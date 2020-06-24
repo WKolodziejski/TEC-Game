@@ -11,3 +11,5 @@ Repository for the TEC Game Class
 "com.unity.animation.rigging": "0.2.6-preview"
 "com.unity.cinemachine": "2.5.0"
 ```
+
+Should be installed in the Window > Package Manager
