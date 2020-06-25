@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - 
   - Background
-  - 
-  - 
+  - Platforms
+  - Characters
   - 
   - 
   - 
@@ -44,4 +45,10 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tileset
+    uniqueID: 2353793069
+    locked: 0
+  - name: Characters
+    uniqueID: 1513144593
     locked: 0
