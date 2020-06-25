@@ -6,15 +6,22 @@ public class SceneReferences : Singleton<SceneReferences>
 {
     protected SceneReferences() { }
 
+    private bool isPersisted;
+
     public void PersistObjects()
     {
         PersistPlayer();
         //TODO: persistir todas entidades e atributos da cena
+        isPersisted = true;
     }
 
     public void ReloadObjects()
     {
-        ReloadPlayer();
+        if (isPersisted)
+        {
+            ReloadPlayer();
+            isPersisted = false;
+        }
     }
 
     private Vector3 player_position;
@@ -25,7 +32,6 @@ public class SceneReferences : Singleton<SceneReferences>
         Transform player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
         player_position = player.position;
         player_rotation = player.rotation;
-
     }
 
     private void ReloadPlayer()
