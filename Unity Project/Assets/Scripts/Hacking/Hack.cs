@@ -23,7 +23,7 @@ public class Hack : MonoBehaviour
 
     void Start()
     {
-        popup = Instantiate(hackInterface, transform.position, Quaternion.identity);
+        popup = Instantiate(hackInterface);
         DontDestroyOnLoad(audio);
     }
 
@@ -41,7 +41,6 @@ public class Hack : MonoBehaviour
             timer = startTime;
 
             popup.SetActive(true);
-            popup.transform.position = target.transform.position;
         }
 
         if (Input.GetKey(KeyCode.H) && held == false)
@@ -74,7 +73,7 @@ public class Hack : MonoBehaviour
         hackCamera.Follow = target.transform;
         cutscene.SetActive(true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
 
         SceneReferences.Instance.PersistObjects();
         SceneManager.LoadScene(1);
