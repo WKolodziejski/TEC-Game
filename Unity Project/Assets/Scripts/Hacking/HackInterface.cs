@@ -25,14 +25,14 @@ public class HackInterface : MonoBehaviour
     private GameObject _particleSuccess;
     
 
-    void Start()
+    /*void Start()
     {
         _position = GetComponent<RectTransform>();
         _text = GetComponentInChildren<Text>(true);
         _progress = GetComponentInChildren<Image>(true);
 
         gameObject.SetActive(false);
-    }
+    }*/
 
     public void SetPlayerPosition(Transform transform)
     {

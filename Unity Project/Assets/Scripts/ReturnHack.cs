@@ -5,7 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ReturnHack : MonoBehaviour
 {
-  
+
+    public AudioSource soundtrack;
+
+    private void Awake()
+    {
+        soundtrack.time = SceneReferences.Instance.GetAudioTime();
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.M))

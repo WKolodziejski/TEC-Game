@@ -8,10 +8,9 @@ using UnityEngine.SceneManagement;
 public class Hack : MonoBehaviour
 {
 
-    public GameObject target;
     public GameObject cutscene;
-    public GameObject audio;
-
+    public AudioSource transition;
+    public AudioSource soundtrack;
     public CinemachineVirtualCamera hackCamera;
     public HackInterface hackInterface;
     public float holdTime = 2.0f;
@@ -19,28 +18,39 @@ public class Hack : MonoBehaviour
     private bool held = false;
     private float startTime;
     private float timer;
-    private HackInterface popup;
+    //private HackInterface popup;
+    private Transform target;
 
     void Start()
     {
-        popup = Instantiate(hackInterface);
-        DontDestroyOnLoad(audio);
+        //popup = Instantiate(hackInterface);
+        DontDestroyOnLoad(transition);
+        DontDestroyOnLoad(soundtrack);
     }
 
     void Awake()
     {
-        SceneReferences.Instance.ReloadObjects();
+        if (SceneReferences.Instance.IsPersisted())
+        {
+            soundtrack.time = SceneReferences.Instance.GetAudioTime();
+            SceneReferences.Instance.ReloadObjects();
+        }
+        
     }
 
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H) && held == false)
         {
             startTime = Time.time;
             timer = startTime;
 
-            popup.SetActive(true);
+            target = FindTarget();
+            
+            hackInterface.GetComponent<RectTransform>().position = new Vector3(target.position.x, target.position.y + 1, target.position.z);
+            hackInterface.SetActive(true);
+            transition.Play();
         }
 
         if (Input.GetKey(KeyCode.H) && held == false)
@@ -50,7 +60,7 @@ public class Hack : MonoBehaviour
 
             if (counter > 0)
             {
-                popup.setProgress(counter);
+                hackInterface.setProgress(counter);
             }
 
             if (timer > (startTime + holdTime))
@@ -64,7 +74,11 @@ public class Hack : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.H))
         {
-            popup.SetActive(false);
+            hackInterface.SetActive(false);
+            target = null;
+
+            if (!held)
+                transition.Stop();
         }
     }
 
@@ -76,7 +90,27 @@ public class Hack : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         SceneReferences.Instance.PersistObjects();
+        SceneReferences.Instance.SetAudio(soundtrack);
         SceneManager.LoadScene(1);
+    }
+
+    Transform FindTarget()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Hackable");
+        Transform tMin = null;
+        float minDist = Mathf.Infinity;
+        Vector3 currentPos = transform.position;
+        foreach (GameObject o in objs)
+        {
+            Transform t = o.transform;
+            float dist = Vector3.Distance(t.position, currentPos);
+            if (dist < minDist)
+            {
+                tMin = t;
+                minDist = dist;
+            }
+        }
+        return tMin;
     }
 
 }

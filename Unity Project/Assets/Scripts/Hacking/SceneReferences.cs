@@ -17,11 +17,13 @@ public class SceneReferences : Singleton<SceneReferences>
 
     public void ReloadObjects()
     {
-        if (isPersisted)
-        {
-            ReloadPlayer();
-            isPersisted = false;
-        }
+        ReloadPlayer();
+        isPersisted = false;
+    }
+
+    public bool IsPersisted()
+    {
+        return isPersisted;
     }
 
     private Vector3 player_position;
@@ -39,6 +41,18 @@ public class SceneReferences : Singleton<SceneReferences>
         Transform player = GameObject.FindGameObjectsWithTag("Player")[0].transform;
         player.position = player_position;
         player.rotation = player_rotation;
+    }
+
+    private AudioSource audio;
+    public void SetAudio(AudioSource audio)
+    {
+        this.audio = audio;
+    }
+
+    public float GetAudioTime()
+    {
+        audio.volume = 0;
+        return audio.time;
     }
 
 }
