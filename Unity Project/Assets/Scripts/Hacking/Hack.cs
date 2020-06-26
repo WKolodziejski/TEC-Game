@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
@@ -7,6 +8,11 @@ using UnityEngine.SceneManagement;
 public class Hack : MonoBehaviour
 {
 
+    public GameObject target;
+    public GameObject cutscene;
+    public GameObject audio;
+
+    public CinemachineVirtualCamera hackCamera;
     public HackInterface hackInterface;
     public float holdTime = 2.0f;
 
@@ -18,6 +24,7 @@ public class Hack : MonoBehaviour
     void Start()
     {
         popup = Instantiate(hackInterface, transform.position, Quaternion.identity);
+        DontDestroyOnLoad(audio);
     }
 
     void Awake()
@@ -34,6 +41,7 @@ public class Hack : MonoBehaviour
             timer = startTime;
 
             popup.SetActive(true);
+            popup.transform.position = target.transform.position;
         }
 
         if (Input.GetKey(KeyCode.H) && held == false)
@@ -49,11 +57,9 @@ public class Hack : MonoBehaviour
             if (timer > (startTime + holdTime))
             {
                 held = true;
-
-                SceneReferences.Instance.PersistObjects();
-                SceneManager.LoadScene(1);
-
                 hackInterface.SetActive(false);
+
+                StartCoroutine(ChangeScene());
             }
         }
 
@@ -61,6 +67,17 @@ public class Hack : MonoBehaviour
         {
             popup.SetActive(false);
         }
+    }
+
+    IEnumerator ChangeScene()
+    {
+        hackCamera.Follow = target.transform;
+        cutscene.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        SceneReferences.Instance.PersistObjects();
+        SceneManager.LoadScene(1);
     }
 
 }
