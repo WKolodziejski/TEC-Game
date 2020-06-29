@@ -10,11 +10,10 @@ public class Controller : MonoBehaviour
     public BoxCollider2D groundcheck;
     public Transform tr;
     public Rigidbody2D rb;
-    float horizontalMov;
+    public float horizontalMov;
     float lastJump;
     public float fallTime = 0.3f;
     public float jumpLock = 0.6f;
-    bool jump;
 
     PolygonCollider2D playerCollider;
     public bool grounded = false;
@@ -30,8 +29,9 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-             Jump();
+        if (Input.GetButtonDown("Jump")){
+            Jump();
+        }
         Move(Input.GetAxis("Horizontal"));
     }
 
@@ -52,7 +52,7 @@ public class Controller : MonoBehaviour
     }
 
     void Move(float input){
-        horizontalMov = input;   
+        horizontalMov = input;  
     }
 
     private void OnTriggerEnter2D(Collider2D collider){
