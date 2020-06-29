@@ -30,14 +30,20 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jump = Input.GetButtonDown("Jump");
+        if (Input.GetButtonDown("Jump"))
+             Jump();
+        Move(Input.GetAxis("Horizontal"));
+    }
 
-        if (jump && grounded && JumpCooldown()){
+    void FixedUpdate(){
+        transform.position += horizontalMov * Time.deltaTime * speed * Vector3.right;
+    }
+
+    void Jump(){
+        if (grounded && JumpCooldown()){
             rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
-            jump = false;
             lastJump = Time.time;
         }
-        horizontalMov = Input.GetAxis("Horizontal");        
     }
 
     private bool JumpCooldown()
@@ -45,8 +51,8 @@ public class Controller : MonoBehaviour
         return (Time.time - lastJump >= jumpLock);
     }
 
-    void FixedUpdate(){
-        transform.position += horizontalMov * Time.deltaTime * speed * Vector3.right;
+    void Move(float input){
+        horizontalMov = input;   
     }
 
     private void OnTriggerEnter2D(Collider2D collider){
@@ -59,8 +65,6 @@ public class Controller : MonoBehaviour
             grounded = true;
         }
     }
-
-
 
     private void OnTriggerExit2D(Collider2D collider){
         if (collider.tag == "Ground"){
