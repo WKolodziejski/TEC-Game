@@ -3,7 +3,7 @@ Repository for the TEC Game Class
 
 ### Unity Version
 ```
-2019.4.1f1
+2019.3.13f1
 ```
 
 ### Dependencies
