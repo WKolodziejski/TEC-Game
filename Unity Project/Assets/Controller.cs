@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+
     public float speed = 5f;
     public float jumpForce = 15;
     public BoxCollider2D groundcheck;
@@ -18,24 +19,54 @@ public class Controller : MonoBehaviour
     PolygonCollider2D playerCollider;
     public bool grounded = false;
     public bool platform = false;
+
+    //Hack variables
+    public HackInterface hackInterface;
+
+    private float startTime;
+    private float countTime;
+    private bool held;
+
     void Start()
     {
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         groundcheck = GetComponent<BoxCollider2D>();
         playerCollider = GetComponent<PolygonCollider2D>();
+
+        hackInterface.SetPlayerPosition(transform);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Jump")){
             Jump();
         }
         Move(Input.GetAxis("Horizontal"));
+
+        if (Input.GetKeyDown(KeyCode.H) && !held)
+        {
+            startTime = Time.time;
+            countTime = startTime;
+
+            hackInterface.StartHacking();
+        }
+
+        if (Input.GetKey(KeyCode.H) && !held)
+        {
+            countTime += Time.deltaTime;
+
+            held = hackInterface.SetProgress(countTime, startTime);
+        }
+
+        if (Input.GetKeyUp(KeyCode.H))
+        {
+            held = false;
+            hackInterface.CancelHacking();
+        }
     }
 
-    void FixedUpdate(){
+    void FixedUpdate() {
         transform.position += horizontalMov * Time.deltaTime * speed * Vector3.right;
     }
 
@@ -83,4 +114,5 @@ public class Controller : MonoBehaviour
         yield return new WaitForSeconds(fallTime);
         playerCollider.enabled = true;
     }
+
 }
