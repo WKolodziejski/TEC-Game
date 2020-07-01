@@ -9,35 +9,51 @@ public class HackSceneReference : Singleton<HackSceneReference>
     protected HackSceneReference() { }
 
     private GameObject[] objs;
-
+    private bool isHacking;
     public void EnterHackGame(EDifficulty difficulty)
     {
-        this.difficulty = difficulty;
-        this.objs = FindObjectsOfType<GameObject>();
-
-        SceneManager.LoadScene(0, LoadSceneMode.Additive);
-
-        foreach (GameObject o in objs)
+        if (!isHacking)
         {
-            DontDestroyOnLoad(o);
+            this.isHacking = true;
+            this.difficulty = difficulty;
+            this.objs = FindObjectsOfType<GameObject>();
 
-            if (o.GetComponent<DontDestroy>() == null)
+            SceneManager.LoadScene(0, LoadSceneMode.Additive);
+
+            foreach (GameObject o in objs)
             {
-                o.SetActive(false);
+                DontDestroyOnLoad(o);
+
+                if (o.GetComponent<DontDestroy>() == null)
+                {
+                    o.SetActive(false);
+                }
             }
+        }
+        else
+        {
+            Debug.Log("Already hacking");
         }
     }
 
     public void ReturnHackGame(float returnDamage)
     {
-        this.returnDamage = returnDamage;
-
-        SceneManager.UnloadSceneAsync(0);
-
-        foreach (GameObject o in objs)
+        if (isHacking)
         {
-            if (o != null)
-                o.SetActive(true);
+            SceneManager.UnloadSceneAsync(0);
+
+            foreach (GameObject o in objs)
+            {
+                if (o != null)
+                    o.SetActive(true);
+            }
+
+            this.returnDamage = returnDamage;
+            this.isHacking = false;
+        }
+        else
+        {
+            Debug.Log("Not hacking");
         }
     }
 

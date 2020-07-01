@@ -5,7 +5,6 @@ using UnityEngine;
 public class MissileFollow : MissileBase
 {
 
-    private Rigidbody2D rb;
     private Transform target;
 
     void FixedUpdate()
@@ -26,7 +25,6 @@ public class MissileFollow : MissileBase
     {
         base.Fire();
 
-        rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

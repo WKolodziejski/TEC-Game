@@ -11,7 +11,7 @@ public class MissileBase : MonoBehaviour
     public GameObject explosion;
     public GameObject muzzle;
 
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
     protected bool fired;
 
     void Start()
@@ -39,7 +39,7 @@ public class MissileBase : MonoBehaviour
     protected virtual void Fire()
     {
         Destroy(Instantiate(muzzle, transform.parent.transform), 1f);
-        GetComponent<Rigidbody2D>().velocity = transform.forward * speed;
+        rb.velocity = transform.forward * speed;
 
         fired = true;
     }
@@ -48,8 +48,6 @@ public class MissileBase : MonoBehaviour
     {
         if (!collision.collider.CompareTag("Missile"))
             Explode();
-
-        Debug.Log(collision.collider.name);
     }
 
     protected void Explode()
