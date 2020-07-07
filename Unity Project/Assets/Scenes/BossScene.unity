@@ -831,9 +831,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 15
-  groundcheck: {fileID: 0}
-  tr: {fileID: 0}
-  rb: {fileID: 0}
+  groundcheck: {fileID: 575010891}
+  tr: {fileID: 575010894}
+  rb: {fileID: 575010893}
   horizontalMov: 0
   fallTime: 0.3
   jumpLock: 0.6
