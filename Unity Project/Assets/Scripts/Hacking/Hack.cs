@@ -32,7 +32,7 @@ public class Hack : MonoBehaviour
     {
         if (SceneReferences.Instance.IsPersisted())
         {
-            soundtrack.time = SceneReferences.Instance.GetAudioTime();
+            //soundtrack.time = SceneReferences.Instance.GetAudioTime();
             SceneReferences.Instance.ReloadObjects();
         }
         
@@ -90,7 +90,7 @@ public class Hack : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         SceneReferences.Instance.PersistObjects();
-        SceneReferences.Instance.SetAudio(soundtrack);
+        //SceneReferences.Instance.SetAudio(soundtrack);
         SceneManager.LoadScene(1);
     }
 

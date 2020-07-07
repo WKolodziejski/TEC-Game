@@ -43,7 +43,7 @@ public class SceneReferences : Singleton<SceneReferences>
         player.rotation = player_rotation;
     }
 
-    private AudioSource audio;
+    /*private AudioSource audio;
     public void SetAudio(AudioSource audio)
     {
         this.audio = audio;
@@ -53,6 +53,6 @@ public class SceneReferences : Singleton<SceneReferences>
     {
         audio.volume = 0;
         return audio.time;
-    }
+    }*/
 
 }

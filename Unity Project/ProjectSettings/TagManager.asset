@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Ground
   - Hackable
+  - Enemy
+  - PlayerBullet
+  - EnemyBullet
+  - Bullet
+  - BossFirePoint
   layers:
   - Default
   - TransparentFX

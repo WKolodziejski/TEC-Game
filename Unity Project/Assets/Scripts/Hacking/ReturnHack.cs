@@ -6,18 +6,21 @@ using UnityEngine.SceneManagement;
 public class ReturnHack : MonoBehaviour
 {
 
-    public AudioSource soundtrack;
+    //public AudioSource soundtrack;
 
     private void Awake()
     {
-        soundtrack.time = SceneReferences.Instance.GetAudioTime();
+        //soundtrack.time = SceneReferences.Instance.GetAudioTime();
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.M))
-        {
-            SceneManager.LoadScene(0);
-        }
+        
+    }
+
+    public void exitHack()
+    {
+        //SceneManager.UnloadScene();
+        SceneManager.LoadScene(0);
     }
 }
