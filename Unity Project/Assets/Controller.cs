@@ -29,9 +29,9 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
-        tr = GetComponent<Transform>();
+        /*tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
-        groundcheck = GetComponent<BoxCollider2D>();
+        groundcheck = GetComponent<BoxCollider2D>();*/
         playerCollider = GetComponent<PolygonCollider2D>();
 
         hackInterface.SetPlayerPosition(transform);
@@ -86,15 +86,17 @@ public class Controller : MonoBehaviour
         horizontalMov = input;  
     }
 
-    private void OnTriggerEnter2D(Collider2D collider){
-        if (collider.tag == "Ground"){
-            grounded = true;
-        }
+    private void OnTriggerStay2D(Collider2D collider){
+       if(JumpCooldown()){
+            if (collider.tag == "Ground"){
+                grounded = true;
+            }
 
-        if (collider.tag == "Platform"){
-            platform = true;
-            grounded = true;
-        }
+            if (collider.tag == "Platform"){
+                platform = true;
+                grounded = true;
+            }
+       }
     }
 
     private void OnTriggerExit2D(Collider2D collider){
@@ -106,6 +108,7 @@ public class Controller : MonoBehaviour
             platform = false;
             grounded = false;
         }
+
     }
     
     public IEnumerator Fall(){
