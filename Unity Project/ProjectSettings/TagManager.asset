@@ -5,12 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Platform
   - Hackable
-  - Enemy
-  - PlayerBullet
-  - EnemyBullet
-  - Bullet
-  - BossFirePoint
+  - Missile
   layers:
   - Default
   - TransparentFX
@@ -21,9 +18,9 @@ TagManager:
   - 
   - 
   - Background
-  - 
-  - 
-  - 
+  - Platforms
+  - Characters
+  - Enemies
   - 
   - 
   - 
@@ -45,11 +42,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Background
     uniqueID: 4269076179
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Tileset
+    uniqueID: 2353793069
+    locked: 0
+  - name: Characters
+    uniqueID: 1513144593
     locked: 0
   - name: ForeGround
     uniqueID: 3984803347
