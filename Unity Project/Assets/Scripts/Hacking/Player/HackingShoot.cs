@@ -28,22 +28,22 @@ public class HackingShoot : MonoBehaviour
         int angle = 0;
         bool shoot = false, shootDiagonal = false;
 
-        if (Input.GetButton("FireHorizontal")) 
+        if (Input.GetButton("HackingShootHorizontal")) 
         {
             shoot = true;
-            if(Input.GetAxisRaw("FireHorizontal") > 0)
+            if(Input.GetAxisRaw("HackingShootHorizontal") > 0)
                 angle += 0;
 
-            else if(Input.GetAxisRaw("FireHorizontal") < 0)
+            else if(Input.GetAxisRaw("HackingShootHorizontal") < 0)
                 angle += 180;
         }
 
-        if (Input.GetButton("FireVertical")) 
+        if (Input.GetButton("HackingShootVertical")) 
         {
-            if(Input.GetAxisRaw("FireVertical") > 0)
+            if(Input.GetAxisRaw("HackingShootVertical") > 0)
                 angle += 90;
                 
-            else if(Input.GetAxisRaw("FireVertical") < 0)
+            else if(Input.GetAxisRaw("HackingShootVertical") < 0)
             {
                 if (angle == 0 && shoot)
                     angle += 360;   //compensar o angulo 0

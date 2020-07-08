@@ -22,8 +22,8 @@ public class HackingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        verticalMov = Input.GetAxis("Vertical");
-        horizontalMov = Input.GetAxis("Horizontal");
+        verticalMov = Input.GetAxis("HackingVertical");
+        horizontalMov = Input.GetAxis("HackingHorizontal");
     }
 
     void FixedUpdate(){
