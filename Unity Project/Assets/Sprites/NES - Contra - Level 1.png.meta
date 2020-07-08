@@ -1,0 +1,2876 @@
+fileFormatVersion: 2
+guid: 62e5cfd4c99203a478418b68f786ca58
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4878209446604732620
+    second: NES - Contra - Level 1_0
+  - first:
+      213: 7551069458353813454
+    second: NES - Contra - Level 1_1
+  - first:
+      213: 2324801321953304013
+    second: NES - Contra - Level 1_2
+  - first:
+      213: 4551223331626912971
+    second: NES - Contra - Level 1_3
+  - first:
+      213: -349714417357122856
+    second: NES - Contra - Level 1_4
+  - first:
+      213: -4777573301932441657
+    second: NES - Contra - Level 1_5
+  - first:
+      213: -8258928584645433980
+    second: NES - Contra - Level 1_6
+  - first:
+      213: 2406862815054223816
+    second: NES - Contra - Level 1_7
+  - first:
+      213: -6022791975168478643
+    second: NES - Contra - Level 1_8
+  - first:
+      213: 9176434994241880646
+    second: NES - Contra - Level 1_9
+  - first:
+      213: 3436261919040558584
+    second: NES - Contra - Level 1_10
+  - first:
+      213: 4454697046695050813
+    second: NES - Contra - Level 1_11
+  - first:
+      213: -6496051137397405955
+    second: NES - Contra - Level 1_12
+  - first:
+      213: -5509259950426920082
+    second: NES - Contra - Level 1_13
+  - first:
+      213: 5899316689175344779
+    second: NES - Contra - Level 1_14
+  - first:
+      213: 7391216861443102660
+    second: NES - Contra - Level 1_15
+  - first:
+      213: 246891606504577152
+    second: NES - Contra - Level 1_16
+  - first:
+      213: 6354019675922211453
+    second: NES - Contra - Level 1_17
+  - first:
+      213: 5851683007029389111
+    second: NES - Contra - Level 1_18
+  - first:
+      213: 8022285653463977503
+    second: NES - Contra - Level 1_19
+  - first:
+      213: -1555013221652409798
+    second: NES - Contra - Level 1_20
+  - first:
+      213: 6949631618663931109
+    second: NES - Contra - Level 1_21
+  - first:
+      213: 7739197423376286489
+    second: NES - Contra - Level 1_22
+  - first:
+      213: -4806015207334835370
+    second: NES - Contra - Level 1_23
+  - first:
+      213: 7589021094270664200
+    second: NES - Contra - Level 1_24
+  - first:
+      213: -4564945372644991716
+    second: NES - Contra - Level 1_25
+  - first:
+      213: 8767973803827384433
+    second: NES - Contra - Level 1_26
+  - first:
+      213: 6310138537483820071
+    second: NES - Contra - Level 1_27
+  - first:
+      213: -5162859264503721443
+    second: NES - Contra - Level 1_28
+  - first:
+      213: -7773638698155986697
+    second: NES - Contra - Level 1_29
+  - first:
+      213: 7457639268340325536
+    second: NES - Contra - Level 1_30
+  - first:
+      213: 1658477580409890814
+    second: NES - Contra - Level 1_31
+  - first:
+      213: 8410205080105240974
+    second: NES - Contra - Level 1_32
+  - first:
+      213: -5120781147482628737
+    second: NES - Contra - Level 1_33
+  - first:
+      213: -1529127304989038211
+    second: NES - Contra - Level 1_34
+  - first:
+      213: -600134611924985325
+    second: NES - Contra - Level 1_35
+  - first:
+      213: -3257115010288361650
+    second: NES - Contra - Level 1_36
+  - first:
+      213: 6174423335422016385
+    second: NES - Contra - Level 1_37
+  - first:
+      213: 2117485400049744794
+    second: NES - Contra - Level 1_38
+  - first:
+      213: -7045121569549950275
+    second: NES - Contra - Level 1_39
+  - first:
+      213: 7863977310208086771
+    second: NES - Contra - Level 1_40
+  - first:
+      213: 6149987069142955726
+    second: NES - Contra - Level 1_41
+  - first:
+      213: 5476142616848583141
+    second: NES - Contra - Level 1_42
+  - first:
+      213: -8185291609815783932
+    second: NES - Contra - Level 1_43
+  - first:
+      213: 7966282895765256711
+    second: NES - Contra - Level 1_44
+  - first:
+      213: 1241374298455201729
+    second: NES - Contra - Level 1_45
+  - first:
+      213: 4724000047920484447
+    second: NES - Contra - Level 1_46
+  - first:
+      213: -5123389392952191840
+    second: NES - Contra - Level 1_47
+  - first:
+      213: 1379562477853122770
+    second: NES - Contra - Level 1_48
+  - first:
+      213: 3359747257742235449
+    second: NES - Contra - Level 1_49
+  - first:
+      213: 8205344284845146121
+    second: NES - Contra - Level 1_50
+  - first:
+      213: -4744917218041268056
+    second: NES - Contra - Level 1_51
+  - first:
+      213: 2486167848140922040
+    second: NES - Contra - Level 1_52
+  - first:
+      213: 6861466201677752133
+    second: NES - Contra - Level 1_53
+  - first:
+      213: -7511717306327015435
+    second: NES - Contra - Level 1_54
+  - first:
+      213: 1928797909991415311
+    second: NES - Contra - Level 1_55
+  - first:
+      213: -5792509371163150683
+    second: NES - Contra - Level 1_56
+  - first:
+      213: -2392836441185411379
+    second: NES - Contra - Level 1_57
+  - first:
+      213: -2908279635864347739
+    second: NES - Contra - Level 1_58
+  - first:
+      213: 8230840173888418116
+    second: NES - Contra - Level 1_59
+  - first:
+      213: 4062511684294624554
+    second: NES - Contra - Level 1_60
+  - first:
+      213: 165601662081278112
+    second: NES - Contra - Level 1_61
+  - first:
+      213: 3120799233950906932
+    second: NES - Contra - Level 1_62
+  - first:
+      213: -2457573549078256055
+    second: NES - Contra - Level 1_63
+  - first:
+      213: -3944702846811836804
+    second: NES - Contra - Level 1_64
+  - first:
+      213: -7317127585069838243
+    second: NES - Contra - Level 1_65
+  - first:
+      213: -454706616077255016
+    second: NES - Contra - Level 1_66
+  - first:
+      213: 8576822309732716003
+    second: NES - Contra - Level 1_67
+  - first:
+      213: 1119563126536610290
+    second: NES - Contra - Level 1_68
+  - first:
+      213: 5678949745300613989
+    second: NES - Contra - Level 1_69
+  - first:
+      213: 4022452613212843092
+    second: NES - Contra - Level 1_70
+  - first:
+      213: -7244610730682101496
+    second: NES - Contra - Level 1_71
+  - first:
+      213: 3498405223407013111
+    second: NES - Contra - Level 1_72
+  - first:
+      213: -619446613075979523
+    second: NES - Contra - Level 1_73
+  - first:
+      213: -7748524685571998630
+    second: NES - Contra - Level 1_74
+  - first:
+      213: -1699327742909192263
+    second: NES - Contra - Level 1_75
+  - first:
+      213: 1954570561878586128
+    second: NES - Contra - Level 1_76
+  - first:
+      213: -4176005519621375337
+    second: NES - Contra - Level 1_77
+  - first:
+      213: 5273925608522367159
+    second: NES - Contra - Level 1_78
+  - first:
+      213: 7213720326267052484
+    second: NES - Contra - Level 1_79
+  - first:
+      213: 2703389062909004989
+    second: NES - Contra - Level 1_80
+  - first:
+      213: 5554784557113979230
+    second: NES - Contra - Level 1_81
+  - first:
+      213: 3169821342503926507
+    second: NES - Contra - Level 1_82
+  - first:
+      213: 8909726478934677193
+    second: NES - Contra - Level 1_83
+  - first:
+      213: 8622156228962381834
+    second: NES - Contra - Level 1_84
+  - first:
+      213: 7870700404788166521
+    second: NES - Contra - Level 1_85
+  - first:
+      213: 3993868599882545655
+    second: NES - Contra - Level 1_86
+  - first:
+      213: 3302433944463487788
+    second: NES - Contra - Level 1_87
+  - first:
+      213: -7217546635453189696
+    second: NES - Contra - Level 1_88
+  - first:
+      213: 5523512813225433541
+    second: NES - Contra - Level 1_89
+  - first:
+      213: -3332111258017553694
+    second: NES - Contra - Level 1_90
+  - first:
+      213: -8341484539561163127
+    second: NES - Contra - Level 1_91
+  - first:
+      213: -8007798769258907959
+    second: NES - Contra - Level 1_92
+  - first:
+      213: -7610393336447721864
+    second: NES - Contra - Level 1_93
+  - first:
+      213: -270641647860998841
+    second: NES - Contra - Level 1_94
+  - first:
+      213: -5111071734540498409
+    second: NES - Contra - Level 1_95
+  - first:
+      213: -7196801200845049020
+    second: NES - Contra - Level 1_96
+  - first:
+      213: -4201013300219730333
+    second: NES - Contra - Level 1_97
+  - first:
+      213: -5408772368828664439
+    second: NES - Contra - Level 1_98
+  - first:
+      213: 406545840392475930
+    second: NES - Contra - Level 1_99
+  - first:
+      213: -1166092307536139780
+    second: NES - Contra - Level 1_100
+  - first:
+      213: 7582144237774153479
+    second: NES - Contra - Level 1_101
+  - first:
+      213: 9002665433312083460
+    second: NES - Contra - Level 1_102
+  - first:
+      213: 3502827876412667943
+    second: NES - Contra - Level 1_103
+  - first:
+      213: 3147460652438517828
+    second: NES - Contra - Level 1_104
+  - first:
+      213: -8732096074792417169
+    second: NES - Contra - Level 1_105
+  - first:
+      213: 8829853660533929711
+    second: NES - Contra - Level 1_106
+  - first:
+      213: -3930833864868350466
+    second: NES - Contra - Level 1_107
+  - first:
+      213: 8414711737066902953
+    second: NES - Contra - Level 1_108
+  - first:
+      213: -7764668204189621675
+    second: NES - Contra - Level 1_109
+  - first:
+      213: 5800879682069948619
+    second: NES - Contra - Level 1_110
+  - first:
+      213: -2189370932493688866
+    second: NES - Contra - Level 1_111
+  - first:
+      213: 240577576985784113
+    second: NES - Contra - Level 1_112
+  - first:
+      213: -863400380095459118
+    second: NES - Contra - Level 1_113
+  - first:
+      213: -6246890365742304238
+    second: NES - Contra - Level 1_114
+  - first:
+      213: 4551265167556416
+    second: NES - Contra - Level 1_115
+  - first:
+      213: -8546317465465763228
+    second: NES - Contra - Level 1_116
+  - first:
+      213: 312731808944579871
+    second: NES - Contra - Level 1_117
+  - first:
+      213: -8125282372284305684
+    second: NES - Contra - Level 1_118
+  - first:
+      213: 3255616887422304887
+    second: NES - Contra - Level 1_119
+  - first:
+      213: 7414189692895966324
+    second: NES - Contra - Level 1_120
+  - first:
+      213: 4190602313594324623
+    second: NES - Contra - Level 1_121
+  - first:
+      213: -1613520741758646158
+    second: NES - Contra - Level 1_122
+  - first:
+      213: -8918934738459956669
+    second: NES - Contra - Level 1_123
+  - first:
+      213: -1006073862268937713
+    second: NES - Contra - Level 1_124
+  - first:
+      213: 1264665362209365253
+    second: NES - Contra - Level 1_125
+  - first:
+      213: -636741235630985844
+    second: NES - Contra - Level 1_126
+  - first:
+      213: 244294209708927297
+    second: NES - Contra - Level 1_127
+  - first:
+      213: -2826502600700784431
+    second: NES - Contra - Level 1_128
+  - first:
+      213: -3623054572794039527
+    second: NES - Contra - Level 1_129
+  - first:
+      213: 4402303417614508389
+    second: NES - Contra - Level 1_130
+  - first:
+      213: 7075968227652371666
+    second: NES - Contra - Level 1_131
+  - first:
+      213: -3102580963781871237
+    second: NES - Contra - Level 1_132
+  - first:
+      213: -322107621018806819
+    second: NES - Contra - Level 1_133
+  - first:
+      213: -2876457137659476833
+    second: NES - Contra - Level 1_134
+  - first:
+      213: -6330579187499557092
+    second: NES - Contra - Level 1_135
+  - first:
+      213: -8458208367792954883
+    second: NES - Contra - Level 1_136
+  - first:
+      213: 7383925431420748807
+    second: NES - Contra - Level 1_137
+  - first:
+      213: -5195041150556167043
+    second: NES - Contra - Level 1_138
+  - first:
+      213: 6968994189263260620
+    second: NES - Contra - Level 1_139
+  - first:
+      213: -4502587940894313299
+    second: NES - Contra - Level 1_140
+  - first:
+      213: 7188359637304268632
+    second: NES - Contra - Level 1_141
+  - first:
+      213: 1007130574579361693
+    second: NES - Contra - Level 1_142
+  - first:
+      213: 777207473835173631
+    second: NES - Contra - Level 1_143
+  - first:
+      213: -1782793810722277845
+    second: NES - Contra - Level 1_144
+  - first:
+      213: -2755240214765135211
+    second: NES - Contra - Level 1_145
+  - first:
+      213: -9211572329283883322
+    second: NES - Contra - Level 1_146
+  - first:
+      213: -5245743528458047971
+    second: NES - Contra - Level 1_147
+  - first:
+      213: -2537791592405709133
+    second: NES - Contra - Level 1_148
+  - first:
+      213: 4501157111317238839
+    second: NES - Contra - Level 1_149
+  - first:
+      213: -1001733199853490834
+    second: NES - Contra - Level 1_150
+  - first:
+      213: -7798404776608317440
+    second: NES - Contra - Level 1_151
+  - first:
+      213: -6616341746477331302
+    second: NES - Contra - Level 1_152
+  - first:
+      213: -1361095366860302676
+    second: NES - Contra - Level 1_153
+  - first:
+      213: 4632577967605918279
+    second: NES - Contra - Level 1_154
+  - first:
+      213: 3729406673162343750
+    second: NES - Contra - Level 1_155
+  - first:
+      213: -8813841420046162056
+    second: NES - Contra - Level 1_156
+  - first:
+      213: -4997742371795326376
+    second: NES - Contra - Level 1_157
+  - first:
+      213: 2043170685687783313
+    second: NES - Contra - Level 1_158
+  - first:
+      213: 1625995587838425267
+    second: NES - Contra - Level 1_159
+  - first:
+      213: 5664331369001302825
+    second: NES - Contra - Level 1_160
+  - first:
+      213: -6484442062122786013
+    second: NES - Contra - Level 1_161
+  - first:
+      213: -5507414496935796569
+    second: NES - Contra - Level 1_162
+  - first:
+      213: -6874982532565652215
+    second: NES - Contra - Level 1_163
+  - first:
+      213: 1124658488302165482
+    second: NES - Contra - Level 1_164
+  - first:
+      213: 5048680150215703817
+    second: NES - Contra - Level 1_165
+  - first:
+      213: 3715309101310227378
+    second: NES - Contra - Level 1_166
+  - first:
+      213: 7406743416163258685
+    second: NES - Contra - Level 1_167
+  - first:
+      213: -2388159173707587421
+    second: NES - Contra - Level 1_168
+  - first:
+      213: -8266086302873915309
+    second: NES - Contra - Level 1_169
+  - first:
+      213: 6552403302662089962
+    second: NES - Contra - Level 1_170
+  - first:
+      213: -8048192560671458097
+    second: NES - Contra - Level 1_171
+  - first:
+      213: -3304930489961369821
+    second: NES - Contra - Level 1_172
+  - first:
+      213: -2865086911442480301
+    second: NES - Contra - Level 1_173
+  - first:
+      213: -1579753756332801166
+    second: NES - Contra - Level 1_174
+  - first:
+      213: 2689881869930806054
+    second: NES - Contra - Level 1_175
+  - first:
+      213: 6461407401189296755
+    second: NES - Contra - Level 1_176
+  - first:
+      213: 9179779025592153745
+    second: NES - Contra - Level 1_177
+  - first:
+      213: 1969881698998343848
+    second: NES - Contra - Level 1_178
+  - first:
+      213: 3179329928564885460
+    second: NES - Contra - Level 1_179
+  - first:
+      213: -1268804516369785782
+    second: NES - Contra - Level 1_180
+  - first:
+      213: -7776966495121367428
+    second: NES - Contra - Level 1_181
+  - first:
+      213: 8895507750732779596
+    second: NES - Contra - Level 1_182
+  - first:
+      213: 1739378553348300610
+    second: NES - Contra - Level 1_183
+  - first:
+      213: 6522726125009458462
+    second: NES - Contra - Level 1_184
+  - first:
+      213: -13181662201460559
+    second: NES - Contra - Level 1_185
+  - first:
+      213: 272055132907959012
+    second: NES - Contra - Level 1_186
+  - first:
+      213: 8374078733741770319
+    second: NES - Contra - Level 1_187
+  - first:
+      213: -7727882085884986384
+    second: NES - Contra - Level 1_188
+  - first:
+      213: 6366513163778679628
+    second: NES - Contra - Level 1_189
+  - first:
+      213: 2764425983812189161
+    second: NES - Contra - Level 1_190
+  - first:
+      213: 2055421727222075698
+    second: NES - Contra - Level 1_191
+  - first:
+      213: -517965461354533193
+    second: NES - Contra - Level 1_192
+  - first:
+      213: 637247091480033439
+    second: NES - Contra - Level 1_193
+  - first:
+      213: 6186160481847062069
+    second: NES - Contra - Level 1_194
+  - first:
+      213: 4352415975878312246
+    second: NES - Contra - Level 1_195
+  - first:
+      213: 4904422787413301650
+    second: NES - Contra - Level 1_196
+  - first:
+      213: -8390619733802396448
+    second: NES - Contra - Level 1_197
+  - first:
+      213: 3277865891642402671
+    second: NES - Contra - Level 1_198
+  - first:
+      213: -1864282271663267733
+    second: NES - Contra - Level 1_199
+  - first:
+      213: 4953994820659909680
+    second: NES - Contra - Level 1_200
+  - first:
+      213: 5716127015485343004
+    second: NES - Contra - Level 1_201
+  - first:
+      213: 7153517778827875386
+    second: NES - Contra - Level 1_202
+  - first:
+      213: -364501838458347552
+    second: NES - Contra - Level 1_203
+  - first:
+      213: -7879862684095673305
+    second: NES - Contra - Level 1_204
+  - first:
+      213: 8666336683079313803
+    second: NES - Contra - Level 1_205
+  - first:
+      213: 4305668315306489109
+    second: NES - Contra - Level 1_206
+  - first:
+      213: -9211479495628129298
+    second: NES - Contra - Level 1_207
+  - first:
+      213: 2938684801127642195
+    second: NES - Contra - Level 1_208
+  - first:
+      213: -8176104946141316064
+    second: NES - Contra - Level 1_209
+  - first:
+      213: -7265900727641749602
+    second: NES - Contra - Level 1_210
+  - first:
+      213: -5768823593721082545
+    second: NES - Contra - Level 1_211
+  - first:
+      213: 3501119661469905788
+    second: NES - Contra - Level 1_212
+  - first:
+      213: 767314310431844836
+    second: NES - Contra - Level 1_213
+  - first:
+      213: -8325099604526477089
+    second: NES - Contra - Level 1_214
+  - first:
+      213: 244404860687633962
+    second: NES - Contra - Level 1_215
+  - first:
+      213: 9092883381089971004
+    second: NES - Contra - Level 1_216
+  - first:
+      213: -1270207194958719565
+    second: NES - Contra - Level 1_217
+  - first:
+      213: -2520199252969768891
+    second: NES - Contra - Level 1_218
+  - first:
+      213: 7542719684900429833
+    second: NES - Contra - Level 1_219
+  - first:
+      213: 1698517155970430291
+    second: NES - Contra - Level 1_220
+  - first:
+      213: -4136815502396151501
+    second: NES - Contra - Level 1_221
+  - first:
+      213: 3938915711330928760
+    second: NES - Contra - Level 1_222
+  - first:
+      213: 4513921227295260535
+    second: NES - Contra - Level 1_223
+  - first:
+      213: 8626826342326572776
+    second: NES - Contra - Level 1_224
+  - first:
+      213: 1331310707185792172
+    second: NES - Contra - Level 1_225
+  - first:
+      213: 6222753595224076508
+    second: NES - Contra - Level 1_226
+  - first:
+      213: 6930620447282885409
+    second: NES - Contra - Level 1_227
+  - first:
+      213: -6265691202758446833
+    second: NES - Contra - Level 1_228
+  - first:
+      213: 1341970664746912175
+    second: NES - Contra - Level 1_229
+  - first:
+      213: 3206536107195089045
+    second: NES - Contra - Level 1_230
+  - first:
+      213: 8778543978321800831
+    second: NES - Contra - Level 1_231
+  - first:
+      213: 2529592907347698547
+    second: NES - Contra - Level 1_232
+  - first:
+      213: -3528025142811635102
+    second: NES - Contra - Level 1_233
+  - first:
+      213: 9083282556845616564
+    second: NES - Contra - Level 1_234
+  - first:
+      213: -4140553088129604445
+    second: NES - Contra - Level 1_235
+  - first:
+      213: 3442361252045738599
+    second: NES - Contra - Level 1_236
+  - first:
+      213: 122060137672092022
+    second: NES - Contra - Level 1_237
+  - first:
+      213: -3108117930639359990
+    second: NES - Contra - Level 1_238
+  - first:
+      213: -8282435827355692635
+    second: NES - Contra - Level 1_239
+  - first:
+      213: -6936142767437607782
+    second: NES - Contra - Level 1_240
+  - first:
+      213: 5944854434453144224
+    second: NES - Contra - Level 1_241
+  - first:
+      213: -8848369520434995047
+    second: NES - Contra - Level 1_242
+  - first:
+      213: -5026317578128711705
+    second: NES - Contra - Level 1_243
+  - first:
+      213: -6050175323116287028
+    second: NES - Contra - Level 1_244
+  - first:
+      213: 409025148015490191
+    second: NES - Contra - Level 1_245
+  - first:
+      213: -1678801633621204656
+    second: NES - Contra - Level 1_246
+  - first:
+      213: -5568164982629306558
+    second: NES - Contra - Level 1_247
+  - first:
+      213: -906716983149133147
+    second: NES - Contra - Level 1_248
+  - first:
+      213: 4157923537396707373
+    second: NES - Contra - Level 1_249
+  - first:
+      213: -881888471154041715
+    second: NES - Contra - Level 1_250
+  - first:
+      213: 50147985981006565
+    second: NES - Contra - Level 1_251
+  - first:
+      213: -5911972584911212448
+    second: NES - Contra - Level 1_252
+  - first:
+      213: -5893751397581926735
+    second: NES - Contra - Level 1_253
+  - first:
+      213: -5951365259499486630
+    second: NES - Contra - Level 1_254
+  - first:
+      213: 4127193907066003883
+    second: NES - Contra - Level 1_255
+  - first:
+      213: -1531333356722639615
+    second: NES - Contra - Level 1_256
+  - first:
+      213: 7826596638164578591
+    second: NES - Contra - Level 1_257
+  - first:
+      213: -3276141745704662207
+    second: NES - Contra - Level 1_258
+  - first:
+      213: 5555037992653400108
+    second: NES - Contra - Level 1_259
+  - first:
+      213: -6176765639998367281
+    second: NES - Contra - Level 1_260
+  - first:
+      213: -2829350715141968571
+    second: NES - Contra - Level 1_261
+  - first:
+      213: -5510341697131570101
+    second: NES - Contra - Level 1_262
+  - first:
+      213: 3569586603673302903
+    second: NES - Contra - Level 1_263
+  - first:
+      213: 553436199861640357
+    second: NES - Contra - Level 1_264
+  - first:
+      213: -1297345423444510633
+    second: NES - Contra - Level 1_265
+  - first:
+      213: -814174930081181099
+    second: NES - Contra - Level 1_266
+  - first:
+      213: 6901787594850569871
+    second: NES - Contra - Level 1_267
+  - first:
+      213: 7837659211232808795
+    second: NES - Contra - Level 1_268
+  - first:
+      213: -6926605945363394211
+    second: NES - Contra - Level 1_269
+  - first:
+      213: 1034135153411751315
+    second: NES - Contra - Level 1_270
+  - first:
+      213: -1200404516187563104
+    second: NES - Contra - Level 1_271
+  - first:
+      213: -3522566867935149857
+    second: NES - Contra - Level 1_272
+  - first:
+      213: -3240560806030163754
+    second: NES - Contra - Level 1_273
+  - first:
+      213: 6649646106931461226
+    second: NES - Contra - Level 1_274
+  - first:
+      213: -6317366555094867947
+    second: NES - Contra - Level 1_275
+  - first:
+      213: 2463045355074401514
+    second: NES - Contra - Level 1_276
+  - first:
+      213: -619105556283926229
+    second: NES - Contra - Level 1_277
+  - first:
+      213: 6160508205113987373
+    second: NES - Contra - Level 1_278
+  - first:
+      213: -2549382571375251627
+    second: NES - Contra - Level 1_279
+  - first:
+      213: -6739229929339218195
+    second: NES - Contra - Level 1_280
+  - first:
+      213: -6226293142411852354
+    second: NES - Contra - Level 1_281
+  - first:
+      213: 9156677344630980442
+    second: NES - Contra - Level 1_282
+  - first:
+      213: -6800387568649168382
+    second: NES - Contra - Level 1_283
+  - first:
+      213: -2897221075012936591
+    second: NES - Contra - Level 1_284
+  - first:
+      213: 1778518040184188430
+    second: NES - Contra - Level 1_285
+  - first:
+      213: -6489747018231798174
+    second: NES - Contra - Level 1_286
+  - first:
+      213: 1390962529295434387
+    second: NES - Contra - Level 1_287
+  - first:
+      213: 1051182866759446424
+    second: NES - Contra - Level 1_288
+  - first:
+      213: 6570267476048599227
+    second: NES - Contra - Level 1_289
+  - first:
+      213: 1496802555146259622
+    second: NES - Contra - Level 1_290
+  - first:
+      213: -1445449193254270014
+    second: NES - Contra - Level 1_291
+  - first:
+      213: 7230586625070022178
+    second: NES - Contra - Level 1_292
+  - first:
+      213: 6275728841783909561
+    second: NES - Contra - Level 1_293
+  - first:
+      213: -4073360953868132071
+    second: NES - Contra - Level 1_294
+  - first:
+      213: 8810878019058608906
+    second: NES - Contra - Level 1_295
+  - first:
+      213: 8159110908791592774
+    second: NES - Contra - Level 1_296
+  - first:
+      213: -2180065377315965024
+    second: NES - Contra - Level 1_297
+  - first:
+      213: 8425124374362507633
+    second: NES - Contra - Level 1_298
+  - first:
+      213: 7556123408006545406
+    second: NES - Contra - Level 1_299
+  - first:
+      213: -241250347605225449
+    second: NES - Contra - Level 1_300
+  - first:
+      213: 6206292985651335751
+    second: NES - Contra - Level 1_301
+  - first:
+      213: -6462882053730213398
+    second: NES - Contra - Level 1_302
+  - first:
+      213: 2122189296224630806
+    second: NES - Contra - Level 1_303
+  - first:
+      213: -3514949588851744792
+    second: NES - Contra - Level 1_304
+  - first:
+      213: -9024048286865185457
+    second: NES - Contra - Level 1_305
+  - first:
+      213: 9155983045994613127
+    second: NES - Contra - Level 1_306
+  - first:
+      213: 478100462487765174
+    second: NES - Contra - Level 1_307
+  - first:
+      213: 8860194067769246123
+    second: NES - Contra - Level 1_308
+  - first:
+      213: -7824481423165681122
+    second: NES - Contra - Level 1_309
+  - first:
+      213: 2605366813947809063
+    second: NES - Contra - Level 1_310
+  - first:
+      213: 8567217456595133030
+    second: NES - Contra - Level 1_311
+  - first:
+      213: -4089078420298841827
+    second: NES - Contra - Level 1_312
+  - first:
+      213: -5913667301024131848
+    second: NES - Contra - Level 1_313
+  - first:
+      213: 5064295220493504150
+    second: NES - Contra - Level 1_314
+  - first:
+      213: 3844945324102253722
+    second: NES - Contra - Level 1_315
+  - first:
+      213: 8646203968894886892
+    second: NES - Contra - Level 1_316
+  - first:
+      213: 1604593679664824655
+    second: NES - Contra - Level 1_317
+  - first:
+      213: 7314207265798655591
+    second: NES - Contra - Level 1_318
+  - first:
+      213: -4075660629531585908
+    second: NES - Contra - Level 1_319
+  - first:
+      213: -4431332125740305446
+    second: NES - Contra - Level 1_320
+  - first:
+      213: 1257576983500945894
+    second: NES - Contra - Level 1_321
+  - first:
+      213: -3289021787487485113
+    second: NES - Contra - Level 1_322
+  - first:
+      213: -5297656580351434639
+    second: NES - Contra - Level 1_323
+  - first:
+      213: 6248812546107930630
+    second: NES - Contra - Level 1_324
+  - first:
+      213: -2864337189084432163
+    second: NES - Contra - Level 1_325
+  - first:
+      213: 590840510497133718
+    second: NES - Contra - Level 1_326
+  - first:
+      213: 9112678053687562102
+    second: NES - Contra - Level 1_327
+  - first:
+      213: -4564423793229593068
+    second: NES - Contra - Level 1_328
+  - first:
+      213: 3331648488152505422
+    second: NES - Contra - Level 1_329
+  - first:
+      213: -577778771822746842
+    second: NES - Contra - Level 1_330
+  - first:
+      213: -8902360470734838375
+    second: NES - Contra - Level 1_331
+  - first:
+      213: 6149982687617464819
+    second: NES - Contra - Level 1_332
+  - first:
+      213: 1681448236323819192
+    second: NES - Contra - Level 1_333
+  - first:
+      213: 7926578523046538322
+    second: NES - Contra - Level 1_334
+  - first:
+      213: 6503196368757738997
+    second: NES - Contra - Level 1_335
+  - first:
+      213: -855408431924116523
+    second: NES - Contra - Level 1_336
+  - first:
+      213: -1153410246013238317
+    second: NES - Contra - Level 1_337
+  - first:
+      213: -7835578984773144502
+    second: NES - Contra - Level 1_338
+  - first:
+      213: -6294440496042730403
+    second: NES - Contra - Level 1_339
+  - first:
+      213: -8434377673792896818
+    second: NES - Contra - Level 1_340
+  - first:
+      213: 3920495694847436174
+    second: NES - Contra - Level 1_341
+  - first:
+      213: -7807502106585482430
+    second: NES - Contra - Level 1_342
+  - first:
+      213: -8966931669419884380
+    second: NES - Contra - Level 1_343
+  - first:
+      213: 8334277381524977165
+    second: NES - Contra - Level 1_344
+  - first:
+      213: 3253274263604401761
+    second: NES - Contra - Level 1_345
+  - first:
+      213: 6341463146379823035
+    second: NES - Contra - Level 1_346
+  - first:
+      213: 1440345586488137584
+    second: NES - Contra - Level 1_347
+  - first:
+      213: 3665161039084784370
+    second: NES - Contra - Level 1_348
+  - first:
+      213: 3132974450795165580
+    second: NES - Contra - Level 1_349
+  - first:
+      213: 778216240444866795
+    second: NES - Contra - Level 1_350
+  - first:
+      213: -5641978580769334855
+    second: NES - Contra - Level 1_351
+  - first:
+      213: 3284819551908453661
+    second: NES - Contra - Level 1_352
+  - first:
+      213: 2569336549549804588
+    second: NES - Contra - Level 1_353
+  - first:
+      213: 2801711223861942999
+    second: NES - Contra - Level 1_354
+  - first:
+      213: 3045010304911400188
+    second: NES - Contra - Level 1_355
+  - first:
+      213: -8642652943419397349
+    second: NES - Contra - Level 1_356
+  - first:
+      213: 7335181987758727955
+    second: NES - Contra - Level 1_357
+  - first:
+      213: 5692543625237761524
+    second: NES - Contra - Level 1_358
+  - first:
+      213: -5055091632727568773
+    second: NES - Contra - Level 1_359
+  - first:
+      213: -3663526596690740899
+    second: NES - Contra - Level 1_360
+  - first:
+      213: 8697515971297275328
+    second: NES - Contra - Level 1_361
+  - first:
+      213: 6601038547936573584
+    second: NES - Contra - Level 1_362
+  - first:
+      213: -5441032558836837075
+    second: NES - Contra - Level 1_363
+  - first:
+      213: 8673550744069436678
+    second: NES - Contra - Level 1_364
+  - first:
+      213: 7503810453554854851
+    second: NES - Contra - Level 1_365
+  - first:
+      213: -334407853149765474
+    second: NES - Contra - Level 1_366
+  - first:
+      213: 4764572096416657403
+    second: NES - Contra - Level 1_367
+  - first:
+      213: -5586302196347249941
+    second: NES - Contra - Level 1_368
+  - first:
+      213: -4032376337263934028
+    second: NES - Contra - Level 1_369
+  - first:
+      213: 6670394322223622841
+    second: NES - Contra - Level 1_370
+  - first:
+      213: 5034238923674888549
+    second: NES - Contra - Level 1_371
+  - first:
+      213: 8818391518781172380
+    second: NES - Contra - Level 1_372
+  - first:
+      213: -3127757449410696395
+    second: NES - Contra - Level 1_373
+  - first:
+      213: 5061972092944110012
+    second: NES - Contra - Level 1_374
+  - first:
+      213: -2409080904112361670
+    second: NES - Contra - Level 1_375
+  - first:
+      213: 1520572919056937726
+    second: NES - Contra - Level 1_376
+  - first:
+      213: -7421246056741378947
+    second: NES - Contra - Level 1_377
+  - first:
+      213: 7239023458741045613
+    second: NES - Contra - Level 1_378
+  - first:
+      213: 8469981429322850744
+    second: NES - Contra - Level 1_379
+  - first:
+      213: -1882487245407036585
+    second: NES - Contra - Level 1_380
+  - first:
+      213: -3486231277005125305
+    second: NES - Contra - Level 1_381
+  - first:
+      213: -942383958245134448
+    second: NES - Contra - Level 1_382
+  - first:
+      213: -7289504667810143292
+    second: NES - Contra - Level 1_383
+  - first:
+      213: -6466901006413597661
+    second: NES - Contra - Level 1_384
+  - first:
+      213: 1049081004271625436
+    second: NES - Contra - Level 1_385
+  - first:
+      213: -7587281839385756754
+    second: NES - Contra - Level 1_386
+  - first:
+      213: -698099341579397477
+    second: NES - Contra - Level 1_387
+  - first:
+      213: 8479890789302836950
+    second: NES - Contra - Level 1_388
+  - first:
+      213: -8828609910189590037
+    second: NES - Contra - Level 1_389
+  - first:
+      213: -4519800264864082570
+    second: NES - Contra - Level 1_390
+  - first:
+      213: -8039684167320415448
+    second: NES - Contra - Level 1_391
+  - first:
+      213: 8090606601035640450
+    second: NES - Contra - Level 1_392
+  - first:
+      213: 796609894779554219
+    second: NES - Contra - Level 1_393
+  - first:
+      213: -4539225722480466204
+    second: NES - Contra - Level 1_394
+  - first:
+      213: 1522483829829823533
+    second: NES - Contra - Level 1_395
+  - first:
+      213: -7125751751584830625
+    second: NES - Contra - Level 1_396
+  - first:
+      213: -6385960424853062510
+    second: NES - Contra - Level 1_397
+  - first:
+      213: 3890524220916408284
+    second: NES - Contra - Level 1_398
+  - first:
+      213: -8831417976299903189
+    second: NES - Contra - Level 1_399
+  - first:
+      213: 300373695263535117
+    second: NES - Contra - Level 1_400
+  - first:
+      213: 8043324244871867115
+    second: NES - Contra - Level 1_401
+  - first:
+      213: 3166370202761893176
+    second: NES - Contra - Level 1_402
+  - first:
+      213: -2170309349168276374
+    second: NES - Contra - Level 1_403
+  - first:
+      213: 3708608636566268000
+    second: NES - Contra - Level 1_404
+  - first:
+      213: 969362365306179740
+    second: NES - Contra - Level 1_405
+  - first:
+      213: -44295223320064498
+    second: NES - Contra - Level 1_406
+  - first:
+      213: -7529217258158514117
+    second: NES - Contra - Level 1_407
+  - first:
+      213: 5398354364053459469
+    second: NES - Contra - Level 1_408
+  - first:
+      213: 8829372241593508046
+    second: NES - Contra - Level 1_409
+  - first:
+      213: 5101228552354324785
+    second: NES - Contra - Level 1_410
+  - first:
+      213: -6636126376375288573
+    second: NES - Contra - Level 1_411
+  - first:
+      213: -620001484380661815
+    second: NES - Contra - Level 1_412
+  - first:
+      213: -8282973218273458972
+    second: NES - Contra - Level 1_413
+  - first:
+      213: 4873240255694440889
+    second: NES - Contra - Level 1_414
+  - first:
+      213: 3640387116334974362
+    second: NES - Contra - Level 1_415
+  - first:
+      213: 436330491799272215
+    second: NES - Contra - Level 1_416
+  - first:
+      213: 1136147909828134196
+    second: NES - Contra - Level 1_417
+  - first:
+      213: -3900228455942048783
+    second: NES - Contra - Level 1_418
+  - first:
+      213: -123132042184242862
+    second: NES - Contra - Level 1_419
+  - first:
+      213: 1168950450029225047
+    second: NES - Contra - Level 1_420
+  - first:
+      213: 5081635065602448232
+    second: NES - Contra - Level 1_421
+  - first:
+      213: 3173638360191112062
+    second: NES - Contra - Level 1_422
+  - first:
+      213: -4730132575176451813
+    second: NES - Contra - Level 1_423
+  - first:
+      213: -5311369120240569779
+    second: NES - Contra - Level 1_424
+  - first:
+      213: -5825064847146800528
+    second: NES - Contra - Level 1_425
+  - first:
+      213: -1820779930232522525
+    second: NES - Contra - Level 1_426
+  - first:
+      213: -2817422600400761302
+    second: NES - Contra - Level 1_427
+  - first:
+      213: -6014226922848883701
+    second: NES - Contra - Level 1_428
+  - first:
+      213: -8335563343344742916
+    second: NES - Contra - Level 1_429
+  - first:
+      213: 4566458261578470331
+    second: NES - Contra - Level 1_430
+  - first:
+      213: 2253303022773355360
+    second: NES - Contra - Level 1_431
+  - first:
+      213: 2794535821677559131
+    second: NES - Contra - Level 1_432
+  - first:
+      213: -7600493126163306917
+    second: NES - Contra - Level 1_433
+  - first:
+      213: 666825417722960481
+    second: NES - Contra - Level 1_434
+  - first:
+      213: 8510854605927408548
+    second: NES - Contra - Level 1_435
+  - first:
+      213: 7810902797658888035
+    second: NES - Contra - Level 1_436
+  - first:
+      213: 4512355935001066289
+    second: NES - Contra - Level 1_437
+  - first:
+      213: 1909892625872291675
+    second: NES - Contra - Level 1_438
+  - first:
+      213: -498605674975166216
+    second: NES - Contra - Level 1_439
+  - first:
+      213: -5534195057048500346
+    second: NES - Contra - Level 1_440
+  - first:
+      213: 3969123808846247938
+    second: NES - Contra - Level 1_441
+  - first:
+      213: 7595401843762754280
+    second: NES - Contra - Level 1_442
+  - first:
+      213: -6034388460095045610
+    second: NES - Contra - Level 1_443
+  - first:
+      213: -7450884769355730436
+    second: NES - Contra - Level 1_444
+  - first:
+      213: 3115534599611359797
+    second: NES - Contra - Level 1_445
+  - first:
+      213: -8051459170619507463
+    second: NES - Contra - Level 1_446
+  - first:
+      213: 2914798827755951345
+    second: NES - Contra - Level 1_447
+  - first:
+      213: -905909016059090798
+    second: NES - Contra - Level 1_448
+  - first:
+      213: -6068353557801666611
+    second: NES - Contra - Level 1_449
+  - first:
+      213: 6917753971263928555
+    second: NES - Contra - Level 1_450
+  - first:
+      213: -7526335426437438309
+    second: NES - Contra - Level 1_451
+  - first:
+      213: -1211119813591482262
+    second: NES - Contra - Level 1_452
+  - first:
+      213: 3995972330604662267
+    second: NES - Contra - Level 1_453
+  - first:
+      213: -3517396485558980486
+    second: NES - Contra - Level 1_454
+  - first:
+      213: 6128431364602606946
+    second: NES - Contra - Level 1_455
+  - first:
+      213: -8042319183308567731
+    second: NES - Contra - Level 1_456
+  - first:
+      213: -5251171227222107346
+    second: NES - Contra - Level 1_457
+  - first:
+      213: -7040018616292320143
+    second: NES - Contra - Level 1_458
+  - first:
+      213: -8829312556516991310
+    second: NES - Contra - Level 1_459
+  - first:
+      213: 2833726458563652217
+    second: NES - Contra - Level 1_460
+  - first:
+      213: -9052751052917482483
+    second: NES - Contra - Level 1_461
+  - first:
+      213: -520555445711887323
+    second: NES - Contra - Level 1_462
+  - first:
+      213: -3799714054071208992
+    second: NES - Contra - Level 1_463
+  - first:
+      213: -5053280286357341512
+    second: NES - Contra - Level 1_464
+  - first:
+      213: 7321612194592866107
+    second: NES - Contra - Level 1_465
+  - first:
+      213: 3747239035093041214
+    second: NES - Contra - Level 1_466
+  - first:
+      213: 136202480122537360
+    second: NES - Contra - Level 1_467
+  - first:
+      213: -2270469546439030192
+    second: NES - Contra - Level 1_468
+  - first:
+      213: 1221915054517142539
+    second: NES - Contra - Level 1_469
+  - first:
+      213: 6288968831483182360
+    second: NES - Contra - Level 1_470
+  - first:
+      213: -233492378666101165
+    second: NES - Contra - Level 1_471
+  - first:
+      213: 727021540651197434
+    second: NES - Contra - Level 1_472
+  - first:
+      213: -327854412696049069
+    second: NES - Contra - Level 1_473
+  - first:
+      213: 4045488089456080505
+    second: NES - Contra - Level 1_474
+  - first:
+      213: 2358459547016345988
+    second: NES - Contra - Level 1_475
+  - first:
+      213: 2141255697762511597
+    second: NES - Contra - Level 1_476
+  - first:
+      213: 711741722057223298
+    second: NES - Contra - Level 1_477
+  - first:
+      213: 922468266385007305
+    second: NES - Contra - Level 1_478
+  - first:
+      213: -6601953540716274780
+    second: NES - Contra - Level 1_479
+  - first:
+      213: 7445722117797608977
+    second: NES - Contra - Level 1_480
+  - first:
+      213: 3487298458679299367
+    second: NES - Contra - Level 1_481
+  - first:
+      213: 8683288567421271453
+    second: NES - Contra - Level 1_482
+  - first:
+      213: -3874069080866809038
+    second: NES - Contra - Level 1_483
+  - first:
+      213: -826371942996794465
+    second: NES - Contra - Level 1_484
+  - first:
+      213: -8059149499872901165
+    second: NES - Contra - Level 1_485
+  - first:
+      213: 1175627908586694378
+    second: NES - Contra - Level 1_486
+  - first:
+      213: -3967299809834909117
+    second: NES - Contra - Level 1_487
+  - first:
+      213: -3846179096410006422
+    second: NES - Contra - Level 1_488
+  - first:
+      213: 7960269313545427770
+    second: NES - Contra - Level 1_489
+  - first:
+      213: 3605649567144654632
+    second: NES - Contra - Level 1_490
+  - first:
+      213: -1932413485074685842
+    second: NES - Contra - Level 1_491
+  - first:
+      213: -1694542248219480364
+    second: NES - Contra - Level 1_492
+  - first:
+      213: 1887733151105876584
+    second: NES - Contra - Level 1_493
+  - first:
+      213: 8637787351331580199
+    second: NES - Contra - Level 1_494
+  - first:
+      213: 7099387165499104022
+    second: NES - Contra - Level 1_495
+  - first:
+      213: 7327703004645201743
+    second: NES - Contra - Level 1_496
+  - first:
+      213: 6863564526254265792
+    second: NES - Contra - Level 1_497
+  - first:
+      213: -6051375776534338096
+    second: NES - Contra - Level 1_498
+  - first:
+      213: 9209195067794561881
+    second: NES - Contra - Level 1_499
+  - first:
+      213: -8888844106889747401
+    second: NES - Contra - Level 1_500
+  - first:
+      213: -4473284177320004998
+    second: NES - Contra - Level 1_501
+  - first:
+      213: -5977972275512136606
+    second: NES - Contra - Level 1_502
+  - first:
+      213: -8894738113768561524
+    second: NES - Contra - Level 1_503
+  - first:
+      213: 584618531630978603
+    second: NES - Contra - Level 1_504
+  - first:
+      213: -8447186640802731569
+    second: NES - Contra - Level 1_505
+  - first:
+      213: -3777130092831189781
+    second: NES - Contra - Level 1_506
+  - first:
+      213: -7100758583570354739
+    second: NES - Contra - Level 1_507
+  - first:
+      213: 7430908237772987341
+    second: NES - Contra - Level 1_508
+  - first:
+      213: 2696172578907640932
+    second: NES - Contra - Level 1_509
+  - first:
+      213: -5659983783220767749
+    second: NES - Contra - Level 1_510
+  - first:
+      213: -7459455057699234468
+    second: NES - Contra - Level 1_511
+  - first:
+      213: 9109371191756412929
+    second: NES - Contra - Level 1_512
+  - first:
+      213: -2051259375261786486
+    second: NES - Contra - Level 1_513
+  - first:
+      213: -7674355273812541992
+    second: NES - Contra - Level 1_514
+  - first:
+      213: 2898571685473150726
+    second: NES - Contra - Level 1_515
+  - first:
+      213: -2689583169156656891
+    second: NES - Contra - Level 1_516
+  - first:
+      213: -5926732603252467903
+    second: NES - Contra - Level 1_517
+  - first:
+      213: -3473264899630242851
+    second: NES - Contra - Level 1_518
+  - first:
+      213: 3014991651452775968
+    second: NES - Contra - Level 1_519
+  - first:
+      213: -8963279967838780084
+    second: NES - Contra - Level 1_520
+  - first:
+      213: 8316946636073227673
+    second: NES - Contra - Level 1_521
+  - first:
+      213: -4871782342798316579
+    second: NES - Contra - Level 1_522
+  - first:
+      213: -6655784100101091834
+    second: NES - Contra - Level 1_523
+  - first:
+      213: 9076058121975073344
+    second: NES - Contra - Level 1_524
+  - first:
+      213: -472760864897835768
+    second: NES - Contra - Level 1_525
+  - first:
+      213: 1254105372093478729
+    second: NES - Contra - Level 1_526
+  - first:
+      213: 6725166683143364492
+    second: NES - Contra - Level 1_527
+  - first:
+      213: -2999136526621717160
+    second: NES - Contra - Level 1_528
+  - first:
+      213: 4258094231507082865
+    second: NES - Contra - Level 1_529
+  - first:
+      213: -6154228481755474319
+    second: NES - Contra - Level 1_530
+  - first:
+      213: -4044651778982448899
+    second: NES - Contra - Level 1_531
+  - first:
+      213: 8507354271238238649
+    second: NES - Contra - Level 1_532
+  - first:
+      213: -997181648721898265
+    second: NES - Contra - Level 1_533
+  - first:
+      213: 4478323945724695442
+    second: NES - Contra - Level 1_534
+  - first:
+      213: -6016818668492759566
+    second: NES - Contra - Level 1_535
+  - first:
+      213: -601311422099124101
+    second: NES - Contra - Level 1_536
+  - first:
+      213: 195627960009664000
+    second: NES - Contra - Level 1_537
+  - first:
+      213: 7825144638794498115
+    second: NES - Contra - Level 1_538
+  - first:
+      213: 877150687033400762
+    second: NES - Contra - Level 1_539
+  - first:
+      213: -6917594232734580158
+    second: NES - Contra - Level 1_540
+  - first:
+      213: -5267211688544178742
+    second: NES - Contra - Level 1_541
+  - first:
+      213: -2726442354859893006
+    second: NES - Contra - Level 1_542
+  - first:
+      213: 441541639885491198
+    second: NES - Contra - Level 1_543
+  - first:
+      213: -8971452119704657397
+    second: NES - Contra - Level 1_544
+  - first:
+      213: 2531950743165198922
+    second: NES - Contra - Level 1_545
+  - first:
+      213: -739674851026424400
+    second: NES - Contra - Level 1_546
+  - first:
+      213: 415828898384003838
+    second: NES - Contra - Level 1_547
+  - first:
+      213: -1425490744964953559
+    second: NES - Contra - Level 1_548
+  - first:
+      213: -916757733221048005
+    second: NES - Contra - Level 1_549
+  - first:
+      213: 5363309399674493480
+    second: NES - Contra - Level 1_550
+  - first:
+      213: -7224321744060048700
+    second: NES - Contra - Level 1_551
+  - first:
+      213: -2322977849434577911
+    second: NES - Contra - Level 1_552
+  - first:
+      213: -6040185302458064065
+    second: NES - Contra - Level 1_553
+  - first:
+      213: 8469675427164115771
+    second: NES - Contra - Level 1_554
+  - first:
+      213: 7407563449219556850
+    second: NES - Contra - Level 1_555
+  - first:
+      213: 276449737443329888
+    second: NES - Contra - Level 1_556
+  - first:
+      213: -8920647643806051731
+    second: NES - Contra - Level 1_557
+  - first:
+      213: -6406825802314095515
+    second: NES - Contra - Level 1_558
+  - first:
+      213: 1543384677548479390
+    second: NES - Contra - Level 1_559
+  - first:
+      213: -335195947356730313
+    second: NES - Contra - Level 1_560
+  - first:
+      213: -126691912375930423
+    second: NES - Contra - Level 1_561
+  - first:
+      213: 2047328356017671503
+    second: NES - Contra - Level 1_562
+  - first:
+      213: 3601960402605221538
+    second: NES - Contra - Level 1_563
+  - first:
+      213: 806299140391522200
+    second: NES - Contra - Level 1_564
+  - first:
+      213: 5782368871117750430
+    second: NES - Contra - Level 1_565
+  - first:
+      213: 6693312333354829811
+    second: NES - Contra - Level 1_566
+  - first:
+      213: 7265041211573386406
+    second: NES - Contra - Level 1_567
+  - first:
+      213: -3240304498943579426
+    second: NES - Contra - Level 1_568
+  - first:
+      213: -2825052456307547768
+    second: NES - Contra - Level 1_569
+  - first:
+      213: 6662117588441167568
+    second: NES - Contra - Level 1_570
+  - first:
+      213: -3980769143610504783
+    second: NES - Contra - Level 1_571
+  - first:
+      213: 4891493473344461536
+    second: NES - Contra - Level 1_572
+  - first:
+      213: 4176519987858336019
+    second: NES - Contra - Level 1_573
+  - first:
+      213: -3966520045474347872
+    second: NES - Contra - Level 1_574
+  - first:
+      213: 5607462938778352374
+    second: NES - Contra - Level 1_575
+  - first:
+      213: -1561598334987370858
+    second: NES - Contra - Level 1_576
+  - first:
+      213: 8582055203436540920
+    second: NES - Contra - Level 1_577
+  - first:
+      213: -1078167012429206992
+    second: NES - Contra - Level 1_578
+  - first:
+      213: 8790479562846110880
+    second: NES - Contra - Level 1_579
+  - first:
+      213: -8978259703909895175
+    second: NES - Contra - Level 1_580
+  - first:
+      213: -6290913189429052613
+    second: NES - Contra - Level 1_581
+  - first:
+      213: -3543104373673536017
+    second: NES - Contra - Level 1_582
+  - first:
+      213: 8399913176499720182
+    second: NES - Contra - Level 1_583
+  - first:
+      213: 7618256166879225132
+    second: NES - Contra - Level 1_584
+  - first:
+      213: 8941994237525174108
+    second: NES - Contra - Level 1_585
+  - first:
+      213: -9171311782090120030
+    second: NES - Contra - Level 1_586
+  - first:
+      213: -5729775301331232054
+    second: NES - Contra - Level 1_587
+  - first:
+      213: 8938452861784663852
+    second: NES - Contra - Level 1_588
+  - first:
+      213: 5983561728035038766
+    second: NES - Contra - Level 1_589
+  - first:
+      213: 3835429212877826614
+    second: NES - Contra - Level 1_590
+  - first:
+      213: -3011451752895681217
+    second: NES - Contra - Level 1_591
+  - first:
+      213: 3209263814931433653
+    second: NES - Contra - Level 1_592
+  - first:
+      213: 3666143717334620681
+    second: NES - Contra - Level 1_593
+  - first:
+      213: 137401377666188901
+    second: NES - Contra - Level 1_594
+  - first:
+      213: 4038889585213319857
+    second: NES - Contra - Level 1_595
+  - first:
+      213: -1675944434314585029
+    second: NES - Contra - Level 1_596
+  - first:
+      213: 3652467014621327951
+    second: NES - Contra - Level 1_597
+  - first:
+      213: -1651621417152281737
+    second: NES - Contra - Level 1_598
+  - first:
+      213: -2836940947785251514
+    second: NES - Contra - Level 1_599
+  - first:
+      213: -4956395460935012372
+    second: NES - Contra - Level 1_600
+  - first:
+      213: -5672670757184746522
+    second: NES - Contra - Level 1_601
+  - first:
+      213: 1769677579591175395
+    second: NES - Contra - Level 1_602
+  - first:
+      213: 876117439603046000
+    second: NES - Contra - Level 1_603
+  - first:
+      213: -7196620511181972282
+    second: NES - Contra - Level 1_604
+  - first:
+      213: -7101478010610545334
+    second: NES - Contra - Level 1_605
+  - first:
+      213: -6217145994843792636
+    second: NES - Contra - Level 1_606
+  - first:
+      213: 6956183300242603025
+    second: NES - Contra - Level 1_607
+  - first:
+      213: 2214704019159276865
+    second: NES - Contra - Level 1_608
+  - first:
+      213: 4042703114245210319
+    second: NES - Contra - Level 1_609
+  - first:
+      213: -6091329057312063751
+    second: NES - Contra - Level 1_610
+  - first:
+      213: 7306592185759876623
+    second: NES - Contra - Level 1_611
+  - first:
+      213: -3467054799203632559
+    second: NES - Contra - Level 1_612
+  - first:
+      213: 2098759507297058889
+    second: NES - Contra - Level 1_613
+  - first:
+      213: -3437101695123748538
+    second: NES - Contra - Level 1_614
+  - first:
+      213: 1029562452666353922
+    second: NES - Contra - Level 1_615
+  - first:
+      213: 715980302662162912
+    second: NES - Contra - Level 1_616
+  - first:
+      213: -3881896403062874011
+    second: NES - Contra - Level 1_617
+  - first:
+      213: 5396211530715236619
+    second: NES - Contra - Level 1_618
+  - first:
+      213: 6671499552914799396
+    second: NES - Contra - Level 1_619
+  - first:
+      213: -8639724877993275868
+    second: NES - Contra - Level 1_620
+  - first:
+      213: -3185333711401721242
+    second: NES - Contra - Level 1_621
+  - first:
+      213: -1850312891713331326
+    second: NES - Contra - Level 1_622
+  - first:
+      213: -4224582467210613368
+    second: NES - Contra - Level 1_623
+  - first:
+      213: -232484611122945564
+    second: NES - Contra - Level 1_624
+  - first:
+      213: -6240811585139402194
+    second: NES - Contra - Level 1_625
+  - first:
+      213: -5219430450489511161
+    second: NES - Contra - Level 1_626
+  - first:
+      213: -4826726392529592879
+    second: NES - Contra - Level 1_627
+  - first:
+      213: 6217972933003698662
+    second: NES - Contra - Level 1_628
+  - first:
+      213: 8274056685956176165
+    second: NES - Contra - Level 1_629
+  - first:
+      213: -2273399102977061349
+    second: NES - Contra - Level 1_630
+  - first:
+      213: 5543626793695460506
+    second: NES - Contra - Level 1_631
+  - first:
+      213: 1202263186095664306
+    second: NES - Contra - Level 1_632
+  - first:
+      213: 7551200329432747085
+    second: NES - Contra - Level 1_633
+  - first:
+      213: 4697812435256169000
+    second: NES - Contra - Level 1_634
+  - first:
+      213: -1576188242064835792
+    second: NES - Contra - Level 1_635
+  - first:
+      213: -5668426285965292867
+    second: NES - Contra - Level 1_636
+  - first:
+      213: 6841212726941591530
+    second: NES - Contra - Level 1_637
+  - first:
+      213: 8804318043812144871
+    second: NES - Contra - Level 1_638
+  - first:
+      213: 9035780608085604646
+    second: NES - Contra - Level 1_639
+  - first:
+      213: 2738190207991008484
+    second: NES - Contra - Level 1_640
+  - first:
+      213: 6578313426498185107
+    second: NES - Contra - Level 1_641
+  - first:
+      213: -7708525034504907146
+    second: NES - Contra - Level 1_642
+  - first:
+      213: 9053150802549654742
+    second: NES - Contra - Level 1_643
+  - first:
+      213: -2145615899721956851
+    second: NES - Contra - Level 1_644
+  - first:
+      213: 7212074010100515886
+    second: NES - Contra - Level 1_645
+  - first:
+      213: 7140155317393165612
+    second: NES - Contra - Level 1_646
+  - first:
+      213: 4864526174613484196
+    second: NES - Contra - Level 1_647
+  - first:
+      213: -7091092554640453599
+    second: NES - Contra - Level 1_648
+  - first:
+      213: -2140166157358723968
+    second: NES - Contra - Level 1_649
+  - first:
+      213: 6130653673798809015
+    second: NES - Contra - Level 1_650
+  - first:
+      213: -8824782250471611231
+    second: NES - Contra - Level 1_651
+  - first:
+      213: 8302483717921915159
+    second: NES - Contra - Level 1_652
+  - first:
+      213: 688315941712489265
+    second: NES - Contra - Level 1_653
+  - first:
+      213: 7363821384086851808
+    second: NES - Contra - Level 1_654
+  - first:
+      213: -5418920067021443981
+    second: NES - Contra - Level 1_655
+  - first:
+      213: 5575701939215949538
+    second: NES - Contra - Level 1_656
+  - first:
+      213: -334596257242521353
+    second: NES - Contra - Level 1_657
+  - first:
+      213: -2860864129241821766
+    second: NES - Contra - Level 1_658
+  - first:
+      213: 5329545372442429685
+    second: NES - Contra - Level 1_659
+  - first:
+      213: 3793528519024394352
+    second: NES - Contra - Level 1_660
+  - first:
+      213: -1422828854616515977
+    second: NES - Contra - Level 1_661
+  - first:
+      213: 104250791709550613
+    second: NES - Contra - Level 1_662
+  - first:
+      213: -4310718270050127787
+    second: NES - Contra - Level 1_663
+  - first:
+      213: -5579602989541355126
+    second: NES - Contra - Level 1_664
+  - first:
+      213: 4571699691884117402
+    second: NES - Contra - Level 1_665
+  - first:
+      213: 646706025270491281
+    second: NES - Contra - Level 1_666
+  - first:
+      213: -1622323797019094503
+    second: NES - Contra - Level 1_667
+  - first:
+      213: 2157265402517329138
+    second: NES - Contra - Level 1_668
+  - first:
+      213: 2910237075127346537
+    second: NES - Contra - Level 1_669
+  - first:
+      213: 1757985034345668673
+    second: NES - Contra - Level 1_670
+  - first:
+      213: -2083903179716861386
+    second: NES - Contra - Level 1_671
+  - first:
+      213: 3863949732137560830
+    second: NES - Contra - Level 1_672
+  - first:
+      213: 2075425623074934639
+    second: NES - Contra - Level 1_673
+  - first:
+      213: 4685129664712150774
+    second: NES - Contra - Level 1_674
+  - first:
+      213: -5122882302069518493
+    second: NES - Contra - Level 1_675
+  - first:
+      213: -805034208751148643
+    second: NES - Contra - Level 1_676
+  - first:
+      213: 699937232775448694
+    second: NES - Contra - Level 1_677
+  - first:
+      213: -2273814595167377615
+    second: NES - Contra - Level 1_678
+  - first:
+      213: 6421935318844844724
+    second: NES - Contra - Level 1_679
+  - first:
+      213: 3476611376451585649
+    second: NES - Contra - Level 1_680
+  - first:
+      213: 1888334874017400668
+    second: NES - Contra - Level 1_681
+  - first:
+      213: -1004628900686932481
+    second: NES - Contra - Level 1_682
+  - first:
+      213: -7213747719453400622
+    second: NES - Contra - Level 1_683
+  - first:
+      213: -2748022830212666405
+    second: NES - Contra - Level 1_684
+  - first:
+      213: 8250580328559419158
+    second: NES - Contra - Level 1_685
+  - first:
+      213: -8560916995701216466
+    second: NES - Contra - Level 1_686
+  - first:
+      213: 739056229737408018
+    second: NES - Contra - Level 1_687
+  - first:
+      213: 3796911880995254015
+    second: NES - Contra - Level 1_688
+  - first:
+      213: -3027652712021444552
+    second: NES - Contra - Level 1_689
+  - first:
+      213: -3462577371398858511
+    second: NES - Contra - Level 1_690
+  - first:
+      213: -5209105527462717344
+    second: NES - Contra - Level 1_691
+  - first:
+      213: 7581367860152059486
+    second: NES - Contra - Level 1_692
+  - first:
+      213: 5870430570532560402
+    second: NES - Contra - Level 1_693
+  - first:
+      213: -399374050506728962
+    second: NES - Contra - Level 1_694
+  - first:
+      213: -4803140147027545281
+    second: NES - Contra - Level 1_695
+  - first:
+      213: 6561669744284170290
+    second: NES - Contra - Level 1_696
+  - first:
+      213: 6598895374032744440
+    second: NES - Contra - Level 1_697
+  - first:
+      213: -4114297203048171081
+    second: NES - Contra - Level 1_698
+  - first:
+      213: -1895941102262983040
+    second: NES - Contra - Level 1_699
+  - first:
+      213: -7974593292777444636
+    second: NES - Contra - Level 1_700
+  - first:
+      213: 3841172910993418122
+    second: NES - Contra - Level 1_701
+  - first:
+      213: -2539676619004374624
+    second: NES - Contra - Level 1_702
+  - first:
+      213: -1378074694167194377
+    second: NES - Contra - Level 1_703
+  - first:
+      213: 4342347296674646875
+    second: NES - Contra - Level 1_704
+  - first:
+      213: -4943786879235113341
+    second: NES - Contra - Level 1_705
+  - first:
+      213: -3730650991267477763
+    second: NES - Contra - Level 1_706
+  - first:
+      213: -2877320262792765079
+    second: NES - Contra - Level 1_707
+  - first:
+      213: -5698207180527644358
+    second: NES - Contra - Level 1_708
+  - first:
+      213: -4138470231851501344
+    second: NES - Contra - Level 1_709
+  - first:
+      213: -1790438788797888182
+    second: NES - Contra - Level 1_710
+  - first:
+      213: -3348760496665237260
+    second: NES - Contra - Level 1_711
+  - first:
+      213: -769058950404164941
+    second: NES - Contra - Level 1_712
+  - first:
+      213: -1872218783736401782
+    second: NES - Contra - Level 1_713
+  - first:
+      213: -5406508207528637544
+    second: NES - Contra - Level 1_714
+  - first:
+      213: 6944295526924074125
+    second: NES - Contra - Level 1_715
+  - first:
+      213: -1006926090018683679
+    second: NES - Contra - Level 1_716
+  - first:
+      213: -9074868990938506769
+    second: NES - Contra - Level 1_717
+  - first:
+      213: -7102198878141298764
+    second: NES - Contra - Level 1_718
+  - first:
+      213: 1974481436319865927
+    second: NES - Contra - Level 1_719
+  - first:
+      213: -1751692064575429828
+    second: NES - Contra - Level 1_720
+  - first:
+      213: 5618778290986965675
+    second: NES - Contra - Level 1_721
+  - first:
+      213: 6468522766428753975
+    second: NES - Contra - Level 1_722
+  - first:
+      213: 7132302441824777420
+    second: NES - Contra - Level 1_723
+  - first:
+      213: -8853032494339656772
+    second: NES - Contra - Level 1_724
+  - first:
+      213: 7766647929492209529
+    second: NES - Contra - Level 1_725
+  - first:
+      213: -1405533374971359402
+    second: NES - Contra - Level 1_726
+  - first:
+      213: 5833210660880235775
+    second: NES - Contra - Level 1_727
+  - first:
+      213: -5376809889659745862
+    second: NES - Contra - Level 1_728
+  - first:
+      213: -8028535512691485553
+    second: NES - Contra - Level 1_729
+  - first:
+      213: -4093262092622829215
+    second: NES - Contra - Level 1_730
+  - first:
+      213: 3433705269086293199
+    second: NES - Contra - Level 1_731
+  - first:
+      213: 8653170867198128492
+    second: NES - Contra - Level 1_732
+  - first:
+      213: 6426501244083202964
+    second: NES - Contra - Level 1_733
+  - first:
+      213: 525055585779317319
+    second: NES - Contra - Level 1_734
+  - first:
+      213: 6725177973185371769
+    second: NES - Contra - Level 1_735
+  - first:
+      213: 2538898313145621094
+    second: NES - Contra - Level 1_736
+  - first:
+      213: 8074778671981180256
+    second: NES - Contra - Level 1_737
+  - first:
+      213: -463864881548234234
+    second: NES - Contra - Level 1_738
+  - first:
+      213: -6959734014883780538
+    second: NES - Contra - Level 1_739
+  - first:
+      213: 6979659570735515900
+    second: NES - Contra - Level 1_740
+  - first:
+      213: -4087925530882588311
+    second: NES - Contra - Level 1_741
+  - first:
+      213: -3843388367739100514
+    second: NES - Contra - Level 1_742
+  - first:
+      213: 5084065838237519742
+    second: NES - Contra - Level 1_743
+  - first:
+      213: -1802369249894625511
+    second: NES - Contra - Level 1_744
+  - first:
+      213: -7267213613446910822
+    second: NES - Contra - Level 1_745
+  - first:
+      213: 7980195384671390872
+    second: NES - Contra - Level 1_746
+  - first:
+      213: -1118306231269131605
+    second: NES - Contra - Level 1_747
+  - first:
+      213: -5217034538142257822
+    second: NES - Contra - Level 1_748
+  - first:
+      213: 2456177840734776545
+    second: NES - Contra - Level 1_749
+  - first:
+      213: 6038868130429158371
+    second: NES - Contra - Level 1_750
+  - first:
+      213: -769119019329737662
+    second: NES - Contra - Level 1_751
+  - first:
+      213: 5740770034998730117
+    second: NES - Contra - Level 1_752
+  - first:
+      213: 1902766455112170873
+    second: NES - Contra - Level 1_753
+  - first:
+      213: -9006055111389546430
+    second: NES - Contra - Level 1_754
+  - first:
+      213: -8500042273611712743
+    second: NES - Contra - Level 1_755
+  - first:
+      213: -3518136159612270942
+    second: NES - Contra - Level 1_0
+  - first:
+      213: 1503697574018424733
+    second: NES - Contra - Level 1_1
+  - first:
+      213: -1118647334960223782
+    second: NES - Contra - Level 1_2
+  - first:
+      213: 7459442736194763128
+    second: NES - Contra - Level 1_3
+  - first:
+      213: -74776351278186775
+    second: NES - Contra - Level 1_4
+  - first:
+      213: -295601005906756130
+    second: NES - Contra - Level 1_5
+  - first:
+      213: 2567288717432849083
+    second: NES - Contra - Level 1_6
+  - first:
+      213: -3345389802918257918
+    second: NES - Contra - Level 1_7
+  - first:
+      213: 1968401284943212956
+    second: NES - Contra - Level 1_8
+  - first:
+      213: -6699795833418117330
+    second: NES - Contra - Level 1_9
+  - first:
+      213: -2643272279173810965
+    second: NES - Contra - Level 1_10
+  - first:
+      213: -4326785178257549118
+    second: NES - Contra - Level 1_11
+  - first:
+      213: 5087708179875125227
+    second: NES - Contra - Level 1_12
+  - first:
+      213: -8294240911618521443
+    second: NES - Contra - Level 1_13
+  - first:
+      213: 2610935174491058350
+    second: NES - Contra - Level 1_14
+  - first:
+      213: 113202075998508825
+    second: NES - Contra - Level 1_15
+  - first:
+      213: 4361035291020903464
+    second: NES - Contra - Level 1_16
+  - first:
+      213: 4773555604026912742
+    second: NES - Contra - Level 1_17
+  - first:
+      213: 8277506537694757174
+    second: NES - Contra - Level 1_18
+  - first:
+      213: -5462798363264155096
+    second: NES - Contra - Level 1_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 2
+    wrapV: 2
+    wrapW: 2
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 32
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a68ade7dc11d2fc0800000000000000
+      internalID: -3518136159612270942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f1cf40af43ed410800000000000000
+      internalID: 1503697574018424733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad922cafc24c970f0800000000000000
+      internalID: -1118647334960223782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879b14195a3458760800000000000000
+      internalID: 7459442736194763128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eeb6700e4756fef0800000000000000
+      internalID: -74776351278186775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eddfda78370d5ebf0800000000000000
+      internalID: -295601005906756130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb204768c77d0a320800000000000000
+      internalID: 2567288717432849083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bd7d9e2b9c291d0800000000000000
+      internalID: -3345389802918257918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9176742a8a215b10800000000000000
+      internalID: 1968401284943212956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f8871cf2b8503a0800000000000000
+      internalID: -6699795833418117330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be43533edd5315bd0800000000000000
+      internalID: -2643272279173810965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8988efdcb24f3c0800000000000000
+      internalID: -4326785178257549118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be75e4e32ab2b9640800000000000000
+      internalID: 5087708179875125227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96477de5dfe4ec80800000000000000
+      internalID: -8294240911618521443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0bc1735b7eb3420800000000000000
+      internalID: 2610935174491058350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9175ab730bc229100800000000000000
+      internalID: 113202075998508825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8244e3ecd72858c30800000000000000
+      internalID: 4361035291020903464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef699dc7831f3240800000000000000
+      internalID: 4773555604026912742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6310545075c9fd270800000000000000
+      internalID: 8277506537694757174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES - Contra - Level 1_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8220e0ee4dd3034b0800000000000000
+      internalID: -5462798363264155096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

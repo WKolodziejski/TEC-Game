@@ -21,7 +21,7 @@ TagManager:
   - Platforms
   - Characters
   - Enemies
-  - Foreground
+  - 
   - 
   - 
   - 
@@ -53,7 +53,4 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 1513144593
-    locked: 0
-  - name: Foreground
-    uniqueID: 2963927479
     locked: 0
