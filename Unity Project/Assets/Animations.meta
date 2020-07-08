@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 59c99f44833772348b09656b1e043bcd
+=======
+guid: 4ce856787b1cfe34dbc4bc6bd21cc826
+>>>>>>> Transição animada
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
