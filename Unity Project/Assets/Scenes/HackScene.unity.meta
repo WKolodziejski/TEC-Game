@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 76ed8f5287901534ba944401c54eaff3
-=======
-guid: eb2d2d16f296c2549b9fffb3ece84a1a
->>>>>>> Lógica para persistir os objetos ao trocar de cena
 DefaultImporter:
   externalObjects: {}
   userData: 
