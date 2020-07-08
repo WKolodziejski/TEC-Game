@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 70995914f589bab48aeb9d21f505cf79
 TextureImporter:
   internalIDToNameTable:
@@ -324,11 +323,6 @@ TextureImporter:
   - first:
       213: 1945945290926882037
     second: signs_106
-=======
-guid: 7e8cd7ba9a026194f95f723c6952ae39
-TextureImporter:
-  internalIDToNameTable: []
->>>>>>> hacking-game
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -358,37 +352,21 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
     filterMode: 0
-=======
-    filterMode: -1
->>>>>>> hacking-game
     aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-<<<<<<< HEAD
     wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-=======
-    wrapW: 1
-  nPOTScale: 0
-  lightmap: 0
-  compressionQuality: 50
-  spriteMode: 1
->>>>>>> hacking-game
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   spritePixelsToUnits: 32
-=======
-  spritePixelsToUnits: 100
->>>>>>> hacking-game
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -400,18 +378,13 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-<<<<<<< HEAD
   applyGammaDecoding: 1
-=======
-  applyGammaDecoding: 0
->>>>>>> hacking-game
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -449,9 +422,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
-=======
-    textureCompression: 1
->>>>>>> hacking-game
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -460,7 +430,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
     sprites:
     - serializedVersion: 2
       name: signs_0
@@ -2713,13 +2682,6 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: c5dc17434669c314d878dab63241aec7
-=======
-    sprites: []
-    outline: []
-    physicsShape: []
-    bones: []
-    spriteID: 5e97eb03825dee720800000000000000
->>>>>>> hacking-game
     internalID: 0
     vertices: []
     indices: 
@@ -2727,13 +2689,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
   spritePackingTag: 
-<<<<<<< HEAD
   pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
-=======
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
->>>>>>> hacking-game
   userData: 
   assetBundleName: 
   assetBundleVariant: 
