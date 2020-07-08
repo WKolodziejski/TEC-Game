@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 70995914f589bab48aeb9d21f505cf79
 TextureImporter:
   internalIDToNameTable:
@@ -324,11 +323,6 @@ TextureImporter:
   - first:
       213: 1945945290926882037
     second: signs_106
-=======
-guid: fb29e0aa877ff494aaa17583bf5f609a
-TextureImporter:
-  internalIDToNameTable: []
->>>>>>> b7b72fbb7f96a52567e8942367d0a067eeb115d5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -363,28 +357,18 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
   spriteMode: 2
-=======
-  spriteMode: 1
->>>>>>> b7b72fbb7f96a52567e8942367d0a067eeb115d5
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
-=======
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
->>>>>>> b7b72fbb7f96a52567e8942367d0a067eeb115d5
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -394,14 +378,13 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -439,9 +422,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
-=======
-    textureCompression: 1
->>>>>>> b7b72fbb7f96a52567e8942367d0a067eeb115d5
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -450,7 +430,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
     sprites:
     - serializedVersion: 2
       name: signs_0
@@ -2699,13 +2678,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-=======
-    sprites: []
->>>>>>> b7b72fbb7f96a52567e8942367d0a067eeb115d5
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: c5dc17434669c314d878dab63241aec7
     internalID: 0
     vertices: []
     indices: 
@@ -2713,12 +2689,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-<<<<<<< HEAD
+  pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
-=======
-  pSDShowRemoveMatteOption: 0
->>>>>>> b7b72fbb7f96a52567e8942367d0a067eeb115d5
   userData: 
   assetBundleName: 
   assetBundleVariant: 
