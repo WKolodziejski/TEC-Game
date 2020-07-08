@@ -1,4 +1,7 @@
-﻿using Cinemachine;
+﻿//não é mais usado???
+
+
+/*using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -60,7 +63,7 @@ public class Hack : MonoBehaviour
 
             if (counter > 0)
             {
-                hackInterface.setProgress(counter);
+                hackInterface.SetProgress(counter);
             }
 
             if (timer > (startTime + holdTime))
@@ -114,3 +117,4 @@ public class Hack : MonoBehaviour
     }
 
 }
+*/

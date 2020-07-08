@@ -21,6 +21,7 @@ public class ReturnHack : MonoBehaviour
     public void exitHack()
     {
         //SceneManager.UnloadScene();
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
+        Debug.Log("Sair");
     }
 }
