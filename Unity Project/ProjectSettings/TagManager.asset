@@ -54,3 +54,6 @@ TagManager:
   - name: Characters
     uniqueID: 1513144593
     locked: 0
+  - name: ForeGround
+    uniqueID: 3984803347
+    locked: 0
