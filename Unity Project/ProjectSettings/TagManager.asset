@@ -57,3 +57,6 @@ TagManager:
   - name: ForeGround
     uniqueID: 3984803347
     locked: 0
+  - name: New Layer
+    uniqueID: 379028487
+    locked: 0
