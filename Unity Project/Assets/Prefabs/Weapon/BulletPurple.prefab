@@ -8316,10 +8316,10 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
     type: 1
-    collisionMode: 0
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -9626,7 +9626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
-  hit: {fileID: 0}
+  hit: {fileID: 7347725156897785008, guid: bf488e5397fd8f6488fbba0565ec466b, type: 3}
   muzzle: {fileID: 4773203370814425042, guid: e6ed154cba4aa91419234bf3fcce4309, type: 3}
 --- !u!50 &8620778009911714765
 Rigidbody2D:
@@ -9647,7 +9647,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &9045840226898283975
 CircleCollider2D:

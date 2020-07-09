@@ -53,7 +53,7 @@ public class Boss : MonoBehaviour
     {
         Transform b = side == 0 ? barrelLeft : barrelRight;
 
-        Instantiate(p, b);
+        Instantiate(p, b.position, b.rotation);
 
         side = (side + 1) % 2;
     }

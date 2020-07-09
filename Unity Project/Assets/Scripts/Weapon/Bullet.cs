@@ -14,13 +14,13 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * speed;
+        rb.velocity = transform.forward * speed;
 
-        Destroy(Instantiate(muzzle, gameObject.transform.position, gameObject.transform.rotation), 0.2f);
+        Destroy(Instantiate(muzzle, gameObject.transform.position, gameObject.transform.rotation), 1f);
         Destroy(gameObject, 1f);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(Instantiate(hit, gameObject.transform.position, gameObject.transform.rotation), 1f);
         Destroy(gameObject);
