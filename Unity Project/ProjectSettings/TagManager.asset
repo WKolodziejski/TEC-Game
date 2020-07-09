@@ -60,3 +60,6 @@ TagManager:
   - name: New Layer
     uniqueID: 379028487
     locked: 0
+  - name: Glow
+    uniqueID: 2492941207
+    locked: 0
