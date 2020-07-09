@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
     {
         if (!collision.collider.CompareTag("PlayerBullet"))
         {
-            Destroy(Instantiate(hit, gameObject.transform.position, gameObject.transform.rotation), 1f);
+            Destroy(Instantiate(hit, gameObject.transform.position, Quaternion.identity), 1f);
             Destroy(gameObject);
         }
         

@@ -11,23 +11,19 @@ public class Animatior_Controller : MonoBehaviour
     float vertical;
     Vector3 scale;
 
-    void Start(){
-        scale.Set(1f,1f,1f);
-    }
-    void Update(){
+    void Update()
+    {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
     }
 
     void FixedUpdate()
     {
-        
-        if (horizontal != 0f){
-            if(horizontal > 0f)
-                scale.y = 0;
-            else
-                scale.y = 180;
+        if (horizontal != 0f)
+        {
+            scale.y = horizontal > 0f ? 0 : 180;
         }
+
         player.localEulerAngles = scale;
 
         if (vertical != 0){
