@@ -213,7 +213,7 @@ TextureImporter:
       name: MainChar_1
       rect:
         serializedVersion: 2
-        x: 76
+        x: 75
         y: 218
         width: 32
         height: 40
@@ -508,7 +508,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 43
-        y: 84
+        y: 83
         width: 28
         height: 46
       alignment: 0
@@ -528,8 +528,8 @@ TextureImporter:
       name: MainChar_16
       rect:
         serializedVersion: 2
-        x: 82
-        y: 84
+        x: 81
+        y: 83
         width: 24
         height: 46
       alignment: 0
@@ -549,8 +549,8 @@ TextureImporter:
       name: MainChar_17
       rect:
         serializedVersion: 2
-        x: 105
-        y: 82
+        x: 113
+        y: 83
         width: 28
         height: 47
       alignment: 0
@@ -570,8 +570,8 @@ TextureImporter:
       name: MainChar_18
       rect:
         serializedVersion: 2
-        x: 142
-        y: 82
+        x: 155
+        y: 83
         width: 24
         height: 46
       alignment: 0
@@ -591,8 +591,8 @@ TextureImporter:
       name: MainChar_19
       rect:
         serializedVersion: 2
-        x: 177
-        y: 78
+        x: 196
+        y: 84
         width: 32
         height: 27
       alignment: 0
@@ -612,8 +612,8 @@ TextureImporter:
       name: MainChar_20
       rect:
         serializedVersion: 2
-        x: 216
-        y: 82
+        x: 235
+        y: 89
         width: 48
         height: 13
       alignment: 0
@@ -633,12 +633,12 @@ TextureImporter:
       name: MainChar_21
       rect:
         serializedVersion: 2
-        x: 271
-        y: 81
+        x: 290
+        y: 87
         width: 30
         height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.44193318, y: 0.42918655}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -654,7 +654,7 @@ TextureImporter:
       name: MainChar_22
       rect:
         serializedVersion: 2
-        x: 46
+        x: 42
         y: 33
         width: 27
         height: 42
@@ -675,7 +675,7 @@ TextureImporter:
       name: MainChar_23
       rect:
         serializedVersion: 2
-        x: 82
+        x: 78
         y: 33
         width: 26
         height: 42
@@ -697,7 +697,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 113
-        y: 32
+        y: 33
         width: 27
         height: 43
       alignment: 0
@@ -718,7 +718,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 151
-        y: 32
+        y: 33
         width: 26
         height: 42
       alignment: 0
