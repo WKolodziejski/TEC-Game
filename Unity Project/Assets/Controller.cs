@@ -39,9 +39,22 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump")){
-            Jump();
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (Input.GetAxis("Vertical") < 0)
+            {
+                if (platform)
+                {
+                    StartCoroutine(Fall());
+                }
+            }
+            else
+            {
+                Jump();
+            }
+            
         }
+
         Move(Input.GetAxis("Horizontal"));
 
         if (Input.GetKeyDown(KeyCode.H) && !held)
