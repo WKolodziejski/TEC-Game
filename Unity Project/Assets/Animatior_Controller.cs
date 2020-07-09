@@ -22,11 +22,11 @@ public class Animatior_Controller : MonoBehaviour
         
         if (horizontal != 0f){
             if(horizontal > 0f)
-                scale.x = 1f;
+                scale.y = 0;
             else
-                scale.x = -1f;
+                scale.y = 180;
         }
-        player.localScale = scale;
+        player.localEulerAngles = scale;
 
         animator.SetBool("jumping", !(playerController.grounded));
         animator.SetBool("moving",(Input.GetAxis("Horizontal")!= 0f));
