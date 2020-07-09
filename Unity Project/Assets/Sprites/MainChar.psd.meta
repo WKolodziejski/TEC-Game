@@ -381,8 +381,8 @@ TextureImporter:
       name: MainChar_9
       rect:
         serializedVersion: 2
-        x: 197
-        y: 142
+        x: 196
+        y: 140
         width: 27
         height: 56
       alignment: 0
@@ -405,7 +405,7 @@ TextureImporter:
         x: 234
         y: 140
         width: 27
-        height: 65
+        height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -510,7 +510,7 @@ TextureImporter:
         x: 43
         y: 83
         width: 28
-        height: 46
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -531,7 +531,7 @@ TextureImporter:
         x: 81
         y: 83
         width: 24
-        height: 46
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -573,7 +573,7 @@ TextureImporter:
         x: 155
         y: 83
         width: 24
-        height: 46
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
