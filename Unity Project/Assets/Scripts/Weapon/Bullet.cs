@@ -22,8 +22,12 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(Instantiate(hit, gameObject.transform.position, gameObject.transform.rotation), 1f);
-        Destroy(gameObject);
+        if (!collision.collider.CompareTag("PlayerBullet"))
+        {
+            Destroy(Instantiate(hit, gameObject.transform.position, gameObject.transform.rotation), 1f);
+            Destroy(gameObject);
+        }
+        
     }
 
 }
