@@ -7,7 +7,8 @@ public class Weapon : MonoBehaviour
 
     public Transform barrelFront;
     public Transform barrelUp;
-    public Transform barrelDiagonal;
+    public Transform barrelDiagonalUp;
+    public Transform barrelDiagonalDown;
     public GameObject bullet;
     public float cooldown = 0.2f;
 
@@ -29,28 +30,19 @@ public class Weapon : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
 
-        /*if (horizontal == 0)
-        {
-            if (vertical > 0)
-                barrel = barrelUp;
-
-            else
-                barrel = barrelFront;
-        }
-        else
-        {
-            if (vertical > 0)
-                barrel = barrelDiagonal;
-            else
-                barrel = barrelFront;
-        }*/
-
         if (vertical > 0)
         {
             if (horizontal == 0)
                 barrel = barrelUp;
             else
-                barrel = barrelDiagonal;
+                barrel = barrelDiagonalUp;
+        }
+        else if (vertical < 0)
+        {
+            if (horizontal == 0)
+                barrel = barrelFront;
+            else
+                barrel = barrelDiagonalDown;
         }
         else
             barrel = barrelFront;
