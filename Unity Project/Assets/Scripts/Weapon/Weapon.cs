@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    
+
+    public Transform barrelFront;
+    public Transform barrelUp;
+    public Transform barrelDiagonal;
     public GameObject bullet;
-    public Transform barrel;
     public float cooldown = 0.2f;
 
+    private Transform barrel;
     private float lastCooldown;
-    private float angle;
+
+    void Start()
+    {
+        barrel = barrelFront;
+    }
 
     void Update()
     {
@@ -22,36 +29,31 @@ public class Weapon : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
 
-        if (horizontal != 0)
+        /*if (horizontal == 0)
         {
             if (vertical > 0)
-            {
-                angle = 45;
-            }
-            else if (vertical < 0)
-            {
-                angle = -45;
-            }
+                barrel = barrelUp;
+
             else
-            {
-                angle = 0;
-            }
+                barrel = barrelFront;
         }
         else
         {
             if (vertical > 0)
-            {
-                angle = 90;
-            }
-            else if (vertical < 0)
-            {
-                angle = -90;
-            }
+                barrel = barrelDiagonal;
             else
-            {
-                angle = 0;
-            }
+                barrel = barrelFront;
+        }*/
+
+        if (vertical > 0)
+        {
+            if (horizontal == 0)
+                barrel = barrelUp;
+            else
+                barrel = barrelDiagonal;
         }
+        else
+            barrel = barrelFront;
     }
 
     void fire()
@@ -59,7 +61,7 @@ public class Weapon : MonoBehaviour
         if (lastCooldown <= Time.time)
         {
             lastCooldown = Time.time + cooldown;
-            Instantiate(bullet, barrel.position, barrel.rotation * Quaternion.Euler(0, angle, 0));
+            Instantiate(bullet, barrel.position, barrel.rotation);
         }
     }
 
