@@ -7,18 +7,12 @@ public class Infantry : MonoBehaviour
     protected Transform playerT;
     protected SpriteRenderer sprite;
     protected Animator animator;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected GameObject graphics;
 
-    // Update is called once per frame
-    void Update()
+    protected void setGraphics()
     {
-        
+        graphics = transform.Find("Sprite").gameObject;
     }
-
     protected void setPlayerTransform()
     {
         playerT = GameObject.Find("Player").GetComponent<Transform>();
@@ -26,11 +20,11 @@ public class Infantry : MonoBehaviour
 
     protected void setSprite()
     {
-        sprite = GetComponent<SpriteRenderer>();
+        sprite = graphics.GetComponent<SpriteRenderer>();
     }
 
     protected void setAnimator()
     {
-        animator = GetComponent<Animator>();
+        animator = graphics.GetComponent<Animator>();
     }
 }

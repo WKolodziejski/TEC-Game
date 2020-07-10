@@ -16,11 +16,12 @@ public class Soldier : Infantry
     void Start()
     {
         setPlayerTransform();
+        setGraphics();
         setSprite();
         setAnimator();
         setMoveSpeed(3);
         setAtkCooldown(0.5f);
-        setFollowRange(20f);
+        setFollowRange(5f);
         iniDesiredDir();
         iniNextMove();
         setNextAtk(Time.time);
