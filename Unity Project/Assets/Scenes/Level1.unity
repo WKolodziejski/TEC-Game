@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -2657,7 +2657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -2729,7 +2729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -2945,7 +2945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -3200,7 +3200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -3320,7 +3320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -3464,7 +3464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -3536,7 +3536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -3749,7 +3749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -3821,7 +3821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -3893,7 +3893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -4181,7 +4181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -4253,7 +4253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -6022,7 +6022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -6094,7 +6094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -8997,7 +8997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -9285,7 +9285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -9514,7 +9514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -9586,7 +9586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -9802,7 +9802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -10018,7 +10018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -10090,7 +10090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -11207,8 +11207,8 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.602
   m_Color: {r: 0.9960785, g: 0.8588236, b: 0.6862745, a: 1}
-  m_Intensity: 1.45
-  m_LightVolumeOpacity: 0.156
+  m_Intensity: 0.73
+  m_LightVolumeOpacity: 0.239
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
@@ -11418,7 +11418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -11786,7 +11786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -20097,7 +20097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -20169,7 +20169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -20398,7 +20398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -25259,7 +25259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -25331,7 +25331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -25818,7 +25818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -25962,7 +25962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -26194,7 +26194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -26387,7 +26387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -26603,7 +26603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -26954,7 +26954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
@@ -27186,9 +27186,9 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.602
-  m_Color: {r: 0, g: 0.4901961, b: 0.56078434, a: 1}
+  m_Color: {r: 0.7264151, g: 0.40550163, b: 0.14048593, a: 1}
   m_Intensity: 1.45
-  m_LightVolumeOpacity: 0.156
+  m_LightVolumeOpacity: 0.304
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
@@ -27632,7 +27632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.528
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.8705883, b: 0.59607846, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.027
