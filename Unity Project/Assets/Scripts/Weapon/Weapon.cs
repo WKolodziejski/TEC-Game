@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetButton("Fire3"))
         {
             fire();
         }
