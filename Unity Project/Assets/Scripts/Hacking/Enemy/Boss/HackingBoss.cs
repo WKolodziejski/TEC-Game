@@ -34,8 +34,9 @@ public class HackingBoss : HackingCharacter
 
     private void OnDestroy()
     {
-        Debug.Log("Won");
-        ReturnHack hackEnd = GetComponent<ReturnHack>();
-        hackEnd.exitHack();
+        Debug.Log("won");
+
+        FindObjectOfType<HackReturnController>().Return(0);
     }
+
 }

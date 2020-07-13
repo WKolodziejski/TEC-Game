@@ -29,8 +29,7 @@ public class HackingPlayer : HackingCharacter
     {
         Debug.Log("lost");
 
-        ReturnHack hackEnd = GetComponent<ReturnHack>();
-        hackEnd.exitHack();
+        FindObjectOfType<HackReturnController>().Return(1f);
     }
 
     public void OnCollisionEnter2D(Collision2D collisionInfo)

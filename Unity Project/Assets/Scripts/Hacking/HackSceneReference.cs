@@ -18,7 +18,7 @@ public class HackSceneReference : Singleton<HackSceneReference>
             this.difficulty = difficulty;
             this.objs = FindObjectsOfType<GameObject>();
 
-            SceneManager.LoadScene(0, LoadSceneMode.Additive);
+            SceneManager.LoadScene("HackScene", LoadSceneMode.Additive);
 
             foreach (GameObject o in objs)
             {
@@ -40,7 +40,7 @@ public class HackSceneReference : Singleton<HackSceneReference>
     {
         if (isHacking)
         {
-            SceneManager.UnloadSceneAsync(0);
+            SceneManager.UnloadSceneAsync("HackScene");
 
             foreach (GameObject o in objs)
             {
