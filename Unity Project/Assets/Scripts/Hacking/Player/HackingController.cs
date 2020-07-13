@@ -2,34 +2,62 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//public class HackingController : HackingCharacter
 public class HackingController : MonoBehaviour
 {
-    private Transform tr;
-    private Rigidbody2D rb;
 
     public float speed = 10f;
-    float horizontalMov;
-    float verticalMov;
+    public float turnSpeed = 5f;
+
+    private Vector2 movement;
+    private Rigidbody2D rb;
+    private float angle = 90;
 
     void Start()
     {
-        tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        verticalMov = Input.GetAxis("HackingVertical");
-        horizontalMov = Input.GetAxis("HackingHorizontal");
+        movement.y = Input.GetAxis("HackingVertical");
+        movement.x = Input.GetAxis("HackingHorizontal");
+
+        if (Input.GetAxis("HackingShootHorizontal") > 0)
+        {
+            if (Input.GetAxis("HackingShootVertical") > 0)
+                angle = 45;
+
+            else if (Input.GetAxis("HackingShootVertical") < 0)
+                angle = 270;
+
+            else
+                angle = 0;
+        } 
+        else if (Input.GetAxis("HackingShootHorizontal") < 0)
+        {
+            if (Input.GetAxis("HackingShootVertical") > 0)
+                angle = 135;
+
+            else if (Input.GetAxis("HackingShootVertical") < 0)
+                angle = 225;
+
+            else
+                angle = 180;
+        }
+        else
+        {
+            if (Input.GetAxis("HackingShootVertical") > 0)
+                angle = 90;
+
+            else if (Input.GetAxis("HackingShootVertical") < 0)
+                angle = 270;
+        }
     }
 
-    void FixedUpdate(){
-        transform.position = transform.position + new Vector3(horizontalMov * speed * Time.deltaTime, 
-                                                            verticalMov * speed * Time.deltaTime,
-                                                            0);
+    void FixedUpdate()
+    {
+        rb.position += Vector2.ClampMagnitude(movement, 1) * speed * Time.deltaTime;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), turnSpeed * Time.deltaTime);
     }
 
     //Collider Test
