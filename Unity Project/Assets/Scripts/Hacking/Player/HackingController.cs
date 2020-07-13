@@ -56,7 +56,7 @@ public class HackingController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.position += Vector2.ClampMagnitude(movement, 1) * speed * Time.deltaTime;
+        transform.position += Vector3.ClampMagnitude(movement, 1) * speed * Time.deltaTime;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), turnSpeed * Time.deltaTime);
     }
 
