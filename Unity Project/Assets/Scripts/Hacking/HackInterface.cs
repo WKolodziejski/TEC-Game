@@ -90,7 +90,6 @@ public class HackInterface : MonoBehaviour
 
             gameObject.SetActive(true);
         }
-        
     }
 
     public void CancelHacking()
@@ -105,7 +104,6 @@ public class HackInterface : MonoBehaviour
 
     public void FinishHacking()
     {
-
         _particleSuccess = Instantiate(particleSuccess, _target.transform.position, Quaternion.identity);
 
         gameObject.SetActive(false);

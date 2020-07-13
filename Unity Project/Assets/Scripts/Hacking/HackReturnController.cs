@@ -29,6 +29,8 @@ public class HackReturnController : MonoBehaviour
 
         HackSceneReference.Instance.ReturnHackGame(returnDamage);
 
+        FindObjectOfType<HackInterface>().DestroyPortal();
+
         _camera.Follow = null;
         _camera.LookAt = null;
     }
