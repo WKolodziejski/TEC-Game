@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - Enemy
   - EnemyBullet
+  - BossFirePoint
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Enemies
   - Foreground
   - Walls
-  - 
+  - Crane
   - 
   - 
   - 
