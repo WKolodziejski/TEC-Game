@@ -31,4 +31,5 @@ public class HackingShoot : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.right * bulletSpeed, ForceMode2D.Impulse);
     }
+
 }

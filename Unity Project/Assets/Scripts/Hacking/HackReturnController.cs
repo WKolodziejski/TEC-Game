@@ -25,14 +25,14 @@ public class HackReturnController : MonoBehaviour
 
     private IEnumerator IPlay(float returnDamage)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f * Time.timeScale);
 
         HackSceneReference.Instance.ReturnHackGame(returnDamage);
 
-        FindObjectOfType<HackInterface>().DestroyPortal();
-
         _camera.Follow = null;
         _camera.LookAt = null;
+
+        Time.timeScale = 1f;
     }
 
 }

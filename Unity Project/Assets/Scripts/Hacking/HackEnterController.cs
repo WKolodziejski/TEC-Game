@@ -20,6 +20,8 @@ public class HackEnterController : MonoBehaviour
 
     public void Enter(GameObject target, EDifficulty difficulty)
     {
+        Time.timeScale = 0.1f;
+
         _camera.LookAt = target.transform;
         _camera.Follow = target.transform;
         _transition.Play();
@@ -29,7 +31,7 @@ public class HackEnterController : MonoBehaviour
 
     private IEnumerator IPlay(EDifficulty difficulty)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.5f * Time.timeScale);
 
         HackSceneReference.Instance.EnterHackGame(difficulty);
     }

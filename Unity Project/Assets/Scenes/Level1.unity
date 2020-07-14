@@ -3548,7 +3548,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 95f320bc290eabe4b90a6ade7cdc9334, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 07a7a98c14719404fbdeb32e011b2c60, type: 2}
 --- !u!4 &387704123
 Transform:
   m_ObjectHideFlags: 0
@@ -12322,7 +12322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 149.68289, y: -2.8000002, z: -10}
+  m_LocalPosition: {x: 149.48587, y: -2.8000002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12342,7 +12342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShowDebugText: 0
   m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
+  m_IgnoreTimeScale: 1
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
@@ -22375,7 +22375,7 @@ PrefabInstance:
     - target: {fileID: 5859210898778810235, guid: 00f1bd67934224f4cae745848eb8856e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.15
+      value: 149.9
       objectReference: {fileID: 0}
     - target: {fileID: 5859210898778810235, guid: 00f1bd67934224f4cae745848eb8856e,
         type: 3}
@@ -28706,7 +28706,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -29352,7 +29352,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -30127,7 +30127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818723414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 149.68289, y: -7.3699994, z: -10}
+  m_LocalPosition: {x: 149.48587, y: -7.3699994, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1266015515}
@@ -30416,7 +30416,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 2
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 1850699823106047852, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
@@ -30903,7 +30903,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 2
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 1850699823106047852, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
@@ -30912,6 +30912,10 @@ PlayableDirector:
     value: {fileID: 2035797847}
   - key: {fileID: -6949948243426791297, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
     value: {fileID: 1590980882}
+  - key: {fileID: 1816899655158336947, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7770760202381824150, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1998563891
@@ -31152,7 +31156,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
