@@ -40,6 +40,9 @@ public class HackSceneReference : Singleton<HackSceneReference>
     {
         if (isHacking)
         {
+            this.won = won;
+            this.isHacking = false;
+
             SceneManager.UnloadSceneAsync("HackScene");
 
             foreach (GameObject o in objs)
@@ -47,9 +50,6 @@ public class HackSceneReference : Singleton<HackSceneReference>
                 if (o != null)
                     o.SetActive(true);
             }
-
-            this.won = won;
-            this.isHacking = false;
         }
         else
         {

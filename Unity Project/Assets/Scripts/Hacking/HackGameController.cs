@@ -40,7 +40,6 @@ public class HackGameController : MonoBehaviour
                 
                 if (bosses.Count == 0)
                 {
-                    Debug.Log(bosses.Count);
                     StartCoroutine(IPlayExit(true));
                 }
             });

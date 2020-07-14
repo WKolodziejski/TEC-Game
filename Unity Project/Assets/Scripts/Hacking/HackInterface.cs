@@ -12,7 +12,6 @@ public class HackInterface : MonoBehaviour
     public GameObject particleThrow;
     public GameObject particlePlayer;
     public GameObject particleTarget;
-    public GameObject particleSuccess;
     public AudioSource audioFail;
     
     private Text _text;
@@ -22,7 +21,6 @@ public class HackInterface : MonoBehaviour
     private Hackable _target;
     private GameObject _particlePlayer;
     private GameObject _particleTarget;
-    private GameObject _particleSuccess;
     
 
     void Start()
@@ -104,19 +102,12 @@ public class HackInterface : MonoBehaviour
 
     public void FinishHacking()
     {
-        _particleSuccess = Instantiate(particleSuccess, _target.transform.position, Quaternion.identity);
-
         gameObject.SetActive(false);
 
         Destroy(_particlePlayer);
         Destroy(_particleTarget);
 
         _target = null;
-    }
-
-    public void DestroyPortal()
-    {
-        Destroy(_particleSuccess);
     }
 
     void FindTarget()

@@ -11900,7 +11900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.01953, y: -2.8000002, z: -10}
+  m_LocalPosition: {x: 148.01952, y: -2.8000002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -29555,7 +29555,6 @@ MonoBehaviour:
   particleThrow: {fileID: 144550, guid: 7e2e254f44ecbe14c9b01c4b5fd075c5, type: 3}
   particlePlayer: {fileID: 141512, guid: ebf2c4f8191e66041903f98647f12886, type: 3}
   particleTarget: {fileID: 117894, guid: 5ff64ae8bab627645b80124cdf80a5ff, type: 3}
-  particleSuccess: {fileID: 162764, guid: 3fb972703cf6390459c8663420886945, type: 3}
   audioFail: {fileID: 1443591185}
 --- !u!114 &1652937472
 MonoBehaviour:
@@ -30084,7 +30083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818723414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 148.01955, y: -4.6782365, z: -10}
+  m_LocalPosition: {x: 148.01952, y: -4.6782365, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1266015515}
@@ -30347,6 +30346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 0
+  particleSuccess: {fileID: 0}
 --- !u!1 &1902804613
 GameObject:
   m_ObjectHideFlags: 0
@@ -30804,6 +30804,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952822897}
   m_CullTransparentMesh: 0
+--- !u!1 &1994389382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5859210898778810234, guid: 00f1bd67934224f4cae745848eb8856e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1298359959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1994389383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994389382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76a1bfee3845f84c9ae7d21edb89eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 0
+  particleSuccess: {fileID: 162764, guid: 3fb972703cf6390459c8663420886945, type: 3}
 --- !u!1 &1998563888
 GameObject:
   m_ObjectHideFlags: 0
