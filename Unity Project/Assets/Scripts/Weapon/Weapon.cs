@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -15,7 +16,7 @@ public class Weapon : MonoBehaviour
         if (lastCooldown <= Time.time)
         {
             lastCooldown = Time.time + cooldown;
-            Instantiate(bullet, barrel.position, barrel.rotation);
+            Instantiate(bullet, barrel.position, barrel.rotation).tag += tag;
         }
     }
 

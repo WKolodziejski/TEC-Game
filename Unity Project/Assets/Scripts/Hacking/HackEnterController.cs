@@ -18,12 +18,13 @@ public class HackEnterController : MonoBehaviour
         _transition = GetComponent<PlayableDirector>();
     }
 
-    public void Enter(GameObject target, EDifficulty difficulty)
+    public void Enter(Transform target, EDifficulty difficulty)
     {
         Time.timeScale = 0.1f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
-        _camera.LookAt = target.transform;
-        _camera.Follow = target.transform;
+        _camera.LookAt = target;
+        _camera.Follow = target;
         _transition.Play();
 
         StartCoroutine(IPlay(difficulty));

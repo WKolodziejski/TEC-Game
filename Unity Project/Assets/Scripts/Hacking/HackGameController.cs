@@ -7,21 +7,21 @@ using static HackingCharacter;
 public class HackGameController : MonoBehaviour
 {
 
-    private HackingBoss[] bosses;
-    private HackingEnemy[] enemies;
+    private List<HackingBoss> bosses;
+    private List<HackingEnemy> enemies;
     private HackingPlayer player;
    
     void Start()
     {
-        bosses = FindObjectsOfType<HackingBoss>();
-        enemies = FindObjectsOfType<HackingEnemy>();
+        bosses = FindObjectsOfType<HackingBoss>().ToList();
+        enemies = FindObjectsOfType<HackingEnemy>().ToList();
         player = FindObjectOfType<HackingPlayer>();
 
         foreach (HackingEnemy e in enemies)
         {
             e.SetOnDieListener(() =>
             {
-                if (enemies.Length == 0)
+                if (enemies.Count == 0)
                 {
                     foreach (HackingBoss b in bosses)
                     {
@@ -36,8 +36,11 @@ public class HackGameController : MonoBehaviour
         {
             b.SetOnDieListener(() =>
             {
-                if (bosses.Length == 0)
+                bosses.Remove(b);
+                
+                if (bosses.Count == 0)
                 {
+                    Debug.Log(bosses.Count);
                     StartCoroutine(IPlayExit(true));
                 }
             });
@@ -45,6 +48,7 @@ public class HackGameController : MonoBehaviour
 
         player.SetOnDieListener(() =>
         {
+            Debug.Log("Boss killed");
             StartCoroutine(IPlayExit(false));
         });
 

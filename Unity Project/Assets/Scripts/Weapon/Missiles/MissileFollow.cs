@@ -19,12 +19,4 @@ public class MissileFollow : Bullet
         rb.MovePosition(transform.position + deltaPosition);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (!collision.collider.CompareTag("Missile"))
-        {
-            Explode();
-        }
-    }
-
 }

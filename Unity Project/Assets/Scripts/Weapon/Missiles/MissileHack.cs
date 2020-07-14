@@ -6,15 +6,15 @@ using static HackSceneReference;
 
 public class MissileHack : Bullet
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
             Destroy(gameObject);
 
-            FindObjectOfType<HackEnterController>().Enter(collision.collider.gameObject, EDifficulty.EASY);
+            FindObjectOfType<HackEnterController>().Enter(collision.collider.gameObject.transform, EDifficulty.EASY);
         }
-        else if(!collision.collider.CompareTag("Missile"))
+        else if(!collision.collider.CompareTag(tag))
         {
             Explode();
         }

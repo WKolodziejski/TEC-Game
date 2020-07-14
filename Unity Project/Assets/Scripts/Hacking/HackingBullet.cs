@@ -31,4 +31,5 @@ public class HackingBullet : MonoBehaviour
 
         character.takeDamage(damage);
     }
+
 }

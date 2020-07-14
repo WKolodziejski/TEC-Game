@@ -33,6 +33,7 @@ public class HackReturnController : MonoBehaviour
         _camera.LookAt = null;
 
         Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
     }
 
 }

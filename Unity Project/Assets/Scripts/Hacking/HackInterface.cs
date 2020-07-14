@@ -19,7 +19,7 @@ public class HackInterface : MonoBehaviour
     private Image _progress;
     private RectTransform _position;
     private Transform _playerPosition;
-    private GameObject _target;
+    private Hackable _target;
     private GameObject _particlePlayer;
     private GameObject _particleTarget;
     private GameObject _particleSuccess;
@@ -62,8 +62,8 @@ public class HackInterface : MonoBehaviour
 
         if (countTime > (startTime + holdTime) && _target != null)
         {
-            
-            FindObjectOfType<HackEnterController>().Enter(_target, EDifficulty.EASY);
+
+            _target.Hack();
 
             FinishHacking();
 
@@ -121,20 +121,20 @@ public class HackInterface : MonoBehaviour
 
     void FindTarget()
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Hackable");
+        Hackable[] objs = GameObject.FindObjectsOfType<Hackable>();
 
-        GameObject result = null;
+        Hackable result = null;
         Vector3 currentPos = _playerPosition.position;
 
         float minDist = Mathf.Infinity;
 
-        foreach (GameObject o in objs)
+        foreach (Hackable h in objs)
         {
-            float dist = Vector3.Distance(o.transform.position, currentPos);
+            float dist = Vector3.Distance(h.transform.position, currentPos);
 
             if (dist < minDist && dist <= maxDist)
             {
-                result = o;
+                result = h;
                 minDist = dist;
             }
         }

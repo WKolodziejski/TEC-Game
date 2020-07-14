@@ -6,14 +6,12 @@ TagManager:
   tags:
   - Ground
   - Platform
-  - Hackable
-  - Missile
-  - PlayerBullet
   - Wall
   - Enemy
-  - EnemyBullet
   - BossFirePoint
   - Bullet
+  - BulletPlayer
+  - BulletEnemy
   layers:
   - Default
   - TransparentFX

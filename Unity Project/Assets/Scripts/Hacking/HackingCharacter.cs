@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HackingCharacter : MonoBehaviour
 {
-    public int hp;
+    public float hp;
     public float fireRate; // shoots/sec
 
     private Action onDie;
@@ -15,19 +15,16 @@ public class HackingCharacter : MonoBehaviour
         this.onDie = onDie;
     }
 
-    public void takeDamage(int damage)
+    public void takeDamage(float damage)
     {
         hp -= damage;
 
         if (hp <= 0)
-            die();
-    }
-
-    public void die() {
-        //gameObject.SetActive(false);
-        Destroy(gameObject);
-
-        onDie();
+        {
+            onDie();
+            Destroy(gameObject);
+        }
+            
     }
 
 }

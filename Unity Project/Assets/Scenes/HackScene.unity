@@ -250,6 +250,11 @@ PrefabInstance:
       propertyPath: fireRate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1684334572556480933, guid: 2cbb7e3f67ab58c4ba99d30de8512234,
+        type: 3}
+      propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 81504735342761606, guid: 2cbb7e3f67ab58c4ba99d30de8512234,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -1803,6 +1808,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2029648098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7760883126543244773, guid: 271402125fe05664e81ed92e53a60a4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7760883126641218025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2029648104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029648098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee16e96f898a5d4d90b39a12a9550c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  cooldown: 0.2
 --- !u!1 &2100381084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,5 +1945,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7760883126543244774, guid: 271402125fe05664e81ed92e53a60a4f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 271402125fe05664e81ed92e53a60a4f, type: 3}
