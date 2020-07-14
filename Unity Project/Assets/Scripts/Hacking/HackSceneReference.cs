@@ -36,7 +36,7 @@ public class HackSceneReference : Singleton<HackSceneReference>
         }
     }
 
-    public void ReturnHackGame(float returnDamage)
+    public void ReturnHackGame(bool won)
     {
         if (isHacking)
         {
@@ -48,7 +48,7 @@ public class HackSceneReference : Singleton<HackSceneReference>
                     o.SetActive(true);
             }
 
-            this.returnDamage = returnDamage;
+            this.won = won;
             this.isHacking = false;
         }
         else
@@ -69,11 +69,11 @@ public class HackSceneReference : Singleton<HackSceneReference>
         EASY, NORMAL, HARD
     }
 
-    private float returnDamage;
+    private bool won;
 
-    public float GetDamage()
+    public bool Won()
     {
-        return returnDamage;
+        return won;
     }
 
 }

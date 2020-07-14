@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - EnemyBullet
   - BossFirePoint
+  - Bullet
   layers:
   - Default
   - TransparentFX

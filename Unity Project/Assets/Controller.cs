@@ -16,6 +16,15 @@ public class Controller : MonoBehaviour
     public float fallTime = 0.3f;
     public float jumpLock = 0.6f;
 
+    //Weapon
+    public Transform barrelFront;
+    public Transform barrelUp;
+    public Transform barrelDiagonalUp;
+    public Transform barrelDiagonalDown;
+
+    private Transform barrel;
+    private Weapon weapon;
+
     PolygonCollider2D playerCollider;
     public bool grounded = false;
     public bool platform = false;
@@ -27,12 +36,14 @@ public class Controller : MonoBehaviour
     private float countTime;
     private bool held;
 
+
     void Start()
     {
         /*tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         groundcheck = GetComponent<BoxCollider2D>();*/
         playerCollider = GetComponent<PolygonCollider2D>();
+        weapon = GetComponent<Weapon>();
 
         hackInterface.SetPlayerPosition(transform);
     }
@@ -77,6 +88,31 @@ public class Controller : MonoBehaviour
             held = false;
             hackInterface.CancelHacking();
         }
+
+        if (Input.GetButton("Fire3"))
+        {
+            weapon.Fire(barrel);
+        }
+
+        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
+
+        if (vertical > 0)
+        {
+            if (horizontal == 0)
+                barrel = barrelUp;
+            else
+                barrel = barrelDiagonalUp;
+        }
+        else if (vertical < 0)
+        {
+            if (horizontal == 0)
+                barrel = barrelFront;
+            else
+                barrel = barrelDiagonalDown;
+        }
+        else
+            barrel = barrelFront;
     }
 
     void FixedUpdate() {

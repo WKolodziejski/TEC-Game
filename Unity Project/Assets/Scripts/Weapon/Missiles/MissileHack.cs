@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static HackSceneReference;
 
-public class MissileHack : MissileBase
+public class MissileHack : Bullet
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {

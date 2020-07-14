@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,18 +8,11 @@ public class HackingCharacter : MonoBehaviour
     public int hp;
     public float fireRate; // shoots/sec
 
-    //protected GameObject character;
+    private Action onDie;
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetOnDieListener(Action onDie)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        this.onDie = onDie;
     }
 
     public void takeDamage(int damage)
@@ -32,5 +26,8 @@ public class HackingCharacter : MonoBehaviour
     public void die() {
         //gameObject.SetActive(false);
         Destroy(gameObject);
+
+        onDie();
     }
+
 }

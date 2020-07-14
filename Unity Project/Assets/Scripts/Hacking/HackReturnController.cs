@@ -16,18 +16,18 @@ public class HackReturnController : MonoBehaviour
         _transition = GetComponent<PlayableDirector>();
     }
 
-    public void Return(float returnDamage)
+    public void Return(bool won)
     {
         _transition.Play();
 
-        StartCoroutine(IPlay(returnDamage));
+        StartCoroutine(IPlay(won));
     }
 
-    private IEnumerator IPlay(float returnDamage)
+    private IEnumerator IPlay(bool won)
     {
         yield return new WaitForSeconds(1f * Time.timeScale);
 
-        HackSceneReference.Instance.ReturnHackGame(returnDamage);
+        HackSceneReference.Instance.ReturnHackGame(won);
 
         _camera.Follow = null;
         _camera.LookAt = null;

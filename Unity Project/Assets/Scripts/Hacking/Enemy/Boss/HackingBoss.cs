@@ -4,39 +4,43 @@ using UnityEngine;
 
 public class HackingBoss : HackingCharacter
 {
-    public float rotationSpeed;
-    private Transform tr;
-    
-    // Start is called before the first frame update
+
+    public float rotationSpeed = 5f;
+    public float movementSpeed = 1f;
+
+    private Transform player;
+    private Rigidbody2D rb;
+
     void Start()
     {
-        tr = GetComponent<Transform>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player = FindObjectOfType<HackingPlayer>().transform;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        tr.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
     }
 
-    /*void OnDisable()
+
+    public void SetAgressive()
     {
-        Debug.Log("Won");
+        Vector2 lookDir = player.position - transform.position;
 
-        ReturnHack hackEnd = GetComponent<ReturnHack>();
-        hackEnd.exitHack();
-    }*/
+        float angle = -Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg + 90f;
+        rb.rotation = angle;
 
-    private void OnDestroy()
+        rb.velocity = transform.right * movementSpeed;
+    }
+
+    public void SetRunaway()
     {
-        Debug.Log("won");
+        Vector2 lookDir = player.position - transform.position;
 
-        FindObjectOfType<HackReturnController>().Return(0);
+        float angle = -Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg + 90f;
+        rb.rotation = angle;
+
+        rb.velocity = -transform.right * movementSpeed;
     }
 
 }

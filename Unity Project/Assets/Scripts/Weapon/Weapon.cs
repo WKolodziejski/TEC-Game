@@ -5,50 +5,12 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
 
-    public Transform barrelFront;
-    public Transform barrelUp;
-    public Transform barrelDiagonalUp;
-    public Transform barrelDiagonalDown;
     public GameObject bullet;
     public float cooldown = 0.2f;
 
-    private Transform barrel;
     private float lastCooldown;
 
-    void Start()
-    {
-        barrel = barrelFront;
-    }
-
-    void Update()
-    {
-        if (Input.GetButton("Fire3"))
-        {
-            fire();
-        }
-
-        float vertical = Input.GetAxis("Vertical");
-        float horizontal = Input.GetAxis("Horizontal");
-
-        if (vertical > 0)
-        {
-            if (horizontal == 0)
-                barrel = barrelUp;
-            else
-                barrel = barrelDiagonalUp;
-        }
-        else if (vertical < 0)
-        {
-            if (horizontal == 0)
-                barrel = barrelFront;
-            else
-                barrel = barrelDiagonalDown;
-        }
-        else
-            barrel = barrelFront;
-    }
-
-    void fire()
+    public void Fire(Transform barrel)
     {
         if (lastCooldown <= Time.time)
         {

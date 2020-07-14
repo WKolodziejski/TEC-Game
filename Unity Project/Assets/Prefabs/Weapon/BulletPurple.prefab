@@ -4872,7 +4872,7 @@ GameObject:
   - component: {fileID: 9045840226898283975}
   m_Layer: 0
   m_Name: BulletPurple
-  m_TagString: PlayerBullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
