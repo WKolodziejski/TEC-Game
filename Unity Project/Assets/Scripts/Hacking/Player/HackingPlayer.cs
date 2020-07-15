@@ -7,9 +7,16 @@ public class HackingPlayer : HackingCharacter
 
     public float speed = 10f;
     public float turnSpeed = 5f;
+    public Transform barrel;
 
     private Vector2 movement;
     private float angle = 90;
+    private Weapon weapon;
+
+    void Start()
+    {
+        weapon = GetComponent<Weapon>();
+    }
 
     void Update()
     {
@@ -46,6 +53,9 @@ public class HackingPlayer : HackingCharacter
             else if (Input.GetAxis("HackingShootVertical") < 0)
                 angle = 270;
         }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+            weapon.Fire(barrel);
     }
 
     void FixedUpdate()
@@ -56,9 +66,12 @@ public class HackingPlayer : HackingCharacter
 
     public void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        if (collisionInfo.collider.CompareTag("Enemy"))
+        Collider2D c = collisionInfo.collider;
+        if (c.CompareTag("Enemy"))
         {
-            takeDamage(1);
+            TakeDamage(1);
+
+            //TODO: fica invulnerável por 1s
         } 
     }
 

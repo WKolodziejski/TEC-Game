@@ -20,11 +20,30 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 1f);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.collider.CompareTag(tag))
+
+        GameObject c = collision.collider.gameObject;
+
+        if (!c.CompareTag(tag))
         {
             Explode();
+
+            if (c.CompareTag("Enemy") && CompareTag("BulletPlayer") || c.CompareTag("Player") && CompareTag("BulletEnemy"))
+                c.GetComponent<HackingCharacter>().TakeDamage(damage);
+        }
+    }*/
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.name);
+
+        if (!collision.CompareTag(tag))
+        {
+            Explode();
+
+            if (collision.CompareTag("Enemy") && CompareTag("BulletPlayer") || collision.CompareTag("Player") && CompareTag("BulletEnemy"))
+                collision.GetComponent<HackingCharacter>().TakeDamage(damage);
         }
     }
 

@@ -6,7 +6,6 @@ using UnityEngine;
 public class HackingCharacter : MonoBehaviour
 {
     public float hp;
-    public float fireRate; // shoots/sec
 
     private Action onDie;
 
@@ -15,7 +14,7 @@ public class HackingCharacter : MonoBehaviour
         this.onDie = onDie;
     }
 
-    public void takeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         hp -= damage;
 
@@ -24,7 +23,6 @@ public class HackingCharacter : MonoBehaviour
             onDie();
             Destroy(gameObject);
         }
-            
     }
 
 }

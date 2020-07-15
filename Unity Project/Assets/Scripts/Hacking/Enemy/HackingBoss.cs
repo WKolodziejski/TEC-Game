@@ -7,14 +7,20 @@ public class HackingBoss : HackingCharacter
 
     public float rotationSpeed = 5f;
     public float movementSpeed = 1f;
+    public Transform barrel1;
+    public Transform barrel2;
+    public Transform barrelS;
+    public GameObject shield;
 
     private Transform player;
     private Rigidbody2D rb;
+    private Weapon weapon;
 
     void Start()
     {
         player = FindObjectOfType<HackingPlayer>().transform;
         rb = GetComponent<Rigidbody2D>();
+        weapon = GetComponent<Weapon>();
     }
 
     void FixedUpdate()
@@ -22,6 +28,11 @@ public class HackingBoss : HackingCharacter
         transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
     }
 
+    void Update()
+    {
+        weapon.Fire(barrel1);
+        //...
+    }
 
     public void SetAgressive()
     {
@@ -41,6 +52,11 @@ public class HackingBoss : HackingCharacter
         rb.rotation = angle;
 
         rb.velocity = -transform.right * movementSpeed;
+    }
+
+    public void DisableShield()
+    {
+        shield.SetActive(false);
     }
 
 }

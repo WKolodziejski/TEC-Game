@@ -21,12 +21,15 @@ public class HackGameController : MonoBehaviour
         {
             e.SetOnDieListener(() =>
             {
+                enemies.Remove(e);
+
                 if (enemies.Count == 0)
                 {
                     foreach (HackingBoss b in bosses)
                     {
                         //b.RemoveShield();
                         //b.SetAgressive();
+                        b.DisableShield();
                     }
                 }
             });
@@ -47,7 +50,6 @@ public class HackGameController : MonoBehaviour
 
         player.SetOnDieListener(() =>
         {
-            Debug.Log("Boss killed");
             StartCoroutine(IPlayExit(false));
         });
 
