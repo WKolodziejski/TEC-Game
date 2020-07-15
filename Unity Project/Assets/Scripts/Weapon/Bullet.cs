@@ -39,11 +39,17 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log(collision.name);
 
-        if (!collision.CompareTag(tag) && !collision.CompareTag("Grid"))
+        /*
+         * BulletPlayer não contém Player
+         * BulletEnemy não contém Enemy
+         * Bullet____ != Bullet____
+        */
+
+        if (!tag.Contains(collision.tag))
         {
             Explode();
 
-            if (collision.CompareTag("Enemy") && CompareTag("BulletPlayer") || collision.CompareTag("Player") && CompareTag("BulletEnemy"))
+            if (collision.CompareTag("Enemy") || collision.CompareTag("Player"))
                 collision.GetComponent<HackingCharacter>().TakeDamage(damage);
         }
     }
