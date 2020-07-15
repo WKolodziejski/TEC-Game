@@ -43,4 +43,9 @@ public class Hackable : MonoBehaviour
         }
     }
 
+    public void SetAction(Action action)
+    {
+        this.action = action;
+    }
+
 }
