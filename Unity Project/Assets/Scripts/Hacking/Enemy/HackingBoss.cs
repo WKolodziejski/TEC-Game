@@ -11,6 +11,7 @@ public class HackingBoss : HackingCharacter
     public Transform barrel2;
     public Transform barrelS;
     public GameObject shield;
+    public GameObject shieldExp;
 
     private Transform player;
     private Rigidbody2D rb;
@@ -56,6 +57,7 @@ public class HackingBoss : HackingCharacter
 
     public void DisableShield()
     {
+        shieldExp.SetActive(true);
         shield.SetActive(false);
     }
 
