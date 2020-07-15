@@ -7,15 +7,20 @@ public class Weapon : MonoBehaviour
 {
 
     public GameObject bullet;
-    public float cooldown = 0.2f;
+    public float fireRate = 1f;
 
     private float lastCooldown;
+
+    void Start()
+    {
+        fireRate = 1 / fireRate;
+    }
 
     public void Fire(Transform barrel)
     {
         if (lastCooldown <= Time.time)
         {
-            lastCooldown = Time.time + cooldown;
+            lastCooldown = Time.time + fireRate;
             Instantiate(bullet, barrel.position, barrel.rotation).tag += tag;
         }
     }
