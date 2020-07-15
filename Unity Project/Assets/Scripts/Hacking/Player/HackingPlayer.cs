@@ -9,8 +9,8 @@ public class HackingPlayer : HackingCharacter
     public float turnSpeed = 5f;
     public Transform barrel;
 
-    private Vector2 movement;
     private float angle = 90;
+    private Vector2 movement;
     private Weapon weapon;
 
     void Start()

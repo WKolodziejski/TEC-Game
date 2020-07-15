@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.WSA;
 
 public class Bullet : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log(collision.name);
 
-        if (!collision.CompareTag(tag))
+        if (!collision.CompareTag(tag) && !collision.CompareTag("Grid"))
         {
             Explode();
 

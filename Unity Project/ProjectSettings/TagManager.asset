@@ -8,10 +8,12 @@ TagManager:
   - Platform
   - Wall
   - Enemy
-  - BossFirePoint
   - Bullet
   - BulletPlayer
   - BulletEnemy
+  - Hackable
+  - Missile
+  - Grid
   layers:
   - Default
   - TransparentFX
