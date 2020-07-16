@@ -12,6 +12,7 @@ public class Crane_Controller : MonoBehaviour
     public float speedH = 1f;
     public float speedV = 1f;
     public Transform HAxis;
+    public Transform VAxis;
     public Transform wire;
     private float targetH;
     private float targetV;
@@ -33,7 +34,7 @@ public class Crane_Controller : MonoBehaviour
         
         HAxis.localPosition = new Vector3(X, HAxis.localPosition.y, HAxis.localPosition.z);
 
-        if (transform.localPosition.y >= targetV){
+        if (VAxis.localPosition.y >= targetV){
             Y = Y - Time.deltaTime * speedV;
             targetV = -rangeV;
         }
@@ -42,19 +43,19 @@ public class Crane_Controller : MonoBehaviour
             targetV = 0f;
         }
         
-        wire.localPosition = new Vector3(wire.localPosition.x, 1 + transform.localPosition.y/2, wire.localPosition.z);
-        wire.localScale = new Vector3(wire.localScale.x,-transform.localPosition.y + 0.05f, wire.localScale.z);
-        transform.localPosition = new Vector3(transform.localPosition.x, Y, transform.localPosition.z);
+        wire.localPosition = new Vector3(wire.localPosition.x, 1 + VAxis.localPosition.y/2, wire.localPosition.z);
+        wire.localScale = new Vector3(wire.localScale.x,-VAxis.localPosition.y + 0.05f, wire.localScale.z);
+        VAxis.localPosition = new Vector3(VAxis.localPosition.x, Y, VAxis.localPosition.z);
     }
 
     private void OnTriggerStay2D(Collider2D collider){
-        if (collider.tag == "Player"){
-            collider.transform.SetParent(transform);
+        if ((collider.tag == "Player")||(collider.tag == "Enemy")){
+            collider.transform.SetParent(VAxis);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collider){
-        if (collider.tag == "Player"){
+        if ((collider.tag == "Player")||(collider.tag == "Enemy")){
             collider.transform.SetParent(null);
         }
     }
