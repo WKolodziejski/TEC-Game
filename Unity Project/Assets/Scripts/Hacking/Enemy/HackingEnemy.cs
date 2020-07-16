@@ -9,6 +9,7 @@ public class HackingEnemy : HackingCharacter
 
     public Transform barrel;
 
+    private Rigidbody2D rb;
     private NavMeshAgent agent;
     private Transform player;
     private Weapon weapon;
@@ -18,6 +19,7 @@ public class HackingEnemy : HackingCharacter
         player = FindObjectOfType<HackingPlayer>().transform;
         weapon = GetComponent<Weapon>();
         agent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody2D>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
@@ -26,6 +28,9 @@ public class HackingEnemy : HackingCharacter
     {
         if (player != null)
         {
+            Vector2 lookDir = player.position - transform.position;
+            rb.rotation = -Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg + 90f;
+
             agent.destination = player.position;
         }
     }
