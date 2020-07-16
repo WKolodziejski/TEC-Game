@@ -4865,7 +4865,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.654902, g: 0, b: 1, a: 0.32156864}
+      maxColor: {r: 0, g: 0.25490198, b: 1, a: 0.32156864}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9507,8 +9507,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1
-  hit: {fileID: 7445229802454809555, guid: 628eabfd31ee6ec42b1706b6a4f7ca50, type: 3}
-  muzzle: {fileID: 8097161587771872766, guid: d1915ef8612d2a64c935fbd13fb9abd0, type: 3}
+  hit: {fileID: 7360479157468160139, guid: d1a18996b10f90a42a4b4fe4f76c9c73, type: 3}
+  muzzle: {fileID: 3404626935373107138, guid: 6db30d00068d92c49bf4883d7e7b1b4d, type: 3}
 --- !u!50 &1536365023654695852
 Rigidbody2D:
   serializedVersion: 4

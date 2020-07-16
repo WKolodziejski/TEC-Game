@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour
          * Bullet____ != Bullet____
         */
 
-        if (!tag.Contains(collision.tag))
+        if (!tag.Contains(collision.tag) && !collision.tag.Contains("Bullet"))
         {
             Explode();
 
