@@ -1,39 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using static HackSceneReference;
 
 public class HackingBoss : HackingCharacter
 {
 
     public float rotationSpeed = 5f;
-    public float movementSpeed = 1f;
     public Transform barrel1;
     public Transform barrel2;
     public Transform barrelS;
     public GameObject shield;
     public GameObject shieldExp;
 
+    private NavMeshAgent agent;
     private Transform player;
-    private Rigidbody2D rb;
     private Weapon weapon;
 
     void Start()
     {
         player = FindObjectOfType<HackingPlayer>().transform;
-        rb = GetComponent<Rigidbody2D>();
         weapon = GetComponent<Weapon>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     void FixedUpdate()
     {
         transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+
+        agent.destination = player.position;
     }
 
     void Update()
     {
         weapon.Fire(barrel1);
         //...
+
+        
     }
 
     public void SetAgressive()
@@ -54,6 +60,8 @@ public class HackingBoss : HackingCharacter
         rb.rotation = angle;
 
         rb.velocity = -transform.right * movementSpeed;*/
+
+        
     }
 
     public void DisableShield()

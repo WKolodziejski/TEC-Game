@@ -2,34 +2,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class HackingEnemy : HackingCharacter
 {
 
-    public float movSpeed = 2f;
     public Transform barrel;
 
+    private NavMeshAgent agent;
     private Transform player;
-    private Rigidbody2D rb;
     private Weapon weapon;
 
     void Start()
     {
         player = FindObjectOfType<HackingPlayer>().transform;
-        rb = GetComponent<Rigidbody2D>();
         weapon = GetComponent<Weapon>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     void FixedUpdate()
     {
         if (player != null)
         {
-            Vector2 lookDir = player.position - transform.position;
-
-            float angle = -Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg + 90f;
-            rb.rotation = angle;
-
-            rb.velocity = transform.right * movSpeed;
+            agent.destination = player.position;
         }
     }
 

@@ -21,7 +21,7 @@ public class HackGameController : MonoBehaviour
     void Start()
     {
         EDifficulty difficulty = HackSceneReference.Instance.GetDifficulty();
-        //difficulty = EDifficulty.HARD;
+        difficulty = EDifficulty.HARD;
 
         switch (difficulty)
         {
