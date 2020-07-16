@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6211147568834979460}
   - component: {fileID: 6211147568816587318}
   - component: {fileID: 6211147568815433956}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BigGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4728,7 +4728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6211147568835016244}
   - component: {fileID: 6211147568825806118}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4861,7 +4861,7 @@ GameObject:
   - component: {fileID: 4444579974292874691}
   - component: {fileID: 8620778009911714765}
   - component: {fileID: 9045840226898283975}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BulletPurple
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -4876,8 +4876,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6211147568835439466}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0, z: 0.05}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0, z: 1}
   m_Children:
   - {fileID: 6211147568835016244}
   - {fileID: 6211147568834979460}
@@ -4902,7 +4902,7 @@ ParticleSystem:
   prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
-  autoRandomSeed: 1
+  autoRandomSeed: 0
   useRigidbodyForVelocity: 1
   startDelay:
     serializedVersion: 2
@@ -5402,7 +5402,7 @@ ParticleSystem:
         m_RotationOrder: 4
   ShapeModule:
     serializedVersion: 6
-    enabled: 1
+    enabled: 0
     type: 19
     angle: 25
     length: 5
@@ -8308,7 +8308,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 1
     collisionMode: 1
@@ -9457,7 +9457,7 @@ ParticleSystemRenderer:
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RenderingLayerMask: 1
@@ -9654,6 +9654,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0040665865, y: -375252.5}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.18423499
+  m_Radius: 0.2
