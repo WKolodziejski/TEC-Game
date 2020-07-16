@@ -69,7 +69,9 @@ public class HackingBoss : HackingCharacter
 
     public void DisableShield()
     {
-        shieldExp.SetActive(true);
+        if (HackSceneReference.Instance.GetDifficulty() != EDifficulty.EASY)
+            shieldExp.SetActive(true);
+
         shield.SetActive(false);
     }
 
