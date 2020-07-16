@@ -97,16 +97,16 @@ public class Controller : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
 
-        if (vertical > 0.1f)
+        if (vertical > 0f)
         {
-            if ((horizontal <= 0.1f)&&(horizontal >= -0.1f))
+            if (horizontal == 0f)
                 barrel = barrelUp;
             else
                 barrel = barrelDiagonalUp;
         }
-        else if (vertical < -0.1f)
+        else if (vertical < 0f)
         {
-            if ((horizontal <= 0.1f)&&(horizontal >= -0.1f))
+            if (horizontal != 0f)
                 barrel = barrelFront;
             else
                 barrel = barrelDiagonalDown;
