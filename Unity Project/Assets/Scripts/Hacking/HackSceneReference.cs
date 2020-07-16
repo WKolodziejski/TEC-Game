@@ -57,7 +57,7 @@ public class HackSceneReference : Singleton<HackSceneReference>
         }
     }
 
-    private EDifficulty difficulty;
+    public EDifficulty difficulty;
 
     public EDifficulty GetDifficulty()
     {

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -17,6 +18,8 @@ public class HackingBoss : HackingCharacter
     private NavMeshAgent agent;
     private Transform player;
     private Weapon weapon;
+    private Action GetDestination;
+    private Vector3 destination;
 
     void Start()
     {
@@ -25,13 +28,19 @@ public class HackingBoss : HackingCharacter
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        GetDestination += GetRunawayPath;
+
+        if (HackSceneReference.Instance.GetDifficulty() == EDifficulty.EASY)
+            shield.SetActive(false);
     }
 
     void FixedUpdate()
     {
         transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
 
-        agent.destination = player.position;
+        GetDestination();
+        agent.SetDestination(destination);
     }
 
     void Update()
@@ -44,31 +53,23 @@ public class HackingBoss : HackingCharacter
 
     public void SetAgressive()
     {
-        /*Vector2 lookDir = player.position - transform.position;
-
-        float angle = -Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg + 90f;
-        rb.rotation = angle;
-
-        rb.velocity = transform.right * movementSpeed;*/
+        GetDestination += GetAgressivePath;
     }
 
-    public void SetRunaway()
+    private void GetAgressivePath()
     {
-        /*Vector2 lookDir = player.position - transform.position;
+        destination = player.position;
+    }
 
-        float angle = -Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg + 90f;
-        rb.rotation = angle;
-
-        rb.velocity = -transform.right * movementSpeed;*/
-
-        
+    private void GetRunawayPath()
+    {        
+        if (Vector3.Distance(transform.position, player.position) < 5f)
+            destination = transform.position + ((transform.position - player.position) * 2); //TESTAR ESSE 2
     }
 
     public void DisableShield()
     {
-        if (HackSceneReference.Instance.GetDifficulty() != EDifficulty.EASY)
-            shieldExp.SetActive(true);
-
+        shieldExp.SetActive(true);
         shield.SetActive(false);
     }
 

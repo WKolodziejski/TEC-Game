@@ -20,8 +20,10 @@ public class HackGameController : MonoBehaviour
    
     void Start()
     {
+        //DEBUG:
+        HackSceneReference.Instance.difficulty = EDifficulty.NORMAL;
+
         EDifficulty difficulty = HackSceneReference.Instance.GetDifficulty();
-        difficulty = EDifficulty.HARD;
 
         switch (difficulty)
         {
@@ -53,6 +55,7 @@ public class HackGameController : MonoBehaviour
                     foreach (HackingBoss b in bosses)
                     {
                         b.DisableShield();
+                        b.SetAgressive();
                     }
                 }
             });
@@ -75,40 +78,6 @@ public class HackGameController : MonoBehaviour
         {
             StartCoroutine(IPlayExit(false));
         });
-
-        switch (difficulty)
-        {
-            case EDifficulty.EASY:
-                {
-                    foreach (HackingBoss b in bosses)
-                    {
-                        b.DisableShield();
-                        b.SetRunaway();
-                    }
-                }
-                
-                break;
-
-            case EDifficulty.NORMAL:
-                {
-                    foreach (HackingBoss b in bosses)
-                    {
-                        b.SetRunaway();
-                    }
-                }
-
-                break;
-
-            case EDifficulty.HARD:
-                {
-                    foreach (HackingBoss b in bosses)
-                    {
-                        b.SetAgressive();
-                    }
-                }
-                
-                break;
-        }
 
         StartCoroutine(IPlayEnter());
     }
