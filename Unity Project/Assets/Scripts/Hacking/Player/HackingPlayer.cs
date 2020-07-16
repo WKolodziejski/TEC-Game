@@ -20,26 +20,26 @@ public class HackingPlayer : HackingCharacter
 
     void Update()
     {
-        movement.y = Input.GetAxis("HackingVertical");
-        movement.x = Input.GetAxis("HackingHorizontal");
+        movement.y = Input.GetAxis("Vertical");
+        movement.x = Input.GetAxis("Horizontal");
 
-        if (Input.GetAxis("HackingShootHorizontal") > 0)
+        if (Input.GetAxis("HackingShootHorizontal") > 0f)
         {
-            if (Input.GetAxis("HackingShootVertical") > 0)
+            if (Input.GetAxis("HackingShootVertical") > 0f)
                 angle = 45;
 
-            else if (Input.GetAxis("HackingShootVertical") < 0)
+            else if (Input.GetAxis("HackingShootVertical") < 0f)
                 angle = 270;
 
             else
                 angle = 0;
         }
-        else if (Input.GetAxis("HackingShootHorizontal") < 0)
+        else if (Input.GetAxis("HackingShootHorizontal") < 0f)
         {
-            if (Input.GetAxis("HackingShootVertical") > 0)
+            if (Input.GetAxis("HackingShootVertical") > 0f)
                 angle = 135;
 
-            else if (Input.GetAxis("HackingShootVertical") < 0)
+            else if (Input.GetAxis("HackingShootVertical") < 0f)
                 angle = 225;
 
             else
@@ -47,14 +47,14 @@ public class HackingPlayer : HackingCharacter
         }
         else
         {
-            if (Input.GetAxis("HackingShootVertical") > 0)
+            if (Input.GetAxis("HackingShootVertical") > 0f)
                 angle = 90;
 
-            else if (Input.GetAxis("HackingShootVertical") < 0)
+            else if (Input.GetAxis("HackingShootVertical") < 0f)
                 angle = 270;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetButton("Fire3"))
             weapon.Fire(barrel);
     }
 
