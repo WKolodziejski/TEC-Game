@@ -68,7 +68,7 @@ public class Controller : MonoBehaviour
 
         Move(Input.GetAxis("Horizontal"));
 
-        if (Input.GetKeyDown(KeyCode.H) && !held)
+        if (Input.GetButtonDown("Fire2") && !held)
         {
             startTime = Time.time;
             countTime = startTime;
@@ -76,14 +76,14 @@ public class Controller : MonoBehaviour
             hackInterface.StartHacking();
         }
 
-        if (Input.GetKey(KeyCode.H) && !held)
+        if (Input.GetButton("Fire2") && !held)
         {
             countTime += Time.deltaTime;
 
             held = hackInterface.SetProgress(countTime, startTime);
         }
 
-        if (Input.GetKeyUp(KeyCode.H))
+        if (Input.GetButtonUp("Fire2"))
         {
             held = false;
             hackInterface.CancelHacking();
@@ -97,16 +97,16 @@ public class Controller : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
 
-        if (vertical > 0)
+        if (vertical > 0.1f)
         {
-            if (horizontal == 0)
+            if ((horizontal <= 0.1f)&&(horizontal >= -0.1f))
                 barrel = barrelUp;
             else
                 barrel = barrelDiagonalUp;
         }
-        else if (vertical < 0)
+        else if (vertical < -0.1f)
         {
-            if (horizontal == 0)
+            if ((horizontal <= 0.1f)&&(horizontal >= -0.1f))
                 barrel = barrelFront;
             else
                 barrel = barrelDiagonalDown;
@@ -140,7 +140,6 @@ public class Controller : MonoBehaviour
             if (collider.tag == "Ground"){
                 grounded = true;
             }
-
             if (collider.tag == "Platform"){
                 platform = true;
                 grounded = true;
@@ -152,12 +151,10 @@ public class Controller : MonoBehaviour
         if (collider.tag == "Ground"){
             grounded = false;
         }
-
         if (collider.tag == "Platform"){
             platform = false;
             grounded = false;
         }
-
     }
     
     public IEnumerator Fall(){
