@@ -67,6 +67,7 @@ public class HackingPlayer : HackingCharacter
     public void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         Collider2D c = collisionInfo.collider;
+
         if (c.CompareTag("Enemy"))
         {
             TakeDamage(1);

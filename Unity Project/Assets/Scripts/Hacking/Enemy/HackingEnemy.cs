@@ -33,7 +33,7 @@ public class HackingEnemy : HackingCharacter
         }
     }
 
-    void Update()
+    public void Fire()
     {
         weapon.Fire(barrel);
     }

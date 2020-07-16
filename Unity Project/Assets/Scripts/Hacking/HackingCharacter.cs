@@ -20,7 +20,10 @@ public class HackingCharacter : MonoBehaviour
 
         if (hp <= 0)
         {
-            onDie();
+            if (onDie != null)
+                onDie();
+            else
+                Debug.Log("null");
             Destroy(gameObject);
         }
     }

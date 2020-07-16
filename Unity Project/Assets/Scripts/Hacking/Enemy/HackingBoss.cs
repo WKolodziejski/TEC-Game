@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static HackSceneReference;
 
 public class HackingBoss : HackingCharacter
 {
@@ -37,27 +38,29 @@ public class HackingBoss : HackingCharacter
 
     public void SetAgressive()
     {
-        Vector2 lookDir = player.position - transform.position;
+        /*Vector2 lookDir = player.position - transform.position;
 
         float angle = -Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg + 90f;
         rb.rotation = angle;
 
-        rb.velocity = transform.right * movementSpeed;
+        rb.velocity = transform.right * movementSpeed;*/
     }
 
     public void SetRunaway()
     {
-        Vector2 lookDir = player.position - transform.position;
+        /*Vector2 lookDir = player.position - transform.position;
 
         float angle = -Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg + 90f;
         rb.rotation = angle;
 
-        rb.velocity = -transform.right * movementSpeed;
+        rb.velocity = -transform.right * movementSpeed;*/
     }
 
     public void DisableShield()
     {
-        shieldExp.SetActive(true);
+        if (HackSceneReference.Instance.GetDifficulty() != EDifficulty.EASY)
+            shieldExp.SetActive(true);
+
         shield.SetActive(false);
     }
 

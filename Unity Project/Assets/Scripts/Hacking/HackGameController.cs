@@ -1,18 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using static HackingCharacter;
+using static HackSceneReference;
 
 public class HackGameController : MonoBehaviour
 {
 
+    public GameObject lEASY;
+    public GameObject lNORMAL;
+    public GameObject lHARD;
+
     private List<HackingBoss> bosses;
     private List<HackingEnemy> enemies;
     private HackingPlayer player;
+    private int actualEnemy;
    
     void Start()
     {
+        EDifficulty difficulty = HackSceneReference.Instance.GetDifficulty();
+        //difficulty = EDifficulty.HARD;
+
+        switch (difficulty)
+        {
+            case EDifficulty.EASY:
+                lEASY.SetActive(true);
+                break;
+
+            case EDifficulty.NORMAL:
+                lNORMAL.SetActive(true);
+                break;
+
+            case EDifficulty.HARD:
+                lHARD.SetActive(true);
+                break;
+        }
+
         bosses = FindObjectsOfType<HackingBoss>().ToList();
         enemies = FindObjectsOfType<HackingEnemy>().ToList();
         player = FindObjectOfType<HackingPlayer>();
@@ -27,8 +52,6 @@ public class HackGameController : MonoBehaviour
                 {
                     foreach (HackingBoss b in bosses)
                     {
-                        //b.RemoveShield();
-                        //b.SetAgressive();
                         b.DisableShield();
                     }
                 }
@@ -40,7 +63,7 @@ public class HackGameController : MonoBehaviour
             b.SetOnDieListener(() =>
             {
                 bosses.Remove(b);
-                
+
                 if (bosses.Count == 0)
                 {
                     StartCoroutine(IPlayExit(true));
@@ -53,7 +76,50 @@ public class HackGameController : MonoBehaviour
             StartCoroutine(IPlayExit(false));
         });
 
+        switch (difficulty)
+        {
+            case EDifficulty.EASY:
+                {
+                    foreach (HackingBoss b in bosses)
+                    {
+                        b.DisableShield();
+                        b.SetRunaway();
+                    }
+                }
+                
+                break;
+
+            case EDifficulty.NORMAL:
+                {
+                    foreach (HackingBoss b in bosses)
+                    {
+                        b.SetRunaway();
+                    }
+                }
+
+                break;
+
+            case EDifficulty.HARD:
+                {
+                    foreach (HackingBoss b in bosses)
+                    {
+                        b.SetAgressive();
+                    }
+                }
+                
+                break;
+        }
+
         StartCoroutine(IPlayEnter());
+    }
+
+    void Update()
+    {
+        if (enemies.Count > 0)
+        {
+            actualEnemy = (actualEnemy + 2) % enemies.Count;
+            enemies[actualEnemy].Fire();
+        }
     }
 
     private IEnumerator IPlayEnter()
