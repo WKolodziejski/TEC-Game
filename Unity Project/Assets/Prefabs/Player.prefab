@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 1134803256459682951}
   - component: {fileID: 1954176065}
   - component: {fileID: 1954176069}
-  - component: {fileID: 1954176068}
+  - component: {fileID: 1373950955}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -381,8 +381,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.4, y: -0.66}
-      - {x: 0.2, y: 0}
-      - {x: -0.2, y: 0}
+      - {x: 0.2, y: 0.8}
+      - {x: -0.2, y: 0.8}
       - {x: -0.4, y: -0.66}
 --- !u!114 &1954176065
 MonoBehaviour:
@@ -424,7 +424,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.38, y: 1.54}
   m_EdgeRadius: 0
---- !u!251 &1954176068
+--- !u!251 &1373950955
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -435,11 +435,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 8192
-  m_RotationalOffset: -90
+    m_Bits: 40960
+  m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
-  m_SideArc: 180
+  m_SideArc: 1
