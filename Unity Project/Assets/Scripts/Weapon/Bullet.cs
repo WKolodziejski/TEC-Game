@@ -37,7 +37,9 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(tag + " -> " + collision.tag);
+        Debug.Log(tag + " -> " + collision.name);
+
+        
 
         /*
          * BulletPlayer não contém Player

@@ -21600,12 +21600,12 @@ PrefabInstance:
     - target: {fileID: 1039487458768613806, guid: 3049dcdabcff02543a0db1fa06674975,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1039487458768613806, guid: 3049dcdabcff02543a0db1fa06674975,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1039487458768613806, guid: 3049dcdabcff02543a0db1fa06674975,
         type: 3}
@@ -21625,12 +21625,17 @@ PrefabInstance:
     - target: {fileID: 1039487458768613806, guid: 3049dcdabcff02543a0db1fa06674975,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1039487458768613806, guid: 3049dcdabcff02543a0db1fa06674975,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1039487458768613806, guid: 3049dcdabcff02543a0db1fa06674975,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3372449853358453421, guid: 3049dcdabcff02543a0db1fa06674975,
         type: 3}
@@ -21706,6 +21711,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Soldier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586935545342001662, guid: 3049dcdabcff02543a0db1fa06674975,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5919643705096875588, guid: 3049dcdabcff02543a0db1fa06674975,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535628114792395010, guid: 3049dcdabcff02543a0db1fa06674975,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3049dcdabcff02543a0db1fa06674975, type: 3}
@@ -31256,11 +31276,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1954176068, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
+      propertyPath: m_UseColliderMask
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
       propertyPath: hackInterface
       value: 
       objectReference: {fileID: 1652937471}
+    - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
+        type: 3}
+      propertyPath: hp
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1134803256459682972, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
       propertyPath: m_Name
