@@ -31278,7 +31278,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1954176068, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
       propertyPath: m_UseColliderMask
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954176068, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
+      propertyPath: m_ColliderMask.m_Bits
+      value: 40960
       objectReference: {fileID: 0}
     - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
