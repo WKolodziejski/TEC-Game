@@ -1,18 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Infantry : MonoBehaviour
+public abstract class Infantry : MonoBehaviour //TODO: alterar mudança de direção, atirar, pular, não se esfregar em paredes, outros inimigos, mudar lados, atirar fora da tela?
 {
     protected Transform playerT;
     protected SpriteRenderer sprite;
     protected Animator animator;
-    protected GameObject graphics;
+    protected Weapon weapon;
 
-    protected void setGraphics()
-    {
-        graphics = transform.Find("Sprite").gameObject;
-    }
     protected void setPlayerTransform()
     {
         playerT = GameObject.Find("Player").GetComponent<Transform>();
@@ -20,11 +17,23 @@ public class Infantry : MonoBehaviour
 
     protected void setSprite()
     {
-        sprite = graphics.GetComponent<SpriteRenderer>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     protected void setAnimator()
     {
-        animator = graphics.GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
+    }
+
+    protected void setWeapon()
+    {
+        this.weapon = GetComponent<Weapon>();
+    }
+
+    public abstract void TakeDamage(int damage);
+
+    protected void Die()
+    {
+        Destroy(gameObject);
     }
 }

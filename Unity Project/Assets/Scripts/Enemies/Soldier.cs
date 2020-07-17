@@ -1,48 +1,185 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Soldier : Infantry
 {
-    int moveSpeed;
+    public Transform barrel;
+    float moveSpeed;
     float atkCooldown;
+    float moveCooldown;
     float nextAtk;
     float nextMove;
     float followRange;
+    float moveCheck;
+    float prevPosition;
     Vector3 desiredDir;
-    // Start is called before the first frame update
+
     void Start()
     {
         setPlayerTransform();
-        setGraphics();
         setSprite();
         setAnimator();
-        setMoveSpeed(3);
-        setAtkCooldown(0.5f);
+        setMoveSpeed(1.5f);
+        setAtkCooldown(0.75f); //se por em 0.5 fica levemente bugado
+        setMoveCooldown(0.5f);
         setFollowRange(5f);
-        iniDesiredDir();
-        iniNextMove();
-        setNextAtk(Time.time);
+        setWeapon();
+        setDesiredDir();
+        setFirstMove();
+        setFirstAtk();
+        setFirstPosition();
+        resetMoveCheck();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (nextAtk > Time.time)
-        {
-            if (nextMove < Time.time)
+        Move();   
+        Attack();
+    }
+
+    private void Attack()
+    {
+        nextAtk -= Time.deltaTime;
+
+        if (nextAtk < 0) { 
+            SetShootingDir(); //talvez se afastar um pouco antes de poder atirar de novo
+
+            animator.SetBool("Shooting", true);
+            animator.SetBool("Running", false);
+            animator.SetBool("Jumping", false);
+
+            Fire();
+
+            UpdateNextAtk();
+            UpdateNextMove();
+        }
+    }
+
+    private void Move()
+    {
+        nextMove -= Time.deltaTime;
+
+        if (nextMove < 0) { 
+            //CheckSpriteMovingDir();
+            CheckDesiredDir();
+            CheckIfMoved();
+
+            this.transform.position += desiredDir;
+
+            if (!animator.GetBool("Running"))
             {
-                move();
+                animator.SetBool("Shooting", false);
+                animator.SetBool("Jumping", false);
+                animator.SetBool("Running", true);
             }
         }
-        else {
-            Attack();
+    }
+
+    /*private bool toTheLeft()
+    {
+        if (this.transform.position.x > playerT.position.x )
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }*/
+
+    private void CheckDesiredDir()
+    {
+
+        if (CheckFollow() && desiredDir.x > 0)
+        {
+            ChangeDesiredDir();
+        } else
+        {
+            if (CheckFollowBack() && desiredDir.x < 0)
+            {
+                ChangeDesiredDir();
+            }
         }
     }
 
-    private void setMoveSpeed(int moveSpeed)
+    private void CheckIfMoved()
+    {
+        moveCheck -= Time.deltaTime;
+        if (moveCheck < 0) {
+            resetMoveCheck();
+
+            if ((Math.Abs(prevPosition - transform.position.x) < moveCheck*moveSpeed/2)){
+                ChangeDesiredDir();
+            }
+            prevPosition = transform.position.x;
+        }
+    }
+
+    private void ChangeDesiredDir()
+    {
+        desiredDir = -1 * desiredDir;
+        transform.Rotate(0f, 180f, 0f);
+        resetMoveCheck();
+    }
+
+    private bool CheckFollowBack()
+    {
+        if (this.transform.position.x < playerT.position.x - followRange)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool CheckFollow()
+    {
+        if (this.transform.position.x > playerT.position.x + followRange)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /*private void CheckSpriteMovingDir()
+    {
+        if (desiredDir.x < 0)
+        {
+            transform.rotation.Set(0f, 0f, 0f, (float)Space.World);
+        }   else
+        {
+            transform.rotation.Set(0f, 180f, 0f, (float)Space.World);
+        }
+    }*/
+
+    private void SetShootingDir()
+    {
+        if (playerT.position.x < transform.position.x && desiredDir.x > 0)
+        {
+            ChangeDesiredDir();
+        } else
+        {
+            if (playerT.position.x > transform.position.x && desiredDir.x < 0) {
+                ChangeDesiredDir();
+            }
+        }
+    }
+
+    private void Fire()
+    {
+        weapon.Fire(barrel);
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        Die();
+    }
+
+    private void setMoveSpeed(float moveSpeed)
     {
         this.moveSpeed = moveSpeed;
     }
@@ -57,19 +194,25 @@ public class Soldier : Infantry
         this.atkCooldown = atkCooldown;
     }
 
-    private void setNextAtk(float nextAtk)
+    private void setMoveCooldown(float moveCooldown)
     {
-        this.nextAtk = nextAtk;
+        this.moveCooldown = moveCooldown;
     }
 
-    private void updateNextAtk()
+
+    private void UpdateNextAtk()
     {
-        this.nextAtk = Time.time + UnityEngine.Random.Range(atkCooldown, atkCooldown * 10);
+        this.nextAtk = UnityEngine.Random.Range(atkCooldown, atkCooldown * 10);
     }
 
-    private void updateNextMove()
+    private void UpdateNextMove()
     {
-        this.nextMove = Time.time + atkCooldown;
+        this.nextMove = moveCooldown;
+    }
+
+    private void resetMoveCheck()
+    {
+        this.moveCheck = 0.125f;
     }
 
     private void setFollowRange(float followRange)
@@ -77,107 +220,25 @@ public class Soldier : Infantry
         this.followRange = followRange;
     }
 
-    private void iniDesiredDir()
+    private void setDesiredDir()
     {
         desiredDir = new Vector3(-getMoveSpeed() * Time.deltaTime, 0f, 0f);
     }
 
-    private void iniNextMove()
+    private void setFirstMove()
     {
-        nextMove = Time.time + atkCooldown;
+        nextMove = atkCooldown;
     }
 
-    private bool checkFollowBack()
+    private void setFirstAtk()
     {
-        if (this.transform.position.x < playerT.position.x - followRange)
-        {
-            return true;
-        } else
-        {
-            return false;
-        }
+        this.nextAtk = atkCooldown;
     }
 
-    private bool checkFollow()
+    private void setFirstPosition()
     {
-        if (this.transform.position.x > playerT.position.x + followRange*2)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        this.prevPosition = transform.position.x;
     }
 
-    private void changeDesiredDir()
-    {
-        desiredDir = -1 * desiredDir;
-        sprite.flipX = !sprite.flipX;
-    }
-
-    private void checkDesiredDir()
-    {
-        if (checkFollow() && desiredDir.x > 0)
-        {
-            changeDesiredDir();
-        } else
-        {
-            if (checkFollowBack() && desiredDir.x < 0)
-            {
-                changeDesiredDir();
-            }
-        }
-    }
-
-    private void move()
-    {
-        //print("Weeeeee");
-        checkSpriteMovingDir();
-        checkDesiredDir();
-        this.transform.position += desiredDir;
-
-        if (!animator.GetBool("Running"))
-        {
-            animator.SetBool("Shooting", false);
-            animator.SetBool("Jumping", false);
-            animator.SetBool("Running", true);
-        }
-    }
-
-    private void checkSpriteMovingDir()
-    {
-        if (desiredDir.x < 0)
-        {
-            sprite.flipX = false;
-        }   else
-        {
-            sprite.flipX = true;
-        }
-    }
-
-    private void setShootingDir()
-    {
-        if (playerT.position.x < transform.position.x)
-        {
-            sprite.flipX = false;
-        } else
-        {
-            sprite.flipX = true;
-        }
-    }
-
-    private void Attack() 
-    {
-        //print("Pew Pew");
-
-        setShootingDir();
-
-        animator.SetBool("Shooting", true);
-        animator.SetBool("Running", false);
-        animator.SetBool("Jumping", false);
-        updateNextAtk();
-        updateNextMove();
-    }
 }
 

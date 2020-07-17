@@ -1,65 +1,117 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEditor;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
 
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemy;
-    public float minDist = 5;
-    public float minDistMult = 2;
+    public enum Orientation { Horizontal, Vertical, Diagonal };
+    public Orientation levelOrientation;
+
+
+    public float spawnCooldown = 5;
     Transform cameraTransf;
     Camera camera;
-    float nextSpawnPoint;
+    float nextSpawnTime;
+    float spawnBoundLeft, spawnBoundRight, spawnBoundUp, spawnBoundDown;
 
-    // Start is called before the first frame update
     void Start()
     {
-        iniCameraPos();
-        iniCamera();
-        iniSpawnPoint();
+        setCameraPos();
+        setCamera();
+        updateSpawnTime();
+        setBoundries();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void Update() //adicionar um limite de inimigos e melhor checagem de spawn
     {
-        if (getHorRightBound() > nextSpawnPoint) //Considerar mudança vertical em proximas versões
+        nextSpawnTime -= Time.deltaTime;
+
+        if (nextSpawnTime < 0) 
         {
-            Vector2 where2Spawn = new Vector2(getHorRightBound() + minDist, getSpawnY());
-            Instantiate(enemy, where2Spawn, Quaternion.identity);
-            updateSpawnPoint();
+            Spawn();
         }
+    }
+
+    private void Spawn()
+    {
+        Instantiate(enemy, getSpawnCoord(), Quaternion.identity);
+        updateSpawnTime();
+    }
+
+    private void updateSpawnTime()
+    {
+        nextSpawnTime = spawnCooldown; //talvez adicionar aleatoriedade
+    }
+
+    private Vector2 getSpawnCoord()
+    {
+        return new Vector2(getSpawnX(), getSpawnY());
+    }
+
+    private float getSpawnX()
+    {
+        return Random.Range(cameraTransf.position.x + spawnBoundLeft, cameraTransf.position.y + spawnBoundRight);
     }
 
     private float getSpawnY()
     {
-        return UnityEngine.Random.Range(cameraTransf.position.y - camera.orthographicSize, cameraTransf.position.y + camera.orthographicSize);
+        return Random.Range(cameraTransf.position.y + spawnBoundDown, cameraTransf.position.y + spawnBoundUp);
     }
 
-    private float getHorRightBound()
+    private void setBoundries() //armazenar apenas os multiplicadores, caso a mudança de resolução se torne um problema
     {
-        float screenAspect = (float)Screen.width / (float)Screen.height; //otimizar? problema com mudança de resolução 
-        float halfCameraHeight = camera.orthographicSize;
-        return cameraTransf.position.x + (halfCameraHeight * screenAspect); 
+        float horizontalSize = getHorizontalSize();
+        float verticalSize = getVerticalSize();
+
+        if (levelOrientation == Orientation.Horizontal)
+        {
+            spawnBoundLeft = horizontalSize * 0.5f;
+            spawnBoundRight = horizontalSize * 1.5f;
+            spawnBoundDown = verticalSize * -0.5f;
+            spawnBoundUp = verticalSize * 0.5f;
+        } else
+        {
+            if (levelOrientation == Orientation.Vertical)
+            {
+                spawnBoundLeft = horizontalSize * -0.5f;
+                spawnBoundRight = horizontalSize * 0.5f;
+                spawnBoundDown = verticalSize * 0.5f;
+                spawnBoundUp = verticalSize * 1.5f;
+            } else
+            {
+                spawnBoundLeft = horizontalSize * 0.5f;
+                spawnBoundRight = horizontalSize * 1.5f;
+                spawnBoundDown = verticalSize * -0.5f;
+                spawnBoundUp = verticalSize * 1.5f;
+            }
+        }
     }
 
-    private void updateSpawnPoint()
+    private float getVerticalSize()
     {
-        nextSpawnPoint += UnityEngine.Random.Range(minDist, minDist*minDistMult);
+        return camera.orthographicSize * 2;
     }
 
-    private void iniCameraPos()
+    private float getHorizontalSize()
+    {
+        float screenAspect = (float)Screen.width / (float)Screen.height; //problema com mudança de resolução 
+        return getVerticalSize() * screenAspect; 
+    }
+
+    private void setCameraPos()
     {
         cameraTransf = Camera.main.transform;
     }
 
-    private void iniCamera()
+    private void setCamera()
     {
         camera = Camera.main;
     }
 
-    private void iniSpawnPoint()
-    {
-        nextSpawnPoint = getHorRightBound();
-    }
 }
