@@ -40,4 +40,9 @@ public class HackingEnemy : Character
         weapon.Fire(barrel);
     }
 
+    protected override void OnDie()
+    {
+        Destroy(gameObject);
+    }
+
 }

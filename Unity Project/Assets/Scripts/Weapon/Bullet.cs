@@ -21,25 +21,9 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 1f);
     }
 
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        GameObject c = collision.collider.gameObject;
-
-        if (!c.CompareTag(tag))
-        {
-            Explode();
-
-            if (c.CompareTag("Enemy") && CompareTag("BulletPlayer") || c.CompareTag("Player") && CompareTag("BulletEnemy"))
-                c.GetComponent<HackingCharacter>().TakeDamage(damage);
-        }
-    }*/
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(tag + " -> " + collision.name);
-
-        
 
         /*
          * BulletPlayer não contém Player

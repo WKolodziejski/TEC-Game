@@ -76,4 +76,9 @@ public class HackingPlayer : Character
         } 
     }
 
+    protected override void OnDie()
+    {
+        Destroy(gameObject);
+    }
+
 }

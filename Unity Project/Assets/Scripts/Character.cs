@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
-    public float hp;
+    public float hp = 3f;
+    public float coolDown = 0f;
 
     private Action onDie;
+    private float lastCooldown;
 
     public void SetOnDieListener(Action onDie)
     {
@@ -16,16 +18,20 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        hp -= damage;
-
-        if (hp <= 0)
+        if (lastCooldown <= Time.time)
         {
-            if (onDie != null)
-                onDie();
-            else
-                Debug.Log("null");
-            Destroy(gameObject);
+            lastCooldown = Time.time + coolDown;
+
+            hp -= damage;
+
+            if (hp <= 0)
+            {
+                onDie?.Invoke();
+                OnDie();
+            }
         }
     }
+
+    protected abstract void OnDie();
 
 }
