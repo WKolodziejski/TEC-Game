@@ -20,14 +20,14 @@ public class Soldier : Infantry
         setSprite();
         setAnimator();
         setMoveSpeed(1.5f);
-        setAtkCooldown(0.75f); //se por em 0.5 fica levemente bugado
+        setAtkCooldown(0.5f); //se por em 0.5 fica levemente bugado
         setMoveCooldown(0.5f);
         setFollowRange(5f);
         setWeapon();
         setDesiredDir();
         setFirstMove();
         setFirstAtk();
-        setFirstPosition();
+        setPrevPosition();
         resetMoveCheck();
     }
 
@@ -108,9 +108,8 @@ public class Soldier : Infantry
             resetMoveCheck();
 
             if ((Math.Abs(prevPosition - transform.position.x) < moveCheck*moveSpeed/2)){
-                ChangeDesiredDir();
+                ChangeDesiredDir(); //resetmovecheck redundante, mas necessario
             }
-            prevPosition = transform.position.x;
         }
     }
 
@@ -119,6 +118,7 @@ public class Soldier : Infantry
         desiredDir = -1 * desiredDir;
         transform.Rotate(0f, 180f, 0f);
         resetMoveCheck();
+        setPrevPosition();
     }
 
     private bool CheckFollowBack()
@@ -210,7 +210,7 @@ public class Soldier : Infantry
         this.nextMove = moveCooldown;
     }
 
-    private void resetMoveCheck()
+    private void resetMoveCheck() //adicionar o setprevposition seria intuitivo, mas causaria problemas no checkifmoved
     {
         this.moveCheck = 0.125f;
     }
@@ -235,7 +235,7 @@ public class Soldier : Infantry
         this.nextAtk = atkCooldown;
     }
 
-    private void setFirstPosition()
+    private void setPrevPosition()
     {
         this.prevPosition = transform.position.x;
     }
