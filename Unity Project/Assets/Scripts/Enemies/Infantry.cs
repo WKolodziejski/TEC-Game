@@ -36,10 +36,4 @@ public abstract class Infantry : Character //TODO: alterar mudança de direção
         Destroy(gameObject);
     }
 
-    /*public abstract void TakeDamage(int damage);
-
-    protected void Die()
-    {
-        Destroy(gameObject);
-    }*/
 }

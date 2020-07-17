@@ -11,6 +11,7 @@ public class Soldier : Infantry
     float nextMove;
     float followRange;
     float moveCheck;
+    float moveCheckRate = 0.125f;
     float prevPosition;
     Vector3 desiredDir;
 
@@ -27,7 +28,6 @@ public class Soldier : Infantry
         setDesiredDir();
         setFirstMove();
         setFirstAtk();
-        setPrevPosition();
         resetMoveCheck();
     }
 
@@ -60,7 +60,6 @@ public class Soldier : Infantry
         nextMove -= Time.deltaTime;
 
         if (nextMove < 0) { 
-            //CheckSpriteMovingDir();
             CheckDesiredDir();
             CheckIfMoved();
 
@@ -74,17 +73,6 @@ public class Soldier : Infantry
             }
         }
     }
-
-    /*private bool toTheLeft()
-    {
-        if (this.transform.position.x > playerT.position.x )
-        {
-            return true;
-        } else
-        {
-            return false;
-        }
-    }*/
 
     private void CheckDesiredDir()
     {
@@ -105,10 +93,11 @@ public class Soldier : Infantry
     {
         moveCheck -= Time.deltaTime;
         if (moveCheck < 0) {
-            resetMoveCheck();
 
-            if ((Math.Abs(prevPosition - transform.position.x) < moveCheck*moveSpeed/2)){
-                ChangeDesiredDir(); //resetmovecheck redundante, mas necessario
+            if ((Math.Abs(prevPosition - transform.position.x) < moveCheckRate*moveSpeed/2)){
+                ChangeDesiredDir();
+            } else {
+                resetMoveCheck();
             }
         }
     }
@@ -118,7 +107,6 @@ public class Soldier : Infantry
         desiredDir = -1 * desiredDir;
         transform.Rotate(0f, 180f, 0f);
         resetMoveCheck();
-        setPrevPosition();
     }
 
     private bool CheckFollowBack()
@@ -145,17 +133,6 @@ public class Soldier : Infantry
         }
     }
 
-    /*private void CheckSpriteMovingDir()
-    {
-        if (desiredDir.x < 0)
-        {
-            transform.rotation.Set(0f, 0f, 0f, (float)Space.World);
-        }   else
-        {
-            transform.rotation.Set(0f, 180f, 0f, (float)Space.World);
-        }
-    }*/
-
     private void SetShootingDir()
     {
         if (playerT.position.x < transform.position.x && desiredDir.x > 0)
@@ -173,11 +150,6 @@ public class Soldier : Infantry
     {
         weapon.Fire(barrel);
     }
-
-    /*public override void TakeDamage(int damage)
-    {
-        Die();
-    }*/
 
     private void setMoveSpeed(float moveSpeed)
     {
@@ -210,9 +182,10 @@ public class Soldier : Infantry
         this.nextMove = moveCooldown;
     }
 
-    private void resetMoveCheck() //adicionar o setprevposition seria intuitivo, mas causaria problemas no checkifmoved
+    private void resetMoveCheck()
     {
-        this.moveCheck = 0.125f;
+        this.moveCheck = moveCheckRate;
+        this.prevPosition = transform.position.x;
     }
 
     private void setFollowRange(float followRange)
@@ -233,11 +206,6 @@ public class Soldier : Infantry
     private void setFirstAtk()
     {
         this.nextAtk = atkCooldown;
-    }
-
-    private void setPrevPosition()
-    {
-        this.prevPosition = transform.position.x;
     }
 
 }

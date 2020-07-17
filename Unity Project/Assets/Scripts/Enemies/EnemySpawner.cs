@@ -15,20 +15,17 @@ public class EnemySpawner : MonoBehaviour
 
     public float spawnCooldown = 5;
     Transform cameraTransf;
-    Camera camera;
     float nextSpawnTime;
     float spawnBoundLeft, spawnBoundRight, spawnBoundUp, spawnBoundDown;
 
     void Start()
     {
         setCameraPos();
-        setCamera();
         updateSpawnTime();
         setBoundries();
-
     }
 
-    void Update() //adicionar um limite de inimigos e melhor checagem de spawn
+    void Update() //adicionar um limite de inimigos e melhor checagem de spawn 
     {
         nextSpawnTime -= Time.deltaTime;
 
@@ -95,7 +92,7 @@ public class EnemySpawner : MonoBehaviour
 
     private float getVerticalSize()
     {
-        return camera.orthographicSize * 2;
+        return Camera.main.orthographicSize * 2;
     }
 
     private float getHorizontalSize()
@@ -107,11 +104,6 @@ public class EnemySpawner : MonoBehaviour
     private void setCameraPos()
     {
         cameraTransf = Camera.main.transform;
-    }
-
-    private void setCamera()
-    {
-        camera = Camera.main;
     }
 
 }
