@@ -7,6 +7,7 @@ public abstract class Character : MonoBehaviour
 {
     public float hp = 3f;
     public float coolDown = 0f;
+    public GameObject shield;
 
     private Action onDie;
     private float lastCooldown;
@@ -28,6 +29,10 @@ public abstract class Character : MonoBehaviour
             {
                 onDie?.Invoke();
                 OnDie();
+            }
+            else
+            {
+                Destroy(Instantiate(shield, transform), 1f);
             }
         }
     }

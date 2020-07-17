@@ -315,6 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   coolDown: 0
+  shield: {fileID: 0}
   speed: 5
   jumpForce: 15
   groundcheck: {fileID: 1134803256459682970}
@@ -329,6 +330,7 @@ MonoBehaviour:
   barrelDiagonalDown: {fileID: 479151357}
   grounded: 0
   platform: 0
+  hackInterface: {fileID: 0}
 --- !u!61 &1134803256459682970
 BoxCollider2D:
   m_ObjectHideFlags: 0
