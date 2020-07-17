@@ -106,7 +106,7 @@ public class Controller : MonoBehaviour
         }
         else if (vertical < 0f)
         {
-            if (horizontal != 0f)
+            if (horizontal == 0f)
                 barrel = barrelFront;
             else
                 barrel = barrelDiagonalDown;
