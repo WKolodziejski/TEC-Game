@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class Infantry : Character //TODO: alterar mudança de direção, atirar, pular, não se esfregar em paredes, outros inimigos, mudar lados, atirar fora da tela?
 {
+
     protected Transform playerT;
     protected SpriteRenderer sprite;
     protected Animator animator;
@@ -28,6 +29,11 @@ public abstract class Infantry : Character //TODO: alterar mudança de direção
     protected void setWeapon()
     {
         this.weapon = GetComponent<Weapon>();
+    }
+
+    protected override void OnDie()
+    {
+        Destroy(gameObject);
     }
 
     /*public abstract void TakeDamage(int damage);

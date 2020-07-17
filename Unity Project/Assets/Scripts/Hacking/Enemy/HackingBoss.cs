@@ -75,4 +75,9 @@ public class HackingBoss : Character
         shield.SetActive(false);
     }
 
+    protected override void OnDie()
+    {
+        Destroy(gameObject);
+    }
+
 }

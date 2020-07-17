@@ -36,7 +36,6 @@ public class Controller : Character
     private float countTime;
     private bool held;
 
-
     void Start()
     {
         /*tr = GetComponent<Transform>();
@@ -162,6 +161,11 @@ public class Controller : Character
         lastJump = Time.time;
         yield return new WaitForSeconds(fallTime);
         playerCollider.enabled = true;
+    }
+
+    protected override void OnDie()
+    {
+
     }
 
 }

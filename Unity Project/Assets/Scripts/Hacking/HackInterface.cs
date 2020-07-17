@@ -22,7 +22,6 @@ public class HackInterface : MonoBehaviour
     private GameObject _particlePlayer;
     private GameObject _particleTarget;
     
-
     void Start()
     {
         _position = GetComponent<RectTransform>();
