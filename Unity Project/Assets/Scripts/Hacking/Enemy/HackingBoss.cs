@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using static HackSceneReference;
 
-public class HackingBoss : HackingCharacter
+public class HackingBoss : Character
 {
 
     public float rotationSpeed = 5f;

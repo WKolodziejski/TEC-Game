@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HackingPlayer : HackingCharacter
+public class HackingPlayer : Character
 {
 
     public float speed = 10f;

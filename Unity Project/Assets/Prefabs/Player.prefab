@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05830015e8f63242a3b1b219457f225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 3
   speed: 5
   jumpForce: 15
   groundcheck: {fileID: 1134803256459682970}
@@ -321,6 +322,10 @@ MonoBehaviour:
   horizontalMov: 0
   fallTime: 0.3
   jumpLock: 0.6
+  barrelFront: {fileID: 2009349151}
+  barrelUp: {fileID: 1924081354}
+  barrelDiagonalUp: {fileID: 769633793}
+  barrelDiagonalDown: {fileID: 479151357}
   grounded: 0
   platform: 0
   hackInterface: {fileID: 0}
@@ -391,12 +396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee16e96f898a5d4d90b39a12a9550c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrelFront: {fileID: 2009349151}
-  barrelUp: {fileID: 1924081354}
-  barrelDiagonalUp: {fileID: 769633793}
-  barrelDiagonalDown: {fileID: 479151357}
-  bullet: {fileID: 346633866021049078, guid: 2ed6cafe13dd596408c02ae39a72a7ec, type: 3}
-  cooldown: 0
+  bullet: {fileID: 6211147568835439466, guid: 27eb6f1707158444ea87798429b419eb, type: 3}
+  fireRate: 5
 --- !u!61 &1954176069
 BoxCollider2D:
   m_ObjectHideFlags: 0

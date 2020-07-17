@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class HackingEnemy : HackingCharacter
+public class HackingEnemy : Character
 {
 
     public Transform barrel;

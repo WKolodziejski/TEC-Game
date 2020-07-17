@@ -174,10 +174,10 @@ public class Soldier : Infantry
         weapon.Fire(barrel);
     }
 
-    public override void TakeDamage(int damage)
+    /*public override void TakeDamage(int damage)
     {
         Die();
-    }
+    }*/
 
     private void setMoveSpeed(float moveSpeed)
     {

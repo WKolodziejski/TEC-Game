@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HackingCharacter : MonoBehaviour
+public class Character : MonoBehaviour
 {
     public float hp;
 

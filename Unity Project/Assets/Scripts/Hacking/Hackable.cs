@@ -20,7 +20,7 @@ public class Hackable : MonoBehaviour
         {
             isHacked = true;
 
-            portal = Instantiate(particleSuccess, transform.position, Quaternion.identity);
+            portal = Instantiate(particleSuccess, transform.position, Quaternion.identity, transform);
 
             FindObjectOfType<HackEnterController>().Enter(transform, difficulty);
         }

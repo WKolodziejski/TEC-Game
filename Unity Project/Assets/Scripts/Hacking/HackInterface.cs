@@ -32,6 +32,12 @@ public class HackInterface : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    void OnGUI()
+    {
+        if (_target != null)
+            _position.position = _target.transform.position;
+    }
+
     public void SetPlayerPosition(Transform transform)
     {
         _playerPosition = transform;
@@ -44,23 +50,29 @@ public class HackInterface : MonoBehaviour
 
         if (counter > 0 && counter < 1 && _target != null)
         {
-            int c = (int)(counter * 100);
-
-            _text.text = String.Format("{0:0}", c);
-            _progress.fillAmount = counter;
-
-            if (c % 10 == 0)
+            if (Vector2.Distance(_target.transform.position, _playerPosition.position) <= maxDist)
             {
-                GameObject pt = Instantiate(particleThrow, _playerPosition.position, Quaternion.identity);
-                pt.transform.LookAt(_target.transform);
-                pt.GetComponent<Rigidbody2D>().AddForce(pt.transform.forward * 0.1f);
-                Destroy(pt, 1f);
+                int c = (int)(counter * 100);
+
+                _text.text = String.Format("{0:0}", c);
+                _progress.fillAmount = counter;
+
+                if (c % 10 == 0)
+                {
+                    GameObject pt = Instantiate(particleThrow, _playerPosition.position, Quaternion.identity);
+                    pt.transform.LookAt(_target.transform);
+                    pt.GetComponent<Rigidbody2D>().AddForce(pt.transform.forward * 0.1f);
+                    Destroy(pt, 1f);
+                }
+            }
+            else
+            {
+                FinishHacking();
             }
         }
 
         if (countTime > (startTime + holdTime) && _target != null)
         {
-
             _target.Hack();
 
             FinishHacking();

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Infantry : MonoBehaviour //TODO: alterar mudança de direção, atirar, pular, não se esfregar em paredes, outros inimigos, mudar lados, atirar fora da tela?
+public abstract class Infantry : Character //TODO: alterar mudança de direção, atirar, pular, não se esfregar em paredes, outros inimigos, mudar lados, atirar fora da tela?
 {
     protected Transform playerT;
     protected SpriteRenderer sprite;
@@ -30,10 +30,10 @@ public abstract class Infantry : MonoBehaviour //TODO: alterar mudança de dire�
         this.weapon = GetComponent<Weapon>();
     }
 
-    public abstract void TakeDamage(int damage);
+    /*public abstract void TakeDamage(int damage);
 
     protected void Die()
     {
         Destroy(gameObject);
-    }
+    }*/
 }

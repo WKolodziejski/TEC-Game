@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(collision.tag);
+        Debug.Log(tag + " -> " + collision.tag);
 
         /*
          * BulletPlayer não contém Player
@@ -50,7 +50,7 @@ public class Bullet : MonoBehaviour
             Explode();
 
             if (collision.CompareTag("Enemy") || collision.CompareTag("Player"))
-                collision.GetComponent<HackingCharacter>().TakeDamage(damage);
+                collision.GetComponent<Character>().TakeDamage(damage);
         }
     }
 
