@@ -6,11 +6,12 @@ using UnityEngine;
 public class Lifebar : MonoBehaviour
 {
 
+    [Range(0, 3)] public int extra = 3;
+    public GameObject lf1, lf2, lf3;
     public RectTransform bar;
     public Character character;
 
-    [Range(0, 3)] public int extra = 3;
-    public GameObject lf1, lf2, lf3;
+    private Vector3 checkpoint;
 
     void Start()
     {
@@ -43,11 +44,14 @@ public class Lifebar : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        Vector3 cam = Camera.main.transform.position;
-
         character.hp = 3;
-        character.transform.position = new Vector3(cam.x, cam.y, 0);
+        character.transform.position = checkpoint;
         character.gameObject.SetActive(true);
+    }
+
+    public void SetCheckpoint(float x)
+    {
+        checkpoint = new Vector3(x, 5, 0);
     }
 
 }
