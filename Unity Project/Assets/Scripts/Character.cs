@@ -19,6 +19,8 @@ public abstract class Character : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("Damage of " + damage);
+
         if (lastCooldown <= Time.time)
         {
             lastCooldown = Time.time + coolDown;
@@ -35,6 +37,12 @@ public abstract class Character : MonoBehaviour
                 Destroy(Instantiate(shield, transform), 1f);
             }
         }
+    }
+
+    public void InstaKill()
+    {
+        onDie?.Invoke();
+        OnDie();
     }
 
     protected abstract void OnDie();
