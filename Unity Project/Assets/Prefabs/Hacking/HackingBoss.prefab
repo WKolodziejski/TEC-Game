@@ -109,7 +109,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!58 &1562632642362888052
 CircleCollider2D:
@@ -126,7 +126,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.75
+  m_Radius: 1.35
 --- !u!1 &9014308859072969021
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -205,7 +205,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.35
 --- !u!114 &1440666046371000501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,11 +219,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
+  coolDown: 0
+  shield: {fileID: 8827016359232172292}
   rotationSpeed: 100
   barrel1: {fileID: 7833792635527143577}
   barrel2: {fileID: 8408277271787334598}
   barrelS: {fileID: 473724925418948736}
-  shield: {fileID: 8827016359232172292}
   shieldExp: {fileID: 6661399537661976782}
 --- !u!114 &657063442731540155
 MonoBehaviour:
@@ -331,6 +332,10 @@ PrefabInstance:
     - target: {fileID: 489488, guid: f0ff2ec3f9047c543b369c7a9368b9b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19871774, guid: f0ff2ec3f9047c543b369c7a9368b9b2, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 19908700, guid: f0ff2ec3f9047c543b369c7a9368b9b2, type: 3}
       propertyPath: m_SortingLayerID
@@ -458,6 +463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shield
       objectReference: {fileID: 0}
+    - target: {fileID: 195504, guid: dd011ee49c0678c40b921f1eea8fb512, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 457720, guid: dd011ee49c0678c40b921f1eea8fb512, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -501,6 +510,14 @@ PrefabInstance:
     - target: {fileID: 457720, guid: dd011ee49c0678c40b921f1eea8fb512, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19824184, guid: dd011ee49c0678c40b921f1eea8fb512, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19885758, guid: dd011ee49c0678c40b921f1eea8fb512, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 19951376, guid: dd011ee49c0678c40b921f1eea8fb512, type: 3}
       propertyPath: m_SortingLayerID

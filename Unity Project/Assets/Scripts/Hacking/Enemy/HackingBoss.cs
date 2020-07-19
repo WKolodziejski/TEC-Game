@@ -12,7 +12,7 @@ public class HackingBoss : Character
     public Transform barrel1;
     public Transform barrel2;
     public Transform barrelS;
-    public GameObject shield;
+    //public GameObject shield;
     public GameObject shieldExp;
 
     private NavMeshAgent agent;

@@ -4755,9 +4755,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.41144955, y: 0.50748086}
-      - {x: -0.41805124, y: -0.48938888}
-      - {x: 0.7621728, y: 0.004350662}
+    - - {x: -0.43612933, y: 0.5321606}
+      - {x: -0.44273102, y: -0.5716549}
+      - {x: 0.8596735, y: -0.010883957}
 --- !u!114 &7760883126543244775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4771,6 +4771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
+  coolDown: 0
+  shield: {fileID: 0}
   speed: 10
   turnSpeed: 5
   barrel: {fileID: 7760883125871837548}
