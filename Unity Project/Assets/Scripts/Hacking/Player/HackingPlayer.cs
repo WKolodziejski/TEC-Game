@@ -20,8 +20,8 @@ public class HackingPlayer : Character
 
     void Update()
     {
-        movement.y = Input.GetAxis("Vertical");
-        movement.x = Input.GetAxis("Horizontal");
+        movement.y = Input.GetAxis("HackingVertical");
+        movement.x = Input.GetAxis("HackingHorizontal");
 
         if (Input.GetAxis("HackingShootHorizontal") > 0f)
         {
@@ -29,7 +29,7 @@ public class HackingPlayer : Character
                 angle = 45;
 
             else if (Input.GetAxis("HackingShootVertical") < 0f)
-                angle = 270;
+                angle = 315;
 
             else
                 angle = 0;
