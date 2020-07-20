@@ -6,7 +6,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
 
-    public GameObject bullet;
+    public Bullet bullet;
     public float fireRate = 1f;
 
     private float lastCooldown;

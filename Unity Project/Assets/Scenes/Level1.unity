@@ -21883,7 +21883,7 @@ PrefabInstance:
     - target: {fileID: 1349797370, guid: 3049dcdabcff02543a0db1fa06674975, type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 6211147568835439466, guid: 27eb6f1707158444ea87798429b419eb,
+      objectReference: {fileID: 4444579974292874691, guid: 27eb6f1707158444ea87798429b419eb,
         type: 3}
     - target: {fileID: 1349797370, guid: 3049dcdabcff02543a0db1fa06674975, type: 3}
       propertyPath: fireRate
@@ -21932,8 +21932,14 @@ PrefabInstance:
     - target: {fileID: 3372449853358453421, guid: 3049dcdabcff02543a0db1fa06674975,
         type: 3}
       propertyPath: hp
-      value: 3
+      value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3372449853358453421, guid: 3049dcdabcff02543a0db1fa06674975,
+        type: 3}
+      propertyPath: popup
+      value: 
+      objectReference: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1,
+        type: 3}
     - target: {fileID: 3586935545342001634, guid: 3049dcdabcff02543a0db1fa06674975,
         type: 3}
       propertyPath: m_Enabled
@@ -31573,6 +31579,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1954176065, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4444579974292874691, guid: 27eb6f1707158444ea87798429b419eb,
+        type: 3}
+    - target: {fileID: 1954176065, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
+      propertyPath: fireRate
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1954176069, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -31597,6 +31612,12 @@ PrefabInstance:
       propertyPath: shield
       value: 
       objectReference: {fileID: 7504938564569316503, guid: 3a0ed5faf8e5aae46af57f2f670ef7a3,
+        type: 3}
+    - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
+        type: 3}
+      propertyPath: popup
+      value: 
+      objectReference: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1,
         type: 3}
     - target: {fileID: 1134803256459682972, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}

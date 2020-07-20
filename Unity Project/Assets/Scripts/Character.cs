@@ -5,9 +5,11 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
+
     public float hp = 3f;
     public float coolDown = 0f;
     public GameObject shield;
+    public DamagePopup popup;
 
     private Action onDie;
     private float lastCooldown;
@@ -27,6 +29,8 @@ public abstract class Character : MonoBehaviour
 
             hp -= damage;
 
+            Instantiate(popup, transform.position, Quaternion.identity, transform).Hit(damage);
+
             if (hp <= 0)
             {
                 onDie?.Invoke();
@@ -34,7 +38,8 @@ public abstract class Character : MonoBehaviour
             }
             else
             {
-                Destroy(Instantiate(shield, transform), 1f);
+                if (shield != null)
+                    Destroy(Instantiate(shield, transform), 1f);
             }
         }
     }
