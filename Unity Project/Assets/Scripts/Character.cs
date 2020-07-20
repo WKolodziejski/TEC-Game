@@ -21,8 +21,6 @@ public abstract class Character : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("Damage of " + damage);
-
         if (lastCooldown <= Time.time)
         {
             lastCooldown = Time.time + coolDown;
