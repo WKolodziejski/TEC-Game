@@ -12,7 +12,6 @@ public class HackInterface : MonoBehaviour
     public HackParticle particle;
     public AudioSource audioFail;
     
-    private Text progress;
     private Image bar;
     private RectTransform rect;
     private Canvas canvas;
@@ -25,7 +24,6 @@ public class HackInterface : MonoBehaviour
     void Start()
     {
         rect = GetComponent<RectTransform>();
-        progress = GetComponentInChildren<Text>(true);
         bar = GetComponentInChildren<Image>(true);
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
@@ -68,7 +66,7 @@ public class HackInterface : MonoBehaviour
     void OnGUI()
     {
         if (target != null)
-            rect.position = new Vector3(target.transform.position.x, target.transform.position.y + 1f, 0);
+            rect.position = new Vector3(target.transform.position.x, target.transform.position.y + 0.5f, 0);
     }
 
     public bool SetProgress(float countTime, float startTime)
@@ -82,7 +80,6 @@ public class HackInterface : MonoBehaviour
             {
                 int c = (int)(counter * 100);
 
-                progress.text = String.Format("{0:0}", c);
                 bar.fillAmount = counter;
 
                 if (c % 10 == 0)
