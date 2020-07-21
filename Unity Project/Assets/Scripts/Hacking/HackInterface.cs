@@ -10,36 +10,65 @@ public class HackInterface : MonoBehaviour
     public float holdTime = 2f;
 
     public GameObject particleThrow;
-    public GameObject particlePlayer;
-    public GameObject particleTarget;
     public AudioSource audioFail;
     
-    private Text _text;
-    private Image _progress;
-    private RectTransform _position;
-    private Transform _playerPosition;
-    private Hackable _target;
-    private GameObject _particlePlayer;
-    private GameObject _particleTarget;
-    
+    private Text progress;
+    private Image bar;
+    private RectTransform rect;
+    private Canvas canvas;
+    private Hackable target;
+    private Controller player;
+    private float startTime;
+    private float countTime;
+    private bool held;
+
     void Start()
     {
-        _position = GetComponent<RectTransform>();
-        _text = GetComponentInChildren<Text>(true);
-        _progress = GetComponentInChildren<Image>(true);
+        rect = GetComponent<RectTransform>();
+        progress = GetComponentInChildren<Text>(true);
+        bar = GetComponentInChildren<Image>(true);
+        canvas = GetComponent<Canvas>();
+        canvas.enabled = false;
+    }
 
-        gameObject.SetActive(false);
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire2") && !held)
+        {
+            startTime = Time.time;
+            countTime = startTime;
+
+            FindTarget();
+
+            if (target == null)
+            {
+                audioFail.Play();
+            }
+            else
+            {
+                canvas.enabled = true;
+            }
+        }
+
+        if (Input.GetButton("Fire2") && !held && target != null)
+        {
+            countTime += Time.deltaTime;
+
+            held = SetProgress(countTime, startTime);
+        }
+
+        if (Input.GetButtonUp("Fire2"))
+        {
+            canvas.enabled = false;
+            held = false;
+            target = null;
+        }
     }
 
     void OnGUI()
     {
-        if (_target != null)
-            _position.position = _target.transform.position;
-    }
-
-    public void SetPlayerPosition(Transform transform)
-    {
-        _playerPosition = transform;
+        if (target != null)
+            rect.position = new Vector3(target.transform.position.x, target.transform.position.y + 1f, 0);
     }
 
     public bool SetProgress(float countTime, float startTime)
@@ -47,34 +76,35 @@ public class HackInterface : MonoBehaviour
 
         float counter = (countTime - startTime) / holdTime;
 
-        if (counter > 0 && counter < 1 && _target != null)
+        if (counter > 0 && counter < 1)
         {
-            if (Vector2.Distance(_target.transform.position, _playerPosition.position) <= maxDist)
+            if (Vector2.Distance(target.transform.position, player.transform.position) <= maxDist)
             {
                 int c = (int)(counter * 100);
 
-                _text.text = String.Format("{0:0}", c);
-                _progress.fillAmount = counter;
+                progress.text = String.Format("{0:0}", c);
+                bar.fillAmount = counter;
 
                 if (c % 10 == 0)
                 {
-                    GameObject pt = Instantiate(particleThrow, _playerPosition.position, Quaternion.identity);
-                    pt.transform.LookAt(_target.transform);
-                    pt.GetComponent<Rigidbody2D>().AddForce(pt.transform.forward * 0.1f);
+                    GameObject pt = Instantiate(particleThrow, player.transform.position, Quaternion.identity);
+                    pt.transform.LookAt(target.transform);
+                    pt.transform.position += Vector3.forward * Time.deltaTime;
                     Destroy(pt, 1f);
                 }
             }
             else
             {
-                FinishHacking();
+                canvas.enabled = false;
+                target = null;
             }
         }
 
-        if (countTime > (startTime + holdTime) && _target != null)
+        if (countTime > (startTime + holdTime) && target != null)
         {
-            _target.Hack();
+            target.Hack();
 
-            FinishHacking();
+            target = null;
 
             return true;
         }
@@ -82,51 +112,13 @@ public class HackInterface : MonoBehaviour
         return false;
     }
 
-    public void StartHacking()
-    {
-        FindTarget();
-
-        if (_target == null)
-        {
-            audioFail.Play();
-        }
-        else
-        {
-            _position.position = new Vector3(_target.transform.position.x, _target.transform.position.y + 1, 0);
-
-            _particlePlayer = Instantiate(particlePlayer, _playerPosition.transform);
-            _particleTarget = Instantiate(particleTarget, _target.transform);
-
-            gameObject.SetActive(true);
-        }
-    }
-
-    public void CancelHacking()
-    {
-        gameObject.SetActive(false);
-
-        _target = null;
-
-        Destroy(_particlePlayer);
-        Destroy(_particleTarget);
-    }
-
-    public void FinishHacking()
-    {
-        gameObject.SetActive(false);
-
-        Destroy(_particlePlayer);
-        Destroy(_particleTarget);
-
-        _target = null;
-    }
-
     void FindTarget()
     {
         Hackable[] objs = GameObject.FindObjectsOfType<Hackable>();
+        player = FindObjectOfType<Controller>();
 
         Hackable result = null;
-        Vector3 currentPos = _playerPosition.position;
+        Vector3 currentPos = player.transform.position;
 
         float minDist = Mathf.Infinity;
 
@@ -141,7 +133,7 @@ public class HackInterface : MonoBehaviour
             }
         }
 
-        _target = result;
+        target = result;
     }
 
 }

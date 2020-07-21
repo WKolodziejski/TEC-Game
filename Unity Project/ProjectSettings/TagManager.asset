@@ -48,9 +48,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 4269076179
     locked: 0
@@ -68,4 +65,7 @@ TagManager:
     locked: 0
   - name: Glow
     uniqueID: 2492941207
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
