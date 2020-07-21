@@ -28,6 +28,8 @@ public class Controller : Character
     PolygonCollider2D playerCollider;
     public bool grounded = false;
     public bool platform = false;
+    public bool hacking = false;
+    public bool dead = false;
 
     //Hack variables
     public HackInterface hackInterface;
@@ -69,6 +71,7 @@ public class Controller : Character
 
         if (Input.GetButtonDown("Fire2") && !held)
         {
+            hacking = true;
             startTime = Time.time;
             countTime = startTime;
 
@@ -84,6 +87,7 @@ public class Controller : Character
 
         if (Input.GetButtonUp("Fire2"))
         {
+            hacking = false;
             held = false;
             hackInterface.CancelHacking();
         }

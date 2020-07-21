@@ -39,7 +39,8 @@ public class Animatior_Controller : MonoBehaviour
             animator.SetBool("down",false);
         }
 
-
+        animator.SetBool("hacking",playerController.hacking);
+        animator.SetBool("dead",playerController.dead);
         animator.SetBool("jumping", !(playerController.grounded));
         animator.SetBool("moving",(Input.GetAxis("Horizontal")!= 0f));
     }
