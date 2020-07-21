@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1513144593
-  m_SortingLayer: 3
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1908687593119836587, guid: 510e031c17c5d2e4d86adbbc897669e9,
     type: 3}
@@ -124,7 +124,7 @@ SortingGroup:
   m_GameObject: {fileID: 8806556650047725023}
   m_Enabled: 1
   m_SortingLayerID: 1513144593
-  m_SortingLayer: 3
+  m_SortingLayer: -2
   m_SortingOrder: 0
 --- !u!212 &8562216600404696104
 SpriteRenderer:
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1513144593
-  m_SortingLayer: 3
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 6889437787313274444, guid: 1f8e2742603811f4f97cc71d7c1ac761,
     type: 3}
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee16e96f898a5d4d90b39a12a9550c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4444579974292874691, guid: 27eb6f1707158444ea87798429b419eb, type: 3}
+  bullet: {fileID: 8939655711060777354, guid: 804786880f97fe948bb3d5661a447a77, type: 3}
   fireRate: 1
 --- !u!114 &8483519181288144369
 MonoBehaviour:
@@ -353,5 +353,5 @@ MonoBehaviour:
   hp: 3
   coolDown: 0
   shield: {fileID: 0}
-  popup: {fileID: 0}
+  popup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1, type: 3}
   barrel: {fileID: 6843050030617122200}

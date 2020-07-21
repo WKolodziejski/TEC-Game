@@ -346,7 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   coolDown: 1
-  shield: {fileID: 7504938564569316503, guid: 3a0ed5faf8e5aae46af57f2f670ef7a3, type: 3}
+  shield: {fileID: 182644, guid: 2338bb4e209457a4eb4c5fcab603c545, type: 3}
   popup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1, type: 3}
   speed: 5
   jumpForce: 15
