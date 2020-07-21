@@ -1,35 +1,41 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEditor;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
+using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour //criar uma classe CameraData? não poderia ser um singleton, pois precisaria da orientação como parametro
 {
     public GameObject enemy;
     public enum Orientation { Horizontal, Vertical, Diagonal };
     public Orientation levelOrientation;
-
-
     public float spawnCooldown = 5;
-    Transform cameraTransf;
+    public int enemyLimit = 5;
+    Transform cameraT;
     float nextSpawnTime;
-    float spawnBoundLeft, spawnBoundRight, spawnBoundUp, spawnBoundDown;
+    float spawnMultLeft, spawnMultRight, spawnMultUp, spawnMultDown;
+    private ArrayList enemyList;
+    float[] boundries;
+    private float halfVerSize, halfHorSize; //já instanciadas pra evitar intaciação repetida 
 
-    void Start()
+    void Start() //popular o mapa logo de inicio
     {
-        setCameraPos();
+        enemyList = new ArrayList(enemyLimit);
+        boundries = new float[4];
+        cameraT = Camera.main.transform;
         updateSpawnTime();
-        setBoundries();
+        setSpawnBoundriesMult();
     }
 
-    void Update() //adicionar um limite de inimigos e melhor checagem de spawn 
+    void Update() // checar melhor o lugar do spawn
     {
         nextSpawnTime -= Time.deltaTime;
 
-        if (nextSpawnTime < 0) 
+        if (nextSpawnTime < 0 && enemyList.Count < enemyLimit) 
         {
             Spawn();
         }
@@ -37,8 +43,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        Instantiate(enemy, getSpawnCoord(), Quaternion.identity);
+        enemyList.Add(Instantiate(enemy, getSpawnCoord(), Quaternion.identity));
         updateSpawnTime();
+    }
+
+    public void Remove(GameObject enemy)
+    {
+        enemyList.Remove(enemy);
     }
 
     private void updateSpawnTime()
@@ -48,62 +59,50 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector2 getSpawnCoord()
     {
-        return new Vector2(getSpawnX(), getSpawnY());
+        float fullVerSize = Camera.main.orthographicSize * 2; //getFullVerticalSize
+        float fullHorSize = fullVerSize * (float)Screen.width / (float)Screen.height; //verticalSize*ScreenAspect = fullHorizontalSize
+
+        return new Vector2(cameraT.position.x + Random.Range(spawnMultLeft*fullHorSize, spawnMultRight*fullHorSize), //GetSpawnX
+                           cameraT.position.y + Random.Range(spawnMultDown*fullVerSize, spawnMultUp*fullVerSize));   //GetSpawnY
     }
 
-    private float getSpawnX()
+    private void setSpawnBoundriesMult() //fazer a multiplicação junta caso seja possivel atualizar quando a resolução muda 
     {
-        return Random.Range(cameraTransf.position.x + spawnBoundLeft, cameraTransf.position.y + spawnBoundRight);
-    }
-
-    private float getSpawnY()
-    {
-        return Random.Range(cameraTransf.position.y + spawnBoundDown, cameraTransf.position.y + spawnBoundUp);
-    }
-
-    private void setBoundries() //armazenar apenas os multiplicadores, caso a mudança de resolução se torne um problema
-    {
-        float horizontalSize = getHorizontalSize();
-        float verticalSize = getVerticalSize();
 
         if (levelOrientation == Orientation.Horizontal)
         {
-            spawnBoundLeft = horizontalSize * 0.5f;
-            spawnBoundRight = horizontalSize * 1.5f;
-            spawnBoundDown = verticalSize * -0.5f;
-            spawnBoundUp = verticalSize * 0.5f;
+            spawnMultLeft = 0.5f;
+            spawnMultRight = 1.5f;
+            spawnMultDown = -0.5f;
+            spawnMultUp = 0.5f;
         } else
         {
             if (levelOrientation == Orientation.Vertical)
             {
-                spawnBoundLeft = horizontalSize * -0.5f;
-                spawnBoundRight = horizontalSize * 0.5f;
-                spawnBoundDown = verticalSize * 0.5f;
-                spawnBoundUp = verticalSize * 1.5f;
+                spawnMultLeft = -0.5f;
+                spawnMultRight = 0.5f;
+                spawnMultDown = 0.5f;
+                spawnMultUp = 1.5f;
             } else
             {
-                spawnBoundLeft = horizontalSize * 0.5f;
-                spawnBoundRight = horizontalSize * 1.5f;
-                spawnBoundDown = verticalSize * -0.5f;
-                spawnBoundUp = verticalSize * 1.5f;
+                spawnMultLeft = 0.5f;
+                spawnMultRight = 1.5f;
+                spawnMultDown = -0.5f;
+                spawnMultUp = 1.5f;
             }
         }
     }
 
-    private float getVerticalSize()
+    public float[] getCameraBoundries() 
     {
-        return Camera.main.orthographicSize * 2;
-    }
+        halfVerSize = Camera.main.orthographicSize; 
+        halfHorSize = halfVerSize * (float)Screen.width / (float)Screen.height; 
 
-    private float getHorizontalSize()
-    {
-        float screenAspect = (float)Screen.width / (float)Screen.height; //problema com mudança de resolução 
-        return getVerticalSize() * screenAspect; 
-    }
-
-    private void setCameraPos()
-    {
-        cameraTransf = Camera.main.transform;
+        boundries[0] = cameraT.position.x - halfHorSize; 
+        boundries[1] = cameraT.position.x + halfHorSize;
+        boundries[2] = cameraT.position.y - halfVerSize;
+        boundries[3] = cameraT.position.y + halfVerSize;
+        return boundries;
     }
 
 }
