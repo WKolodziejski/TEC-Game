@@ -43,6 +43,11 @@ public class ThrowerMissile : MonoBehaviour
         {
             Destroy(Instantiate(explosion, gameObject.transform.position, Quaternion.identity), 2f);
             Destroy(gameObject);
+
+            if (collision.CompareTag("Player"))
+            {
+                collision.GetComponent<Controller>().TakeDamage(1);
+            }
         }
     }
 

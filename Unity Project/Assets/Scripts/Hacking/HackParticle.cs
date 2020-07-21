@@ -19,7 +19,7 @@ public class HackParticle : MonoBehaviour
     public void FlyTo(Transform target)
     {
         transform.LookAt(target);
-        GetComponent<Rigidbody2D>().AddForce(transform.forward * .1f);
+        GetComponent<Rigidbody2D>().AddForce(transform.forward * .05f);
     }
 
 }
