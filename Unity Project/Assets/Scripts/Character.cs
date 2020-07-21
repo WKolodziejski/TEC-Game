@@ -27,7 +27,8 @@ public abstract class Character : MonoBehaviour
 
             hp -= damage;
 
-            Instantiate(popup, transform.position, Quaternion.identity, transform).Hit(damage);
+            if (popup != null)
+                Instantiate(popup, transform.position, Quaternion.identity, transform).Hit(damage);
 
             if (hp <= 0)
             {
