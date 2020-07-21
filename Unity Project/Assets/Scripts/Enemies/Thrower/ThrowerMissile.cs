@@ -30,6 +30,7 @@ public class ThrowerMissile : MonoBehaviour
             tail.SetActive(true);
             rb.gravityScale = 0.1f;
             rb.AddForce(Vector3.right * 500f * (transform.parent.transform.position.magnitude >= 0 ? 1 : -1));
+            transform.SetParent(null);
         }
     }
 

@@ -24,7 +24,7 @@ public class Thrower : MonoBehaviour
             {
                 missile.Fire();
                 animator.SetTrigger("Throw");
-                Destroy(gameObject, 0.5f);
+                Destroy(transform.parent.gameObject, 0.5f);
             }
         }
         else
