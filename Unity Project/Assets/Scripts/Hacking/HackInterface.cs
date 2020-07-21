@@ -9,7 +9,7 @@ public class HackInterface : MonoBehaviour
     public float maxDist = 5f;
     public float holdTime = 2f;
 
-    public GameObject particleThrow;
+    public HackParticle particle;
     public AudioSource audioFail;
     
     private Text progress;
@@ -87,10 +87,7 @@ public class HackInterface : MonoBehaviour
 
                 if (c % 10 == 0)
                 {
-                    GameObject pt = Instantiate(particleThrow, player.transform.position, Quaternion.identity);
-                    pt.transform.LookAt(target.transform);
-                    pt.transform.position += Vector3.forward * Time.deltaTime;
-                    Destroy(pt, 1f);
+                    Instantiate(particle, player.hand.position, Quaternion.identity).FlyTo(target.transform);
                 }
             }
             else

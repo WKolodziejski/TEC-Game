@@ -9,7 +9,6 @@ public class Controller : Character
     public float speed = 5f;
     public float jumpForce = 15;
     public BoxCollider2D groundcheck;
-    public Transform tr;
     public Rigidbody2D rb;
     public float horizontalMov;
     float lastJump;
@@ -21,6 +20,7 @@ public class Controller : Character
     public Transform barrelUp;
     public Transform barrelDiagonalUp;
     public Transform barrelDiagonalDown;
+    public Transform hand;
 
     private Transform barrel;
     private Weapon weapon;

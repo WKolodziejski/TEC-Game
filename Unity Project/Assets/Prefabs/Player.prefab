@@ -60,6 +60,36 @@ Transform:
   m_Father: {fileID: 1134803256459682975}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -45, y: 90, z: 90}
+--- !u!1 &1701293767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701293768}
+  m_Layer: 10
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1701293768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701293767}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1134803256459682975}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1924081353
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +220,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1513144593
-  m_SortingLayer: 3
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: -3803441764975500669, guid: c5bb8e80e4aa64e4396c5ffdca98719e,
     type: 3}
@@ -277,6 +307,7 @@ Transform:
   - {fileID: 769633793}
   - {fileID: 479151357}
   - {fileID: 1924081354}
+  - {fileID: 1701293768}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -320,7 +351,6 @@ MonoBehaviour:
   speed: 5
   jumpForce: 15
   groundcheck: {fileID: 1134803256459682970}
-  tr: {fileID: 1134803256459682975}
   rb: {fileID: 1134803256459682974}
   horizontalMov: 0
   fallTime: 0.3
@@ -329,9 +359,11 @@ MonoBehaviour:
   barrelUp: {fileID: 1924081354}
   barrelDiagonalUp: {fileID: 769633793}
   barrelDiagonalDown: {fileID: 479151357}
+  hand: {fileID: 1701293768}
   grounded: 0
   platform: 0
-  hackInterface: {fileID: 0}
+  hacking: 0
+  dead: 0
 --- !u!61 &1134803256459682970
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -399,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee16e96f898a5d4d90b39a12a9550c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4444579974292874691, guid: 27eb6f1707158444ea87798429b419eb, type: 3}
+  bullet: {fileID: 595494354877179255, guid: 27eb6f1707158444ea87798429b419eb, type: 3}
   fireRate: 10
 --- !u!61 &1954176069
 BoxCollider2D:
@@ -438,7 +470,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 40960
+    m_Bits: 106496
   m_RotationalOffset: -90
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0

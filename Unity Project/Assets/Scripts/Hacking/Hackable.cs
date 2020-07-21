@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static HackSceneReference;
 
+[RequireComponent(typeof(Collider2D))]
 public class Hackable : MonoBehaviour
 {
 
