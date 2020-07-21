@@ -13,7 +13,7 @@ public class Animatior_Controller : MonoBehaviour
 
     void Update()
     {
-        if (!playerController.hacking)
+        if (!playerController.hacking || playerController.dead)
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");

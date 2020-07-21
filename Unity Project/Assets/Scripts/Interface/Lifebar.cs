@@ -9,7 +9,7 @@ public class Lifebar : MonoBehaviour
     [Range(0, 3)] public int extra = 3;
     public GameObject lf1, lf2, lf3;
     public RectTransform bar;
-    public Character character;
+    public Controller character;
 
     private Vector3 checkpoint;
 
@@ -40,13 +40,14 @@ public class Lifebar : MonoBehaviour
 
     private IEnumerator IDie()
     {
-        character.gameObject.SetActive(false);
+        //character.gameObject.SetActive(false);
+        character.dead = true;
 
         yield return new WaitForSeconds(1f);
 
+        character.dead = false;
         character.hp = 3;
         character.transform.position = checkpoint;
-        character.gameObject.SetActive(true);
     }
 
     public void SetCheckpoint(float x)

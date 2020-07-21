@@ -42,66 +42,69 @@ public class Controller : Character
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (!dead)
         {
-            hacking = true;
-        }
-
-        if (Input.GetButtonUp("Fire2"))
-        {
-            hacking = false;
-        }
-
-        if (!hacking)
-        {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Fire2"))
             {
-                if (Input.GetAxis("Vertical") < 0)
+                hacking = true;
+            }
+
+            if (Input.GetButtonUp("Fire2"))
+            {
+                hacking = false;
+            }
+
+            if (!hacking)
+            {
+                if (Input.GetButtonDown("Jump"))
                 {
-                    if (platform)
+                    if (Input.GetAxis("Vertical") < 0)
                     {
-                        StartCoroutine(Fall());
+                        if (platform)
+                        {
+                            StartCoroutine(Fall());
+                        }
                     }
+                    else
+                    {
+                        Jump();
+                    }
+
                 }
-                else
+
+                Move(Input.GetAxis("Horizontal"));
+
+                if (Input.GetButton("Fire3"))
                 {
-                    Jump();
+                    weapon.Fire(barrel);
                 }
 
-            }
+                float vertical = Input.GetAxis("Vertical");
+                float horizontal = Input.GetAxis("Horizontal");
 
-            Move(Input.GetAxis("Horizontal"));
-
-            if (Input.GetButton("Fire3"))
-            {
-                weapon.Fire(barrel);
-            }
-
-            float vertical = Input.GetAxis("Vertical");
-            float horizontal = Input.GetAxis("Horizontal");
-
-            if (vertical > 0f)
-            {
-                if (horizontal == 0f)
-                    barrel = barrelUp;
+                if (vertical > 0f)
+                {
+                    if (horizontal == 0f)
+                        barrel = barrelUp;
+                    else
+                        barrel = barrelDiagonalUp;
+                }
+                else if (vertical < 0f)
+                {
+                    if (horizontal == 0f)
+                        barrel = barrelFront;
+                    else
+                        barrel = barrelDiagonalDown;
+                }
                 else
-                    barrel = barrelDiagonalUp;
-            }
-            else if (vertical < 0f)
-            {
-                if (horizontal == 0f)
                     barrel = barrelFront;
-                else
-                    barrel = barrelDiagonalDown;
             }
-            else
-                barrel = barrelFront;
         }
     }
 
     void FixedUpdate()
     {
-        if (!hacking)
+        if (!hacking && !dead)
             transform.position += horizontalMov * Time.deltaTime * speed * Vector3.right;
     }
 
