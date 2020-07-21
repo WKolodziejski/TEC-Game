@@ -25,4 +25,9 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    public bool CanFire()
+    {
+        return (lastCooldown <= Time.time) ? true : false;
+    }
+
 }

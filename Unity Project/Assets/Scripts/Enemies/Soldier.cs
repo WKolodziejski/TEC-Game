@@ -1,13 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-public class Soldier : Infantry //usar variaveis static para padrozinar a classe
+public class Soldier : Infantry //usar variaveis static para padrozinar a classe, no CheckIfMoved checar se essa não é diareção que o player está e simplemente parar até que ele mude de lado ou pular
 {
     public Transform barrel;
     float moveSpeed;
-    float atkCooldown;
     float moveCooldown;
-    float nextAtk;
     float nextMove;
     float followRange;
     float moveCheck;
@@ -27,12 +25,11 @@ public class Soldier : Infantry //usar variaveis static para padrozinar a classe
 
         //locais
         this.moveSpeed = 5f; //setMoveSpeed(5f);
-        setAtkCooldown(0.5f); //usar o cooldown da arma??
+        //setAtkCooldown(0.5f); //usar o cooldown da arma??
         this.moveCooldown = 0.5f; //setMoveCooldown(0.5f);
         this.followRange = 5f; //setFollowRange(5f);
         desiredDir = new Vector3(-moveSpeed * Time.deltaTime, 0f, 0f); //setDesiredDir();
         nextMove = moveCooldown; //setFirstMove();
-        nextAtk = atkCooldown; //setFirstAtk();
         resetMoveCheck();
     }
 
@@ -44,9 +41,8 @@ public class Soldier : Infantry //usar variaveis static para padrozinar a classe
 
     public override void Attack()
     {
-        nextAtk -= Time.deltaTime;
 
-        if (nextAtk < 0) {
+        if (weapon.CanFire()) {
 
             if (playerT.position.x < transform.position.x && desiredDir.x > 0)//SetShootingDir(); //talvez se afastar um pouco antes de poder atirar de novo
             {
@@ -66,7 +62,6 @@ public class Soldier : Infantry //usar variaveis static para padrozinar a classe
 
             weapon.Fire(barrel); //Fire();
 
-            this.nextAtk = UnityEngine.Random.Range(atkCooldown, atkCooldown * 10); //UpdateNextAtk();
             this.nextMove = moveCooldown; //UpdateNextMove();
         }
     }
@@ -93,7 +88,7 @@ public class Soldier : Infantry //usar variaveis static para padrozinar a classe
             if (moveCheck < 0)
             {
 
-                if ((Math.Abs(prevPosition - transform.position.x) < Math.Abs(moveCheckRate * moveSpeed / 2)))
+                if ((Math.Abs(prevPosition - transform.position.x) < Math.Abs(moveCheckRate * moveSpeed / 2))) 
                 {
                     ChangeDesiredDir();
                 }
@@ -120,11 +115,6 @@ public class Soldier : Infantry //usar variaveis static para padrozinar a classe
         moveSpeed = -moveSpeed;
         transform.Rotate(0f, 180f, 0f);
         resetMoveCheck();
-    }
-
-    private void setAtkCooldown(float atkCooldown)
-    {
-        this.atkCooldown = atkCooldown;
     }
 
     private void resetMoveCheck()

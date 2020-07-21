@@ -38,25 +38,25 @@ public class Sniper : Infantry
         float angle = Vector3.Angle(yAxis, playerT.position - transform.position); //getAimingAngle()
         animator.SetFloat("angle", angle);
 
-        if (angle > 0f && angle < 70f) //setBarrel
-        {
-            barrel = barrelDU; 
-        } else {
-            if (angle > 70f && angle < 110f)
+        if (weapon.CanFire()) {
+
+            if (angle > 0f && angle < 70f) //setBarrel
             {
-                barrel = barrelF;
-            } else
-            {
-                barrel = barrelDD;
+                barrel = barrelDU;
+            } else {
+                if (angle > 70f && angle < 110f)
+                {
+                    barrel = barrelF;
+                } else
+                {
+                    barrel = barrelDD;
+                }
             }
+
+            barrel.rotation = Quaternion.Euler(-angle - 90f, (playerT.position.x < transform.position.x) ? 90f : -90f, -90f);
+
+            weapon.Fire(barrel);
         }
-
-        barrel.rotation = Quaternion.Euler(-angle -90f, (playerT.position.x < transform.position.x) ? 90f : -90f ,-90f);
-
-        weapon.Fire(barrel);
     }
-
-
-
 
 }
