@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -31660,66 +31660,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1954176065, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 4444579974292874691, guid: 27eb6f1707158444ea87798429b419eb,
-        type: 3}
-    - target: {fileID: 1954176065, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
-      propertyPath: fireRate
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1954176068, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
-      propertyPath: m_SurfaceArc
-      value: 179
-      objectReference: {fileID: 0}
-    - target: {fileID: 1954176068, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
-      propertyPath: m_SideArc
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1954176069, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1954176069, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
-      propertyPath: m_Size.x
-      value: 1.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 1954176069, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1954176069, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
-      propertyPath: m_UsedByComposite
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
       propertyPath: hackInterface
       value: 
       objectReference: {fileID: 1652937471}
-    - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
-        type: 3}
-      propertyPath: hp
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
-        type: 3}
-      propertyPath: coolDown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
-        type: 3}
-      propertyPath: shield
-      value: 
-      objectReference: {fileID: 7504938564569316503, guid: 3a0ed5faf8e5aae46af57f2f670ef7a3,
-        type: 3}
-    - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
-        type: 3}
-      propertyPath: popup
-      value: 
-      objectReference: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1,
-        type: 3}
     - target: {fileID: 1134803256459682972, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
       propertyPath: m_Name

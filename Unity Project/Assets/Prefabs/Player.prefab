@@ -314,8 +314,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  coolDown: 0
-  shield: {fileID: 0}
+  coolDown: 1
+  shield: {fileID: 7504938564569316503, guid: 3a0ed5faf8e5aae46af57f2f670ef7a3, type: 3}
+  popup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1, type: 3}
   speed: 5
   jumpForce: 15
   groundcheck: {fileID: 1134803256459682970}
@@ -398,8 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee16e96f898a5d4d90b39a12a9550c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6211147568835439466, guid: 27eb6f1707158444ea87798429b419eb, type: 3}
-  fireRate: 5
+  bullet: {fileID: 4444579974292874691, guid: 27eb6f1707158444ea87798429b419eb, type: 3}
+  fireRate: 10
 --- !u!61 &1954176069
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -407,13 +408,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134803256459682972}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0132751465, y: 0.100000024}
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0.100000024}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -424,7 +425,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5467529, y: 1.54}
+  m_Size: {x: 1.49, y: 1.54}
   m_EdgeRadius: 0
 --- !u!251 &1954176068
 PlatformEffector2D:
@@ -441,7 +442,7 @@ PlatformEffector2D:
   m_RotationalOffset: -90
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
-  m_SideArc: 180
+  m_SideArc: 0
