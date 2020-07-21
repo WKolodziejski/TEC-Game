@@ -3443,6 +3443,7 @@ GameObject:
   - component: {fileID: 368875938}
   - component: {fileID: 368875940}
   - component: {fileID: 368875939}
+  - component: {fileID: 368875941}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -3534,6 +3535,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &368875941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368875937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d546c95a47b144a418971a76b3981306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missile: {fileID: 1230274250}
 --- !u!1 &385347008
 GameObject:
   m_ObjectHideFlags: 0
@@ -4029,7 +4043,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 163856, guid: f278121b006e2684f87107121f6aab14, type: 3}
       propertyPath: m_Name
-      value: FlamethrowerYellow
+      value: Tail
+      objectReference: {fileID: 0}
+    - target: {fileID: 163856, guid: f278121b006e2684f87107121f6aab14, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 421264, guid: f278121b006e2684f87107121f6aab14, type: 3}
       propertyPath: m_LocalScale.x
@@ -10572,6 +10590,12 @@ MonoBehaviour:
   - {x: 0.5404744, y: -0.62455606, z: 0}
   - {x: 0.5379238, y: 0.6669264, z: 0}
   - {x: -0.3424754, y: 0.65889406, z: 0}
+--- !u!1 &821765841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 163856, guid: f278121b006e2684f87107121f6aab14,
+    type: 3}
+  m_PrefabInstance: {fileID: 449526058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &821765842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429336, guid: f278121b006e2684f87107121f6aab14,
@@ -22812,7 +22836,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -22830,6 +22854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76a1ba9b600306418c538355755743b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tail: {fileID: 821765841}
 --- !u!1 &1266015514
 GameObject:
   m_ObjectHideFlags: 3
