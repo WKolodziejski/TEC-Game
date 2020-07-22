@@ -32705,7 +32705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed5ceb2a6a42024fb8e5a2af3fd3589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 1424989208}
 --- !u!114 &1902804617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33140,6 +33139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bfb9548f54fffb459231bc91f042b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  w: {fileID: 0}
 --- !u!61 &1994389387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33238,7 +33238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7faee67597b5f4ebc6eeb125b4d852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 1424989208}
 --- !u!114 &1998563892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33567,6 +33566,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
+        type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 1072420094742162731, guid: 46bceafad6e5bdf409ec6fd5e52ddd4d,
+        type: 3}
     - target: {fileID: 1134803256459682972, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
       propertyPath: m_Name
@@ -33627,7 +33632,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1954176065, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
 --- !u!1 &1466783209936700936
 GameObject:

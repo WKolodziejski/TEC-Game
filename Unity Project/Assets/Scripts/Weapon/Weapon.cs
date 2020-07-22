@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
+        tag = transform.parent.tag;
         fireRate = 1 / fireRate;
     }
 

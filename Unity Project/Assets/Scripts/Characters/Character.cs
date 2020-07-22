@@ -25,14 +25,14 @@ public abstract class Character : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
-        //SetWeapon(weaponPrefab);
+        SetWeapon(weaponPrefab);
         InitializeComponents();
     }
 
     //Inicializa componentes específicos
     protected abstract void InitializeComponents();
 
-    private void SetWeapon(Weapon prefab)
+    public void SetWeapon(Weapon prefab)
     {
         if (weapon != null)
             Destroy(weapon.gameObject);
