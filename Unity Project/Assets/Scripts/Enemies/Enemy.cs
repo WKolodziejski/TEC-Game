@@ -21,15 +21,20 @@ public abstract class Enemy : Character
         }
     }
 
-    protected abstract void setTarget();
+    protected void setTarget()
+    {
+        target = FindObjectOfType<Player>().transform;
+    }
 
     protected override void OnDie()
     {
         Destroy(gameObject);
     }
 
-    public void Fire()
+    //public abstract void Fire();
+
+    /*public void Fire()
     {
         weapon.Fire(barrel);
-    }
+    }*/
 }

@@ -13,6 +13,8 @@ public class HackingEnemy : Enemy
     {
         setTarget();
         setWeapon();
+        setNavMash();
+
         barrel = gameObject.transform.Find("Barrel").transform;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -28,15 +30,15 @@ public class HackingEnemy : Enemy
         }
     }
 
-    protected override void setTarget() //talvez funcione só com <Player>, nesse caso passe o código para a classe Enemy
-    {
-        target = FindObjectOfType<HackingPlayer>().transform;
-    }
-
 protected void setNavMash()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+    }
+
+    public void Fire()
+    {
+        weapon.Fire(barrel);
     }
 }

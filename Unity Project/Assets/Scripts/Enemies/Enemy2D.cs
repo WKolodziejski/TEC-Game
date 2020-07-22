@@ -22,11 +22,6 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
 
     public abstract void Attack();
 
-    protected override void setTarget()
-    {
-        target = FindObjectOfType<Player>().transform;
-    }
-
     protected void setEnemySpawner() 
     {
         this.enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
