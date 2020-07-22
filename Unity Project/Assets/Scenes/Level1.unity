@@ -6032,6 +6032,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 1313054830682069115, guid: a0980b63508db6445bbbe93da3c597db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0980b63508db6445bbbe93da3c597db, type: 3}
 --- !u!1 &644354999
@@ -32700,6 +32705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed5ceb2a6a42024fb8e5a2af3fd3589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 1424989208}
 --- !u!114 &1902804617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33134,7 +33140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bfb9548f54fffb459231bc91f042b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  w: {fileID: 733265808357610998, guid: 48923803c6012c34fb23b24b3bb57140, type: 3}
 --- !u!61 &1994389387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33233,6 +33238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7faee67597b5f4ebc6eeb125b4d852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 1424989208}
 --- !u!114 &1998563892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33556,12 +33562,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
+    - target: {fileID: 1134803256279026797, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
-      propertyPath: weaponPrefab
-      value: 
-      objectReference: {fileID: 1072420094742162731, guid: 46bceafad6e5bdf409ec6fd5e52ddd4d,
-        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1134803256459682972, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
       propertyPath: m_Name
@@ -33622,8 +33627,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1954176065, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
 --- !u!1 &1466783209936700936
 GameObject:
@@ -33902,6 +33906,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thrower
       objectReference: {fileID: 0}
+    - target: {fileID: 5093600384743435598, guid: 47355c54329b6ff488fc454562079fef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5093600384743435599, guid: 47355c54329b6ff488fc454562079fef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34139,12 +34148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297f115dfc7bab64eb1fb1c16f0533ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  coolDown: 0
-  shield: {fileID: 0}
-  popup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1, type: 3}
   weaponPrefab: {fileID: 0}
-  barrel: {fileID: 5192865113514023394}
+  hp: 100
+  movementSpeed: 5
+  damageCooldown: 0
+  moveCooldown: 0
+  followRange: 0
 --- !u!4 &8627377116523063720
 Transform:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class HackInterface : MonoBehaviour
     private RectTransform rect;
     private Canvas canvas;
     private Hackable target;
-    private Controller player;
+    private Player2D player;
     private float startTime;
     private float countTime;
     private bool held;
@@ -109,7 +109,7 @@ public class HackInterface : MonoBehaviour
     void FindTarget()
     {
         Hackable[] objs = GameObject.FindObjectsOfType<Hackable>();
-        player = FindObjectOfType<Controller>();
+        player = FindObjectOfType<Player2D>();
 
         Hackable result = null;
         Vector3 currentPos = player.transform.position;

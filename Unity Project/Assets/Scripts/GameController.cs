@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 
-    public Controller player;
+    public Player2D player;
     public CinemachineVirtualCamera cam;
     public CinemachineConfiner confiner;
 
@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
         confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Grid").GetComponent<PolygonCollider2D>();
     }
 
-    private void SetupPlayer(Controller p)
+    private void SetupPlayer(Player2D p)
     {
 
         lifebar.SetPlayer(p);

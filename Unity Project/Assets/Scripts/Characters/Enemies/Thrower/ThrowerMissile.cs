@@ -46,7 +46,7 @@ public class ThrowerMissile : MonoBehaviour
 
             if (collision.CompareTag("Player"))
             {
-                collision.GetComponent<Controller>().TakeDamage(1);
+                collision.GetComponent<Player2D>().TakeDamage(1);
             }
         }
     }

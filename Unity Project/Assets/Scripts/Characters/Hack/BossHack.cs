@@ -5,29 +5,23 @@ using UnityEngine;
 using UnityEngine.AI;
 using static HackSceneReference;
 
-public class HackingBoss : Character
+public class BossHack : EnemyHack
 {
+
+    public GameObject shield;
+    public GameObject shieldExp;
 
     public float rotationSpeed = 5f;
     public Transform barrel1;
     public Transform barrel2;
     public Transform barrelS;
-    //public GameObject shield;
-    public GameObject shieldExp;
-
-    private NavMeshAgent agent;
-    private Transform player;
-    private Weapon weapon;
+    
     private Action GetDestination;
     private Vector3 destination;
 
-    void Start()
+    protected override void InitializeComponents()
     {
-        player = FindObjectOfType<HackingPlayer>().transform;
-        weapon = GetComponent<Weapon>();
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        base.InitializeComponents();
 
         GetDestination += GetRunawayPath;
 
@@ -50,7 +44,7 @@ public class HackingBoss : Character
 
         
     }
-
+    
     public void SetAgressive()
     {
         GetDestination += GetAgressivePath;
@@ -58,13 +52,13 @@ public class HackingBoss : Character
 
     private void GetAgressivePath()
     {
-        destination = player.position;
+        destination = GetTarget().position;
     }
 
     private void GetRunawayPath()
     {        
-        if (Vector3.Distance(transform.position, player.position) < 5f)
-            destination = transform.position + ((transform.position - player.position) * 2); //TESTAR ESSE 2
+        if (Vector3.Distance(transform.position, GetTarget().position) < 5f)
+            destination = transform.position + ((transform.position - GetTarget().position) * 2); //TESTAR ESSE 2
     }
 
     public void DisableShield()
@@ -73,11 +67,6 @@ public class HackingBoss : Character
             //shieldExp.SetActive(true);
 
         shield.SetActive(false);
-    }
-
-    protected override void OnDie()
-    {
-        Destroy(gameObject);
     }
 
 }

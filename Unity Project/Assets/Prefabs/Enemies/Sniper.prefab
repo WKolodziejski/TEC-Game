@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 6940544834418335464}
   - component: {fileID: 8897313512609843997}
   - component: {fileID: 2641348538530134298}
+  - component: {fileID: 4467133996987040684}
   m_Layer: 10
   m_Name: Sniper
   m_TagString: Enemy
@@ -225,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 0
-  particleSuccess: {fileID: 130424, guid: 30db3cda4a3494748a9d6bbd6655a9aa, type: 3}
+  particleSuccess: {fileID: 119060, guid: dced2fc32a8df41498ec050e598128a1, type: 3}
 --- !u!114 &2641348538530134298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,13 +239,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0901384929006488e45532e22569cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 0}
   hp: 3
-  coolDown: 0
-  shield: {fileID: 0}
-  popup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1, type: 3}
+  movementSpeed: 5
+  damageCooldown: 0
   barrelF: {fileID: 8541637474504059057}
   barrelDU: {fileID: 3951181000761226502}
   barrelDD: {fileID: 1572116377941549946}
+--- !u!95 &4467133996987040684
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922385192120482674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4159693506560343040
 GameObject:
   m_ObjectHideFlags: 0
