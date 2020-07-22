@@ -1131,28 +1131,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 421fd769c5dcc944ca9f88e6410ef7e5, type: 3}
---- !u!1 &887242627 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7760883126543244773, guid: 271402125fe05664e81ed92e53a60a4f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1297257060}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &887242630
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887242627}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.2
 --- !u!4 &941338607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1772240176048543166, guid: 0efa90b577e64cf42a1338c72e275bef,
@@ -2286,46 +2264,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2721095444714237028, guid: 271402125fe05664e81ed92e53a60a4f,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 595494354877179255, guid: 27eb6f1707158444ea87798429b419eb,
-        type: 3}
-    - target: {fileID: 5841819204698253425, guid: 271402125fe05664e81ed92e53a60a4f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5841819204698268417, guid: 271402125fe05664e81ed92e53a60a4f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5841819204698450739, guid: 271402125fe05664e81ed92e53a60a4f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5841819204698465665, guid: 271402125fe05664e81ed92e53a60a4f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7760883126543244773, guid: 271402125fe05664e81ed92e53a60a4f,
         type: 3}
       propertyPath: m_Name
       value: HackingPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760883126543244773, guid: 271402125fe05664e81ed92e53a60a4f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7760883126543244775, guid: 271402125fe05664e81ed92e53a60a4f,
-        type: 3}
-      propertyPath: hp
-      value: 9999999
       objectReference: {fileID: 0}
     - target: {fileID: 7760883126543244795, guid: 271402125fe05664e81ed92e53a60a4f,
         type: 3}
@@ -2382,13 +2324,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7760883127536143485, guid: 271402125fe05664e81ed92e53a60a4f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1933600758357232667, guid: 271402125fe05664e81ed92e53a60a4f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 271402125fe05664e81ed92e53a60a4f, type: 3}
 --- !u!1 &1414649532
 GameObject:
