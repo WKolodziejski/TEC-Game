@@ -5,12 +5,14 @@ using UnityEngine;
 
 public abstract class Infantry : Character //TODO: pular, outros inimigos, mudar de facção, limpar as funções
 {
+
+    public Weapon weaponPrefab;
+
     protected Transform playerT;
     protected SpriteRenderer sprite;
     protected Animator animator;
     protected Weapon weapon;
     protected EnemySpawner enemySpawner;
-
 
     protected delegate void AttackAction();
     protected AttackAction attackAction;

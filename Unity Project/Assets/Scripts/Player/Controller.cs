@@ -16,6 +16,7 @@ public class Controller : Character
     public float jumpLock = 0.6f;
 
     //Weapon
+    public Weapon weaponPrefab;
     public Transform barrelFront;
     public Transform barrelUp;
     public Transform barrelDiagonalUp;
@@ -24,7 +25,7 @@ public class Controller : Character
 
     private Transform barrel;
     private Weapon weapon;
-
+    
     public BoxCollider2D playerCollider;
     public bool grounded = false;
     public bool platform = false;
@@ -36,7 +37,13 @@ public class Controller : Character
         /*tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         groundcheck = GetComponent<BoxCollider2D>();*/
-        weapon = GetComponent<Weapon>();
+        //weapon = GetComponent<Weapon>();
+        SetWeapon(weaponPrefab);
+    }
+
+    public void SetWeapon(Weapon w)
+    {
+        weapon = Instantiate(w, transform);
     }
 
     void Update()

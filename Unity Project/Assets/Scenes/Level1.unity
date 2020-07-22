@@ -6324,6 +6324,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sniper
       objectReference: {fileID: 0}
+    - target: {fileID: 3922385192120482674, guid: 64038c9f61d667541b12cfecbe7003f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64038c9f61d667541b12cfecbe7003f0, type: 3}
 --- !u!1 &681617840
@@ -14196,7 +14201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 156.33017, y: -1.1082366, z: -10}
+  m_LocalPosition: {x: 156.3301, y: -1.1082366, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14446,6 +14451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Soldier (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068708769799894922, guid: 3049dcdabcff02543a0db1fa06674975,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3049dcdabcff02543a0db1fa06674975, type: 3}
@@ -32431,7 +32441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818723414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 156.33017, y: -1.1082366, z: -10}
+  m_LocalPosition: {x: 156.3301, y: -1.1082366, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1266015515}
@@ -32690,7 +32700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed5ceb2a6a42024fb8e5a2af3fd3589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 1424989208}
 --- !u!114 &1902804617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33223,7 +33232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7faee67597b5f4ebc6eeb125b4d852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 1424989208}
 --- !u!114 &1998563892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33547,6 +33555,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
+        type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 1072420094742162731, guid: 46bceafad6e5bdf409ec6fd5e52ddd4d,
+        type: 3}
     - target: {fileID: 1134803256459682972, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
       propertyPath: m_Name
@@ -33607,7 +33621,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1954176065, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
 --- !u!1 &1466783209936700936
 GameObject:
@@ -34127,6 +34142,7 @@ MonoBehaviour:
   coolDown: 0
   shield: {fileID: 0}
   popup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1, type: 3}
+  weaponPrefab: {fileID: 0}
   barrel: {fileID: 5192865113514023394}
 --- !u!4 &8627377116523063720
 Transform:

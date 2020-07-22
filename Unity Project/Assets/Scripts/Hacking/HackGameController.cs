@@ -20,12 +20,9 @@ public class HackGameController : MonoBehaviour
    
     void Start()
     {
-        //DEBUG:
-        FindObjectOfType<HackSceneReference>().difficulty = EDifficulty.NORMAL;
+        //EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
 
-        EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
-
-        switch (difficulty)
+        switch (EDifficulty.NORMAL)
         {
             case EDifficulty.EASY:
                 lEASY.SetActive(true);

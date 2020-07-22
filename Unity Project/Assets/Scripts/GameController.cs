@@ -28,8 +28,6 @@ public class GameController : MonoBehaviour
 
         while (!load.isDone)
         {
-            Debug.Log(load.progress);
-
             yield return null;
         }
 
@@ -71,7 +69,6 @@ public class GameController : MonoBehaviour
 
     public void SetCheckpoint(Vector3 position)
     {
-        Debug.Log(position);
         checkpoint = position;
     }
 

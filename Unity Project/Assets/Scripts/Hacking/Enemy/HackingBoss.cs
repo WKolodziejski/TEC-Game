@@ -31,8 +31,8 @@ public class HackingBoss : Character
 
         GetDestination += GetRunawayPath;
 
-        if (FindObjectOfType<HackSceneReference>().GetDifficulty() == EDifficulty.EASY)
-            shield.SetActive(false);
+        //if (FindObjectOfType<HackSceneReference>().GetDifficulty() == EDifficulty.EASY)
+            //shield.SetActive(false);
     }
 
     void FixedUpdate()
@@ -69,8 +69,8 @@ public class HackingBoss : Character
 
     public void DisableShield()
     {
-        if (FindObjectOfType<HackSceneReference>().GetDifficulty() != EDifficulty.EASY)
-            shieldExp.SetActive(true);
+        //if (FindObjectOfType<HackSceneReference>().GetDifficulty() != EDifficulty.EASY)
+            //shieldExp.SetActive(true);
 
         shield.SetActive(false);
     }
