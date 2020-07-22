@@ -44,6 +44,7 @@ public class Controller : Character
     public void SetWeapon(Weapon w)
     {
         weapon = Instantiate(w, transform);
+        weapon.tag = tag;
     }
 
     void Update()
