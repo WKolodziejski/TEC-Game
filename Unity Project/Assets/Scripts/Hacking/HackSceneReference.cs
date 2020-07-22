@@ -1,16 +1,70 @@
-﻿using System;
+﻿using Cinemachine;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
-public class HackSceneReference : Singleton<HackSceneReference>
+public class HackSceneReference : MonoBehaviour
 {
-    protected HackSceneReference() { }
+    //protected HackSceneReference() { }
+
+    public CinemachineVirtualCamera cam;
+    public PlayableDirector transitionEnter;
+    public PlayableDirector transitionReturn;
 
     private GameObject[] objs;
     private bool isHacking;
-    public void EnterHackGame(EDifficulty difficulty)
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void Enter(Transform target, EDifficulty difficulty)
+    {
+        Debug.Log("Entering...");
+
+        Time.timeScale = 0.1f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+
+        cam.LookAt = target;
+        cam.Follow = target;
+        transitionEnter.Play();
+
+        StartCoroutine(IEnter(difficulty));
+    }
+
+    private IEnumerator IEnter(EDifficulty difficulty)
+    {
+        yield return new WaitForSeconds(1.5f * Time.timeScale);
+
+        EnterHackGame(difficulty);
+    }
+
+    public void Return(bool won)
+    {
+        transitionReturn.Play();
+
+        StartCoroutine(IReturn(won));
+    }
+
+    private IEnumerator IReturn(bool won)
+    {
+        Debug.Log("Entering...");
+
+        yield return new WaitForSeconds(1f * Time.timeScale);
+
+        ReturnHackGame(won);
+
+        cam.Follow = null;
+        cam.LookAt = null;
+
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
+    }
+
+    private void EnterHackGame(EDifficulty difficulty)
     {
         if (!isHacking)
         {
@@ -36,7 +90,7 @@ public class HackSceneReference : Singleton<HackSceneReference>
         }
     }
 
-    public void ReturnHackGame(bool won)
+    private void ReturnHackGame(bool won)
     {
         if (isHacking)
         {

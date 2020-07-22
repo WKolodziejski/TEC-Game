@@ -21,13 +21,14 @@ public class Hackable : MonoBehaviour
         {
             isHacked = true;
 
-            portal = Instantiate(particleSuccess, transform.position, Quaternion.identity, transform);
+            if (particleSuccess != null)
+                portal = Instantiate(particleSuccess, transform.position, Quaternion.identity, transform);
 
-            FindObjectOfType<HackEnterController>().Enter(transform, difficulty);
+            FindObjectOfType<HackSceneReference>().Enter(transform, difficulty);
         }
         else
         {
-            action();
+            action?.Invoke();
         }
     }
 
@@ -35,8 +36,6 @@ public class Hackable : MonoBehaviour
     {
         if (isHacked)
         {
-            Debug.Log(HackSceneReference.Instance.Won());
-
             Destroy(portal, 1f);
 
             //TODO: se for inimigo: matar

@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        SceneManager.LoadSceneAsync("TESTE", LoadSceneMode.Additive);
+        //SceneManager.LoadSceneAsync("TESTE", LoadSceneMode.Additive);
         lifebar = FindObjectOfType<Lifebar>();
     }
 

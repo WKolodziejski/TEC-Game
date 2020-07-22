@@ -21,9 +21,9 @@ public class HackGameController : MonoBehaviour
     void Start()
     {
         //DEBUG:
-        HackSceneReference.Instance.difficulty = EDifficulty.NORMAL;
+        FindObjectOfType<HackSceneReference>().difficulty = EDifficulty.NORMAL;
 
-        EDifficulty difficulty = HackSceneReference.Instance.GetDifficulty();
+        EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
 
         switch (difficulty)
         {
@@ -118,7 +118,7 @@ public class HackGameController : MonoBehaviour
 
         yield return new WaitForSeconds(1f * Time.timeScale);
 
-        FindObjectOfType<HackReturnController>().Return(won);
+        FindObjectOfType<HackSceneReference>().Return(won);
     }
 
 }
