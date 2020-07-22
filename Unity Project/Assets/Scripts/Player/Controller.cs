@@ -25,7 +25,7 @@ public class Controller : Character
     private Transform barrel;
     private Weapon weapon;
 
-    PolygonCollider2D playerCollider;
+    public BoxCollider2D playerCollider;
     public bool grounded = false;
     public bool platform = false;
     public bool hacking = false;
@@ -36,7 +36,6 @@ public class Controller : Character
         /*tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         groundcheck = GetComponent<BoxCollider2D>();*/
-        playerCollider = GetComponent<PolygonCollider2D>();
         weapon = GetComponent<Weapon>();
     }
 
