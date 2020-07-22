@@ -80,6 +80,8 @@ public abstract class Character : MonoBehaviour
         onDie?.Invoke();
 
         animator.SetTrigger("OnDie");
+
+        //tem q fazer o destroy()
     }
 
     protected virtual void OnDamage(float damage)

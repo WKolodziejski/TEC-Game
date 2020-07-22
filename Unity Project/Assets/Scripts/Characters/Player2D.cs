@@ -20,7 +20,6 @@ public class Player2D : Character
     private bool platform;
     private bool hacking;
 
-    //Weapon
     public Transform barrelFront;
     public Transform barrelUp;
     public Transform barrelDiagonalUp;
