@@ -5,18 +5,18 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
 
-    private Lifebar lifebar;
+    private GameController gameController;
     
     void Start()
     {
-        lifebar = FindObjectOfType<Lifebar>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            lifebar.SetCheckpoint(collision.bounds.center.x);
+            gameController.SetCheckpoint(collision.bounds.center);
         }
     }
 

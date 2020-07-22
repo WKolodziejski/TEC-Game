@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Thrower : MonoBehaviour
+public class Thrower : Character
 {
 
     public ThrowerMissile missile;
@@ -31,6 +31,11 @@ public class Thrower : MonoBehaviour
         {
             player = FindObjectOfType<Controller>().transform;
         }
+    }
+
+    protected override void OnDie()
+    {
+
     }
 
 }

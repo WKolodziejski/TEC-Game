@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour
 {
-    public void NewGame(){
-        SceneManager.LoadScene("Level1",LoadSceneMode.Single);
+
+    public void NewGame()
+    {
+        SceneManager.LoadSceneAsync("MainScene", LoadSceneMode.Single);
     }
-    public void QuitGame(){
+
+    public void QuitGame()
+    {
         Debug.Log("QUIT");
         Application.Quit();
     }
+
 }

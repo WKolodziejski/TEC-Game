@@ -12,11 +12,18 @@ public abstract class Character : MonoBehaviour
     public DamagePopup popup;
 
     private Action onDie;
+    private Action onDamage;
     private float lastCooldown;
+    private bool isDead;
 
     public void SetOnDieListener(Action onDie)
     {
         this.onDie = onDie;
+    }
+
+    public void SetOnDamageAction(Action onDamage)
+    {
+        this.onDamage = onDamage;
     }
 
     public void TakeDamage(float damage)
@@ -27,13 +34,14 @@ public abstract class Character : MonoBehaviour
 
             hp -= damage;
 
+            onDamage?.Invoke();
+
             if (popup != null)
                 Instantiate(popup, transform.position, Quaternion.identity, transform).Hit(damage);
 
             if (hp <= 0)
             {
-                onDie?.Invoke();
-                OnDie();
+                Kill();
             }
             else
             {
@@ -43,10 +51,16 @@ public abstract class Character : MonoBehaviour
         }
     }
 
-    public void InstaKill()
+    public void Kill()
     {
-        onDie?.Invoke();
-        OnDie();
+        if (!isDead)
+        {
+            hp = 0;
+            isDead = true;
+            onDamage?.Invoke();
+            onDie?.Invoke();
+            OnDie();
+        }
     }
 
     protected abstract void OnDie();

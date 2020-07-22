@@ -2,57 +2,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Lifebar : MonoBehaviour
 {
 
-    [Range(0, 3)] public int extra = 3;
     public GameObject lf1, lf2, lf3;
-    public RectTransform bar;
-    public Controller character;
+    public Image bar;
 
-    private Vector3 checkpoint;
+    private bool animating;
 
-    void Start()
+    public void SetExtraLifes(int l)
     {
-        character.SetOnDieListener(() =>
+        lf1.SetActive(l >= 1);
+        lf2.SetActive(l >= 2);
+        lf3.SetActive(l >= 3);
+    }
+
+    public void SetPlayer(Controller c)
+    {
+        c.SetOnDamageAction(() =>
         {
-            extra--;
-            ExtraLifes();
-            StartCoroutine(IDie());
+            if (animating)
+                StopAllCoroutines();
+
+            StartCoroutine(IAnim(c.hp / 3));
         });
+
+        if (animating)
+            StopAllCoroutines();
+
+        StartCoroutine(IAnim(c.hp / 3));
     }
 
-    void Update()
+    private IEnumerator IAnim(float hp)
     {
-        bar.localPosition = new Vector3((character.hp / 3f * 220f) - 220f, bar.localPosition.y, bar.localPosition.y);
-    }
+        animating = true;
 
-    private void ExtraLifes()
-    {
-        lf1.SetActive(extra >= 1);
-        lf2.SetActive(extra >= 2);
-        lf3.SetActive(extra >= 3);
+        if (bar.fillAmount < hp)
+        {
+            while (bar.fillAmount < hp)
+            {
+                bar.fillAmount += 0.05f;
 
-        //if (n == 0)
-            //GAMEOVER
-    }
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
+        else
+        {
+            while (bar.fillAmount > hp)
+            {
+                bar.fillAmount -= 0.05f;
 
-    private IEnumerator IDie()
-    {
-        //character.gameObject.SetActive(false);
-        character.dead = true;
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
 
-        yield return new WaitForSeconds(1f);
-
-        character.dead = false;
-        character.hp = 3;
-        character.transform.position = checkpoint;
-    }
-
-    public void SetCheckpoint(float x)
-    {
-        checkpoint = new Vector3(x, 5, 0);
+        animating = false;
     }
 
 }

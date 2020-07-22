@@ -165,7 +165,8 @@ public class Controller : Character
 
     protected override void OnDie()
     {
-
+        dead = true;
+        Destroy(gameObject, 1f);
     }
 
 }
