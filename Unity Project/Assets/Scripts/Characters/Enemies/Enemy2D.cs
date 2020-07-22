@@ -10,14 +10,16 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
     protected delegate void AttackAction();
     protected AttackAction attackAction;
 
+    //esse cu não deixa usar InitializeComponents() em abstratct!!!
+
     protected void CanAttack()
     {
-        /*float[] boundries = enemySpawner.getCameraBoundries();
+        float[] boundries = enemySpawner.getCameraBoundries();
         if (transform.position.x > boundries[0] && transform.position.x < boundries[1] &&
             transform.position.y > boundries[2] && transform.position.y < boundries[3])
         {
             attackAction = Attack;
-        }*/
+        }
     }
 
     public abstract void Attack();
@@ -27,4 +29,9 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
         enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
     }
 
+    protected override void OnDie()
+    {
+        enemySpawner.Remove(gameObject);
+        Destroy(gameObject);
+    }
 }

@@ -94,10 +94,8 @@ GameObject:
   - component: {fileID: 3375257758416616503}
   - component: {fileID: 8781941532251957148}
   - component: {fileID: 5521709443296456996}
-  - component: {fileID: 6940544834418335464}
   - component: {fileID: 8897313512609843997}
   - component: {fileID: 2641348538530134298}
-  - component: {fileID: 4467133996987040684}
   m_Layer: 10
   m_Name: Sniper
   m_TagString: Enemy
@@ -199,20 +197,6 @@ PolygonCollider2D:
       - {x: 0.33, y: -0.66}
       - {x: 0.33, y: 0.625}
       - {x: -0.33, y: 0.625}
---- !u!114 &6940544834418335464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3922385192120482674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee16e96f898a5d4d90b39a12a9550c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 8939655711060777354, guid: 804786880f97fe948bb3d5661a447a77, type: 3}
-  fireRate: 1
 --- !u!114 &8897313512609843997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,32 +223,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0901384929006488e45532e22569cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 8833496160627859498, guid: 089083774a933124dbd5f90372d3aac0,
+    type: 3}
   hp: 3
   movementSpeed: 5
   damageCooldown: 0
   barrelF: {fileID: 8541637474504059057}
   barrelDU: {fileID: 3951181000761226502}
   barrelDD: {fileID: 1572116377941549946}
---- !u!95 &4467133996987040684
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3922385192120482674}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4159693506560343040
 GameObject:
   m_ObjectHideFlags: 0

@@ -264,7 +264,6 @@ GameObject:
   - component: {fileID: 1134803256459682974}
   - component: {fileID: 1134803256459682971}
   - component: {fileID: 1134803256459682970}
-  - component: {fileID: 1954176065}
   - component: {fileID: 1954176068}
   - component: {fileID: 3923419496403882210}
   - component: {fileID: 2782826564122050973}
@@ -328,27 +327,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05830015e8f63242a3b1b219457f225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 1072420094742162731, guid: 46bceafad6e5bdf409ec6fd5e52ddd4d,
+    type: 3}
   hp: 10000
-  popup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1, type: 3}
-  coolDown: 1
-  shield: {fileID: 182644, guid: 2338bb4e209457a4eb4c5fcab603c545, type: 3}
-  speed: 5
-  jumpForce: 15
+  movementSpeed: 5
+  damageCooldown: 0
+  playerCollider: {fileID: 3923419496403882210}
   groundcheck: {fileID: 1134803256459682970}
-  rb: {fileID: 1134803256459682974}
-  horizontalMov: 0
   fallTime: 0.3
   jumpLock: 0.6
+  jumpForce: 15
   barrelFront: {fileID: 2009349151}
   barrelUp: {fileID: 1924081354}
   barrelDiagonalUp: {fileID: 769633793}
   barrelDiagonalDown: {fileID: 479151357}
   hand: {fileID: 1701293768}
-  playerCollider: {fileID: 3923419496403882210}
-  grounded: 0
-  platform: 0
-  hacking: 0
-  dead: 0
 --- !u!61 &1134803256459682970
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -375,20 +368,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.06}
   m_EdgeRadius: 0
---- !u!114 &1954176065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134803256459682972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee16e96f898a5d4d90b39a12a9550c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 595494354877179255, guid: 27eb6f1707158444ea87798429b419eb, type: 3}
-  fireRate: 10
 --- !u!251 &1954176068
 PlatformEffector2D:
   m_ObjectHideFlags: 0

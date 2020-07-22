@@ -4,10 +4,7 @@ using UnityEngine;
 
 public abstract class Enemy : Character
 {
-
-    protected Transform barrel;
-
-    private Transform target;
+    protected Transform target;
 
     protected Transform GetTarget()
     {

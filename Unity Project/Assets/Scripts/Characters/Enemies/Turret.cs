@@ -18,8 +18,8 @@ public class Turret : Enemy2D //criar classe de tiro "complexo"
     protected override void InitializeComponents()
     {
         SetEnemySpawner();
-        attackAction = CanAttack;
         yAxis = new Vector3(0f, 1f, 0f);
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()

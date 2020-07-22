@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6843050030617122200}
   - component: {fileID: 8119672573953874549}
   m_Layer: 10
-  m_Name: Barrel F
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,10 +208,8 @@ GameObject:
   - component: {fileID: 2695718001892259389}
   - component: {fileID: 8235654493098637720}
   - component: {fileID: 7247168589398661086}
-  - component: {fileID: 8320148373235539858}
   - component: {fileID: 8483519181288144369}
   - component: {fileID: 2778196925352573742}
-  - component: {fileID: 6456172921560485829}
   m_Layer: 10
   m_Name: Soldier
   m_TagString: Enemy
@@ -311,20 +309,6 @@ PolygonCollider2D:
       - {x: 0.33, y: -0.66}
       - {x: 0.33, y: 0.625}
       - {x: -0.33, y: 0.625}
---- !u!114 &8320148373235539858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9068708769799894922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee16e96f898a5d4d90b39a12a9550c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 8939655711060777354, guid: 804786880f97fe948bb3d5661a447a77, type: 3}
-  fireRate: 1
 --- !u!114 &8483519181288144369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,28 +335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 297f115dfc7bab64eb1fb1c16f0533ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 8187958245616858976, guid: 013f07f7c371a0c40adda8850991d0e4,
+    type: 3}
   hp: 3
   movementSpeed: 5
   damageCooldown: 0
-  moveCooldown: 0
-  followRange: 0
---- !u!95 &6456172921560485829
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9068708769799894922}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  moveCooldown: 0.5
+  followRange: 5

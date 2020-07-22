@@ -6,6 +6,7 @@ public abstract class Character : MonoBehaviour
 {
 
     public Weapon weaponPrefab;
+
     public float hp = 3f;
     public float movementSpeed = 5f;
     public float damageCooldown = 0f;
@@ -13,7 +14,8 @@ public abstract class Character : MonoBehaviour
     protected Weapon weapon;
     protected Animator animator;
     protected Rigidbody2D rb;
-    
+    protected Transform barrel;
+
     private Action onDie;
     private Action onDamage;
     private float lastCooldown;
@@ -24,6 +26,7 @@ public abstract class Character : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        barrel = gameObject.transform.Find("Barrel");
 
         SetWeapon(weaponPrefab);
         InitializeComponents();

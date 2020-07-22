@@ -19,6 +19,7 @@ public class Sniper : Enemy2D
         SetEnemySpawner();
         attackAction = CanAttack;
         yAxis = new Vector3(0f, 1f, 0f);
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()

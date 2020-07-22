@@ -6,7 +6,6 @@ public class PlayerHack : Character
 {
 
     public float turnSpeed = 5f;
-    public Transform barrel;
 
     private float angle = 90;
     private Vector2 movement;

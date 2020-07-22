@@ -26,8 +26,6 @@ public class Player2D : Character
     public Transform barrelDiagonalDown;
     public Transform hand;
 
-    private Transform barrel;
-
     protected override void InitializeComponents()
     {
         animator = GetComponentInChildren<Animator>();
