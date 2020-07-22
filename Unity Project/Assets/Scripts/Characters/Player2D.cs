@@ -45,6 +45,8 @@ public class Player2D : Character
         if (Input.GetButtonUp("Fire2"))
             hacking = false;
 
+        //Isso aqui tem q arrumar pq ele n atualiza a animação ao segurar h
+
         if (hacking)
             return;
 
