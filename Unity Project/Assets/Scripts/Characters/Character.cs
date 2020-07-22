@@ -79,6 +79,7 @@ public abstract class Character : MonoBehaviour
     {
         onDie?.Invoke();
 
+        animator.SetBool("dead", isDead);
         animator.SetTrigger("OnDie");
 
         //tem q fazer o destroy()
