@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : Character
+public class Controller : Player2D
 {
+    float horizontal; //animation_controller
+    float vertical;
+    Vector3 scale;
 
-    public float speed = 5f;
     public float jumpForce = 15;
     public BoxCollider2D groundcheck;
     public Rigidbody2D rb;
@@ -23,7 +25,6 @@ public class Controller : Character
     public Transform hand;
 
     private Transform barrel;
-    private Weapon weapon;
 
     public BoxCollider2D playerCollider;
     public bool grounded = false;
@@ -36,12 +37,19 @@ public class Controller : Character
         /*tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         groundcheck = GetComponent<BoxCollider2D>();*/
-        weapon = GetComponent<Weapon>();
+        SetAnimator();
+        setWeapon();
     }
 
     void Update()
     {
-        if (!dead)
+        if (!hacking || dead) //animation_controller
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+        }
+
+        if (!dead) //controller
         {
             if (Input.GetButtonDown("Fire2"))
             {
@@ -103,8 +111,40 @@ public class Controller : Character
 
     void FixedUpdate()
     {
-        if (!hacking && !dead)
+        if (!hacking && !dead) //controller
             transform.position += horizontalMov * Time.deltaTime * speed * Vector3.right;
+
+        if (horizontal != 0f) //animation_controller
+        {
+            scale.y = horizontal > 0f ? 0 : 180;
+        }
+
+        transform.localEulerAngles = scale;
+
+        if (vertical != 0)
+        {
+            if (vertical > 0f)
+            {
+                animator.SetBool("up", true);
+                animator.SetBool("down", false);
+            }
+            else
+            {
+                animator.SetBool("up", false);
+                animator.SetBool("down", true);
+            }
+        }
+        else
+        {
+            animator.SetBool("up", false);
+            animator.SetBool("down", false);
+        }
+
+        animator.SetBool("hacking", hacking);
+        animator.SetBool("dead", dead);
+        animator.SetBool("jumping", !(grounded));
+        animator.SetBool("moving", (Input.GetAxis("Horizontal") != 0f));
+
     }
 
     void Jump()
@@ -123,12 +163,12 @@ public class Controller : Character
 
     void Move(float input)
     {
-        horizontalMov = input;  
+        horizontalMov = input;
     }
 
     private void OnTriggerStay2D(Collider2D collider)
     {
-       if(JumpCooldown())
+        if (JumpCooldown())
         {
             if (collider.tag == "Ground")
             {
@@ -139,7 +179,7 @@ public class Controller : Character
                 platform = true;
                 grounded = true;
             }
-       }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
@@ -154,7 +194,7 @@ public class Controller : Character
             grounded = false;
         }
     }
-    
+
     public IEnumerator Fall()
     {
         playerCollider.enabled = false;

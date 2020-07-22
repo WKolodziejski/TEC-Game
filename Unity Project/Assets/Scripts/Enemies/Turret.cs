@@ -5,9 +5,8 @@ using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
-public class Turret : Infantry //criar classe de tiro "complexo"
+public class Turret : Enemy2D //criar classe de tiro "complexo"
 {
-    private Transform barrel;
     private Vector3 yAxis;
 
     public Transform barrelUp;
@@ -18,9 +17,8 @@ public class Turret : Infantry //criar classe de tiro "complexo"
 
     void Start()
     {
-        setPlayerTransform();
-        setSprite();
-        setAnimator();
+        setTarget();
+        SetAnimator();
         setWeapon();
         setEnemySpawner();
         attackAction = CanAttack;
@@ -29,15 +27,17 @@ public class Turret : Infantry //criar classe de tiro "complexo"
 
     void Update()
     {
-        attackAction();
+        if (target) {
+            attackAction();
+        }
     }
 
 
     public override void Attack()
     {
-        transform.rotation = (transform.position.x > playerT.position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f); // setShootingDir()   
+        transform.rotation = (transform.position.x > target.position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f); // setShootingDir()   
 
-        float angle = Vector3.Angle(yAxis, playerT.position - transform.position); //getAimingAngle()
+        float angle = Vector3.Angle(yAxis, target.position - transform.position); //getAimingAngle()
         animator.SetFloat("angle", angle);
 
         if (weapon.CanFire()) {

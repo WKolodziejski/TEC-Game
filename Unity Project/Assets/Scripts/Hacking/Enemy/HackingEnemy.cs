@@ -4,45 +4,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class HackingEnemy : Character
+public class HackingEnemy : Enemy
 {
-
-    public Transform barrel;
-
     private Rigidbody2D rb;
-    private NavMeshAgent agent;
-    private Transform player;
-    private Weapon weapon;
+    protected NavMeshAgent agent;
 
     void Start()
     {
-        player = FindObjectOfType<HackingPlayer>().transform;
-        weapon = GetComponent<Weapon>();
-        agent = GetComponent<NavMeshAgent>();
+        setTarget();
+        setWeapon();
+        barrel = gameObject.transform.Find("Barrel").transform;
         rb = GetComponent<Rigidbody2D>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
     }
 
     void FixedUpdate()
     {
-        if (player != null)
+        if (target != null)
         {
-            Vector2 lookDir = player.position - transform.position;
+            Vector2 lookDir = target.position - transform.position;
             rb.rotation = -Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg + 90f;
 
-            agent.destination = player.position;
+            agent.destination = target.position;
         }
     }
 
-    public void Fire()
+    protected override void setTarget() //talvez funcione só com <Player>, nesse caso passe o código para a classe Enemy
     {
-        weapon.Fire(barrel);
+        target = FindObjectOfType<HackingPlayer>().transform;
     }
 
-    protected override void OnDie()
+protected void setNavMash()
     {
-        Destroy(gameObject);
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
-
 }

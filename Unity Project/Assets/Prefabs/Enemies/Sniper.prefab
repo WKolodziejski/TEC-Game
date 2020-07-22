@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 0
-  particleSuccess: {fileID: 130424, guid: 30db3cda4a3494748a9d6bbd6655a9aa, type: 3}
+  particleSuccess: {fileID: 119060, guid: dced2fc32a8df41498ec050e598128a1, type: 3}
 --- !u!114 &2641348538530134298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,8 +239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  coolDown: 0
-  shield: {fileID: 0}
   popup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1, type: 3}
   barrelF: {fileID: 8541637474504059057}
   barrelDU: {fileID: 3951181000761226502}

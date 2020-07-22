@@ -1,9 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-public class Soldier : Infantry //usar variaveis static para padrozinar a classe, no CheckIfMoved checar se essa não é diareção que o player está e simplemente parar até que ele mude de lado ou pular
+public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe, no CheckIfMoved checar se essa não é diareção que o player está e simplemente parar até que ele mude de lado ou pular
 {
-    public Transform barrel;
     float moveSpeed;
     float moveCooldown;
     float nextMove;
@@ -16,27 +15,28 @@ public class Soldier : Infantry //usar variaveis static para padrozinar a classe
     void Start()
     {
         //classe pai
-        setPlayerTransform();
+        setTarget();
         setEnemySpawner();
-        setSprite();
-        setAnimator();
+        SetAnimator();
         setWeapon();
         attackAction = CanAttack;
 
         //locais
         this.moveSpeed = 5f; //setMoveSpeed(5f);
-        //setAtkCooldown(0.5f); //usar o cooldown da arma??
         this.moveCooldown = 0.5f; //setMoveCooldown(0.5f);
         this.followRange = 5f; //setFollowRange(5f);
         desiredDir = new Vector3(-moveSpeed * Time.deltaTime, 0f, 0f); //setDesiredDir();
         nextMove = moveCooldown; //setFirstMove();
+        barrel = gameObject.transform.Find("Barrel F").transform;
         resetMoveCheck();
     }
 
     void Update()
     {
-        Move();
-        attackAction();
+        if (target) {
+            Move();
+            attackAction();
+        }
     }
 
     public override void Attack()
@@ -44,13 +44,13 @@ public class Soldier : Infantry //usar variaveis static para padrozinar a classe
 
         if (weapon.CanFire()) {
 
-            if (playerT.position.x < transform.position.x && desiredDir.x > 0)//SetShootingDir(); //talvez se afastar um pouco antes de poder atirar de novo
+            if (target.position.x < transform.position.x && desiredDir.x > 0)//SetShootingDir(); //talvez se afastar um pouco antes de poder atirar de novo
             {
                 ChangeDesiredDir();
             }
             else
             {
-                if (playerT.position.x > transform.position.x && desiredDir.x < 0)
+                if (target.position.x > transform.position.x && desiredDir.x < 0)
                 {
                     ChangeDesiredDir();
                 }
@@ -72,13 +72,13 @@ public class Soldier : Infantry //usar variaveis static para padrozinar a classe
 
         if (nextMove < 0) {
 
-            if ((this.transform.position.x > playerT.position.x + followRange) && desiredDir.x > 0) //CheckFollowBack() CheckDesiredDir()
+            if ((this.transform.position.x > target.position.x + followRange) && desiredDir.x > 0) //CheckFollowBack() CheckDesiredDir()
             {
                 ChangeDesiredDir();
             }
             else
             {
-                if ((this.transform.position.x < playerT.position.x - followRange) && desiredDir.x < 0) //CheckFollowBack()
+                if ((this.transform.position.x < target.position.x - followRange) && desiredDir.x < 0) //CheckFollowBack()
                 {
                     ChangeDesiredDir();
                 }

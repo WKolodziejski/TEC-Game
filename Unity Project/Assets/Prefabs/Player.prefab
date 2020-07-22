@@ -161,7 +161,6 @@ GameObject:
   - component: {fileID: 1134803256279026786}
   - component: {fileID: 1134803256279026798}
   - component: {fileID: 1134803256279026797}
-  - component: {fileID: 1134803256279026796}
   m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
@@ -253,21 +252,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1134803256279026796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134803256279026787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6d7df5462c54214cbfaee4e0ea3c144, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 1134803256459682971}
-  animator: {fileID: 1134803256279026797}
-  player: {fileID: 1134803256459682975}
 --- !u!1 &1134803256459682972
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,10 +328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05830015e8f63242a3b1b219457f225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 10000
+  popup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1, type: 3}
   coolDown: 1
   shield: {fileID: 182644, guid: 2338bb4e209457a4eb4c5fcab603c545, type: 3}
-  popup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1, type: 3}
   speed: 5
   jumpForce: 15
   groundcheck: {fileID: 1134803256459682970}

@@ -2,20 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HackingPlayer : Character
+public class HackingPlayer : Player
 {
-
-    public float speed = 10f;
     public float turnSpeed = 5f;
     public Transform barrel;
 
     private float angle = 90;
     private Vector2 movement;
-    private Weapon weapon;
 
     void Start()
     {
-        weapon = GetComponent<Weapon>();
+        setWeapon();
     }
 
     void Update()

@@ -2,25 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Thrower : Character
+public class Thrower : Enemy2D
 {
-
     public ThrowerMissile missile;
-
-    private Animator animator;
-    private Transform player;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        player = FindObjectOfType<Controller>().transform;
+        SetAnimator();
+        setTarget();
+        attackAction = Attack;
     }
 
     void Update()
     {
-        if (player != null)
+        attackAction();
+    }
+
+    public override void Attack()
+    {
+        if (target != null)
         {
-            if (Vector2.Distance(transform.position, player.position) <= 10f)
+            if (Vector2.Distance(transform.position, target.position) <= 10f)
             {
                 missile.Fire();
                 animator.SetTrigger("Throw");
@@ -29,7 +31,7 @@ public class Thrower : Character
         }
         else
         {
-            player = FindObjectOfType<Controller>().transform;
+            target = FindObjectOfType<Controller>().transform;
         }
     }
 
