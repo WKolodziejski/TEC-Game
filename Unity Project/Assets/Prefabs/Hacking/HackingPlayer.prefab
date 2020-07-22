@@ -73,7 +73,7 @@ MonoBehaviour:
   coolDown: 0
   shield: {fileID: 0}
   popup: {fileID: 0}
-  speed: 10
+  speed: 5
   turnSpeed: 5
   barrel: {fileID: 7760883125871837548}
 --- !u!114 &2721095444714237028
@@ -130,7 +130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7760883127536143485}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 1, y: -0.03, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7760883126543244795}
@@ -206,6 +206,22 @@ PrefabInstance:
     - target: {fileID: 486230, guid: 0badbb577e321ff41857e14eff51adf7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19812904, guid: 0badbb577e321ff41857e14eff51adf7, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19812904, guid: 0badbb577e321ff41857e14eff51adf7, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19812904, guid: 0badbb577e321ff41857e14eff51adf7, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19812904, guid: 0badbb577e321ff41857e14eff51adf7, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0badbb577e321ff41857e14eff51adf7, type: 3}
