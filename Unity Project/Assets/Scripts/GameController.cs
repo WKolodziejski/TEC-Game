@@ -22,11 +22,6 @@ public class GameController : MonoBehaviour
         lifebar = FindObjectOfType<Lifebar>();
     }
 
-    void Start()
-    {
-        SetupPlayer(Instantiate(player, checkpoint, Quaternion.identity, null));
-    }
-
     private IEnumerator ILoadScene(string scene)
     {
         AsyncOperation load = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
@@ -38,6 +33,7 @@ public class GameController : MonoBehaviour
             yield return null;
         }
 
+        SetupPlayer(Instantiate(player, checkpoint, Quaternion.identity, null));
         confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Grid").GetComponent<PolygonCollider2D>();
     }
 
@@ -60,7 +56,7 @@ public class GameController : MonoBehaviour
 
             if (lifes == 0)
             {
-                //gameover
+                StartCoroutine(IGameOver());
             } 
             else
             {
@@ -84,6 +80,13 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         SetupPlayer(Instantiate(player, checkpoint, Quaternion.identity, null));
+    }
+
+    private IEnumerator IGameOver()
+    {
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene("GameOver");
     }
 
 }
