@@ -87,6 +87,7 @@ public abstract class Character : MonoBehaviour
     }
 
     //Listeners INTERNOS
+    //                      CHAMAR BASE.METODO()!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     protected virtual void OnDie()
     {
