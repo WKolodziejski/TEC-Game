@@ -52,7 +52,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
             animator.SetBool("Running", false);
             animator.SetBool("Jumping", false);
 
-            weapon.Fire(barrel); //Fire();
+            weapon.Fire(mainBarrel); //Fire();
 
             this.nextMove = moveCooldown; //UpdateNextMove();
         }

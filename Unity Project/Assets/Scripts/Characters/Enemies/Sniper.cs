@@ -40,20 +40,20 @@ public class Sniper : Enemy2D
 
             if (angle > 0f && angle < 70f) //setBarrel
             {
-                barrel = barrelDU;
+                mainBarrel = barrelDU;
             } else {
                 if (angle > 70f && angle < 110f)
                 {
-                    barrel = barrelF;
+                    mainBarrel = barrelF;
                 } else
                 {
-                    barrel = barrelDD;
+                    mainBarrel = barrelDD;
                 }
             }
 
-            barrel.rotation = Quaternion.Euler(-angle - 90f, (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
+            mainBarrel.rotation = Quaternion.Euler(-angle - 90f, (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
 
-            weapon.Fire(barrel);
+            weapon.Fire(mainBarrel);
         }
     }
 

@@ -41,32 +41,32 @@ public class Turret : Enemy2D //criar classe de tiro "complexo"
             
             if (angle > 0f && angle < 22.5f) //setBarrel
             {
-                barrel = barrelUp;               
+                mainBarrel = barrelUp;               
             }
             else
             {
                 if (angle > 22.5f && angle < 67.5f)
                 {
-                    barrel = barrelDU;              
+                    mainBarrel = barrelDU;              
                 }
                 else
                 {
                     if (angle > 67.5f && angle < 112.5f) {
-                        barrel = barrelF;
+                        mainBarrel = barrelF;
                     } else
                     {
                         if (angle > 112.5f && angle < 157.5f)
                         {
-                            barrel = barrelDD;
+                            mainBarrel = barrelDD;
                         } else
                         {
-                            barrel = barrelDown;
+                            mainBarrel = barrelDown;
                         }
                     }
                 }
             }
 
-            weapon.Fire(barrel);
+            weapon.Fire(mainBarrel);
         }
     }
 

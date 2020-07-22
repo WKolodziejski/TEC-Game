@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7760883126543244795}
   - component: {fileID: 7760883126543244793}
   - component: {fileID: 7760883126543244775}
-  - component: {fileID: 2721095444714237028}
   - component: {fileID: 887242630}
+  - component: {fileID: -8805156354586820473}
   m_Layer: 10
   m_Name: HackingPlayer
   m_TagString: Player
@@ -69,27 +69,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73aabb0daffd104aae5ef02dff00a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 1072420094742162731, guid: 46bceafad6e5bdf409ec6fd5e52ddd4d,
+    type: 3}
+  mainBarrel: {fileID: 7760883125871837548}
   hp: 9999999
-  coolDown: 0
-  shield: {fileID: 0}
-  popup: {fileID: 0}
-  speed: 5
+  movementSpeed: 5
+  damageCooldown: 0
   turnSpeed: 5
-  barrel: {fileID: 7760883125871837548}
---- !u!114 &2721095444714237028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7760883126543244773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee16e96f898a5d4d90b39a12a9550c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 595494354877179255, guid: 27eb6f1707158444ea87798429b419eb, type: 3}
-  fireRate: 5
 --- !u!58 &887242630
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -106,6 +92,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!95 &-8805156354586820473
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760883126543244773}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7760883127536143485
 GameObject:
   m_ObjectHideFlags: 0

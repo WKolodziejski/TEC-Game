@@ -337,6 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 8187958245616858976, guid: 013f07f7c371a0c40adda8850991d0e4,
     type: 3}
+  mainBarrel: {fileID: 6843050030617122200}
   hp: 3
   movementSpeed: 5
   damageCooldown: 0

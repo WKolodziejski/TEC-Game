@@ -40,9 +40,8 @@ public class BossHack : EnemyHack
     void Update()
     {
         weapon.Fire(barrel1);
-        //...
-
-        
+        weapon.Fire(barrel2);
+        //weapon.Fire(barrelS);
     }
     
     public void SetAgressive()

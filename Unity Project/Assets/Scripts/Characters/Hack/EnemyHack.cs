@@ -29,7 +29,7 @@ public class EnemyHack : Enemy
 
     public void Fire()
     {
-        base.Fire(barrel);
+        weapon.Fire(mainBarrel);
     }
  
 }

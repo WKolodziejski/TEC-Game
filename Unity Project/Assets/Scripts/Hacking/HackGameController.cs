@@ -41,6 +41,11 @@ public class HackGameController : MonoBehaviour
         enemies = FindObjectsOfType<EnemyHack>().ToList();
         player = FindObjectOfType<PlayerHack>();
 
+        bosses.ForEach((BossHack b) =>
+        {
+            enemies.Remove(b);
+        });
+
         foreach (EnemyHack e in enemies)
         {
             e.SetOnDieListener(() =>

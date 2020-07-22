@@ -62,7 +62,7 @@ public class Player2D : Character
 
             if (Input.GetButton("Fire3"))
             {
-                weapon.Fire(barrel);
+                weapon.Fire(mainBarrel);
             }
 
             if (vertical > 0f)
@@ -71,9 +71,9 @@ public class Player2D : Character
                 animator.SetBool("down", false);
 
                 if (horizontal == 0f)
-                    barrel = barrelUp;
+                    mainBarrel = barrelUp;
                 else
-                    barrel = barrelDiagonalUp;
+                    mainBarrel = barrelDiagonalUp;
             }
             else if (vertical < 0f)
             {
@@ -81,13 +81,13 @@ public class Player2D : Character
                 animator.SetBool("down", true);
 
                 if (horizontal == 0f)
-                    barrel = barrelFront;
+                    mainBarrel = barrelFront;
                 else
-                    barrel = barrelDiagonalDown;
+                    mainBarrel = barrelDiagonalDown;
             }
             else
             {
-                barrel = barrelFront;
+                mainBarrel = barrelFront;
                 animator.SetBool("up", false);
                 animator.SetBool("down", false);
             }
@@ -162,7 +162,5 @@ public class Player2D : Character
         yield return new WaitForSeconds(fallTime);
         playerCollider.enabled = true;
     }
-
-    
 
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Enemy : Character
 {
+
     protected Transform target;
 
     protected Transform GetTarget()

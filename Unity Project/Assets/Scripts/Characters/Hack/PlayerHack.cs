@@ -52,7 +52,7 @@ public class PlayerHack : Character
         }
 
         if (Input.GetButton("Fire3"))
-            weapon.Fire(barrel);
+            weapon.Fire(mainBarrel);
     }
 
     void FixedUpdate()

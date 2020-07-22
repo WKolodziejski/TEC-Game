@@ -31,7 +31,7 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
 
     protected override void OnDie()
     {
+        base.OnDie();
         enemySpawner.Remove(gameObject);
-        Destroy(gameObject);
     }
 }

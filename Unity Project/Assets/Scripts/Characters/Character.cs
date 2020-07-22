@@ -6,6 +6,7 @@ public abstract class Character : MonoBehaviour
 {
 
     public Weapon weaponPrefab;
+    public Transform mainBarrel;
 
     public float hp = 3f;
     public float movementSpeed = 5f;
@@ -14,8 +15,7 @@ public abstract class Character : MonoBehaviour
     protected Weapon weapon;
     protected Animator animator;
     protected Rigidbody2D rb;
-    protected Transform barrel;
-
+    
     private Action onDie;
     private Action onDamage;
     private float lastCooldown;
@@ -26,7 +26,7 @@ public abstract class Character : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        barrel = gameObject.transform.Find("Barrel");
+        //barrel = gameObject.transform.Find("Barrel");
 
         SetWeapon(weaponPrefab);
         InitializeComponents();
@@ -43,10 +43,15 @@ public abstract class Character : MonoBehaviour
         weapon = Instantiate(prefab, transform);
     }
 
+    /*protected void Fire()
+    {
+        weapon.Fire(mainBarrel);
+    }
+
     protected void Fire(Transform barrel)
     {
         weapon.Fire(barrel);
-    }
+    }*/
 
     public virtual void TakeDamage(float damage)
     {
@@ -76,6 +81,11 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
     //Listeners INTERNOS
 
     protected virtual void OnDie()
@@ -85,7 +95,7 @@ public abstract class Character : MonoBehaviour
         animator.SetBool("dead", isDead);
         animator.SetTrigger("OnDie");
 
-        //tem q fazer o destroy()
+        Destroy(gameObject);
     }
 
     protected virtual void OnDamage(float damage)
@@ -103,11 +113,6 @@ public abstract class Character : MonoBehaviour
     public void SetOnDamageListener(Action onDamage)
     {
         this.onDamage = onDamage;
-    }
-
-    public bool IsDead()
-    {
-        return isDead;
     }
 
 }
