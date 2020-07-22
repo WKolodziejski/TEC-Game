@@ -56,6 +56,7 @@ public class GameController : MonoBehaviour
 
     public void SetCheckpoint(Vector3 position)
     {
+        Debug.Log(position);
         checkpoint = position;
     }
 

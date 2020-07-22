@@ -89,6 +89,9 @@ public class HackGameController : MonoBehaviour
             actualEnemy = (actualEnemy + 2) % enemies.Count;
             enemies[actualEnemy].Fire();
         }
+
+        if (Input.GetKey(KeyCode.H))
+            StartCoroutine(IPlayExit(true));
     }
 
     private IEnumerator IPlayEnter()

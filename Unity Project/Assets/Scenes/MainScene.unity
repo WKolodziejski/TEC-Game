@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 310355584}
   - component: {fileID: 310355585}
   m_Layer: 0
-  m_Name: Transition Controller
+  m_Name: Hack Stuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,15 +602,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310355583}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2063150728}
   - {fileID: 2051420328}
   - {fileID: 648519176}
-  m_Father: {fileID: 1107524319}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &310355585
 MonoBehaviour:
@@ -748,7 +748,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760881681}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.25881907, w: 0.9659259}
   m_LocalPosition: {x: -4.9944224, y: -4.0388174, z: 20.474459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -838,7 +838,7 @@ Transform:
   - {fileID: 1808016629}
   - {fileID: 1789592542}
   - {fileID: 1739217745}
-  - {fileID: 310355584}
+  - {fileID: 2037232452}
   - {fileID: 235067815}
   m_Father: {fileID: 252929994}
   m_RootOrder: 1
@@ -1401,7 +1401,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 0.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1489,7 +1489,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808016625}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.25881907, w: 0.9659259}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1502,7 +1502,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 235067815}
+    m_TransformParent: {fileID: 1107524319}
     m_Modifications:
     - target: {fileID: 7462748581175016658, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
@@ -1557,7 +1557,7 @@ PrefabInstance:
     - target: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
@@ -1627,23 +1627,23 @@ PrefabInstance:
     - target: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5238096
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5238096
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5238096
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7462748581175016751, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
       propertyPath: audioFail
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1119749389}
     - target: {fileID: 7462748582442861074, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
       propertyPath: m_Material
@@ -1666,6 +1666,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e709b6375f70ecd4a97fc3f728c460b5, type: 3}
+--- !u!224 &2037232452 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1959412924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2041287596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,7 +1801,7 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 1850699823106047852, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 648519177}
   - key: {fileID: 6024154138689981186, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
     value: {fileID: 0}
   - key: {fileID: -6949948243426791297, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
@@ -1880,7 +1886,7 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 1850699823106047852, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 648519177}
   - key: {fileID: 6024154138689981186, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
     value: {fileID: 0}
   - key: {fileID: -6949948243426791297, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
