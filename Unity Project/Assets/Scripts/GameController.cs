@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
 
     public Controller player;
     public CinemachineVirtualCamera cam;
+    public CinemachineConfiner confiner;
 
     private Lifebar lifebar;
     private Vector3 checkpoint;
@@ -16,13 +17,28 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        //SceneManager.LoadSceneAsync("TESTE", LoadSceneMode.Additive);
+        StartCoroutine(ILoadScene("TESTE"));
+
         lifebar = FindObjectOfType<Lifebar>();
     }
 
     void Start()
     {
         SetupPlayer(Instantiate(player, checkpoint, Quaternion.identity, null));
+    }
+
+    private IEnumerator ILoadScene(string scene)
+    {
+        AsyncOperation load = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
+
+        while (!load.isDone)
+        {
+            Debug.Log(load.progress);
+
+            yield return null;
+        }
+
+        confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Grid").GetComponent<PolygonCollider2D>();
     }
 
     private void SetupPlayer(Controller p)
@@ -35,6 +51,9 @@ public class GameController : MonoBehaviour
 
         p.SetOnDieListener(() =>
         {
+            cam.Follow = null;
+            cam.LookAt = null;
+
             Debug.Log("Morri 1");
 
             lifes--;
