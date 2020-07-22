@@ -331,7 +331,7 @@ MonoBehaviour:
     type: 3}
   hp: 10000
   movementSpeed: 5
-  damageCooldown: 0
+  damageCooldown: 1
   playerCollider: {fileID: 3923419496403882210}
   groundcheck: {fileID: 1134803256459682970}
   fallTime: 0.3
