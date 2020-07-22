@@ -1028,7 +1028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 827934291}
   - component: {fileID: 827934290}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1131,6 +1131,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 421fd769c5dcc944ca9f88e6410ef7e5, type: 3}
+--- !u!1 &887242627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7760883126543244773, guid: 271402125fe05664e81ed92e53a60a4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1297257060}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &887242630
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887242627}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
 --- !u!4 &941338607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1772240176048543166, guid: 0efa90b577e64cf42a1338c72e275bef,
@@ -1216,7 +1238,7 @@ GameObject:
   - component: {fileID: 1041311900}
   - component: {fileID: 1041311902}
   - component: {fileID: 1041311903}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2365,7 +2387,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1933600758357232667, guid: 271402125fe05664e81ed92e53a60a4f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 271402125fe05664e81ed92e53a60a4f, type: 3}
 --- !u!1 &1414649532
 GameObject:
