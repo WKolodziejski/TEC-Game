@@ -6,11 +6,15 @@ using UnityEngine;
 public class Putin : MonoBehaviour
 {
 
+    public Weapon w;
+
     void Start()
     {
         GetComponent<Hackable>().SetAction(() =>
         {
             GetComponent<AudioSource>().Play();
+            FindObjectOfType<Controller>().SetWeapon(w);
+
         });
     }
 

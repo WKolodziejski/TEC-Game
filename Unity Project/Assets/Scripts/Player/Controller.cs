@@ -43,6 +43,9 @@ public class Controller : Character
 
     public void SetWeapon(Weapon w)
     {
+        if (weapon != null)
+            Destroy(weapon.gameObject);
+
         weapon = Instantiate(w, transform);
         weapon.tag = tag;
     }
