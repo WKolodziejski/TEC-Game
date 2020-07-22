@@ -7,35 +7,32 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Sniper : Enemy2D
 {
+
     private Vector3 yAxis;
 
     public Transform barrelF;
     public Transform barrelDU;
     public Transform barrelDD;
 
-    void Start()
+    protected override void InitializeComponents()
     {
-        setTarget();
-        SetAnimator();
-        setWeapon();
-        setEnemySpawner();
+        SetEnemySpawner();
         attackAction = CanAttack;
         yAxis = new Vector3(0f, 1f, 0f);
     }
 
     void Update()
     {
-        if (target) {
+        if (GetTarget() != null) {
             attackAction(); 
         }
     }
 
-
     public override void Attack()
     {
-        transform.rotation = (transform.position.x > target.position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f); // setShootingDir()
+        transform.rotation = (transform.position.x > GetTarget().position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f); // setShootingDir()
 
-        float angle = Vector3.Angle(yAxis, target.position - transform.position); //getAimingAngle()
+        float angle = Vector3.Angle(yAxis, GetTarget().position - transform.position); //getAimingAngle()
         animator.SetFloat("angle", angle);
 
         if (weapon.CanFire()) {
@@ -53,7 +50,7 @@ public class Sniper : Enemy2D
                 }
             }
 
-            barrel.rotation = Quaternion.Euler(-angle - 90f, (target.position.x < transform.position.x) ? 90f : -90f, -90f);
+            barrel.rotation = Quaternion.Euler(-angle - 90f, (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
 
             weapon.Fire(barrel);
         }

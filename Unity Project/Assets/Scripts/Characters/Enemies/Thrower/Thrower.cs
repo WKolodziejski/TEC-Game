@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Thrower : Enemy2D
 {
+
     public ThrowerMissile missile;
 
-    void Start()
+    protected override void InitializeComponents()
     {
-        SetAnimator();
-        setTarget();
         attackAction = Attack;
     }
 
@@ -20,24 +19,15 @@ public class Thrower : Enemy2D
 
     public override void Attack()
     {
-        if (target != null)
+        if (GetTarget() != null)
         {
-            if (Vector2.Distance(transform.position, target.position) <= 10f)
+            if (Vector2.Distance(transform.position, GetTarget().position) <= 10f)
             {
                 missile.Fire();
                 animator.SetTrigger("Throw");
                 Destroy(transform.parent.gameObject, 0.5f);
             }
         }
-        else
-        {
-            target = FindObjectOfType<Controller>().transform;
-        }
-    }
-
-    protected override void OnDie()
-    {
-
     }
 
 }

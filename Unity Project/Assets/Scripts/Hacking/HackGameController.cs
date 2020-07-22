@@ -13,9 +13,9 @@ public class HackGameController : MonoBehaviour
     public GameObject lNORMAL;
     public GameObject lHARD;
 
-    private List<HackingBoss> bosses;
-    private List<HackingEnemy> enemies;
-    private HackingPlayer player;
+    private List<BossHack> bosses;
+    private List<EnemyHack> enemies;
+    private PlayerHack player;
     private int actualEnemy;
    
     void Start()
@@ -40,11 +40,11 @@ public class HackGameController : MonoBehaviour
                 break;
         }
 
-        bosses = FindObjectsOfType<HackingBoss>().ToList();
-        enemies = FindObjectsOfType<HackingEnemy>().ToList();
-        player = FindObjectOfType<HackingPlayer>();
+        bosses = FindObjectsOfType<BossHack>().ToList();
+        enemies = FindObjectsOfType<EnemyHack>().ToList();
+        player = FindObjectOfType<PlayerHack>();
 
-        foreach (HackingEnemy e in enemies)
+        foreach (EnemyHack e in enemies)
         {
             e.SetOnDieListener(() =>
             {
@@ -52,7 +52,7 @@ public class HackGameController : MonoBehaviour
 
                 if (enemies.Count == 0)
                 {
-                    foreach (HackingBoss b in bosses)
+                    foreach (BossHack b in bosses)
                     {
                         b.DisableShield();
                         b.SetAgressive();
@@ -61,7 +61,7 @@ public class HackGameController : MonoBehaviour
             });
         }
 
-        foreach (HackingBoss b in bosses)
+        foreach (BossHack b in bosses)
         {
             b.SetOnDieListener(() =>
             {

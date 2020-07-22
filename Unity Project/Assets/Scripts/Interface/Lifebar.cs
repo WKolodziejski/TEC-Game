@@ -19,9 +19,9 @@ public class Lifebar : MonoBehaviour
         lf3.SetActive(l >= 3);
     }
 
-    public void SetPlayer(Controller c)
+    public void SetPlayer(Player2D c)
     {
-        c.SetOnDamageAction(() =>
+        c.SetOnDamageListener(() =>
         {
             if (animating)
                 StopAllCoroutines();

@@ -5,26 +5,23 @@ using UnityEngine;
 using UnityEngine.AI;
 using static HackSceneReference;
 
-public class HackingBoss : HackingEnemy
+public class BossHack : EnemyHack
 {
-    public float coolDown = 0f; //redundante com o do player, mas fazer o que?
+
     public GameObject shield;
-    private float lastCooldown;
+    public GameObject shieldExp;
 
     public float rotationSpeed = 5f;
     public Transform barrel1;
     public Transform barrel2;
     public Transform barrelS;
-    public GameObject shieldExp;
-
+    
     private Action GetDestination;
     private Vector3 destination;
 
-    void Start()
+    protected override void InitializeComponents()
     {
-        setTarget();
-        setWeapon();
-        setNavMash();
+        base.InitializeComponents();
 
         GetDestination += GetRunawayPath;
 
@@ -47,30 +44,7 @@ public class HackingBoss : HackingEnemy
 
         
     }
-    public override void TakeDamage(float damage)
-    {
-        if (lastCooldown <= Time.time)
-        {
-            lastCooldown = Time.time + coolDown;
-
-            hp -= damage;
-
-            if (popup != null)
-                Instantiate(popup, transform.position, Quaternion.identity, transform).Hit(damage);
-
-            if (hp <= 0)
-            {
-                onDie?.Invoke();
-                OnDie();
-            }
-            else
-            {
-                if (shield != null)
-                    Destroy(Instantiate(shield, transform), 1f);
-            }
-        }
-    }
-
+    
     public void SetAgressive()
     {
         GetDestination += GetAgressivePath;
@@ -78,13 +52,13 @@ public class HackingBoss : HackingEnemy
 
     private void GetAgressivePath()
     {
-        destination = target.position;
+        destination = GetTarget().position;
     }
 
     private void GetRunawayPath()
     {        
-        if (Vector3.Distance(transform.position, target.position) < 5f)
-            destination = transform.position + ((transform.position - target.position) * 2); //TESTAR ESSE 2
+        if (Vector3.Distance(transform.position, GetTarget().position) < 5f)
+            destination = transform.position + ((transform.position - GetTarget().position) * 2); //TESTAR ESSE 2
     }
 
     public void DisableShield()
@@ -93,11 +67,6 @@ public class HackingBoss : HackingEnemy
             shieldExp.SetActive(true);
 
         shield.SetActive(false);
-    }
-
-    protected override void OnDie()
-    {
-        Destroy(gameObject);
     }
 
 }

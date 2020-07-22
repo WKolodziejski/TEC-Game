@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HackingPlayer : Player
+public class PlayerHack : Character
 {
+
     public float turnSpeed = 5f;
     public Transform barrel;
 
     private float angle = 90;
     private Vector2 movement;
 
-    void Start()
+    protected override void InitializeComponents()
     {
-        setWeapon();
+        //
     }
 
     void Update()
@@ -57,7 +58,7 @@ public class HackingPlayer : Player
 
     void FixedUpdate()
     {
-        transform.position += Vector3.ClampMagnitude(movement, 1) * speed * Time.deltaTime;
+        transform.position += Vector3.ClampMagnitude(movement, 1) * movementSpeed * Time.deltaTime;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, angle), turnSpeed * Time.deltaTime);
     }
 
@@ -68,14 +69,7 @@ public class HackingPlayer : Player
         if (c.CompareTag("Enemy"))
         {
             TakeDamage(1);
-
-            //TODO: fica invulnerável por 1s
         } 
-    }
-
-    protected override void OnDie()
-    {
-        Destroy(gameObject);
     }
 
 }

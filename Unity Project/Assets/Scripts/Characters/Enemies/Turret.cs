@@ -15,29 +15,25 @@ public class Turret : Enemy2D //criar classe de tiro "complexo"
     public Transform barrelDD;
     public Transform barrelDown;
 
-    void Start()
+    protected override void InitializeComponents()
     {
-        setTarget();
-        SetAnimator();
-        setWeapon();
-        setEnemySpawner();
+        SetEnemySpawner();
         attackAction = CanAttack;
         yAxis = new Vector3(0f, 1f, 0f);
     }
 
     void Update()
     {
-        if (target) {
+        if (GetTarget() != null) {
             attackAction();
         }
     }
 
-
     public override void Attack()
     {
-        transform.rotation = (transform.position.x > target.position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f); // setShootingDir()   
+        transform.rotation = (transform.position.x > GetTarget().position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f); // setShootingDir()   
 
-        float angle = Vector3.Angle(yAxis, target.position - transform.position); //getAimingAngle()
+        float angle = Vector3.Angle(yAxis, GetTarget().position - transform.position); //getAimingAngle()
         animator.SetFloat("angle", angle);
 
         if (weapon.CanFire()) {

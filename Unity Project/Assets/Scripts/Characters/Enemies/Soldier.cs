@@ -3,29 +3,21 @@ using UnityEngine;
 
 public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe, no CheckIfMoved checar se essa não é diareção que o player está e simplemente parar até que ele mude de lado ou pular
 {
-    float moveSpeed;
-    float moveCooldown;
-    float nextMove;
-    float followRange;
-    float moveCheck;
-    readonly float moveCheckRate = 0.125f;
-    float prevPosition;
-    Vector3 desiredDir;
 
-    void Start()
+    public float moveCooldown = 0.5f;
+    public float followRange = 5f;
+    readonly float moveCheckRate = 0.125f;
+
+    private float nextMove;
+    private float moveCheck;
+    private float prevPosition;
+    private Vector3 desiredDir;
+
+    protected override void InitializeComponents()
     {
-        //classe pai
-        setTarget();
-        setEnemySpawner();
-        SetAnimator();
-        setWeapon();
         attackAction = CanAttack;
 
-        //locais
-        this.moveSpeed = 5f; //setMoveSpeed(5f);
-        this.moveCooldown = 0.5f; //setMoveCooldown(0.5f);
-        this.followRange = 5f; //setFollowRange(5f);
-        desiredDir = new Vector3(-moveSpeed * Time.deltaTime, 0f, 0f); //setDesiredDir();
+        desiredDir = new Vector3(-movementSpeed * Time.deltaTime, 0f, 0f); //setDesiredDir();
         nextMove = moveCooldown; //setFirstMove();
         barrel = gameObject.transform.Find("Barrel F").transform;
         resetMoveCheck();
@@ -33,7 +25,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
 
     void Update()
     {
-        if (target) {
+        if (GetTarget() != null) {
             Move();
             attackAction();
         }
@@ -44,13 +36,13 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
 
         if (weapon.CanFire()) {
 
-            if (target.position.x < transform.position.x && desiredDir.x > 0)//SetShootingDir(); //talvez se afastar um pouco antes de poder atirar de novo
+            if (GetTarget().position.x < transform.position.x && desiredDir.x > 0)//SetShootingDir(); //talvez se afastar um pouco antes de poder atirar de novo
             {
                 ChangeDesiredDir();
             }
             else
             {
-                if (target.position.x > transform.position.x && desiredDir.x < 0)
+                if (GetTarget().position.x > transform.position.x && desiredDir.x < 0)
                 {
                     ChangeDesiredDir();
                 }
@@ -72,13 +64,13 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
 
         if (nextMove < 0) {
 
-            if ((this.transform.position.x > target.position.x + followRange) && desiredDir.x > 0) //CheckFollowBack() CheckDesiredDir()
+            if ((this.transform.position.x > GetTarget().position.x + followRange) && desiredDir.x > 0) //CheckFollowBack() CheckDesiredDir()
             {
                 ChangeDesiredDir();
             }
             else
             {
-                if ((this.transform.position.x < target.position.x - followRange) && desiredDir.x < 0) //CheckFollowBack()
+                if ((this.transform.position.x < GetTarget().position.x - followRange) && desiredDir.x < 0) //CheckFollowBack()
                 {
                     ChangeDesiredDir();
                 }
@@ -88,7 +80,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
             if (moveCheck < 0)
             {
 
-                if ((Math.Abs(prevPosition - transform.position.x) < Math.Abs(moveCheckRate * moveSpeed / 2))) 
+                if ((Math.Abs(prevPosition - transform.position.x) < Math.Abs(moveCheckRate * movementSpeed / 2))) 
                 {
                     ChangeDesiredDir();
                 }
@@ -98,7 +90,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
                 }
             }
 
-            desiredDir.Set(-moveSpeed * Time.deltaTime, 0f, 0f); //getDesiredDir();
+            desiredDir.Set(-movementSpeed * Time.deltaTime, 0f, 0f); //getDesiredDir();
             this.transform.position += desiredDir;
 
             if (!animator.GetBool("Running"))
@@ -112,7 +104,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
 
     private void ChangeDesiredDir()
     {
-        moveSpeed = -moveSpeed;
+        movementSpeed = -movementSpeed; //Isso aqui tá bem gambiarra hein
         transform.Rotate(0f, 180f, 0f);
         resetMoveCheck();
     }
