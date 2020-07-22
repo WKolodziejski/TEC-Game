@@ -44,59 +44,57 @@ public class Player2D : Character
         if (Input.GetButtonUp("Fire2"))
             hacking = false;
 
-        //Isso aqui tem q arrumar pq ele n atualiza a animação ao segurar h
-
-        if (hacking)
-            return;
-
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-
-        if (Input.GetButtonDown("Jump"))
+        if (!hacking)
         {
-            if (Input.GetAxis("Vertical") < 0)
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+
+            if (Input.GetButtonDown("Jump"))
             {
-                if (platform)
-                    StartCoroutine(Fall());
+                if (Input.GetAxis("Vertical") < 0)
+                {
+                    if (platform)
+                        StartCoroutine(Fall());
+                }
+                else
+                {
+                    Jump();
+                }
+            }
+
+            if (Input.GetButton("Fire3"))
+            {
+                weapon.Fire(barrel);
+            }
+
+            if (vertical > 0f)
+            {
+                animator.SetBool("up", true);
+                animator.SetBool("down", false);
+
+                if (horizontal == 0f)
+                    barrel = barrelUp;
+                else
+                    barrel = barrelDiagonalUp;
+            }
+            else if (vertical < 0f)
+            {
+                animator.SetBool("up", false);
+                animator.SetBool("down", true);
+
+                if (horizontal == 0f)
+                    barrel = barrelFront;
+                else
+                    barrel = barrelDiagonalDown;
             }
             else
             {
-                Jump();
-            }
-        }
-
-        if (Input.GetButton("Fire3"))
-        {
-            weapon.Fire(barrel);
-        }
-
-        if (vertical > 0f)
-        {
-            animator.SetBool("up", true);
-            animator.SetBool("down", false);
-
-            if (horizontal == 0f)
-                barrel = barrelUp;
-            else
-                barrel = barrelDiagonalUp;
-        }
-        else if (vertical < 0f)
-        {
-            animator.SetBool("up", false);
-            animator.SetBool("down", true);
-
-            if (horizontal == 0f)
                 barrel = barrelFront;
-            else
-                barrel = barrelDiagonalDown;
+                animator.SetBool("up", false);
+                animator.SetBool("down", false);
+            }
         }
-        else
-        {
-            barrel = barrelFront;
-            animator.SetBool("up", false);
-            animator.SetBool("down", false);
-        }
-            
+
         animator.SetBool("hacking", hacking);
         animator.SetBool("dead", IsDead());
         animator.SetBool("jumping", !grounded);
