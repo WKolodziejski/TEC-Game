@@ -94,7 +94,7 @@ public abstract class Character : MonoBehaviour
         onDie?.Invoke();
 
         animator.SetBool("dead", isDead);
-        animator.SetTrigger("OnDie");
+        //animator.SetTrigger("OnDie");
 
         Destroy(gameObject);
     }
