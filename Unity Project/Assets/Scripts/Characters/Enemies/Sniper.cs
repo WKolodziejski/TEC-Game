@@ -31,7 +31,7 @@ public class Sniper : Enemy2D
 
     public override void Attack()
     {
-        transform.rotation = (transform.position.x > GetTarget().position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f); // setShootingDir()
+        LookAtTarget();
 
         float angle = Vector3.Angle(yAxis, GetTarget().position - transform.position); //getAimingAngle()
         animator.SetFloat("angle", angle);

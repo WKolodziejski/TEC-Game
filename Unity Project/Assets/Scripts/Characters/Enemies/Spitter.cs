@@ -23,37 +23,43 @@ public class Spitter : Enemy2D
 
     void Update()
     {
-        if (Vector2.Distance(GetTarget().position, transform.position) <= 10f && !jumped)
+        if (Vector2.Distance(GetTarget().position, transform.position) <= 10f && !jumped && !jumping)
             StartCoroutine(IJump());
 
-        if (jumped && ! jumping)
+        if (jumped && !jumping)
             Attack();
+
+        LookAtTarget();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Platform"))
         {
-            jumping = false;
-            animator.SetBool("jumping", jumping);
+            animator.SetBool("jumping", false);
         }
     }
 
     private IEnumerator IJump()
     {
         jumping = true;
-        jumped = true;
-
+        
         rb.gravityScale = 3f;
 
         rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
-        rb.AddForce(Vector2.right * -2f, ForceMode2D.Impulse);
+        //rb.AddForce(Vector2.right * -2f, ForceMode2D.Impulse);
 
-        animator.SetBool("jumping", jumping);
+        animator.SetBool("jumping", true);
 
         yield return new WaitForSeconds(0.4f);
 
         GetComponent<BoxCollider2D>().enabled = true;
+
+        while (animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+            yield return null;
+
+        jumping = false;
+        jumped = true;
     }
     
     private IEnumerator IFire()

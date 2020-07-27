@@ -12,6 +12,12 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
 
     //esse cu não deixa usar InitializeComponents() em abstratct!!!
 
+    //CHAMAR BASE NOS FILHOS
+    protected override void InitializeComponents()
+    {
+        //throw new System.NotImplementedException();
+    }
+
     protected void CanAttack()
     {
         float[] boundries = enemySpawner.getCameraBoundries();
@@ -20,6 +26,12 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
         {
             attackAction = Attack;
         }
+    }
+
+    protected void LookAtTarget()
+    {
+        if (GetTarget() != null)
+            transform.rotation = (transform.position.x > GetTarget().position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f);
     }
 
     public abstract void Attack();
@@ -34,4 +46,5 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
         base.OnDie();
         enemySpawner.Remove(gameObject);
     }
+
 }
