@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public abstract class Character : MonoBehaviour
 {
 
@@ -24,11 +23,13 @@ public abstract class Character : MonoBehaviour
     //Inicializa componetes comuns
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         //barrel = gameObject.transform.Find("Barrel");
 
-        SetWeapon(weaponPrefab);
+        if (weaponPrefab != null)
+            SetWeapon(weaponPrefab);
+
         InitializeComponents();
     }
 

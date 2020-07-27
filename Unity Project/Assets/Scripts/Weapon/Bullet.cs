@@ -6,8 +6,9 @@ using UnityEngine.XR.WSA;
 public class Bullet : MonoBehaviour
 {
 
-    public float speed = 100f;
+    public float speed = 10f;
     public float damage = 1f;
+    public float ttl = 1f;
     public GameObject hit;
     public GameObject muzzle;
 
@@ -18,12 +19,12 @@ public class Bullet : MonoBehaviour
         rb.velocity = transform.forward * speed;
 
         Destroy(Instantiate(muzzle, gameObject.transform.position, gameObject.transform.rotation), 1f);
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, ttl);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(tag + " -> " + collision.name);
+        Debug.Log(tag + " -> " + collision.name);
 
         /*
          * BulletPlayer não contém Player
