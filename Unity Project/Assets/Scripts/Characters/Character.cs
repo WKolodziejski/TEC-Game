@@ -94,11 +94,13 @@ public abstract class Character : MonoBehaviour
     {
         enabled = false;
 
+        StopAllCoroutines();
+
         onDie?.Invoke();
 
         animator.SetBool("dead", isDead);
 
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 15f); //15s a fins de debug
     }
 
     protected virtual void OnDamage(float damage)

@@ -34,10 +34,20 @@ public class Bullet : MonoBehaviour
 
         if (!tag.Contains(collision.tag) && !collision.tag.Contains("Bullet"))
         {
-            Explode();
-
             if (collision.CompareTag("Enemy") || collision.CompareTag("Player"))
-                collision.GetComponent<Character>().TakeDamage(damage);
+            {
+                Character c = collision.GetComponent<Character>();
+
+                if (!c.IsDead())
+                {
+                    Explode();
+                    c.TakeDamage(damage);
+                }
+            }
+            else
+            {
+                Explode();
+            }
         }
     }
 
