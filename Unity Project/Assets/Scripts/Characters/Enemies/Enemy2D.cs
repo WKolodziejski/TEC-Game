@@ -28,7 +28,20 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
     protected void LookAtTarget()
     {
         if (GetTarget() != null)
-            transform.rotation = (transform.position.x < GetTarget().position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f);
+            transform.rotation = GetTargetRotation();
+    }
+
+    protected Quaternion GetTargetRotation()
+    {
+        if (GetTarget() != null)
+            return transform.position.x < GetTarget().position.x ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f);
+        else
+            return Quaternion.identity;
+    }
+
+    protected int GetTargetMagnitude()
+    {
+        return GetTargetRotation() == Quaternion.identity ? 1 : -1;
     }
 
     public abstract void Attack();

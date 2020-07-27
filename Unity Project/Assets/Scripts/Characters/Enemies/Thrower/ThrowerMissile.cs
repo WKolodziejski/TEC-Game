@@ -46,7 +46,7 @@ public class ThrowerMissile : MonoBehaviour
 
         Debug.Log(tag + " -> " + collision.name);
 
-        if (!collision.CompareTag("Grid") && !collision.tag.Contains("Enemy"))
+        if (!collision.CompareTag("Grid") && !collision.tag.Contains("Enemy") && !collision.tag.Contains("Bullet"))
         {
             Destroy(Instantiate(explosion, gameObject.transform.position, Quaternion.identity), 2f);
             Destroy(gameObject);
