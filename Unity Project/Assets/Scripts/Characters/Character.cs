@@ -92,12 +92,13 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void OnDie()
     {
+        enabled = false;
+
         onDie?.Invoke();
 
         animator.SetBool("dead", isDead);
-        //animator.SetTrigger("OnDie");
 
-        Destroy(gameObject);
+        Destroy(gameObject, 1f);
     }
 
     protected virtual void OnDamage(float damage)

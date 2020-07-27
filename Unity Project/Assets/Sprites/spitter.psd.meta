@@ -558,69 +558,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spitter_11
-      rect:
-        serializedVersion: 2
-        x: 715
-        y: 504
-        width: 65
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87e6e9cf9af8bc190800000000000000
-      internalID: -7941095557687251336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spitter_22
-      rect:
-        serializedVersion: 2
-        x: 650
-        y: 432
-        width: 65
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03dd7e73c130c4a20800000000000000
-      internalID: 3047814467554893104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spitter_39
-      rect:
-        serializedVersion: 2
-        x: 1040
-        y: 288
-        width: 65
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf7f1c12506466580800000000000000
-      internalID: -8834296631185508356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: spitter_0
       rect:
         serializedVersion: 2
@@ -1065,8 +1002,8 @@ TextureImporter:
       name: spitter_23
       rect:
         serializedVersion: 2
-        x: 0
-        y: 288
+        x: 715
+        y: 432
         width: 65
         height: 72
       alignment: 0
@@ -1086,7 +1023,7 @@ TextureImporter:
       name: spitter_24
       rect:
         serializedVersion: 2
-        x: 65
+        x: 0
         y: 288
         width: 65
         height: 72
@@ -1107,7 +1044,7 @@ TextureImporter:
       name: spitter_25
       rect:
         serializedVersion: 2
-        x: 130
+        x: 65
         y: 288
         width: 65
         height: 72
@@ -1128,7 +1065,7 @@ TextureImporter:
       name: spitter_26
       rect:
         serializedVersion: 2
-        x: 195
+        x: 130
         y: 288
         width: 65
         height: 72
@@ -1149,7 +1086,7 @@ TextureImporter:
       name: spitter_27
       rect:
         serializedVersion: 2
-        x: 260
+        x: 195
         y: 288
         width: 65
         height: 72
@@ -1170,7 +1107,7 @@ TextureImporter:
       name: spitter_28
       rect:
         serializedVersion: 2
-        x: 325
+        x: 260
         y: 288
         width: 65
         height: 72
@@ -1191,7 +1128,7 @@ TextureImporter:
       name: spitter_29
       rect:
         serializedVersion: 2
-        x: 390
+        x: 325
         y: 288
         width: 65
         height: 72
@@ -1212,7 +1149,7 @@ TextureImporter:
       name: spitter_30
       rect:
         serializedVersion: 2
-        x: 455
+        x: 390
         y: 288
         width: 65
         height: 72
@@ -1233,7 +1170,7 @@ TextureImporter:
       name: spitter_31
       rect:
         serializedVersion: 2
-        x: 520
+        x: 455
         y: 288
         width: 65
         height: 72
@@ -1254,7 +1191,7 @@ TextureImporter:
       name: spitter_32
       rect:
         serializedVersion: 2
-        x: 585
+        x: 520
         y: 288
         width: 65
         height: 72
@@ -1275,7 +1212,7 @@ TextureImporter:
       name: spitter_33
       rect:
         serializedVersion: 2
-        x: 650
+        x: 585
         y: 288
         width: 65
         height: 72
@@ -1296,7 +1233,7 @@ TextureImporter:
       name: spitter_34
       rect:
         serializedVersion: 2
-        x: 715
+        x: 650
         y: 288
         width: 65
         height: 72
@@ -1317,7 +1254,7 @@ TextureImporter:
       name: spitter_35
       rect:
         serializedVersion: 2
-        x: 780
+        x: 715
         y: 288
         width: 65
         height: 72
@@ -1338,7 +1275,7 @@ TextureImporter:
       name: spitter_36
       rect:
         serializedVersion: 2
-        x: 845
+        x: 780
         y: 288
         width: 65
         height: 72
@@ -1359,7 +1296,7 @@ TextureImporter:
       name: spitter_37
       rect:
         serializedVersion: 2
-        x: 910
+        x: 845
         y: 288
         width: 65
         height: 72
@@ -1380,7 +1317,7 @@ TextureImporter:
       name: spitter_38
       rect:
         serializedVersion: 2
-        x: 975
+        x: 910
         y: 288
         width: 65
         height: 72
@@ -1401,8 +1338,8 @@ TextureImporter:
       name: spitter_40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 216
+        x: 1040
+        y: 288
         width: 65
         height: 72
       alignment: 0
@@ -1422,7 +1359,7 @@ TextureImporter:
       name: spitter_41
       rect:
         serializedVersion: 2
-        x: 65
+        x: 0
         y: 216
         width: 65
         height: 72
@@ -1443,7 +1380,7 @@ TextureImporter:
       name: spitter_42
       rect:
         serializedVersion: 2
-        x: 130
+        x: 65
         y: 216
         width: 65
         height: 72
@@ -1464,7 +1401,7 @@ TextureImporter:
       name: spitter_43
       rect:
         serializedVersion: 2
-        x: 195
+        x: 130
         y: 216
         width: 65
         height: 72
@@ -1485,7 +1422,7 @@ TextureImporter:
       name: spitter_44
       rect:
         serializedVersion: 2
-        x: 260
+        x: 195
         y: 216
         width: 65
         height: 72
@@ -1506,7 +1443,7 @@ TextureImporter:
       name: spitter_45
       rect:
         serializedVersion: 2
-        x: 325
+        x: 260
         y: 216
         width: 65
         height: 72
@@ -1527,7 +1464,7 @@ TextureImporter:
       name: spitter_46
       rect:
         serializedVersion: 2
-        x: 390
+        x: 325
         y: 216
         width: 65
         height: 72
@@ -1548,8 +1485,8 @@ TextureImporter:
       name: spitter_47
       rect:
         serializedVersion: 2
-        x: 0
-        y: 144
+        x: 390
+        y: 216
         width: 65
         height: 72
       alignment: 0
@@ -1569,7 +1506,7 @@ TextureImporter:
       name: spitter_48
       rect:
         serializedVersion: 2
-        x: 65
+        x: 0
         y: 144
         width: 65
         height: 72
@@ -1590,7 +1527,7 @@ TextureImporter:
       name: spitter_49
       rect:
         serializedVersion: 2
-        x: 130
+        x: 65
         y: 144
         width: 65
         height: 72
@@ -1611,7 +1548,7 @@ TextureImporter:
       name: spitter_50
       rect:
         serializedVersion: 2
-        x: 195
+        x: 130
         y: 144
         width: 65
         height: 72
@@ -1632,7 +1569,7 @@ TextureImporter:
       name: spitter_51
       rect:
         serializedVersion: 2
-        x: 260
+        x: 195
         y: 144
         width: 65
         height: 72
@@ -1653,8 +1590,8 @@ TextureImporter:
       name: spitter_52
       rect:
         serializedVersion: 2
-        x: 0
-        y: 72
+        x: 260
+        y: 144
         width: 65
         height: 72
       alignment: 0
@@ -1674,8 +1611,8 @@ TextureImporter:
       name: spitter_53
       rect:
         serializedVersion: 2
-        x: 65
-        y: 72
+        x: 325
+        y: 144
         width: 65
         height: 72
       alignment: 0
@@ -1695,8 +1632,8 @@ TextureImporter:
       name: spitter_54
       rect:
         serializedVersion: 2
-        x: 130
-        y: 72
+        x: 390
+        y: 144
         width: 65
         height: 72
       alignment: 0
@@ -1716,8 +1653,8 @@ TextureImporter:
       name: spitter_55
       rect:
         serializedVersion: 2
-        x: 195
-        y: 72
+        x: 455
+        y: 144
         width: 65
         height: 72
       alignment: 0
@@ -1737,8 +1674,8 @@ TextureImporter:
       name: spitter_56
       rect:
         serializedVersion: 2
-        x: 260
-        y: 72
+        x: 0
+        y: 0
         width: 65
         height: 72
       alignment: 0
@@ -1758,8 +1695,8 @@ TextureImporter:
       name: spitter_57
       rect:
         serializedVersion: 2
-        x: 325
-        y: 72
+        x: 65
+        y: 0
         width: 65
         height: 72
       alignment: 0
@@ -1779,8 +1716,8 @@ TextureImporter:
       name: spitter_58
       rect:
         serializedVersion: 2
-        x: 390
-        y: 72
+        x: 130
+        y: 0
         width: 65
         height: 72
       alignment: 0
@@ -1800,8 +1737,8 @@ TextureImporter:
       name: spitter_59
       rect:
         serializedVersion: 2
-        x: 455
-        y: 72
+        x: 195
+        y: 0
         width: 65
         height: 72
       alignment: 0
@@ -1821,7 +1758,7 @@ TextureImporter:
       name: spitter_60
       rect:
         serializedVersion: 2
-        x: 0
+        x: 260
         y: 0
         width: 65
         height: 72
@@ -1842,7 +1779,7 @@ TextureImporter:
       name: spitter_61
       rect:
         serializedVersion: 2
-        x: 65
+        x: 325
         y: 0
         width: 65
         height: 72
@@ -1863,7 +1800,7 @@ TextureImporter:
       name: spitter_62
       rect:
         serializedVersion: 2
-        x: 130
+        x: 390
         y: 0
         width: 65
         height: 72
@@ -1884,7 +1821,7 @@ TextureImporter:
       name: spitter_63
       rect:
         serializedVersion: 2
-        x: 195
+        x: 455
         y: 0
         width: 65
         height: 72
@@ -1905,7 +1842,7 @@ TextureImporter:
       name: spitter_64
       rect:
         serializedVersion: 2
-        x: 260
+        x: 520
         y: 0
         width: 65
         height: 72
@@ -1926,7 +1863,7 @@ TextureImporter:
       name: spitter_65
       rect:
         serializedVersion: 2
-        x: 325
+        x: 585
         y: 0
         width: 65
         height: 72
@@ -1947,7 +1884,7 @@ TextureImporter:
       name: spitter_66
       rect:
         serializedVersion: 2
-        x: 390
+        x: 650
         y: 0
         width: 65
         height: 72
@@ -1968,7 +1905,7 @@ TextureImporter:
       name: spitter_67
       rect:
         serializedVersion: 2
-        x: 455
+        x: 715
         y: 0
         width: 65
         height: 72
@@ -1989,7 +1926,7 @@ TextureImporter:
       name: spitter_68
       rect:
         serializedVersion: 2
-        x: 520
+        x: 780
         y: 0
         width: 65
         height: 72
@@ -2010,7 +1947,7 @@ TextureImporter:
       name: spitter_69
       rect:
         serializedVersion: 2
-        x: 585
+        x: 845
         y: 0
         width: 65
         height: 72
@@ -2031,7 +1968,7 @@ TextureImporter:
       name: spitter_70
       rect:
         serializedVersion: 2
-        x: 650
+        x: 910
         y: 0
         width: 65
         height: 72
@@ -2052,7 +1989,7 @@ TextureImporter:
       name: spitter_71
       rect:
         serializedVersion: 2
-        x: 715
+        x: 975
         y: 0
         width: 65
         height: 72
@@ -2070,11 +2007,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spitter_72
+      name: spitter_11
       rect:
         serializedVersion: 2
-        x: 780
-        y: 0
+        x: 715
+        y: 504
         width: 65
         height: 72
       alignment: 0
@@ -2084,18 +2021,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8bfd8b04b9bffc60800000000000000
-      internalID: 7854200458096540559
+      spriteID: 1ab07434114f3fae0800000000000000
+      internalID: -1516600294513374303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spitter_73
+      name: spitter_22
       rect:
         serializedVersion: 2
-        x: 845
-        y: 0
+        x: 650
+        y: 432
         width: 65
         height: 72
       alignment: 0
@@ -2105,39 +2042,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ad07c6f25ab74030800000000000000
-      internalID: 3478954102657322406
+      spriteID: 6b79a5286484a9dc0800000000000000
+      internalID: -3631510681848997962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spitter_74
-      rect:
-        serializedVersion: 2
-        x: 910
-        y: 0
-        width: 65
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c4ca5480458a8f60800000000000000
-      internalID: 8037382997141013696
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spitter_75
+      name: spitter_39
       rect:
         serializedVersion: 2
         x: 975
-        y: 0
+        y: 288
         width: 65
         height: 72
       alignment: 0
@@ -2147,8 +2063,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa87039df0b036d50800000000000000
-      internalID: 6729234430917900463
+      spriteID: 8538b190653188d00800000000000000
+      internalID: 975050579566625624
       vertices: []
       indices: 
       edges: []

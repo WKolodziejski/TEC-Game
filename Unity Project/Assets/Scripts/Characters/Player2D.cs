@@ -33,9 +33,6 @@ public class Player2D : Character
 
     void Update()
     {
-        if (IsDead())
-            return;
-
         if (Input.GetButtonDown("Fire2"))
             hacking = true;
 
