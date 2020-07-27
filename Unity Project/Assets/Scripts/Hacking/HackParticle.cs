@@ -16,6 +16,12 @@ public class HackParticle : MonoBehaviour
             Destroy(gameObject);
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.GetComponent<Hackable>())
+            Destroy(gameObject);
+    }
+
     public void FlyTo(Transform target)
     {
         transform.LookAt(target);

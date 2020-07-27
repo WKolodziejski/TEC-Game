@@ -118,6 +118,13 @@ public class HackInterface : MonoBehaviour
 
         foreach (Hackable h in objs)
         {
+
+            Character c = h.GetComponent<Character>();
+
+            if (c != null)
+                if (c.IsDead())
+                    continue;
+
             float dist = Vector3.Distance(h.transform.position, currentPos);
 
             if (dist < minDist && dist <= maxDist)

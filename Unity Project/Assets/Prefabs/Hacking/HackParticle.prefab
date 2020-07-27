@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6856565769980322774}
   - component: {fileID: 8787702166047475819}
   - component: {fileID: 7719782406936132243}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HackParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,6 +93,22 @@ PrefabInstance:
     - target: {fileID: 141272, guid: 816610dd3f7544a49986fd879e15a37c, type: 3}
       propertyPath: m_Name
       value: SymbolMissileGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 141272, guid: 816610dd3f7544a49986fd879e15a37c, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 147456, guid: 816610dd3f7544a49986fd879e15a37c, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 176722, guid: 816610dd3f7544a49986fd879e15a37c, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 195830, guid: 816610dd3f7544a49986fd879e15a37c, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 462476, guid: 816610dd3f7544a49986fd879e15a37c, type: 3}
       propertyPath: m_LocalPosition.x
