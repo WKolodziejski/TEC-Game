@@ -24,8 +24,8 @@ public class Turret : Enemy2D //criar classe de tiro "complexo"
 
     void Update()
     {
-        if (GetTarget() != null) {
-            attackAction();
+        if (GetTarget() != null && CanAttack()) {
+            Attack();
         }
     }
 
@@ -65,7 +65,6 @@ public class Turret : Enemy2D //criar classe de tiro "complexo"
                     }
                 }
             }
-
             weapon.Fire(mainBarrel);
         }
     }

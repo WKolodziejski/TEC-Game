@@ -7,8 +7,8 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
 {
 
     protected EnemySpawner enemySpawner;
-    protected delegate void AttackAction();
-    protected AttackAction attackAction;
+    //protected delegate void AttackAction();
+    //protected AttackAction attackAction;
 
     //esse cu não deixa usar InitializeComponents() em abstratct!!!
 
@@ -18,20 +18,17 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
         //throw new System.NotImplementedException();
     }
 
-    protected void CanAttack()
+    protected bool CanAttack()
     {
         float[] boundries = enemySpawner.getCameraBoundries();
-        if (transform.position.x > boundries[0] && transform.position.x < boundries[1] &&
-            transform.position.y > boundries[2] && transform.position.y < boundries[3])
-        {
-            attackAction = Attack;
-        }
+        return transform.position.x > boundries[0] && transform.position.x < boundries[1] &&
+            transform.position.y > boundries[2] && transform.position.y < boundries[3] ;
     }
 
     protected void LookAtTarget()
     {
         if (GetTarget() != null)
-            transform.rotation = (transform.position.x > GetTarget().position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f);
+            transform.rotation = (transform.position.x < GetTarget().position.x) ? Quaternion.identity : Quaternion.Euler(0f, 180f, 0f);
     }
 
     public abstract void Attack();
@@ -44,7 +41,9 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
     protected override void OnDie()
     {
         base.OnDie();
-        enemySpawner.Remove(gameObject);
+
+        if (enemySpawner != null)
+            enemySpawner.Remove(gameObject);
     }
 
 }

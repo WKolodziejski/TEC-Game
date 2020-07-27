@@ -7,6 +7,7 @@ public class ThrowerMissile : MonoBehaviour
 
     public GameObject tail;
     public GameObject explosion;
+    public float speed = 500f;
 
     private Rigidbody2D rb;
     private bool fired;
@@ -29,9 +30,15 @@ public class ThrowerMissile : MonoBehaviour
             fired = true;
             tail.SetActive(true);
             rb.gravityScale = 0.1f;
-            rb.AddForce(Vector3.right * 500f * (transform.parent.transform.position.magnitude >= 0 ? 1 : -1));
+            rb.AddForce(Vector3.right * speed * (transform.parent.transform.rotation.eulerAngles.y == 0 ? 1 : -1));
             transform.SetParent(null);
         }
+    }
+
+    public void Drop()
+    {
+        rb.gravityScale = 1f;
+        transform.SetParent(null);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -39,14 +46,14 @@ public class ThrowerMissile : MonoBehaviour
 
         Debug.Log(tag + " -> " + collision.name);
 
-        if (!collision.CompareTag("Grid"))
+        if (!collision.CompareTag("Grid") && !collision.tag.Contains("Enemy"))
         {
             Destroy(Instantiate(explosion, gameObject.transform.position, Quaternion.identity), 2f);
             Destroy(gameObject);
 
             if (collision.CompareTag("Player"))
             {
-                collision.GetComponent<Player2D>().TakeDamage(1);
+                collision.GetComponent<Player2D>().Kill();
             }
         }
     }

@@ -28,7 +28,7 @@ public class Player2D : Character
 
     protected override void InitializeComponents()
     {
-        animator = GetComponentInChildren<Animator>();
+        
     }
 
     void Update()

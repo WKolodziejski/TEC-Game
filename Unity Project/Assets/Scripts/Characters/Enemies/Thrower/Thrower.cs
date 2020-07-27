@@ -9,25 +9,35 @@ public class Thrower : Enemy2D
 
     protected override void InitializeComponents()
     {
-        attackAction = Attack;
+        SetEnemySpawner();
     }
 
     void Update()
     {
-        attackAction();
+        LookAtTarget();
+        Attack();
     }
 
     public override void Attack()
     {
         if (GetTarget() != null)
         {
-            if (Vector2.Distance(transform.position, GetTarget().position) <= 10f)
+            if (CanAttack())
             {
                 missile.Fire();
                 animator.SetTrigger("Throw");
-                Destroy(transform.parent.gameObject, 0.5f);
+                Destroy(gameObject, 0.5f);
             }
         }
+    }
+
+    protected override void OnDie()
+    {
+        base.OnDie();
+
+        missile.Drop();
+
+        Destroy(gameObject, 0.1f);
     }
 
 }
