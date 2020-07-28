@@ -7094,6 +7094,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3708518628544176558, guid: 64038c9f61d667541b12cfecbe7003f0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708518628544176558, guid: 64038c9f61d667541b12cfecbe7003f0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708518628544176558, guid: 64038c9f61d667541b12cfecbe7003f0,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3783409612423197993, guid: 64038c9f61d667541b12cfecbe7003f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7153,6 +7168,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sniper
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563592208527816992, guid: 64038c9f61d667541b12cfecbe7003f0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2974042352950513775, guid: 1f8e2742603811f4f97cc71d7c1ac761,
+        type: 3}
+    - target: {fileID: 8563592208527816992, guid: 64038c9f61d667541b12cfecbe7003f0,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563592208527816992, guid: 64038c9f61d667541b12cfecbe7003f0,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.2500228
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563592208527816992, guid: 64038c9f61d667541b12cfecbe7003f0,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080696422420131468, guid: 64038c9f61d667541b12cfecbe7003f0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64038c9f61d667541b12cfecbe7003f0, type: 3}
