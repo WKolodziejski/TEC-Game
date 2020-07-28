@@ -41,7 +41,10 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
 
     protected int GetTargetMagnitude()
     {
-        return GetTargetRotation() == Quaternion.identity ? 1 : -1;
+        if (GetTarget() != null)
+            return transform.position.x < GetTarget().position.x ? 1 : -1;
+        else
+            return 1;
     }
 
     public abstract void Attack();

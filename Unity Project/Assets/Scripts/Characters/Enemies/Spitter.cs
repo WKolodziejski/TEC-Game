@@ -66,7 +66,7 @@ public class Spitter : Enemy2D
     {
         animator.SetTrigger("spit");
         
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.5f);
 
         animator.ResetTrigger("spit");
 
