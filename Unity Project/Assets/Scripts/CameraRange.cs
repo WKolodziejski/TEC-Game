@@ -11,6 +11,13 @@ public class CameraRange : MonoBehaviour
             collision.gameObject.GetComponent<Character>().SetEnabled(true);
     }
 
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+            collision.gameObject.GetComponent<Character>().SetEnabled(true);
+    }
+
+
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
