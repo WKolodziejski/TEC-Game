@@ -6,12 +6,6 @@ using UnityEngine;
 public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de facção, 
 {
 
-    //protected EnemySpawner enemySpawner;
-    //protected delegate void AttackAction();
-    //protected AttackAction attackAction;
-
-    //esse cu não deixa usar InitializeComponents() em abstratct!!!
-
     //CHAMAR BASE NOS FILHOS
     protected override void InitializeComponents()
     {

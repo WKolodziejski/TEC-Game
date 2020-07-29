@@ -132,7 +132,8 @@ public abstract class Character : MonoBehaviour
 
     public void SetEnabled(bool enabled)
     {
-        this.enabled = enabled;
+        if (!isDead)
+            this.enabled = enabled;
     }
 
 }

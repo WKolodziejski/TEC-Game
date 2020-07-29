@@ -42,6 +42,8 @@ public class GameController : MonoBehaviour
         {
             pontuation[e.GetType()] = 0;
 
+            //TODO: não contar se inimigo morrer sozinho
+
             e.SetOnDieListener(() => pontuation[e.GetType()]++);
         }
 
