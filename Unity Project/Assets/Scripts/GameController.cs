@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        StartCoroutine(ILoadScene("TESTE"));
+        StartCoroutine(ILoadScene("Level1"));
 
         lifebar = FindObjectOfType<Lifebar>();
     }
