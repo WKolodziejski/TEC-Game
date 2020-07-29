@@ -7,6 +7,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Turret : Enemy2D //criar classe de tiro "complexo"
 {
+
     private Vector3 yAxis;
 
     public Transform barrelUp;
@@ -17,16 +18,13 @@ public class Turret : Enemy2D //criar classe de tiro "complexo"
 
     protected override void InitializeComponents()
     {
-        SetEnemySpawner();
         yAxis = new Vector3(0f, 1f, 0f);
-        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        if (GetTarget() != null && CanAttack()) {
+        if (GetTarget() != null)
             Attack();
-        }
     }
 
     public override void Attack()

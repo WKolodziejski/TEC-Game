@@ -10,6 +10,7 @@ using Vector2 = UnityEngine.Vector2;
 
 public class EnemySpawner : MonoBehaviour //criar uma classe CameraData? não poderia ser um singleton, pois precisaria da orientação como parametro
 {
+
     public GameObject enemy;
     public enum Orientation { Horizontal, Vertical, Diagonal };
     public Orientation levelOrientation;
@@ -47,13 +48,13 @@ public class EnemySpawner : MonoBehaviour //criar uma classe CameraData? não po
 
     private void Spawn()
     {
-        enemyList.Add(Instantiate(enemy, getSpawnCoord(), Quaternion.identity));
+        GameObject e = Instantiate(enemy, getSpawnCoord(), Quaternion.identity);
+        e.GetComponent<Enemy2D>().SetOnDieListener(() =>
+        {
+            enemyList.Remove(e);
+        });
+        enemyList.Add(e);
         updateSpawnTime();
-    }
-
-    public void Remove(GameObject enemy)
-    {
-        enemyList.Remove(enemy);
     }
 
     private void updateSpawnTime()

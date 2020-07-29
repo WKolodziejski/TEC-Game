@@ -16,14 +16,12 @@ public class Sniper : Enemy2D
 
     protected override void InitializeComponents()
     {
-        SetEnemySpawner();
         yAxis = new Vector3(0f, 1f, 0f);
-        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        if (GetTarget() != null && CanAttack())
+        if (GetTarget() != null)
             Attack();
     }
 

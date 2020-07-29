@@ -16,9 +16,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
     protected override void InitializeComponents()
     {
         desiredDir = new Vector3(-movementSpeed * Time.deltaTime, 0f, 0f); //setDesiredDir();
-        animator = GetComponentInChildren<Animator>(); //checar isso!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         nextMove = moveCooldown; //setFirstMove();
-        SetEnemySpawner();
         resetMoveCheck();
     }
 
@@ -26,9 +24,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
     {
         if (GetTarget() != null) {
             Move();
-
-            if (CanAttack())
-                Attack();
+            Attack();
         }
     }
 

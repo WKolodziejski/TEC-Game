@@ -14,6 +14,7 @@ public class Bullet : MonoBehaviour
     public GameObject muzzle;
 
     protected Rigidbody2D rb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,8 +41,6 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log(tag + " -> " + collision.name);
-
-        Debug.Log(rb.velocity);
 
         /*
          * BulletPlayer não contém Player
