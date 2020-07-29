@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
@@ -15,8 +16,8 @@ public abstract class Character : MonoBehaviour
     protected Animator animator;
     protected Rigidbody2D rb;
     
-    private Action onDie;
-    private Action onDamage;
+    private List<Action> onDie;
+    private List<Action> onDamage;
     private float lastCooldown;
     private bool isDead;
 
@@ -25,7 +26,6 @@ public abstract class Character : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        //barrel = gameObject.transform.Find("Barrel");
 
         if (weaponPrefab != null)
             SetWeapon(weaponPrefab);
@@ -43,16 +43,6 @@ public abstract class Character : MonoBehaviour
 
         weapon = Instantiate(prefab, transform);
     }
-
-    /*protected void Fire()
-    {
-        weapon.Fire(mainBarrel);
-    }
-
-    protected void Fire(Transform barrel)
-    {
-        weapon.Fire(barrel);
-    }*/
 
     public virtual void TakeDamage(float damage)
     {
@@ -96,7 +86,7 @@ public abstract class Character : MonoBehaviour
 
         StopAllCoroutines();
 
-        onDie?.Invoke();
+        CallOnDie();
 
         animator.SetBool("dead", isDead);
 
@@ -105,19 +95,39 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void OnDamage(float damage)
     {
-        onDamage?.Invoke();
+        CallOnDamage();
     }
 
     //Listeners EXTERNOS
 
-    public void SetOnDieListener(Action onDie)
+    public void SetOnDieListener(Action a)
     {
-        this.onDie = onDie;
+        if (onDie == null)
+            onDie = new List<Action>();
+
+        onDie.Add(a);
     }
 
-    public void SetOnDamageListener(Action onDamage)
+    public void SetOnDamageListener(Action a)
     {
-        this.onDamage = onDamage;
+        if (onDamage == null)
+            onDamage = new List<Action>();
+
+        onDamage.Add(a);
+    }
+
+    private void CallOnDie()
+    {
+        if (onDie != null)
+            foreach (Action a in onDie)
+                a?.Invoke();
+    }
+
+    private void CallOnDamage()
+    {
+        if (onDamage != null)
+            foreach (Action a in onDamage)
+                a?.Invoke();
     }
 
 }

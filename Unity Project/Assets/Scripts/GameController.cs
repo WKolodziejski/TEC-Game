@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class GameController : MonoBehaviour
     private Lifebar lifebar;
     private Vector3 checkpoint;
     private int lifes = 3;
+
+    private Dictionary<Type, int> pontuation;
 
     void Awake()
     {
@@ -31,8 +34,18 @@ public class GameController : MonoBehaviour
             yield return null;
         }
 
-        SetupPlayer(Instantiate(player, checkpoint, Quaternion.identity, null));
         confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Grid").GetComponent<PolygonCollider2D>();
+
+        pontuation = new Dictionary<Type, int>();
+
+        foreach (Enemy2D e in FindObjectsOfType<Enemy2D>())
+        {
+            pontuation[e.GetType()] = 0;
+
+            e.SetOnDieListener(() => pontuation[e.GetType()]++);
+        }
+
+        SetupPlayer(Instantiate(player, checkpoint, Quaternion.identity, null));
     }
 
     private void SetupPlayer(Player2D p)
