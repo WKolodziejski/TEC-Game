@@ -18,7 +18,7 @@ public class Spitter : Enemy2D
 
     protected override void InitializeComponents()
     {
-        //throw new System.NotImplementedException();
+        base.InitializeComponents();
     }
 
     void Update()

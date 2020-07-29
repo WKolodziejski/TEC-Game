@@ -44,7 +44,7 @@ public class ThrowerMissile : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
 
-        Debug.Log(tag + " -> " + collision.name);
+        //Debug.Log(tag + " -> " + collision.name);
 
         if (!collision.CompareTag("Grid") && !collision.tag.Contains("Enemy") && !collision.tag.Contains("Bullet"))
         {

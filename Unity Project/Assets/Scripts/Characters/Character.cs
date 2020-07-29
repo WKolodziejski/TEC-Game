@@ -130,4 +130,9 @@ public abstract class Character : MonoBehaviour
                 a?.Invoke();
     }
 
+    public void SetEnabled(bool enabled)
+    {
+        this.enabled = enabled;
+    }
+
 }

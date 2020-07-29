@@ -28,7 +28,7 @@ public class Player2D : Character
 
     protected override void InitializeComponents()
     {
-        
+        enabled = true;
     }
 
     void Update()

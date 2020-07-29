@@ -15,6 +15,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
 
     protected override void InitializeComponents()
     {
+        base.InitializeComponents();
         desiredDir = new Vector3(-movementSpeed * Time.deltaTime, 0f, 0f); //setDesiredDir();
         nextMove = moveCooldown; //setFirstMove();
         resetMoveCheck();

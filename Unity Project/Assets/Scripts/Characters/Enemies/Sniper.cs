@@ -16,6 +16,7 @@ public class Sniper : Enemy2D
 
     protected override void InitializeComponents()
     {
+        base.InitializeComponents();
         yAxis = new Vector3(0f, 1f, 0f);
     }
 

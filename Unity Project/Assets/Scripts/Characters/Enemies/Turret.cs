@@ -18,6 +18,7 @@ public class Turret : Enemy2D //criar classe de tiro "complexo"
 
     protected override void InitializeComponents()
     {
+        base.InitializeComponents();
         yAxis = new Vector3(0f, 1f, 0f);
     }
 

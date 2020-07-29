@@ -15,7 +15,7 @@ public abstract class Enemy2D : Enemy //TODO: pular, outros inimigos, mudar de f
     //CHAMAR BASE NOS FILHOS
     protected override void InitializeComponents()
     {
-        //throw new System.NotImplementedException();
+        enabled = false;
     }
 
     /*protected bool CanAttack()
