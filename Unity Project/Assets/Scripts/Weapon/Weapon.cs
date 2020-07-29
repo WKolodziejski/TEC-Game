@@ -9,12 +9,22 @@ public class Weapon : MonoBehaviour
     public Bullet bullet;
     public float fireRate = 1f;
 
+    private Vector3 lastPosition;
     private float lastCooldown;
+    private float relativeSpeed;
 
     void Start()
     {
         tag = transform.parent.tag;
         fireRate = 1 / fireRate;
+
+        lastPosition = transform.parent.position;
+    }
+
+    void FixedUpdate()
+    {
+        relativeSpeed = (transform.parent.position.x - lastPosition.x) / Time.deltaTime;
+        lastPosition = transform.parent.position;
     }
 
     public void Fire(Transform barrel)
@@ -22,7 +32,9 @@ public class Weapon : MonoBehaviour
         if (lastCooldown <= Time.time)
         {
             lastCooldown = Time.time + fireRate;
-            Instantiate(bullet, barrel.position, barrel.rotation).tag += tag;
+            Bullet b = Instantiate(bullet, barrel.position, barrel.rotation);
+            b.tag += tag;
+            b.Fire(relativeSpeed);
         }
     }
 

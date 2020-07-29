@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.WSA;
@@ -18,13 +19,29 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.forward * speed;
 
-        Destroy(Instantiate(muzzle, gameObject.transform.position, gameObject.transform.rotation), 1f);
+        Destroy(Instantiate(muzzle, transform.position, transform.rotation), 1f);
         Destroy(gameObject, ttl);
+    }
+
+    public void Fire(float relativeSpeed)
+    {
+        //Tive que usar coroutine pq o rb é null quando chama essa função ?????
+        StartCoroutine(IFire(relativeSpeed));
+    }
+
+    private IEnumerator IFire(float relativeSpeed)
+    {
+        while (rb == null)
+            yield return null;
+
+        rb.velocity = transform.forward * (speed + Math.Abs(relativeSpeed));
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log(tag + " -> " + collision.name);
+
+        Debug.Log(rb.velocity);
 
         /*
          * BulletPlayer não contém Player

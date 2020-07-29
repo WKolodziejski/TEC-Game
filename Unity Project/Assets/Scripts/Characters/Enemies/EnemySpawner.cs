@@ -29,6 +29,10 @@ public class EnemySpawner : MonoBehaviour //criar uma classe CameraData? não po
         cameraT = Camera.main.transform;
         updateSpawnTime();
         setSpawnBoundriesMult();
+
+        //DEBUG
+
+        enabled = false;
     }
 
     void Update() // checar melhor o lugar do spawn

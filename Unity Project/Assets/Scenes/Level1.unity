@@ -27056,6 +27056,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5859210897658407857, guid: 00f1bd67934224f4cae745848eb8856e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 5859210897658407858, guid: 00f1bd67934224f4cae745848eb8856e,
         type: 3}
       propertyPath: m_Layer
@@ -33715,7 +33720,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.528
   m_Color: {r: 0.50445, g: 0.9811321, b: 0.67556655, a: 1}
-  m_Intensity: 1.85
+  m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
   m_LightCookieSprite: {fileID: 0}
@@ -34013,7 +34018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1476167850
 Transform:
   m_ObjectHideFlags: 0
@@ -34044,7 +34049,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.528
   m_Color: {r: 0.50445, g: 0.9811321, b: 0.67556655, a: 1}
-  m_Intensity: 1.85
+  m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
   m_LightCookieSprite: {fileID: 0}
