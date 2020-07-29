@@ -28,7 +28,7 @@ public class EnemySpawnerPoint : MonoBehaviour
 
     private void Spawn()
     {
-        if ((enemyList.Count < enemyLimit) && !inView()){
+        if ((enemyList.Count < enemyLimit) && !GetComponent<Renderer>().IsVisibleFrom(Camera.main)){
             GameObject e = Instantiate(enemy, transform.position, quaternion.identity);
             e.GetComponent<Enemy2D>().SetOnDieListener(() =>
                 {
@@ -42,11 +42,4 @@ public class EnemySpawnerPoint : MonoBehaviour
     public void SetEnabled(bool enabled){
         this.enabled = enabled;
     }
-
-    private bool inView(){
-        // se aparece na tela
-        return false;
-    }
-    
-    
 }
