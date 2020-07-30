@@ -19,12 +19,17 @@ public class Player2D : Character
     private bool grounded;
     private bool platform;
     private bool hacking;
+    private bool lying;
 
     public Transform barrelFront;
     public Transform barrelUp;
     public Transform barrelDiagonalUp;
     public Transform barrelDiagonalDown;
+    public Transform barrelLying;
     public Transform hand;
+
+    public PolygonCollider2D lyingCollider;
+    public PolygonCollider2D standingCollider;
 
     protected override void InitializeComponents()
     {
@@ -33,6 +38,7 @@ public class Player2D : Character
 
     void Update()
     {
+        lying = false;
         if (Input.GetButtonDown("Fire2"))
             hacking = true;
 
@@ -77,8 +83,10 @@ public class Player2D : Character
                 animator.SetBool("up", false);
                 animator.SetBool("down", true);
 
-                if (horizontal == 0f)
-                    mainBarrel = barrelFront;
+                if (horizontal == 0f){
+                    lying = true;
+                    mainBarrel = barrelLying;
+                }
                 else
                     mainBarrel = barrelDiagonalDown;
             }
@@ -94,6 +102,9 @@ public class Player2D : Character
         animator.SetBool("dead", IsDead());
         animator.SetBool("jumping", !grounded);
         animator.SetBool("moving", horizontal != 0f);
+
+        lyingCollider.enabled = lying;
+        standingCollider.enabled = !lying;
     }
 
     void FixedUpdate()

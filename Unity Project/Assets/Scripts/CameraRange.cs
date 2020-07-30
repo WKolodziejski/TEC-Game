@@ -15,6 +15,8 @@ public class CameraRange : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
             collision.gameObject.GetComponent<Character>().SetEnabled(true);
+        if (collision.CompareTag("Spawner"))
+            collision.gameObject.GetComponent<EnemySpawnerPoint>().SetEnabled(true);
     }
 
 
@@ -22,6 +24,7 @@ public class CameraRange : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
             collision.gameObject.GetComponent<Character>().SetEnabled(false);
+        if (collision.CompareTag("Spawner"))
+            collision.gameObject.GetComponent<EnemySpawnerPoint>().SetEnabled(false);
     }
-
 }
