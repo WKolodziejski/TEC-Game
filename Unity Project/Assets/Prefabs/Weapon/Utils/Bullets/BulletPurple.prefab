@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 595494354877179255}
   - component: {fileID: 9096364439573429532}
   - component: {fileID: 6961459194690451490}
+  - component: {fileID: 4060915706518956354}
   m_Layer: 15
   m_Name: BulletPurple
   m_TagString: Bullet
@@ -88,6 +89,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!210 &4060915706518956354
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959543355661987157}
+  m_Enabled: 1
+  m_SortingLayerID: 1513144593
+  m_SortingLayer: -2
+  m_SortingOrder: 0
 --- !u!1001 &7813985861834366751
 PrefabInstance:
   m_ObjectHideFlags: 0

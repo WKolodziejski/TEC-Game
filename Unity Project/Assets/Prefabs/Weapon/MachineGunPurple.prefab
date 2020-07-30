@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 48706883310247846}
   - component: {fileID: 1072420094742162731}
   m_Layer: 0
-  m_Name: MachineGun
+  m_Name: MachineGunPurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

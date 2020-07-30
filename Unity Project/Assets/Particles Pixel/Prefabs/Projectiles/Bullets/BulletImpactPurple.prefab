@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 19848326}
   - component: {fileID: 19966882}
   - component: {fileID: 8268482}
+  - component: {fileID: 4181407941933391}
   m_Layer: 0
   m_Name: BulletImpactPurple
   m_TagString: Untagged
@@ -4768,6 +4769,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!210 &4181407941933391
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107292}
+  m_Enabled: 1
+  m_SortingLayerID: 1513144593
+  m_SortingLayer: -2
+  m_SortingOrder: 0
 --- !u!1 &129616
 GameObject:
   m_ObjectHideFlags: 0

@@ -9378,6 +9378,7 @@ GameObject:
   - component: {fileID: 495098}
   - component: {fileID: 19874712}
   - component: {fileID: 19906798}
+  - component: {fileID: -866230631287750351}
   m_Layer: 0
   m_Name: MuzzleFlashLaserPurple
   m_TagString: Untagged
@@ -14073,6 +14074,17 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!210 &-866230631287750351
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177002}
+  m_Enabled: 1
+  m_SortingLayerID: 1513144593
+  m_SortingLayer: -2
+  m_SortingOrder: 0
 --- !u!1 &186920
 GameObject:
   m_ObjectHideFlags: 0
