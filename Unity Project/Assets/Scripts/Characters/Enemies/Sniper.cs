@@ -26,6 +26,8 @@ public class Sniper : Enemy2D
     {
         if (GetTarget() != null)
             Attack();
+        else
+            animator.SetFloat("angle", -1);
     }
 
     public override void Attack()
