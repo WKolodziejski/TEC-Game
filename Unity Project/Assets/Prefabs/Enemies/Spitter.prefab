@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6466141861340973700}
   - component: {fileID: 6466141861340973702}
   m_Layer: 10
-  m_Name: Spitter 1
+  m_Name: Spitter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6466141861340973698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 217.45, y: -6.23, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6466141861699167781}
