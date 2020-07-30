@@ -10,6 +10,8 @@ public class Sniper : Enemy2D
 
     private Vector3 yAxis;
 
+    public Transform barrelU;
+    public Transform barrelD;
     public Transform barrelF;
     public Transform barrelDU;
     public Transform barrelDD;
@@ -35,21 +37,20 @@ public class Sniper : Enemy2D
 
         if (weapon.CanFire()) {
 
-            if (angle > 0f && angle < 70f) //setBarrel
-            {
+            if (angle >= 0f && angle < 22.5f)
+                mainBarrel = barrelU;
+            else if (angle >= 22.5f && angle < 67.5f)
                 mainBarrel = barrelDU;
-            } else {
-                if (angle > 70f && angle < 110f)
-                {
-                    mainBarrel = barrelF;
-                } else
-                {
-                    mainBarrel = barrelDD;
-                }
-            }
+            else if (angle >= 67.5f && angle < 112.5f)
+                mainBarrel = barrelF;
+            else if (angle >= 112.5f && angle < 157.5f)
+                mainBarrel = barrelDD;
+            else if (angle >= 157.5f && angle < 180f)
+                mainBarrel = barrelD;
 
-            mainBarrel.rotation = Quaternion.Euler(-angle - 90f, (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
+            // mainBarrel.rotation = Quaternion.Euler(-angle - 90f, (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
 
+            animator.SetTrigger("fire");
             weapon.Fire(mainBarrel);
         }
     }

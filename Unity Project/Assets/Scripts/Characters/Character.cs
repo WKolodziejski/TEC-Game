@@ -55,9 +55,7 @@ public abstract class Character : MonoBehaviour
             OnDamage(damage);
             
             if (hp <= 0)
-            {
                 Kill();
-            }
         }
     }
     
@@ -68,7 +66,7 @@ public abstract class Character : MonoBehaviour
             hp = 0;
             isDead = true;
 
-            OnDie(); 
+            OnDie();
         }
     }
 
@@ -77,8 +75,14 @@ public abstract class Character : MonoBehaviour
         return isDead;
     }
 
+    public void SetEnabled(bool enabled)
+    {
+        if (!isDead)
+            this.enabled = enabled;
+    }
+
     //Listeners INTERNOS
-    //                      CHAMAR BASE.METODO()!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //CHAMAR BASE.METODO()!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     protected virtual void OnDie()
     {
@@ -128,12 +132,6 @@ public abstract class Character : MonoBehaviour
         if (onDamage != null)
             foreach (Action a in onDamage)
                 a?.Invoke();
-    }
-
-    public void SetEnabled(bool enabled)
-    {
-        if (!isDead)
-            this.enabled = enabled;
     }
 
 }
