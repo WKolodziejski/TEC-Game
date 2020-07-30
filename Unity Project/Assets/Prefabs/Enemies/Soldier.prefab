@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8617182084509214989}
   - component: {fileID: 3790207174084181669}
   - component: {fileID: 8444360762300383532}
-  m_Layer: 10
+  m_Layer: 19
   m_Name: JumpCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
