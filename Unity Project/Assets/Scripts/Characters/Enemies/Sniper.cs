@@ -48,7 +48,7 @@ public class Sniper : Enemy2D
             else if (angle >= 157.5f && angle < 180f)
                 mainBarrel = barrelD;
 
-            // mainBarrel.rotation = Quaternion.Euler(-angle - 90f, (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
+            mainBarrel.rotation = Quaternion.Euler(-angle - 90f, (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
 
             animator.SetTrigger("fire");
             weapon.Fire(mainBarrel);
