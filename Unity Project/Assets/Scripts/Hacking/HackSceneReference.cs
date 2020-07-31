@@ -51,7 +51,7 @@ public class HackSceneReference : MonoBehaviour
 
     private IEnumerator IReturn(bool won)
     {
-        Debug.Log("Entering...");
+        Debug.Log("Returning...");
 
         yield return new WaitForSeconds(1f * Time.timeScale);
 

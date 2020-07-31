@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Playables;
 using static Character;
 using static HackSceneReference;
 
@@ -12,6 +13,10 @@ public class HackGameController : MonoBehaviour
     public GameObject lEASY;
     public GameObject lNORMAL;
     public GameObject lHARD;
+
+    public GameObject start;
+    public GameObject sucess;
+    public GameObject failed;
 
     private List<BossHack> bosses;
     private List<EnemyHack> enemies;
@@ -92,25 +97,28 @@ public class HackGameController : MonoBehaviour
 
     private IEnumerator IPlayEnter()
     {
-        //TODO: cutscene "start hacking"
+        Time.timeScale = 0.1f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
-        //Time.timeScale = 0.1f;
-        //Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        start.SetActive(true);
 
         yield return new WaitForSeconds(1f * Time.timeScale);
 
-        //TODO: fade
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;
+
+        start.SetActive(false);
     }
 
     private IEnumerator IPlayExit(bool won)
     {
-        //TODO: fade
         Time.timeScale = 0.1f;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
-        //TODO: cutscene "finish"
+        if (won)
+            sucess.SetActive(true);
+        else
+            failed.SetActive(true);
 
         yield return new WaitForSeconds(1f * Time.timeScale);
 

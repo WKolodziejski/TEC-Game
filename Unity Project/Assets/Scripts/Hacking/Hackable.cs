@@ -36,10 +36,20 @@ public class Hackable : MonoBehaviour
     {
         if (isHacked)
         {
-            Destroy(portal, 1f);
+            Destroy(portal, 1f * Time.timeScale);
 
-            //TODO: se for inimigo: matar
-            //      se for objeto permitir acesso chamando action()
+            if (FindObjectOfType<HackSceneReference>().Won())
+            {
+                if (gameObject.GetComponent<Character>() != null)
+                    gameObject.GetComponent<Character>().Kill();
+                else
+                    action?.Invoke();
+
+            }
+            else
+            {
+                FindObjectOfType<Player2D>().TakeDamage(5f);
+            }
         }
     }
 

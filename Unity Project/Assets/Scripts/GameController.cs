@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        StartCoroutine(ILoadScene("Level1"));
+        StartCoroutine(ILoadScene("TESTE"));
 
         lifebar = FindObjectOfType<Lifebar>();
     }
@@ -63,8 +63,6 @@ public class GameController : MonoBehaviour
             cam.Follow = null;
             cam.LookAt = null;
 
-            Debug.Log("Morri 1");
-
             lifes--;
 
             if (lifes == 0)
@@ -73,8 +71,6 @@ public class GameController : MonoBehaviour
             } 
             else
             {
-                Debug.Log("Morri 2");
-
                 lifebar.SetExtraLifes(lifes);
 
                 StartCoroutine(INewPlayer());
