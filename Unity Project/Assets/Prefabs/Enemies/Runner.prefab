@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8444360762300383532}
   m_Layer: 19
   m_Name: JumpCheck
-  m_TagString: JumpCheck
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49d9b3866e6e6b459269bea29a4554c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground: 0
+  ground: 1
 --- !u!1 &8806556650047725023
 GameObject:
   m_ObjectHideFlags: 0
