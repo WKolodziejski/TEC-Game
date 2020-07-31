@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1579,7 +1579,6 @@ GameObject:
   - component: {fileID: 701619475}
   - component: {fileID: 701619474}
   - component: {fileID: 701619476}
-  - component: {fileID: 701619473}
   - component: {fileID: 701619477}
   m_Layer: 9
   m_Name: Platforms
@@ -4356,18 +4355,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &701619473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701619469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fee1b1245f6298b4d93eac7e85e799bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &701619474
 Rigidbody2D:
   serializedVersion: 4
@@ -4413,7 +4400,7 @@ PlatformEffector2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701619469}
   m_Enabled: 1
-  m_UseColliderMask: 1
+  m_UseColliderMask: 0
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 3072
