@@ -42,12 +42,13 @@ public class Spitter : Enemy2D
 
     private IEnumerator IJump()
     {
+        GetComponent<BoxCollider2D>().enabled = false;
+
         jumping = true;
         
         rb.gravityScale = 3f;
 
         rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
-        //rb.AddForce(Vector2.right * -2f, ForceMode2D.Impulse);
 
         animator.SetBool("jumping", true);
 
