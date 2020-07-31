@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73aabb0daffd104aae5ef02dff00a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 1072420094742162731, guid: 46bceafad6e5bdf409ec6fd5e52ddd4d,
+  weaponPrefab: {fileID: 2261321554311384493, guid: 2097ec8c83558554e8b69a92bd88cb73,
     type: 3}
   mainBarrel: {fileID: 7760883125871837548}
   hp: 9999999

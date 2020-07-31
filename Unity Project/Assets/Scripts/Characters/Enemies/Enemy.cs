@@ -5,12 +5,12 @@ using UnityEngine;
 public abstract class Enemy : Character
 {
 
-    private Player2D player;
+    private Character player;
 
     protected Transform GetTarget()
     {
         if (player == null)
-            player = FindObjectOfType<Player2D>();
+            player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Character>();
 
         if (player != null)
             return player.IsDead() ? null : player.transform;

@@ -20,7 +20,9 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.forward * speed;
 
-        Destroy(Instantiate(muzzle, transform.position, transform.rotation), 1f);
+        if (muzzle != null)
+            Destroy(Instantiate(muzzle, transform.position, transform.rotation), 1f);
+
         Destroy(gameObject, ttl);
     }
 
@@ -69,7 +71,9 @@ public class Bullet : MonoBehaviour
 
     protected void Explode()
     {
-        Destroy(Instantiate(hit, gameObject.transform.position, Quaternion.identity), 1f);
+        if (hit != null)
+            Destroy(Instantiate(hit, gameObject.transform.position, Quaternion.identity), 1f);
+
         Destroy(gameObject);
     }
 

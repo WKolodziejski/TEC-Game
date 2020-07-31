@@ -13,11 +13,12 @@ public class BossHack : EnemyHack
 
     public float rotationSpeed = 5f;
     public Transform barrel1;
-    public Transform barrel2;
-    public Transform barrelS;
+    //public Transform barrel2;
+    //public Transform barrelS;
     
     private Action GetDestination;
     private Vector3 destination;
+    private bool hasShield = true;
 
     protected override void InitializeComponents()
     {
@@ -39,8 +40,11 @@ public class BossHack : EnemyHack
 
     void Update()
     {
-        weapon.Fire(barrel1);
-        weapon.Fire(barrel2);
+        if (!hasShield)
+        {
+            weapon.Fire(barrel1);
+        }
+        
         //weapon.Fire(barrelS);
     }
     
@@ -62,10 +66,19 @@ public class BossHack : EnemyHack
 
     public void DisableShield()
     {
+        hasShield = false;
         //if (FindObjectOfType<HackSceneReference>().GetDifficulty() != EDifficulty.EASY)
-            //shieldExp.SetActive(true);
+            shieldExp.SetActive(true);
 
         shield.SetActive(false);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Character>().Kill();
+        }
     }
 
 }

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7783817504561860859}
   - component: {fileID: -1426650850101480585}
   - component: {fileID: 5858253818393248484}
-  - component: {fileID: 2602945750416575602}
   - component: {fileID: 7355777206975858348}
   m_Layer: 10
   m_Name: HackingEnemy
@@ -87,12 +86,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481bc3d52f8a0e545adeccf49db04b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 8187958245616858976, guid: 013f07f7c371a0c40adda8850991d0e4,
+  weaponPrefab: {fileID: 2261321554311384493, guid: 8eaccd8e681e0a44593e98c7f95e08e4,
     type: 3}
   mainBarrel: {fileID: 7685677996116595044}
   hp: 1
   movementSpeed: 5
   damageCooldown: 0
+  explosion: {fileID: 166214, guid: 078d54c719054054ab1dc1e7fa88d090, type: 3}
 --- !u!195 &5858253818393248484
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -115,22 +115,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!208 &2602945750416575602
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5811625071918611468}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.15, y: 0.175, z: 0.15}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!95 &7355777206975858348
 Animator:
   serializedVersion: 3

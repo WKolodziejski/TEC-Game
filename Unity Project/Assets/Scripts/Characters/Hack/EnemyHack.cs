@@ -7,6 +7,8 @@ using UnityEngine.AI;
 public class EnemyHack : Enemy
 {
 
+    public GameObject explosion;
+
     protected NavMeshAgent agent;
 
     protected override void InitializeComponents()
@@ -31,5 +33,14 @@ public class EnemyHack : Enemy
     {
         weapon.Fire(mainBarrel);
     }
- 
+
+    protected override void OnDie()
+    {
+        base.OnDie();
+        agent.isStopped = true;
+
+        Destroy(Instantiate(explosion, transform.position, Quaternion.identity, null), 2f);
+        Destroy(gameObject);
+    }
+
 }

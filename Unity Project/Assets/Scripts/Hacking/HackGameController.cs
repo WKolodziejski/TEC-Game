@@ -16,13 +16,13 @@ public class HackGameController : MonoBehaviour
     private List<BossHack> bosses;
     private List<EnemyHack> enemies;
     private PlayerHack player;
-    private int actualEnemy;
+    private float enemyCooldown;
    
     void Start()
     {
         //EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
 
-        switch (EDifficulty.NORMAL)
+        switch (EDifficulty.HARD)
         {
             case EDifficulty.EASY:
                 lEASY.SetActive(true);
@@ -41,10 +41,7 @@ public class HackGameController : MonoBehaviour
         enemies = FindObjectsOfType<EnemyHack>().ToList();
         player = FindObjectOfType<PlayerHack>();
 
-        bosses.ForEach((BossHack b) =>
-        {
-            enemies.Remove(b);
-        });
+        bosses.ForEach((BossHack b) => enemies.Remove(b));
 
         foreach (EnemyHack e in enemies)
         {
@@ -76,22 +73,19 @@ public class HackGameController : MonoBehaviour
             });
         }
 
-        player.SetOnDieListener(() =>
-        {
-            StartCoroutine(IPlayExit(false));
-        });
+        player.SetOnDieListener(() => StartCoroutine(IPlayExit(false)));
 
         StartCoroutine(IPlayEnter());
     }
 
     void Update()
     {
-        if (enemies.Count > 0)
+        if (enemies.Count > 0 && Time.time - enemyCooldown >= 0.5f)
         {
-            actualEnemy = (actualEnemy + 2) % enemies.Count;
-            enemies[actualEnemy].Fire();
+            enemyCooldown = Time.time;
+            enemies[UnityEngine.Random.Range(0, enemies.Count)].Fire();
         }
-
+            
         if (Input.GetKey(KeyCode.H))
             StartCoroutine(IPlayExit(true));
     }
