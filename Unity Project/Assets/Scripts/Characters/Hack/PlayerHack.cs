@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerHack : Character
 {
 
+    public GameObject shield;
+    public GameObject explosion;
     public float turnSpeed = 5f;
 
     private float angle = 90;
@@ -12,7 +14,7 @@ public class PlayerHack : Character
 
     protected override void InitializeComponents()
     {
-        //
+        shield.SetActive(false);
     }
 
     void Update()
@@ -69,6 +71,32 @@ public class PlayerHack : Character
         {
             TakeDamage(1);
         } 
+    }
+
+    protected override void OnDamage(float damage)
+    {
+        base.OnDamage(damage);
+
+        StartCoroutine(IShield());
+    }
+
+    protected override void OnDie()
+    {
+        base.OnDie();
+
+        shield.SetActive(false);
+
+        Destroy(Instantiate(explosion, transform.position, Quaternion.identity, null), 2f);
+        Destroy(gameObject);
+    }
+
+    private IEnumerator IShield()
+    {
+        shield.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        shield.SetActive(false);
     }
 
 }

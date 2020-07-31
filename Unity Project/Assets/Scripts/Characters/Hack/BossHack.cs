@@ -24,7 +24,7 @@ public class BossHack : EnemyHack
     {
         base.InitializeComponents();
 
-        GetDestination += GetRunawayPath;
+        GetDestination = GetRunawayPath;
 
         //if (FindObjectOfType<HackSceneReference>().GetDifficulty() == EDifficulty.EASY)
             //shield.SetActive(false);
@@ -50,18 +50,20 @@ public class BossHack : EnemyHack
     
     public void SetAgressive()
     {
-        GetDestination += GetAgressivePath;
+        GetDestination = GetAgressivePath;
     }
 
     private void GetAgressivePath()
     {
-        destination = GetTarget().position;
+        if (GetTarget() != null)
+            destination = GetTarget().position;
     }
 
     private void GetRunawayPath()
-    {        
-        if (Vector3.Distance(transform.position, GetTarget().position) < 5f)
-            destination = transform.position + ((transform.position - GetTarget().position) * 2); //TESTAR ESSE 2
+    {   
+        if (GetTarget() != null)
+            if (Vector3.Distance(transform.position, GetTarget().position) < 5f)
+                destination = transform.position + ((transform.position - GetTarget().position) * 2); //TESTAR ESSE 2
     }
 
     public void DisableShield()
