@@ -6,27 +6,51 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
 
     public float moveCooldown = 0.5f;
     public float followRange = 5f;
+    public float jumpForce = 15f;
     readonly float moveCheckRate = 0.125f;
 
     private float nextMove;
     private float moveCheck;
     private float prevPosition;
+    private float lastJump;
+    private bool grounded;
     private Vector3 desiredDir;
+    private JumpCheck jCheck;
 
     protected override void InitializeComponents()
     {
         base.InitializeComponents();
+        jCheck = GetComponentInChildren<JumpCheck>();
         desiredDir = new Vector3(-movementSpeed * Time.deltaTime, 0f, 0f); //setDesiredDir();
         nextMove = moveCooldown; //setFirstMove();
         resetMoveCheck();
+        lastJump = Time.time;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (GetTarget() != null) {
             Move();
             Attack();
         }
+
+        Jump();
+    }
+
+    void Jump()
+    {
+        if (grounded && JumpCooldown() && !jCheck.ground)
+        {
+            rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+            lastJump = Time.time;
+            animator.SetBool("jumping", true);
+            animator.SetBool("Running", false);
+        }
+    }
+
+    private bool JumpCooldown()
+    {
+        return (Time.time - lastJump >= 0.6f);
     }
 
     public override void Attack()
@@ -46,9 +70,8 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
                 }
             }
 
-            animator.SetBool("Shooting", true);
+            animator.SetTrigger("shoot");
             animator.SetBool("Running", false);
-            animator.SetBool("Jumping", false);
 
             weapon.Fire(mainBarrel); //Fire();
 
@@ -91,12 +114,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
             desiredDir.Set(-movementSpeed * Time.deltaTime, 0f, 0f); //getDesiredDir();
             this.transform.position += desiredDir;
 
-            if (!animator.GetBool("Running"))
-            {
-                animator.SetBool("Shooting", false);
-                animator.SetBool("Jumping", false);
-                animator.SetBool("Running", true);
-            }
+            animator.SetBool("Running", true);
         }
     }
 
@@ -111,6 +129,23 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
     {
         this.moveCheck = moveCheckRate;
         this.prevPosition = transform.position.x;
+    }
+
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        if ((collider.tag == "Ground") || (collider.tag == "Platform"))
+        {
+            grounded = true;
+            animator.SetBool("jumping", false);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if ((collider.tag == "Ground") || (collider.tag == "Platform"))
+        {
+            grounded = false;
+        }
     }
 
 }

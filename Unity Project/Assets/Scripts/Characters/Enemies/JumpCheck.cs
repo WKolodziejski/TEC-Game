@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class jumpcheck : MonoBehaviour
+public class JumpCheck : MonoBehaviour
 {
 
-    public bool ground;
+    public bool ground = true;
     private void OnTriggerStay2D(Collider2D collider)
     {
-        Debug.Log(tag + "->" + collider.tag);
-
         if ((collider.tag == "Ground") || (collider.tag == "Platform"))
         {
             ground = true;
@@ -18,8 +16,6 @@ public class jumpcheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        Debug.Log(tag + "->" + collider.tag);
-
         if ((collider.tag == "Ground") || (collider.tag == "Platform"))
         {
             ground = false;
