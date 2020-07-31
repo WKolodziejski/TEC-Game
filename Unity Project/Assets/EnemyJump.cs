@@ -10,18 +10,24 @@ public class EnemyJump : MonoBehaviour
     public jumpcheck jCheck;
     public float jumpLock = 0.6f;
     public float jumpForce = 15f;
+
+    private Character character;
     private float lastJump;
     private bool grounded;
 
-    void start()
+    void Start()
     {
+        character = GetComponent<Character>();
        /* rb = GetComponent<Rigidbody2D>();
         jCheck = GetComponent<jumpcheck>();*/
     }
 
-    void FixedUpdate(){
-        Jump();
+    void FixedUpdate()
+    {
+        if (!character.IsDead())
+            Jump();
     }
+
     void Jump()
     {
         if (grounded && JumpCooldown() && !jCheck.ground)
