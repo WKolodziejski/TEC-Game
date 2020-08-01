@@ -13,6 +13,7 @@ public class HackSceneReference : MonoBehaviour
     public PlayableDirector transitionEnter;
     public PlayableDirector transitionReturn;
 
+    private Action<bool> onReturn;
     private GameObject[] objs;
     private bool isHacking;
 
@@ -21,7 +22,14 @@ public class HackSceneReference : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void Enter(Transform target, EDifficulty difficulty)
+    public void Enter(Transform target, EDifficulty difficulty, Action<bool> onReturn)
+    {
+        this.onReturn = onReturn;
+
+        StartCoroutine(IEnter(target, difficulty));
+    }
+
+    private IEnumerator IEnter(Transform target, EDifficulty difficulty)
     {
         Debug.Log("Entering...");
 
@@ -32,43 +40,11 @@ public class HackSceneReference : MonoBehaviour
         cam.Follow = target;
         transitionEnter.Play();
 
-        StartCoroutine(IEnter(difficulty));
-    }
+        yield return new WaitForSeconds(2f * Time.timeScale);
 
-    private IEnumerator IEnter(EDifficulty difficulty)
-    {
-        yield return new WaitForSeconds(1.5f * Time.timeScale);
-
-        EnterHackGame(difficulty);
-    }
-
-    public void Return(bool won)
-    {
-        transitionReturn.Play();
-
-        StartCoroutine(IReturn(won));
-    }
-
-    private IEnumerator IReturn(bool won)
-    {
-        Debug.Log("Returning...");
-
-        yield return new WaitForSeconds(1f * Time.timeScale);
-
-        ReturnHackGame(won);
-
-        cam.Follow = null;
-        cam.LookAt = null;
-
-        Time.timeScale = 1f;
-        Time.fixedDeltaTime = 0.02f;
-    }
-
-    private void EnterHackGame(EDifficulty difficulty)
-    {
         if (!isHacking)
         {
-            this.isHacking = true;
+            isHacking = true;
             this.difficulty = difficulty;
             this.objs = FindObjectsOfType<GameObject>();
 
@@ -90,12 +66,22 @@ public class HackSceneReference : MonoBehaviour
         }
     }
 
-    private void ReturnHackGame(bool won)
+    public void Return(bool won)
     {
+        StartCoroutine(IReturn(won));
+    }
+
+    private IEnumerator IReturn(bool won)
+    {
+        Debug.Log("Returning...");
+
+        yield return new WaitForSeconds(0.5f * Time.timeScale);
+
+        transitionReturn.Play();
+
         if (isHacking)
         {
-            this.won = won;
-            this.isHacking = false;
+            isHacking = false;
 
             SceneManager.UnloadSceneAsync("HackScene");
 
@@ -109,6 +95,18 @@ public class HackSceneReference : MonoBehaviour
         {
             Debug.Log("Not hacking");
         }
+
+        yield return new WaitForSeconds(0.5f * Time.timeScale);
+
+        cam.Follow = null;
+        cam.LookAt = null;
+
+        yield return new WaitForSeconds(2f * Time.timeScale);
+
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
+
+        onReturn(won);
     }
 
     public EDifficulty difficulty;
@@ -121,13 +119,6 @@ public class HackSceneReference : MonoBehaviour
     public enum EDifficulty
     {
         EASY, NORMAL, HARD
-    }
-
-    private bool won;
-
-    public bool Won()
-    {
-        return won;
     }
 
 }

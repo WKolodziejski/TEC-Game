@@ -7,6 +7,7 @@ public abstract class Character : MonoBehaviour
 
     public Weapon weaponPrefab;
     public Transform mainBarrel;
+    public DamagePopup damagePopup;
 
     public float hp = 3f;
     public float movementSpeed = 5f;
@@ -99,6 +100,9 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void OnDamage(float damage)
     {
+        if (damagePopup != null)
+            Instantiate(damagePopup, transform.position, Quaternion.identity).Hit(damage);
+
         CallOnDamage();
     }
 

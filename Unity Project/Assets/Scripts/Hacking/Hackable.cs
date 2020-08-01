@@ -24,32 +24,26 @@ public class Hackable : MonoBehaviour
             if (particleSuccess != null)
                 portal = Instantiate(particleSuccess, transform.position, Quaternion.identity, transform);
 
-            FindObjectOfType<HackSceneReference>().Enter(transform, difficulty);
+            FindObjectOfType<HackSceneReference>().Enter(transform, difficulty, (won) =>
+            {
+                Destroy(portal);
+
+                if (won)
+                {
+                    if (gameObject.GetComponent<Character>() != null)
+                        gameObject.GetComponent<Character>().Kill();
+                    else
+                        action?.Invoke();
+                }
+                else
+                {
+                    FindObjectOfType<Player2D>().TakeDamage(5f);
+                }
+            });
         }
         else
         {
             action?.Invoke();
-        }
-    }
-
-    void OnEnable()
-    {
-        if (isHacked)
-        {
-            Destroy(portal, 1f * Time.timeScale);
-
-            if (FindObjectOfType<HackSceneReference>().Won())
-            {
-                if (gameObject.GetComponent<Character>() != null)
-                    gameObject.GetComponent<Character>().Kill();
-                else
-                    action?.Invoke();
-
-            }
-            else
-            {
-                FindObjectOfType<Player2D>().TakeDamage(5f);
-            }
         }
     }
 

@@ -9,11 +9,30 @@ public class DamagePopup : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, 0.5f);
+
+        //GetComponent<RectTransform>().SetPositionAndRotation(transform.position, Quaternion.identity);
+
+        transform.SetParent(null);
+        transform.position += Vector3.up * 2f;
+
+        StartCoroutine(IAnim());
     }
 
     public void Hit(float damage)
     {
-        GetComponent<TextMeshPro>().SetText(damage.ToString());
+        GetComponent<TextMeshPro>().SetText("-" + damage);
+    }
+
+    private IEnumerator IAnim()
+    {
+        float y = transform.position.y + 0.5f;
+
+        while (transform.position.y < y)
+        {
+            transform.position += Vector3.up * 0.05f;
+
+            yield return null;
+        }
     }
 
 }

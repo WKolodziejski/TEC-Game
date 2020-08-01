@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3761328250247434353}
   - component: {fileID: 3761328250247434352}
   - component: {fileID: 545691458}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Damage Popup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,8 +38,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 5, y: 5}
+  m_AnchoredPosition: {x: 0.5, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &3761328250247434364
 MeshRenderer:
@@ -78,7 +78,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -310163949
-  m_SortingLayer: 4
+  m_SortingLayer: -1
   m_SortingOrder: 0
 --- !u!33 &3761328250247434367
 MeshFilter:
@@ -125,8 +125,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294835968
-  m_fontColor: {r: 0, g: 1, b: 0.9905875, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -144,8 +144,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 2
-  m_fontSizeBase: 2
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

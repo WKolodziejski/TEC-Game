@@ -11,6 +11,7 @@ public class Lifebar : MonoBehaviour
     public Image bar;
 
     private bool animating;
+    private float hp;
 
     public void SetExtraLifes(int l)
     {
@@ -21,12 +22,14 @@ public class Lifebar : MonoBehaviour
 
     public void SetPlayer(Player2D c)
     {
+        hp = c.hp;
+
         c.SetOnDamageListener(() =>
         {
             if (animating)
                 StopAllCoroutines();
 
-            StartCoroutine(IAnim(c.hp / 3));
+            StartCoroutine(IAnim(c.hp / hp));
         });
 
         if (animating)

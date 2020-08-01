@@ -12,7 +12,13 @@ public class MissileHack : Bullet
         {
             Destroy(gameObject);
 
-            FindObjectOfType<HackSceneReference>().Enter(collision.collider.gameObject.transform, EDifficulty.EASY);
+            FindObjectOfType<HackSceneReference>().Enter(collision.collider.gameObject.transform, EDifficulty.EASY, (won) =>
+            {
+                if (!won)
+                {
+                    FindObjectOfType<Player2D>().TakeDamage(5f);
+                }
+            });
         }
         else if(!collision.collider.CompareTag(tag))
         {

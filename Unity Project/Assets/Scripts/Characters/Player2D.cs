@@ -21,6 +21,7 @@ public class Player2D : Character
     private bool hacking;
     private bool lying;
 
+    public GameObject shield;
     public Transform barrelFront;
     public Transform barrelUp;
     public Transform barrelDiagonalUp;
@@ -34,6 +35,7 @@ public class Player2D : Character
     protected override void InitializeComponents()
     {
         enabled = true;
+        shield.SetActive(false);
     }
 
     void Update()
@@ -169,6 +171,29 @@ public class Player2D : Character
         lastJump = Time.time;
         yield return new WaitForSeconds(fallTime);
         playerCollider.enabled = true;
+    }
+
+    protected override void OnDamage(float damage)
+    {
+        base.OnDamage(damage);
+
+        StartCoroutine(IShield());
+    }
+
+    protected override void OnDie()
+    {
+        base.OnDie();
+
+        shield.SetActive(false);
+    }
+
+    private IEnumerator IShield()
+    {
+        shield.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        shield.SetActive(false);
     }
 
 }
