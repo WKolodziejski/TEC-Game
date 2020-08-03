@@ -132,7 +132,7 @@ public class GameController : MonoBehaviour
         Player2D p = FindObjectOfType<Player2D>();
         p.DisableControlsAndRun();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         complete.SetActive(true);
 
