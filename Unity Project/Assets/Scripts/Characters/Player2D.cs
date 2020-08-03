@@ -20,6 +20,7 @@ public class Player2D : Character
     private bool platform;
     private bool hacking;
     private bool lying;
+    private bool controlIsEnabled = true;
 
     public GameObject shield;
     public Transform barrelFront;
@@ -40,64 +41,72 @@ public class Player2D : Character
 
     void Update()
     {
-        lying = false;
-        if (Input.GetButtonDown("Fire2"))
-            hacking = true;
-
-        if (Input.GetButtonUp("Fire2"))
-            hacking = false;
-
-        if (!hacking)
+        if (controlIsEnabled)
         {
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
+            lying = false;
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Fire2"))
+                hacking = true;
+
+            if (Input.GetButtonUp("Fire2"))
+                hacking = false;
+
+            if (!hacking)
             {
-                if (Input.GetAxis("Vertical") < 0)
+                horizontal = Input.GetAxis("Horizontal");
+                vertical = Input.GetAxis("Vertical");
+
+                if (Input.GetButtonDown("Jump"))
                 {
-                    if (platform)
-                        StartCoroutine(Fall());
+                    if (Input.GetAxis("Vertical") < 0)
+                    {
+                        if (platform)
+                            StartCoroutine(Fall());
+                    }
+                    else
+                    {
+                        Jump();
+                    }
+                }
+
+                if (Input.GetButton("Fire3"))
+                {
+                    weapon.Fire(mainBarrel);
+                }
+
+                if (vertical > 0f)
+                {
+                    animator.SetBool("up", true);
+                    animator.SetBool("down", false);
+
+                    if (horizontal == 0f)
+                        mainBarrel = barrelUp;
+                    else
+                        mainBarrel = barrelDiagonalUp;
+                }
+                else if (vertical < 0f)
+                {
+                    animator.SetBool("up", false);
+                    animator.SetBool("down", true);
+
+                    if (horizontal == 0f)
+                    {
+                        lying = true;
+                        mainBarrel = barrelLying;
+                    }
+                    else
+                        mainBarrel = barrelDiagonalDown;
                 }
                 else
                 {
-                    Jump();
+                    mainBarrel = barrelFront;
+                    animator.SetBool("up", false);
+                    animator.SetBool("down", false);
                 }
             }
 
-            if (Input.GetButton("Fire3"))
-            {
-                weapon.Fire(mainBarrel);
-            }
-
-            if (vertical > 0f)
-            {
-                animator.SetBool("up", true);
-                animator.SetBool("down", false);
-
-                if (horizontal == 0f)
-                    mainBarrel = barrelUp;
-                else
-                    mainBarrel = barrelDiagonalUp;
-            }
-            else if (vertical < 0f)
-            {
-                animator.SetBool("up", false);
-                animator.SetBool("down", true);
-
-                if (horizontal == 0f){
-                    lying = true;
-                    mainBarrel = barrelLying;
-                }
-                else
-                    mainBarrel = barrelDiagonalDown;
-            }
-            else
-            {
-                mainBarrel = barrelFront;
-                animator.SetBool("up", false);
-                animator.SetBool("down", false);
-            }
+            lyingCollider.enabled = lying;
+            standingCollider.enabled = !lying;
         }
 
         animator.SetBool("hacking", hacking);
@@ -105,8 +114,8 @@ public class Player2D : Character
         animator.SetBool("jumping", !grounded);
         animator.SetBool("moving", horizontal != 0f);
 
-        lyingCollider.enabled = lying;
-        standingCollider.enabled = !lying;
+        if (Input.GetKeyDown(KeyCode.O))
+            DisableControlsAndRun();
     }
 
     void FixedUpdate()
@@ -194,6 +203,18 @@ public class Player2D : Character
         yield return new WaitForSeconds(1f);
 
         shield.SetActive(false);
+    }
+
+    public void DisableControlsAndRun()
+    {
+        controlIsEnabled = false;
+        horizontal = 1f;
+    }
+
+    public void EnableControls()
+    {
+        controlIsEnabled = true;
+        horizontal = 0f;
     }
 
 }

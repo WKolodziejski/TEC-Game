@@ -10,8 +10,6 @@ public class DamagePopup : MonoBehaviour
     {
         Destroy(gameObject, 0.5f);
 
-        //GetComponent<RectTransform>().SetPositionAndRotation(transform.position, Quaternion.identity);
-
         transform.SetParent(null);
         transform.position += Vector3.up * 2f;
 
