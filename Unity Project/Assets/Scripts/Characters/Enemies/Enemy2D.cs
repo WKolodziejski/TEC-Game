@@ -34,7 +34,7 @@ public abstract class Enemy2D : Enemy //TODO: mudar de facção,
     }
 
     protected int GetTargetMagnitude()
-    {t
+    {
         if (GetTarget() != null)
             return transform.position.x < GetTarget().position.x ? 1 : -1;
         else
