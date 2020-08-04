@@ -33,7 +33,7 @@ public class HackSceneReference : MonoBehaviour
     {
         Debug.Log("Entering...");
 
-        Time.timeScale = 0.1f;
+        Time.timeScale = 0.01f;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
         cam.LookAt = target;

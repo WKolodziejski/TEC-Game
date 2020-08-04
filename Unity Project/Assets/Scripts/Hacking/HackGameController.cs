@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 using static Character;
 using static HackSceneReference;
 
@@ -20,11 +21,15 @@ public class HackGameController : MonoBehaviour
     public GameObject failed;
 
     public Volume damage;
+    public Text timer;
 
     private List<BossHack> bosses;
     private List<EnemyHack> enemies;
     private PlayerHack player;
     private float enemyCooldown;
+    private float timer_counter = 30f;
+    private bool isReturning;
+    private bool isCounting;
    
     void Start()
     {
@@ -94,7 +99,24 @@ public class HackGameController : MonoBehaviour
             enemyCooldown = Time.time;
             enemies[UnityEngine.Random.Range(0, enemies.Count)].Fire();
         }
-            
+
+        if (isCounting)
+        {
+            timer_counter -= Time.deltaTime;
+
+            if (timer_counter <= 0f && !isReturning)
+                player.Kill();
+
+            timer.text = ((int) timer_counter + 1).ToString();
+
+            if (timer_counter <= 5f)
+            {
+                timer.color = Color.red;
+                timer.fontSize = 30;
+            }
+                
+        }
+
         if (Input.GetKey(KeyCode.H))
             StartCoroutine(IPlayExit(true));
     }
@@ -112,21 +134,31 @@ public class HackGameController : MonoBehaviour
         Time.fixedDeltaTime = 0.02f;
 
         start.SetActive(false);
+
+        isCounting = true;
     }
 
     private IEnumerator IPlayExit(bool won)
     {
-        Time.timeScale = 0.1f;
-        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        if (!isReturning)
+        {
+            isReturning = true;
+            isCounting = false;
 
-        if (won)
-            sucess.SetActive(true);
-        else
-            failed.SetActive(true);
+            Time.timeScale = 0.1f;
+            Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
-        yield return new WaitForSeconds(1f * Time.timeScale);
+            if (won)
+                sucess.SetActive(true);
+            else
+                failed.SetActive(true);
 
-        FindObjectOfType<HackSceneReference>().Return(won);
+            timer.enabled = false;
+
+            yield return new WaitForSeconds(1f * Time.timeScale);
+
+            FindObjectOfType<HackSceneReference>().Return(won);
+        }
     }
 
 }
