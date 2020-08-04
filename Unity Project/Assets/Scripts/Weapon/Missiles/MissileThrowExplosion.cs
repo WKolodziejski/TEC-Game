@@ -9,7 +9,7 @@ public class MissileThrowExplosion : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Character>().TakeDamage((int)(Vector2.Distance(collision.bounds.center, collision.transform.position) * 5));
+            collision.GetComponent<Character>().TakeDamage((int)(Vector2.Distance(collision.bounds.center, collision.transform.position) * 5), true);
         }
     }
 

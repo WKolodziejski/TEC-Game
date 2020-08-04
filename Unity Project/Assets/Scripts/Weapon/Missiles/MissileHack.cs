@@ -16,7 +16,7 @@ public class MissileHack : Bullet
             {
                 if (!won)
                 {
-                    FindObjectOfType<Player2D>().TakeDamage(5f);
+                    FindObjectOfType<Player2D>().TakeDamage(5f, true);
                 }
             });
         }

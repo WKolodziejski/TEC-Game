@@ -37,7 +37,7 @@ public class Hackable : MonoBehaviour
                 }
                 else
                 {
-                    FindObjectOfType<Player2D>().TakeDamage(5f);
+                    FindObjectOfType<Player2D>().TakeDamage(5f, true);
                 }
             });
         }

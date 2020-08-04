@@ -61,7 +61,7 @@ public class Bullet : MonoBehaviour
                     if (!c.IsDead())
                     {
                         Explode();
-                        c.TakeDamage(damage);
+                        c.TakeDamage(damage, false);
                     }
                 } 
                 else

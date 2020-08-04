@@ -69,7 +69,7 @@ public class PlayerHack : Character
 
         if (c.CompareTag("Enemy"))
         {
-            TakeDamage(1);
+            TakeDamage(1, false);
         } 
     }
 

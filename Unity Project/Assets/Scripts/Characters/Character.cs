@@ -45,9 +45,10 @@ public abstract class Character : MonoBehaviour
         weapon = Instantiate(prefab, transform);
     }
 
-    public virtual void TakeDamage(float damage)
+    //tive q botar essa flag pq ao retornar do hack pode ser q n tome o dano, caso um inimigo atire antes
+    public virtual void TakeDamage(float damage, bool force)
     {
-        if (lastCooldown <= Time.time)
+        if (lastCooldown <= Time.time || force)
         {
             lastCooldown = Time.time + damageCooldown;
 
