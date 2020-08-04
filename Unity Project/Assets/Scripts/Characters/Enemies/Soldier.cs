@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe, no CheckIfMoved checar se essa não é diareção que o player está e simplemente parar até que ele mude de lado ou pular
+public class Soldier : Enemy2D //TODO: talvez usar VectorDistance, usar variaveis static para padrozinar a classe, adicionar um pequeno fator de aleatoriedade na moveSpeed, no CheckIfMoved checar se o pulo falhou 
 {
 
     public float moveCooldown = 0.5f;
@@ -23,7 +23,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
         jCheck = GetComponentInChildren<JumpCheck>();
         desiredDir = new Vector3(-movementSpeed * Time.deltaTime, 0f, 0f); //setDesiredDir();
         nextMove = moveCooldown; //setFirstMove();
-        resetMoveCheck();
+        ResetMoveCheck();
         lastJump = Time.time;
     }
 
@@ -37,28 +37,12 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
         Jump();
     }
 
-    void Jump()
-    {
-        if (grounded && JumpCooldown() && !jCheck.ground)
-        {
-            rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
-            lastJump = Time.time;
-            animator.SetBool("jumping", true);
-            animator.SetBool("Running", false);
-        }
-    }
-
-    private bool JumpCooldown()
-    {
-        return (Time.time - lastJump >= 0.6f);
-    }
-
     public override void Attack()
     {
 
         if (weapon.CanFire()) {
 
-            if (GetTarget().position.x < transform.position.x && desiredDir.x > 0)//SetShootingDir(); //talvez se afastar um pouco antes de poder atirar de novo
+            if (GetTarget().position.x < transform.position.x && desiredDir.x > 0)//SetShootingDir(); //TODO: dar soco e talvez se afastar um pouco antes de poder atirar de novo
             {
                 ChangeDesiredDir();
             }
@@ -100,14 +84,22 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
             moveCheck -= Time.deltaTime; // CheckIfMoved()
             if (moveCheck < 0)
             {
-
                 if ((Math.Abs(prevPosition - transform.position.x) < Math.Abs(moveCheckRate * movementSpeed / 2))) 
                 {
-                    ChangeDesiredDir();
+                    if (((this.transform.position.x > GetTarget().position.x) && desiredDir.x > 0) || ((this.transform.position.x < GetTarget().position.x) && desiredDir.x < 0))
+                        ChangeDesiredDir();
+                    else if (JumpCooldown()) //JumpOnGround()
+                    {
+                        rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+                        lastJump = Time.time;
+                        animator.SetBool("jumping", true);
+                        animator.SetBool("Running", false);
+                        ResetMoveCheck();
+                    }
                 }
                 else
                 {
-                    resetMoveCheck();
+                    ResetMoveCheck();
                 }
             }
 
@@ -118,14 +110,30 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
         }
     }
 
+    private void Jump()
+    {
+        if (grounded && JumpCooldown() && !jCheck.ground && (this.transform.position.y - followRange/2 < GetTarget().position.y)) //TODO: aperfeiçoar o parametro de diferença de altura
+        {
+            rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+            lastJump = Time.time;
+            animator.SetBool("jumping", true);
+            animator.SetBool("Running", false);
+        }
+    }
+
+    private bool JumpCooldown()
+    {
+        return (Time.time - lastJump >= 0.6f);
+    }
+
     private void ChangeDesiredDir()
     {
         movementSpeed = -movementSpeed; //Isso aqui tá bem gambiarra hein
         transform.Rotate(0f, 180f, 0f);
-        resetMoveCheck();
+        ResetMoveCheck();
     }
 
-    private void resetMoveCheck()
+    private void ResetMoveCheck()
     {
         this.moveCheck = moveCheckRate;
         this.prevPosition = transform.position.x;
@@ -133,7 +141,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
 
     private void OnTriggerStay2D(Collider2D collider)
     {
-        if ((collider.tag == "Ground") || (collider.tag == "Platform"))
+        if ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform")))
         {
             grounded = true;
             animator.SetBool("jumping", false);
@@ -142,7 +150,7 @@ public class Soldier : Enemy2D //usar variaveis static para padrozinar a classe,
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        if ((collider.tag == "Ground") || (collider.tag == "Platform"))
+        if ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform")))
         {
             grounded = false;
         }

@@ -4,16 +4,15 @@ using UnityEngine;
 
 public abstract class Enemy : Character
 {
-
-    private Character player;
+    private Character target;
 
     protected Transform GetTarget()
     {
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Character>();
+        if (target == null)
+            target = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Character>();
 
-        if (player != null)
-            return player.IsDead() ? null : player.transform;
+        if (target != null)
+            return target.IsDead() ? null : target.transform;
         else
             return null;
     }

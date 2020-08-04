@@ -110,14 +110,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 0}
   mainBarrel: {fileID: 0}
+  damagePopup: {fileID: 0}
   hp: 3
   movementSpeed: 5
   damageCooldown: 0
-  barrelUp: {fileID: 708496268211519394}
+  barrelU: {fileID: 708496268211519394}
   barrelDU: {fileID: 6048865911471572044}
   barrelF: {fileID: 1008399966901662330}
   barrelDD: {fileID: 5260584422414729553}
-  barrelDown: {fileID: 6704107646996608475}
+  barrelD: {fileID: 6704107646996608475}
 --- !u!114 &5737304067616968159
 MonoBehaviour:
   m_ObjectHideFlags: 0
