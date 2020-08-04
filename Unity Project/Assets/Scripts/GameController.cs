@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -13,6 +14,7 @@ public class GameController : MonoBehaviour
     public CinemachineConfiner confiner;
     public GameObject loading;
     public GameObject complete;
+    public Volume damage;
 
     private Lifebar lifebar;
     private Vector3 checkpoint;
@@ -81,6 +83,8 @@ public class GameController : MonoBehaviour
         cam.Follow = p.transform;
         cam.LookAt = p.transform;
 
+        p.SetOnDamageListener(() => damage.weight = 1 - p.hp / 10);
+
         p.SetOnDieListener(() =>
         {
             cam.Follow = null;
@@ -97,6 +101,8 @@ public class GameController : MonoBehaviour
                 lifebar.SetExtraLifes(lifes);
 
                 StartCoroutine(INewPlayer());
+
+                StartCoroutine(IAnim());
             }
         });
     }
@@ -148,6 +154,18 @@ public class GameController : MonoBehaviour
         complete.SetActive(false);
 
         StartCoroutine(ILoadScene(scene + 1));
+    }
+
+    private IEnumerator IAnim()
+    {
+        yield return new WaitForSeconds(1f);
+
+        while (damage.weight > 0)
+        {
+            damage.weight -= 0.05f;
+
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 
 }

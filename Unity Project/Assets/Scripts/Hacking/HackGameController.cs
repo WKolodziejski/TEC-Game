@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Rendering;
 using static Character;
 using static HackSceneReference;
 
@@ -17,6 +18,8 @@ public class HackGameController : MonoBehaviour
     public GameObject start;
     public GameObject sucess;
     public GameObject failed;
+
+    public Volume damage;
 
     private List<BossHack> bosses;
     private List<EnemyHack> enemies;
@@ -79,6 +82,7 @@ public class HackGameController : MonoBehaviour
         }
 
         player.SetOnDieListener(() => StartCoroutine(IPlayExit(false)));
+        player.SetOnDamageListener(() => damage.weight = 1 - player.hp / 5);
 
         StartCoroutine(IPlayEnter());
     }

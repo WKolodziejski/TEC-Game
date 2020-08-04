@@ -56,11 +56,18 @@ public class Bullet : MonoBehaviour
             {
                 Character c = collision.GetComponent<Character>();
 
-                if (!c.IsDead())
+                if (c != null)
+                {
+                    if (!c.IsDead())
+                    {
+                        Explode();
+                        c.TakeDamage(damage);
+                    }
+                } 
+                else
                 {
                     Explode();
-                    c.TakeDamage(damage);
-                }
+                }   
             }
             else
             {
