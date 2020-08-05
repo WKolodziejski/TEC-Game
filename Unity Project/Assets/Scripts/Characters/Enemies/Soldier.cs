@@ -1,7 +1,9 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
+using Random = UnityEngine.Random;
 
-public class Soldier : Enemy2D //TODO: usar AStar para o soldier?, condicionar melhor o pulo, talvez usar VectorDistance, usar variaveis static para padrozinar a classe, adicionar um pequeno fator de aleatoriedade na moveSpeed, no CheckIfMoved checar se o pulo falhou 
+public class Soldier : Enemy2D //TODO: usar AStar para o soldier? Não, condicionar melhor o pulo, talvez usar VectorDistance, no CheckIfMoved checar se o pulo falhou 
 {
 
     public float moveCooldown = 0.5f;
@@ -21,6 +23,7 @@ public class Soldier : Enemy2D //TODO: usar AStar para o soldier?, condicionar m
     {
         base.InitializeComponents();
         jCheck = GetComponentInChildren<JumpCheck>();
+        movementSpeed += Random.Range(-movementSpeed * 0.05f, movementSpeed * 0.05f);
         desiredDir = new Vector3(-movementSpeed * Time.fixedDeltaTime, 0f, 0f); //setDesiredDir();
         nextMove = moveCooldown; //setFirstMove();
         ResetMoveCheck();
