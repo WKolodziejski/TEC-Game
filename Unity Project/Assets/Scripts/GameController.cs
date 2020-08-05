@@ -143,6 +143,12 @@ public class GameController : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        foreach (Enemy2D e in FindObjectsOfType<Enemy2D>())
+            e.SetEnabled(false);
+
+        foreach (Bullet b in FindObjectsOfType<Bullet>())
+            Destroy(b);
+
         complete.SetActive(true);
 
         yield return new WaitForSeconds(2f);
