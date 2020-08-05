@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour
 
     public float speed = 10f;
     public float damage = 1f;
-    public float ttl = 1f;
     public GameObject hit;
     public GameObject muzzle;
 
@@ -23,7 +22,7 @@ public class Bullet : MonoBehaviour
         if (muzzle != null)
             Destroy(Instantiate(muzzle, transform.position, transform.rotation), 1f);
 
-        Destroy(gameObject, ttl);
+        Destroy(gameObject, 10);
     }
 
     public void Fire(float relativeSpeed)
@@ -50,7 +49,7 @@ public class Bullet : MonoBehaviour
          * Bullet____ != Bullet____
         */
 
-        if (!tag.Contains(collision.tag) && !collision.tag.Contains("Bullet"))
+        if (!tag.Contains(collision.tag) && !collision.tag.Contains("Bullet") && !collision.CompareTag("MainCamera"))
         {
             if (collision.CompareTag("Enemy") || collision.CompareTag("Player"))
             {

@@ -27,13 +27,13 @@ public class GameController : MonoBehaviour
     {
         lifebar = FindObjectOfType<Lifebar>();
 
-        StartCoroutine(ILoadScene(5));
+        StartCoroutine(ILoadScene(4));
     }
 
     private IEnumerator ILoadScene(int s)
     {
         scene = s;
-        checkpoint = new Vector3(0, 5, 0);
+        checkpoint = new Vector3(-1, 5, 0);
 
         lifebar.gameObject.SetActive(false);
         loading.SetActive(true);
@@ -82,13 +82,16 @@ public class GameController : MonoBehaviour
 
         cam.Follow = p.transform;
         cam.LookAt = p.transform;
+        cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 4;
 
         p.SetOnDamageListener(() => damage.weight = 1 - p.hp / 10);
 
         p.SetOnDieListener(() =>
         {
+            cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 0;
             cam.Follow = null;
             cam.LookAt = null;
+            
 
             lifes--;
 

@@ -27,15 +27,16 @@ public class HackGameController : MonoBehaviour
     private List<EnemyHack> enemies;
     private PlayerHack player;
     private float enemyCooldown;
-    private float timer_counter = 30f;
+    private float timerCounter;
     private bool isReturning;
     private bool isCounting;
    
     void Start()
     {
-        //EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
+        EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
+        timerCounter = ((int) difficulty + 1) * 10;
 
-        switch (EDifficulty.HARD)
+        switch (difficulty)
         {
             case EDifficulty.EASY:
                 lEASY.SetActive(true);
@@ -102,14 +103,14 @@ public class HackGameController : MonoBehaviour
 
         if (isCounting)
         {
-            timer_counter -= Time.deltaTime;
+            timerCounter -= Time.deltaTime;
 
-            if (timer_counter <= 0f && !isReturning)
+            if (timerCounter <= 0f && !isReturning)
                 player.Kill();
 
-            timer.text = ((int) timer_counter + 1).ToString();
+            timer.text = ((int) timerCounter + 1).ToString();
 
-            if (timer_counter <= 5f)
+            if (timerCounter <= 5f)
             {
                 timer.color = Color.red;
                 timer.fontSize = 30;

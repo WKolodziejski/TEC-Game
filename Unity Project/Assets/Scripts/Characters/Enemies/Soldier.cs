@@ -112,7 +112,7 @@ public class Soldier : Enemy2D //TODO: talvez usar VectorDistance, usar variavei
 
     private void Jump()
     {
-        if (grounded && JumpCooldown() && !jCheck.ground && (this.transform.position.y - followRange/2 < GetTarget().position.y)) //TODO: aperfeiçoar o parametro de diferença de altura
+        if (grounded && JumpCooldown() && !jCheck.ground) //&& (this.transform.position.y - followRange/2 < GetTarget().position.y)) //TODO: aperfeiçoar o parametro de diferença de altura
         {
             rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
             lastJump = Time.time;
