@@ -466,7 +466,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -7106,7 +7106,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -7388,7 +7388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &839509817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7404,8 +7404,8 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.7075472, g: 0.49061057, b: 0.49061057, a: 1}
+  m_Intensity: 1.5
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
   m_LightCookieSprite: {fileID: 0}
@@ -7565,7 +7565,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -8706,7 +8706,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -8857,7 +8857,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -106822,7 +106822,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -106979,7 +106979,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -107057,7 +107057,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -107404,7 +107404,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -108927,7 +108927,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -109090,7 +109090,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -109162,7 +109162,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
@@ -116480,7 +116480,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.8018868, g: 0.6132076, b: 0.2004717, a: 1}
+  m_Color: {r: 0.21420646, g: 0.16509432, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0.5
   m_ApplyToSortingLayers: 00000000d3ee74fe2d084c8c11c1305a134683ed0784971697439794
