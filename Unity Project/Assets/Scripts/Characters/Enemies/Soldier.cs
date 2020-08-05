@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Soldier : Enemy2D //TODO: talvez usar VectorDistance, usar variaveis static para padrozinar a classe, adicionar um pequeno fator de aleatoriedade na moveSpeed, no CheckIfMoved checar se o pulo falhou 
+public class Soldier : Enemy2D //TODO: usar AStar para o soldier?, condicionar melhor o pulo, talvez usar VectorDistance, usar variaveis static para padrozinar a classe, adicionar um pequeno fator de aleatoriedade na moveSpeed, no CheckIfMoved checar se o pulo falhou 
 {
 
     public float moveCooldown = 0.5f;
@@ -21,7 +21,7 @@ public class Soldier : Enemy2D //TODO: talvez usar VectorDistance, usar variavei
     {
         base.InitializeComponents();
         jCheck = GetComponentInChildren<JumpCheck>();
-        desiredDir = new Vector3(-movementSpeed * Time.deltaTime, 0f, 0f); //setDesiredDir();
+        desiredDir = new Vector3(-movementSpeed * Time.fixedDeltaTime, 0f, 0f); //setDesiredDir();
         nextMove = moveCooldown; //setFirstMove();
         ResetMoveCheck();
         lastJump = Time.time;
@@ -65,7 +65,7 @@ public class Soldier : Enemy2D //TODO: talvez usar VectorDistance, usar variavei
 
     private void Move()
     {
-        nextMove -= Time.deltaTime;
+        nextMove -= Time.fixedDeltaTime;
 
         if (nextMove < 0) {
 
@@ -81,7 +81,7 @@ public class Soldier : Enemy2D //TODO: talvez usar VectorDistance, usar variavei
                 }
             }
 
-            moveCheck -= Time.deltaTime; // CheckIfMoved()
+            moveCheck -= Time.fixedDeltaTime; // CheckIfMoved()
             if (moveCheck < 0)
             {
                 if ((Math.Abs(prevPosition - transform.position.x) < Math.Abs(moveCheckRate * movementSpeed / 2))) 
@@ -103,7 +103,6 @@ public class Soldier : Enemy2D //TODO: talvez usar VectorDistance, usar variavei
                 }
             }
 
-            desiredDir.Set(-movementSpeed * Time.deltaTime, 0f, 0f); //getDesiredDir();
             this.transform.position += desiredDir;
 
             animator.SetBool("Running", true);
@@ -114,10 +113,18 @@ public class Soldier : Enemy2D //TODO: talvez usar VectorDistance, usar variavei
     {
         if (grounded && JumpCooldown() && !jCheck.ground) //&& (this.transform.position.y - followRange/2 < GetTarget().position.y)) //TODO: aperfeiçoar o parametro de diferença de altura
         {
-            rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
-            lastJump = Time.time;
-            animator.SetBool("jumping", true);
-            animator.SetBool("Running", false);
+            if (((this.transform.position.x > GetTarget().position.x) && desiredDir.x > 0) || ((this.transform.position.x < GetTarget().position.x) && desiredDir.x < 0))
+            {
+                ChangeDesiredDir();
+                lastJump = Time.time - 0.3f;
+            }
+            else
+            {
+                rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+                lastJump = Time.time;
+                animator.SetBool("jumping", true);
+                animator.SetBool("Running", false);
+            }
         }
     }
 
@@ -128,7 +135,7 @@ public class Soldier : Enemy2D //TODO: talvez usar VectorDistance, usar variavei
 
     private void ChangeDesiredDir()
     {
-        movementSpeed = -movementSpeed; //Isso aqui tá bem gambiarra hein
+        desiredDir = -1*desiredDir;
         transform.Rotate(0f, 180f, 0f);
         ResetMoveCheck();
     }
