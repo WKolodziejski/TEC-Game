@@ -4307,7 +4307,7 @@ PrefabInstance:
     - target: {fileID: 7642791908599837428, guid: 0a8c886e21caeb14c8dcd47fe0dd06a3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7642791908599837428, guid: 0a8c886e21caeb14c8dcd47fe0dd06a3,
         type: 3}
@@ -4640,6 +4640,7 @@ GameObject:
   - component: {fileID: 602614887}
   - component: {fileID: 602614886}
   - component: {fileID: 602614885}
+  - component: {fileID: 602614890}
   m_Layer: 13
   m_Name: Wall
   m_TagString: Wall
@@ -4672,7 +4673,7 @@ CompositeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
@@ -4753,7 +4754,7 @@ TilemapCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
@@ -5162,6 +5163,25 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!251 &602614890
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602614883}
+  m_Enabled: 1
+  m_UseColliderMask: 0
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 1
+  m_UseSideBounce: 0
+  m_SideArc: 180
 --- !u!1 &620483000
 GameObject:
   m_ObjectHideFlags: 0
@@ -5723,7 +5743,7 @@ Transform:
   - {fileID: 1590980881}
   - {fileID: 2035797845}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &691081961
 AudioListener:
@@ -17550,6 +17570,7 @@ GameObject:
   - component: {fileID: 932089322}
   - component: {fileID: 932089321}
   - component: {fileID: 932089325}
+  - component: {fileID: 932089326}
   m_Layer: 9
   m_Name: Ground
   m_TagString: Ground
@@ -17603,7 +17624,7 @@ TilemapCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
@@ -21419,7 +21440,7 @@ CompositeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
@@ -21480,6 +21501,25 @@ CompositeCollider2D:
       - {x: -2.5999708, y: -3.9}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+--- !u!251 &932089326
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932089319}
+  m_Enabled: 1
+  m_UseColliderMask: 0
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -21583,7 +21623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.281424, y: 6.991648, z: -10}
+  m_LocalPosition: {x: 9.275555, y: 6.991648, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -22006,7 +22046,7 @@ Transform:
   - {fileID: 79880409}
   - {fileID: 644355000}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1058776174
 PolygonCollider2D:
@@ -69255,7 +69295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818723414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3515406, y: 6.9916453, z: -10}
+  m_LocalPosition: {x: 1.3503795, y: 6.9916453, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1266015515}
@@ -70541,7 +70581,7 @@ PrefabInstance:
     - target: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
