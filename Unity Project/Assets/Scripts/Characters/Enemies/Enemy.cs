@@ -4,17 +4,24 @@ using UnityEngine;
 
 public abstract class Enemy : Character
 {
-    private Character target;
+    protected Character target;
+    private string targetFaction = "Player";
 
     protected Transform GetTarget()
     {
         if (target == null)
-            target = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Character>();
+            target = GameObject.FindGameObjectWithTag(targetFaction)?.GetComponent<Character>();
 
         if (target != null)
             return target.IsDead() ? null : target.transform;
         else
             return null;
+    }
+
+    public void ChangeFaction()
+    {
+        tag = "Player";
+        targetFaction = "Enemy";
     }
 
 }

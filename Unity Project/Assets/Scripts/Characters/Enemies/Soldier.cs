@@ -3,18 +3,20 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using Random = UnityEngine.Random;
 
-public class Soldier : Enemy2D //TODO: usar AStar para o soldier? Não, condicionar melhor o pulo, talvez usar VectorDistance, no CheckIfMoved checar se o pulo falhou 
+public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, talvez usar VectorDistance em algo, no CheckIfMoved checar se o pulo falhou, melhorar CheckFollow para evitar que o inimigo fique a frente do alvo
 {
 
     public float moveCooldown = 0.5f;
     public float followRange = 5f;
     public float jumpForce = 15f;
+    public float punchDamage = 1f;
     readonly float moveCheckRate = 0.125f;
 
     private float nextMove;
     private float moveCheck;
     private float prevPosition;
     private float lastJump;
+    private float lastPunch;
     private bool grounded;
     private Vector3 desiredDir;
     private JumpCheck jCheck;
@@ -29,6 +31,7 @@ public class Soldier : Enemy2D //TODO: usar AStar para o soldier? Não, condicio
         nextMove = moveCooldown; //setFirstMove();
         ResetMoveCheck();
         lastJump = Time.time;
+        lastPunch = Time.time;
     }
 
     void FixedUpdate()
@@ -43,27 +46,41 @@ public class Soldier : Enemy2D //TODO: usar AStar para o soldier? Não, condicio
 
     public override void Attack()
     {
-
-        if (weapon.CanFire()) {
-
-            if (GetTarget().position.x < transform.position.x && desiredDir.x > 0)//SetShootingDir(); //TODO: dar soco e talvez se afastar um pouco antes de poder atirar de novo
+        if (Vector2.Distance(this.transform.position, target.transform.position) < 1f)
+        {
+            if (Time.time - lastPunch >= 2f) //Punch() 
             {
-                ChangeDesiredDir();
+                lastPunch = Time.time;
+                target.TakeDamage(punchDamage, false);
+                animator.SetBool("Running", false);
+                animator.SetTrigger("punch");
+                this.nextMove = moveCooldown; //UpdateNextMove();
             }
-            else
+        }
+        else
+        {
+            if (weapon.CanFire())
             {
-                if (GetTarget().position.x > transform.position.x && desiredDir.x < 0)
+
+                if (GetTarget().position.x < transform.position.x && desiredDir.x > 0)//SetShootingDir(); //TODO: talvez se afastar um pouco antes de poder atirar de novo
                 {
                     ChangeDesiredDir();
                 }
+                else
+                {
+                    if (GetTarget().position.x > transform.position.x && desiredDir.x < 0)
+                    {
+                        ChangeDesiredDir();
+                    }
+                }
+
+                animator.SetTrigger("shoot");
+                animator.SetBool("Running", false);
+
+                weapon.Fire(mainBarrel); //Fire();
+
+                this.nextMove = moveCooldown; //UpdateNextMove();
             }
-
-            animator.SetTrigger("shoot");
-            animator.SetBool("Running", false);
-
-            weapon.Fire(mainBarrel); //Fire();
-
-            this.nextMove = moveCooldown; //UpdateNextMove();
         }
     }
 
@@ -92,7 +109,7 @@ public class Soldier : Enemy2D //TODO: usar AStar para o soldier? Não, condicio
                 {
                     if (((this.transform.position.x > GetTarget().position.x) && desiredDir.x > 0) || ((this.transform.position.x < GetTarget().position.x) && desiredDir.x < 0))
                         ChangeDesiredDir();
-                    else if (JumpCooldown()) //JumpOnGround()
+                    else if (JumpCooldown()) //JumpOnGround() //TODO: verificar se falhou
                     {
                         rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
                         lastJump = Time.time;
@@ -108,7 +125,6 @@ public class Soldier : Enemy2D //TODO: usar AStar para o soldier? Não, condicio
             }
 
             this.transform.position += desiredDir;
-
             animator.SetBool("Running", true);
         }
     }
