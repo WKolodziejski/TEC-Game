@@ -18,6 +18,7 @@ public class Soldier : Enemy2D //TODO: usar AStar para o soldier? Não, condicio
     private bool grounded;
     private Vector3 desiredDir;
     private JumpCheck jCheck;
+    private bool insidePlayersCone;
 
     protected override void InitializeComponents()
     {
@@ -114,7 +115,7 @@ public class Soldier : Enemy2D //TODO: usar AStar para o soldier? Não, condicio
 
     private void Jump()
     {
-        if (grounded && JumpCooldown() && !jCheck.ground) //&& (this.transform.position.y - followRange/2 < GetTarget().position.y)) //TODO: aperfeiçoar o parametro de diferença de altura
+        if (grounded && JumpCooldown() && !jCheck.ground)
         {
             if (((this.transform.position.x > GetTarget().position.x) && desiredDir.x > 0) || ((this.transform.position.x < GetTarget().position.x) && desiredDir.x < 0))
             {
@@ -123,10 +124,13 @@ public class Soldier : Enemy2D //TODO: usar AStar para o soldier? Não, condicio
             }
             else
             {
-                rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
-                lastJump = Time.time;
-                animator.SetBool("jumping", true);
-                animator.SetBool("Running", false);
+                if (!insidePlayersCone)
+                {
+                    rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+                    lastJump = Time.time;
+                    animator.SetBool("jumping", true);
+                    animator.SetBool("Running", false);
+                }
             }
         }
     }
@@ -164,6 +168,11 @@ public class Soldier : Enemy2D //TODO: usar AStar para o soldier? Não, condicio
         {
             grounded = false;
         }
+    }
+
+    public void InsideCone(bool inside)
+    {
+        insidePlayersCone = inside;
     }
 
 }

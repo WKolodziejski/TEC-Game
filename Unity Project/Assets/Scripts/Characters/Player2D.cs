@@ -8,6 +8,7 @@ public class Player2D : Character
 
     public BoxCollider2D playerCollider;
     public BoxCollider2D groundcheck;
+    public PolygonCollider2D enemyCone;
     public float fallTime = 0.3f;
     public float jumpLock = 0.6f;
     public float jumpForce = 15f;
@@ -149,11 +150,11 @@ public class Player2D : Character
     {
         if (JumpCooldown())
         {
-            if (collider.tag == "Ground")
+            if (collider.CompareTag("Ground"))
             {
                 grounded = true;
             }
-            if (collider.tag == "Platform")
+            if (collider.CompareTag("Platform"))
             {
                 platform = true;
                 grounded = true;
@@ -161,17 +162,25 @@ public class Player2D : Character
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+            collision.GetComponent<Soldier>()?.InsideCone(true);
+    }
+
     private void OnTriggerExit2D(Collider2D collider)
     {
-        if (collider.tag == "Ground")
+        if (collider.CompareTag("Ground"))
         {
             grounded = false;
         }
-        if (collider.tag == "Platform")
+        if (collider.CompareTag("Platform"))
         {
             platform = false;
             grounded = false;
         }
+        if (collider.CompareTag("Enemy"))
+            collider.GetComponent<Soldier>()?.InsideCone(false);
     }
 
     public IEnumerator Fall()
