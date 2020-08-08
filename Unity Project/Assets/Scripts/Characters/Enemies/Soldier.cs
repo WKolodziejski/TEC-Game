@@ -36,10 +36,13 @@ public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, talvez usar V
 
     void FixedUpdate()
     {
-        if (GetTarget() != null) {
+        if (GetTarget() != null)
+        {
             Move();
             Attack();
         }
+        else
+            animator.SetBool("Running", false);
 
         Jump();
     }

@@ -5,23 +5,15 @@ using UnityEngine;
 public abstract class Enemy : Character
 {
     protected Character target;
-    private string targetFaction = "Player";
 
-    protected Transform GetTarget()
+    protected virtual Transform GetTarget()
     {
         if (target == null)
-            target = GameObject.FindGameObjectWithTag(targetFaction)?.GetComponent<Character>();
+            target = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Character>();
 
         if (target != null)
             return target.IsDead() ? null : target.transform;
         else
             return null;
     }
-
-    public void ChangeFaction()
-    {
-        tag = "Player";
-        targetFaction = "Enemy";
-    }
-
 }

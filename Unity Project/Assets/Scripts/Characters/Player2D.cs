@@ -9,6 +9,7 @@ public class Player2D : Character
     public BoxCollider2D playerCollider;
     public BoxCollider2D groundcheck;
     public PolygonCollider2D enemyCone;
+    private AIAssistant assistant;
     public float fallTime = 0.3f;
     public float jumpLock = 0.6f;
     public float jumpForce = 15f;
@@ -36,7 +37,8 @@ public class Player2D : Character
 
     protected override void InitializeComponents()
     {
-        enabled = true;
+        assistant = GameObject.FindObjectOfType<AIAssistant>();
+        SetEnabled(true);
         shield.SetActive(false);
     }
 
@@ -226,4 +228,17 @@ public class Player2D : Character
         horizontal = 0f;
     }
 
+    public override void SetEnabled(bool enabled)
+    {
+        if (!IsDead())
+        {
+            this.enabled = enabled;
+            assistant.EnabledAI(this, enabled);
+        }
+    }
+
+    /* private void OnDestroy()
+    {
+        assistant.EnabledAI(this, false);
+    }*/
 }
