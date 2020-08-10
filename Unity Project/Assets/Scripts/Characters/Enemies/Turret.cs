@@ -1,22 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
+﻿
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
-public class Turret : ComplexShooter
+public class Turret : Enemy2D
 {
+
+    public Transform barrel1;
+    public Transform barrel2;
+
     void Update()
     {
         if (GetTarget() != null)
             Attack();
     }
 
+    void FixedUpdate()
+    {
+        if (GetTarget() != null)
+        {
+            Vector2 lookDir = GetTarget().position - transform.position;
+            rb.rotation = -Mathf.Atan2(lookDir.x, lookDir.y) * Mathf.Rad2Deg + 90f;
+        }  
+    }
+
     public override void Attack()
     {
-        Aim();
-        weapon.Fire(mainBarrel);
+        weapon.Fire(barrel1);
     }
 
 }
