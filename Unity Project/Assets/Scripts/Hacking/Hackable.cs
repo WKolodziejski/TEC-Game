@@ -18,8 +18,6 @@ public class Hackable : MonoBehaviour
     {
         if (!isHacked)
         {
-            isHacked = true;
-
             portal = Instantiate(p, transform.position, Quaternion.identity, transform);
 
             FindObjectOfType<HackSceneReference>().Enter(transform, difficulty, (won) =>
@@ -28,6 +26,8 @@ public class Hackable : MonoBehaviour
 
                 if (won)
                 {
+                    isHacked = true;
+
                     if (gameObject.GetComponent<Character>() != null)
                         gameObject.GetComponent<Character>().Kill();
                     else
