@@ -936,7 +936,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577932132}
-  m_LocalRotation: {x: -0, y: -0, z: 0.25881907, w: 0.9659259}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1652,12 +1652,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!82 &1677011604 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1709813642669667846, guid: e709b6375f70ecd4a97fc3f728c460b5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1959412924}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1782500663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,11 +2070,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1808016626}
-    - target: {fileID: 7462748581175016658, guid: e709b6375f70ecd4a97fc3f728c460b5,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -310163949
-      objectReference: {fileID: 0}
     - target: {fileID: 7462748581175016749, guid: e709b6375f70ecd4a97fc3f728c460b5,
         type: 3}
       propertyPath: m_Name
@@ -2190,51 +2179,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7462748581175016750, guid: e709b6375f70ecd4a97fc3f728c460b5,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7462748581175016751, guid: e709b6375f70ecd4a97fc3f728c460b5,
-        type: 3}
-      propertyPath: audioFail
-      value: 
-      objectReference: {fileID: 1677011604}
-    - target: {fileID: 7462748581175016751, guid: e709b6375f70ecd4a97fc3f728c460b5,
-        type: 3}
-      propertyPath: audioNoTarget
-      value: 
-      objectReference: {fileID: 1677011604}
-    - target: {fileID: 7462748582442861074, guid: e709b6375f70ecd4a97fc3f728c460b5,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
-    - target: {fileID: 7462748582442861074, guid: e709b6375f70ecd4a97fc3f728c460b5,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7462748582442861074, guid: e709b6375f70ecd4a97fc3f728c460b5,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7462748582442861074, guid: e709b6375f70ecd4a97fc3f728c460b5,
-        type: 3}
-      propertyPath: m_Maskable
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e709b6375f70ecd4a97fc3f728c460b5, type: 3}
@@ -2433,14 +2377,6 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 1850699823106047852, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
     value: {fileID: 648519177}
-  - key: {fileID: 6024154138689981186, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -6949948243426791297, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 4414633689120918101, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -1386678869353789867, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
-    value: {fileID: 0}
   - key: {fileID: -2600359318790555947, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
     value: {fileID: 1585362560}
   - key: {fileID: 6047963374049952569, guid: f7e9eb1ae7b99b64ab9d5e389f761c5b, type: 2}
@@ -2512,20 +2448,14 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 1850699823106047852, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
     value: {fileID: 648519177}
-  - key: {fileID: 6024154138689981186, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -6949948243426791297, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 1816899655158336947, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 7770760202381824150, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
-    value: {fileID: 0}
   - key: {fileID: -8576385178294946447, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
     value: {fileID: 1585362560}
   - key: {fileID: -6857856133405131580, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
     value: {fileID: 1487881774}
   - key: {fileID: -379648261307520890, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
     value: {fileID: 248413913}
+  - key: {fileID: 5667975359961467005, guid: e0e587c188cbf7b48a35b7fd9049959c, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &1623757852804599718

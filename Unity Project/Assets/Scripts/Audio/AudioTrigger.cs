@@ -13,6 +13,11 @@ public class AudioTrigger : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    public AudioSource GetAudioSource()
+    {
+        return audioSource;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !faded)

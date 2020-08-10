@@ -11,6 +11,7 @@ public class HackInterface : MonoBehaviour
 
     public HackParticle particle;
     public AudioSource audioNoTarget;
+    public GameObject portal;
     
     private Image bar;
     private RectTransform rect;
@@ -96,7 +97,7 @@ public class HackInterface : MonoBehaviour
 
         if (countTime > (startTime + holdTime) && target != null)
         {
-            target.Hack();
+            target.Hack(portal);
 
             target = null;
 

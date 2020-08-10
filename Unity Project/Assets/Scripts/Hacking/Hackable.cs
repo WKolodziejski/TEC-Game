@@ -9,20 +9,18 @@ public class Hackable : MonoBehaviour
 {
 
     public EDifficulty difficulty;
-    public GameObject particleSuccess;
 
     private bool isHacked;
     private GameObject portal;
     protected Action action;
 
-    public void Hack()
+    public void Hack(GameObject p)
     {
         if (!isHacked)
         {
             isHacked = true;
 
-            if (particleSuccess != null)
-                portal = Instantiate(particleSuccess, transform.position, Quaternion.identity, transform);
+            portal = Instantiate(p, transform.position, Quaternion.identity, transform);
 
             FindObjectOfType<HackSceneReference>().Enter(transform, difficulty, (won) =>
             {
