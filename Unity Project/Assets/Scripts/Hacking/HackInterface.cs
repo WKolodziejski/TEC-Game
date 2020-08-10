@@ -10,7 +10,7 @@ public class HackInterface : MonoBehaviour
     public float holdTime = 2f;
 
     public HackParticle particle;
-    public AudioSource audioFail;
+    public AudioSource audioNoTarget;
     
     private Image bar;
     private RectTransform rect;
@@ -40,7 +40,7 @@ public class HackInterface : MonoBehaviour
 
             if (target == null)
             {
-                audioFail.Play();
+                audioNoTarget.Play();
             }
             else
             {

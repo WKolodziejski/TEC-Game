@@ -4443,6 +4443,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Putin
       objectReference: {fileID: 0}
+    - target: {fileID: 5859210898778810234, guid: 00f1bd67934224f4cae745848eb8856e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hackable
+      objectReference: {fileID: 0}
     - target: {fileID: 5859210898778810235, guid: 00f1bd67934224f4cae745848eb8856e,
         type: 3}
       propertyPath: m_LocalPosition.x

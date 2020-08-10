@@ -17,11 +17,6 @@ public class HackSceneReference : MonoBehaviour
     private GameObject[] objs;
     private bool isHacking;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void Enter(Transform target, EDifficulty difficulty, Action<bool> onReturn)
     {
         this.onReturn = onReturn;

@@ -35,7 +35,7 @@ public class Lifebar : MonoBehaviour
         if (animating)
             StopAllCoroutines();
 
-        StartCoroutine(IAnim(c.hp / 10));
+        StartCoroutine(IAnim(c.hp / hp));
     }
 
     private IEnumerator IAnim(float hp)

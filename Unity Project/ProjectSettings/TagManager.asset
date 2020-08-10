@@ -15,6 +15,7 @@ TagManager:
   - Missile
   - Grid
   - Spawner
+  - JumpCone
   layers:
   - Default
   - TransparentFX

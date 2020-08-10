@@ -41,15 +41,17 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(tag + " -> " + collision.name);
-
+        
         /*
          * BulletPlayer não contém Player
          * BulletEnemy não contém Enemy
          * Bullet____ != Bullet____
         */
 
-        if (!tag.Contains(collision.tag) && !collision.tag.Contains("Bullet") && !collision.CompareTag("MainCamera"))
+        if (!tag.Contains(collision.tag) && 
+            !collision.tag.Contains("Bullet") && 
+            !collision.CompareTag("MainCamera") && 
+            !collision.CompareTag("JumpCone"))
         {
             if (collision.CompareTag("Enemy") || collision.CompareTag("Player"))
             {
@@ -66,7 +68,7 @@ public class Bullet : MonoBehaviour
                 else
                 {
                     Explode();
-                }   
+                }
             }
             else
             {

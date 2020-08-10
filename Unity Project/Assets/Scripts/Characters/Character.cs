@@ -96,7 +96,7 @@ public abstract class Character : MonoBehaviour
 
         animator.SetBool("dead", isDead);
 
-        Destroy(gameObject, 1f); //15s a fins de debug
+        Destroy(gameObject, 2f);
     }
 
     protected virtual void OnDamage(float damage)

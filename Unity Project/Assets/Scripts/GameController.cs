@@ -84,7 +84,7 @@ public class GameController : MonoBehaviour
         cam.LookAt = p.transform;
         cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 4;
 
-        p.SetOnDamageListener(() => damage.weight = 1 - p.hp / 10);
+        p.SetOnDamageListener(() => damage.weight = 1 - p.hp / 5);
 
         p.SetOnDieListener(() =>
         {
@@ -112,14 +112,17 @@ public class GameController : MonoBehaviour
 
     private IEnumerator INewPlayer()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         SetupPlayer();
     }
 
     private IEnumerator IGameOver()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.5f);
+
+        foreach (GameObject o in FindObjectsOfType<GameObject>())
+            Destroy(o);
 
         SceneManager.LoadScene("GameOver");
     }

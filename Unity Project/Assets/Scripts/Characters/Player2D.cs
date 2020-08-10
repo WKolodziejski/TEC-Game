@@ -35,11 +35,17 @@ public class Player2D : Character
     public PolygonCollider2D lyingCollider;
     public PolygonCollider2D standingCollider;
 
+    public AudioSource audioDamage;
+    public AudioSource audioCritical;
+    public AudioSource audioSpawn;
+    public AudioSource audioDie;
+
     protected override void InitializeComponents()
     {
         assistant = GameObject.FindObjectOfType<AIAssistant>();
         SetEnabled(true);
         shield.SetActive(false);
+        audioSpawn.Play();
     }
 
     void Update()
@@ -197,12 +203,19 @@ public class Player2D : Character
     {
         base.OnDamage(damage);
 
+        if (hp >= 2)
+            audioDamage.Play();
+        else
+            audioCritical.Play();
+
         StartCoroutine(IShield());
     }
 
     protected override void OnDie()
     {
         base.OnDie();
+
+        audioDie.Play();
 
         shield.SetActive(false);
     }
