@@ -16,18 +16,38 @@ public class GameController : MonoBehaviour
     public GameObject complete;
     public Volume damage;
 
+    private GameMenuButtons menu;
     private Lifebar lifebar;
     private Vector3 checkpoint;
     private int scene;
     private int lifes = 3;
+    public bool isPaused;
 
     //private Dictionary<Type, int> pontuation;
 
     void Awake()
     {
         lifebar = FindObjectOfType<Lifebar>();
+        menu = FindObjectOfType<GameMenuButtons>();
+        menu.gameObject.SetActive(false);
 
         StartCoroutine(ILoadScene(4));
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                menu.Resume();
+            }
+            else
+            {
+                menu.gameObject.SetActive(true);
+                menu.Pause();
+            }
+        }
     }
 
     private IEnumerator ILoadScene(int s)
