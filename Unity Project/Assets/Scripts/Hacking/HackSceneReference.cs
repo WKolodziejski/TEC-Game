@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class HackSceneReference : MonoBehaviour
 {
-    //protected HackSceneReference() { }
 
     public CinemachineVirtualCamera cam;
     public PlayableDirector transitionEnter;
@@ -26,14 +25,14 @@ public class HackSceneReference : MonoBehaviour
 
     private IEnumerator IEnter(Transform target, EDifficulty difficulty)
     {
-        Debug.Log("Entering...");
-
         Time.timeScale = 0.01f;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
         cam.LookAt = target;
         cam.Follow = target;
         transitionEnter.Play();
+
+        FindObjectOfType<AudioController>().EnterHack();
 
         yield return new WaitForSeconds(2f * Time.timeScale);
 
@@ -43,21 +42,14 @@ public class HackSceneReference : MonoBehaviour
             this.difficulty = difficulty;
             this.objs = FindObjectsOfType<GameObject>();
 
-            SceneManager.LoadScene("HackScene", LoadSceneMode.Additive);
+            AsyncOperation s = SceneManager.LoadSceneAsync("HackScene", LoadSceneMode.Additive);
+
+           while (!s.isDone)
+                yield return null;
 
             foreach (GameObject o in objs)
-            {
-                DontDestroyOnLoad(o);
-
                 if (o.GetComponent<DontDestroy>() == null)
-                {
                     o.SetActive(false);
-                }
-            }
-        }
-        else
-        {
-            Debug.Log("Already hacking");
         }
     }
 
@@ -68,11 +60,11 @@ public class HackSceneReference : MonoBehaviour
 
     private IEnumerator IReturn(bool won)
     {
-        Debug.Log("Returning...");
-
         yield return new WaitForSeconds(0.5f * Time.timeScale);
 
         transitionReturn.Play();
+
+        FindObjectOfType<AudioController>().ReturnHack();
 
         if (isHacking)
         {
@@ -81,14 +73,8 @@ public class HackSceneReference : MonoBehaviour
             SceneManager.UnloadSceneAsync("HackScene");
 
             foreach (GameObject o in objs)
-            {
                 if (o != null)
                     o.SetActive(true);
-            }
-        }
-        else
-        {
-            Debug.Log("Not hacking");
         }
 
         yield return new WaitForSeconds(0.5f * Time.timeScale);
@@ -104,7 +90,7 @@ public class HackSceneReference : MonoBehaviour
         onReturn(won);
     }
 
-    public EDifficulty difficulty;
+    private EDifficulty difficulty;
 
     public EDifficulty GetDifficulty()
     {

@@ -45,7 +45,15 @@ public class HackInterface : MonoBehaviour
             }
             else
             {
-                canvas.enabled = true;
+                if (target.IsHacked())
+                {
+                    target.ExecuteAction();
+                    held = false;
+                    target = null;
+                    return;
+                }
+                else
+                    canvas.enabled = true;
             }
         }
 

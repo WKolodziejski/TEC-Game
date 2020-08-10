@@ -13,7 +13,7 @@ public class Putin : MonoBehaviour
         GetComponent<Hackable>().SetAction(() =>
         {
             GetComponent<AudioSource>().Play();
-            FindObjectOfType<Player2D>().SetWeapon(w);
+            //FindObjectOfType<Player2D>().SetWeapon(w);
         });
     }
 

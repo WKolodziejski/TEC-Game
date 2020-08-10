@@ -38,7 +38,7 @@ public class AudioTrigger : MonoBehaviour
 
         while (audioSource.volume > 0)
         {
-            audioSource.volume -= startVolume * Time.deltaTime / 2f;
+            audioSource.volume -= startVolume * Time.deltaTime * Time.deltaTime;
 
             yield return null;
         }

@@ -34,6 +34,7 @@ public class HackGameController : MonoBehaviour
     void Start()
     {
         EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
+
         timerCounter = ((int) difficulty + 1) * 10;
 
         switch (difficulty)
@@ -49,6 +50,8 @@ public class HackGameController : MonoBehaviour
             case EDifficulty.HARD:
                 lHARD.SetActive(true);
                 break;
+
+            default: throw new Exception("No difficulty set");
         }
 
         bosses = FindObjectsOfType<BossHack>().ToList();

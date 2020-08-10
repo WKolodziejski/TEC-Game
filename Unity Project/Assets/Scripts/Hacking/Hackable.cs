@@ -45,6 +45,16 @@ public class Hackable : MonoBehaviour
         }
     }
 
+    public void ExecuteAction()
+    {
+        action?.Invoke();
+    }
+
+    public bool IsHacked()
+    {
+        return isHacked;
+    }
+
     public void SetAction(Action action)
     {
         this.action = action;

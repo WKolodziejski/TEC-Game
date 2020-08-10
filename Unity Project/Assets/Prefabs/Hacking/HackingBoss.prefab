@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5445095491871528822
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8408277271787334598}
-  m_Layer: 10
-  m_Name: Barrel 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &8408277271787334598
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5445095491871528822}
-  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1566321562899547710}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 180, y: 90, z: 90}
 --- !u!1 &6246838507680840824
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,36 +30,6 @@ Transform:
   m_Father: {fileID: 1566321562899547710}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
---- !u!1 &8713986033421322924
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 473724925418948736}
-  m_Layer: 10
-  m_Name: Barrel S
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &473724925418948736
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8713986033421322924}
-  m_LocalRotation: {x: 0, y: 0.70710677, z: 0.70710677, w: 0}
-  m_LocalPosition: {x: -0, y: 1.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1566321562899547710}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 90}
 --- !u!1 &8827016359232172292
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +60,7 @@ Transform:
   m_Children:
   - {fileID: 5939862302783056500}
   m_Father: {fileID: 1566321562899547710}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1562632642362888052
 CircleCollider2D:
@@ -173,8 +113,6 @@ Transform:
   - {fileID: 801206063927517030}
   - {fileID: 4795705039346542536}
   - {fileID: 7833792635527143577}
-  - {fileID: 8408277271787334598}
-  - {fileID: 473724925418948736}
   - {fileID: 7237498131858052081}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -230,17 +168,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 2261321554311384493, guid: 8eaccd8e681e0a44593e98c7f95e08e4,
     type: 3}
-  mainBarrel: {fileID: 0}
-  hp: 10
+  mainBarrel: {fileID: 7833792635527143577}
+  damagePopup: {fileID: 0}
+  hp: 5
   movementSpeed: 5
   damageCooldown: 0
   explosion: {fileID: 166214, guid: 078d54c719054054ab1dc1e7fa88d090, type: 3}
   shield: {fileID: 8827016359232172292}
   shieldExp: {fileID: 4795705039346261776}
   rotationSpeed: 100
-  barrel1: {fileID: 7833792635527143577}
-  barrel2: {fileID: 8408277271787334598}
-  barrelS: {fileID: 473724925418948736}
 --- !u!195 &5468346214059814276
 NavMeshAgent:
   m_ObjectHideFlags: 0

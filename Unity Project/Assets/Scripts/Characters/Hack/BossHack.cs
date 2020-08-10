@@ -12,9 +12,6 @@ public class BossHack : EnemyHack
     public GameObject shieldExp;
 
     public float rotationSpeed = 5f;
-    public Transform barrel1;
-    //public Transform barrel2;
-    //public Transform barrelS;
     
     private Action GetDestination;
     private Vector3 destination;
@@ -24,10 +21,13 @@ public class BossHack : EnemyHack
     {
         base.InitializeComponents();
 
+        //Por algum motivo o boss tava aparecendo rotacionado quando inicia o hack pelo mainScene
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+
         GetDestination = GetRunawayPath;
 
-        //if (FindObjectOfType<HackSceneReference>().GetDifficulty() == EDifficulty.EASY)
-            //shield.SetActive(false);
+        if (FindObjectOfType<HackSceneReference>().GetDifficulty() == EDifficulty.EASY)
+            shield.SetActive(false);
     }
 
     void FixedUpdate()
@@ -41,11 +41,7 @@ public class BossHack : EnemyHack
     void Update()
     {
         if (!hasShield)
-        {
-            weapon.Fire(barrel1);
-        }
-        
-        //weapon.Fire(barrelS);
+            weapon.Fire(mainBarrel);
     }
     
     public void SetAgressive()
@@ -69,7 +65,8 @@ public class BossHack : EnemyHack
     public void DisableShield()
     {
         hasShield = false;
-        //if (FindObjectOfType<HackSceneReference>().GetDifficulty() != EDifficulty.EASY)
+
+        if (FindObjectOfType<HackSceneReference>().GetDifficulty() != EDifficulty.EASY)
             shieldExp.SetActive(true);
 
         shield.SetActive(false);

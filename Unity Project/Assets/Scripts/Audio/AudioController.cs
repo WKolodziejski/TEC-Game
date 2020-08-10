@@ -5,13 +5,17 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
 
-    public AudioSource hack;
-
+    private AudioSource hack;
     private AudioSource actual;
+
+    void Start()
+    {
+        hack = GetComponent<AudioSource>();
+    }
 
     public void EnterHack()
     {
-        foreach (AudioTrigger a in FindObjectsOfType<AudioTrigger>())
+        foreach (AudioTrigger a in GetComponentsInChildren<AudioTrigger>())
         {
             AudioSource source = a.GetAudioSource();
 
@@ -36,13 +40,13 @@ public class AudioController : MonoBehaviour
 
     IEnumerator FadeOut(AudioSource a)
     {
-        float startVolume = a.volume;
+        a.volume = 1;
 
         while (a.volume > 0)
         {
-            a.volume -= startVolume * Time.deltaTime / 2f;
+            a.volume -= 0.1f;
 
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
 
         a.mute = true;
@@ -51,16 +55,13 @@ public class AudioController : MonoBehaviour
     IEnumerator FadeIn(AudioSource a)
     {
         a.mute = false;
-
-        float startVolume = 0.2f;
-
         a.volume = 0;
 
         while (a.volume < 1.0f)
         {
-            a.volume += startVolume * Time.deltaTime;
+            a.volume += 0.1f;
 
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
