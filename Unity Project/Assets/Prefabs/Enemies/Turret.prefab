@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2c8c445f49058468642b1284450e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 8187958245616858976, guid: 013f07f7c371a0c40adda8850991d0e4,
+  weaponPrefab: {fileID: 6927569103293174824, guid: 8b4fbfeeab1d30547b8925ddf18f7b4c,
     type: 3}
   mainBarrel: {fileID: 0}
   damagePopup: {fileID: 0}

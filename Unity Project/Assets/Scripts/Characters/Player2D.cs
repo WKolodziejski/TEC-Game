@@ -122,9 +122,6 @@ public class Player2D : Character
         animator.SetBool("dead", IsDead());
         animator.SetBool("jumping", !grounded);
         animator.SetBool("moving", horizontal != 0f);
-
-        if (Input.GetKeyDown(KeyCode.O))
-            DisableControlsAndRun();
     }
 
     void FixedUpdate()
