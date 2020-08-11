@@ -5,6 +5,18 @@ using UnityEngine;
 public class CameraRange : MonoBehaviour
 {
 
+    private BoxCollider2D col;
+
+    void Awake()
+    {
+        col = GetComponent<BoxCollider2D>();
+    }
+
+    public void SetEnabled(bool enabled)
+    {
+        col.enabled = enabled;
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy") || collision.CompareTag("Rat"))
@@ -30,4 +42,5 @@ public class CameraRange : MonoBehaviour
         if (collision.tag.Contains("Bullet") || collision.CompareTag("Rat"))
             Destroy(collision.gameObject);
     }
+
 }

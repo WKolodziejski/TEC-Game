@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     private GameMenuButtons menu;
     private Lifebar lifebar;
     private Vector3 checkpoint;
+    private CameraRange range;
     private int scene;
     private int lifes = 4;
     public bool isPaused;
@@ -28,6 +29,7 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         lifebar = FindObjectOfType<Lifebar>();
+        range = FindObjectOfType<CameraRange>();
         menu = FindObjectOfType<GameMenuButtons>();
         menu.gameObject.SetActive(false);
 
@@ -82,6 +84,7 @@ public class GameController : MonoBehaviour
 
         loading.SetActive(false);
         lifebar.gameObject.SetActive(true);
+        range.SetEnabled(true);
 
         SetupPlayer();
     }
@@ -159,6 +162,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator ICompleteLevel()
     {
+        range.SetEnabled(false);
         lifebar.gameObject.SetActive(false);
 
         Player2D p = FindObjectOfType<Player2D>();
@@ -169,12 +173,11 @@ public class GameController : MonoBehaviour
         foreach (Bullet b in FindObjectsOfType<Bullet>())
             Destroy(b);
 
-
         yield return new WaitForSeconds(0.5f);
 
         complete.SetActive(true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         AsyncOperation load = SceneManager.UnloadSceneAsync(scene);
 

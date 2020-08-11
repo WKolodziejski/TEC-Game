@@ -24,7 +24,6 @@ public class Player2D : Character
     private bool lying;
     private bool controlIsEnabled = true;
 
-    public GameObject shield;
     public Transform barrelFront;
     public Transform barrelUp;
     public Transform barrelDiagonalUp;
@@ -44,7 +43,6 @@ public class Player2D : Character
     {
         assistant = GameObject.FindObjectOfType<AIAssistant>();
         SetEnabled(true);
-        shield.SetActive(false);
         audioSpawn.Play();
     }
 
@@ -204,8 +202,6 @@ public class Player2D : Character
             audioDamage.Play();
         else
             audioCritical.Play();
-
-        StartCoroutine(IShield());
     }
 
     protected override void OnDie()
@@ -213,17 +209,6 @@ public class Player2D : Character
         base.OnDie();
 
         audioDie.Play();
-
-        shield.SetActive(false);
-    }
-
-    private IEnumerator IShield()
-    {
-        shield.SetActive(true);
-
-        yield return new WaitForSeconds(1f);
-
-        shield.SetActive(false);
     }
 
     public void DisableControlsAndRun()

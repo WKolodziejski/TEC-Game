@@ -15,9 +15,9 @@ public class Lifebar : MonoBehaviour
 
     public void SetExtraLifes(int l)
     {
-        lf1.SetActive(l >= 1);
-        lf2.SetActive(l >= 2);
-        lf3.SetActive(l >= 3);
+        lf1.SetActive(l >= 2);
+        lf2.SetActive(l >= 3);
+        lf3.SetActive(l >= 4);
     }
 
     public void SetPlayer(Player2D c)
