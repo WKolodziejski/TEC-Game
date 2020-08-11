@@ -5,21 +5,11 @@ using UnityEngine;
 
 public abstract class Enemy2D : Enemy //TODO: mudar de facção
 {
-    private AIAssistant assistant;
-
     //CHAMAR BASE NOS FILHOS
     protected override void InitializeComponents()
     {
-        assistant = GameObject.FindObjectOfType<AIAssistant>();
+        //assistant = GameObject.FindObjectOfType<AIAssistant>();
         SetEnabled(false);
-    }
-
-    protected override Transform GetTarget()
-    {
-        if (!target || target.IsDead() || !target.enabled)
-            target = assistant.GetTarget(this.transform.position, this.tag);
-
-        return target?.transform;
     }
 
     protected void LookAtTarget()
@@ -46,32 +36,42 @@ public abstract class Enemy2D : Enemy //TODO: mudar de facção
 
     public abstract void Attack();
 
-    public override void SetEnabled(bool enabled)
+    //private AIAssistant assistant;
+
+    /*public override void SetEnabled(bool enabled)
     {
         if (this.enabled != enabled && !IsDead())
         {
             this.enabled = enabled;
             assistant.EnabledAI(this, enabled);
         }
-    }
+    }*/
 
-    public void ChangeFaction()
+    /*public void ChangeFaction()
     {
         assistant.EnabledAI(this, false);
         tag = "Player";
         assistant.EnabledAI(this, true);
-    }
+    }*/
 
-    protected override void OnDie()
+    /*protected override void OnDie()
     {
         base.OnDie();
 
         assistant.EnabledAI(this, false);
-    }
+    }*/
 
     /*private void OnDestroy()
     {
         assistant.EnabledAI(this, false);
+    }*/
+
+    /*protected override Transform GetTarget()
+    {
+        if (!target || target.IsDead() || !target.enabled)
+            target = assistant.GetTarget(this.transform.position, this.tag);
+
+        return target?.transform;
     }*/
 
     /*protected bool CanAttack()
@@ -80,4 +80,5 @@ public abstract class Enemy2D : Enemy //TODO: mudar de facção
         return transform.position.x > boundries[0] && transform.position.x < boundries[1] &&
             transform.position.y > boundries[2] && transform.position.y < boundries[3];
     }*/
+
 }

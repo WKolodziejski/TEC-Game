@@ -6,7 +6,7 @@ public abstract class Enemy : Character
 {
     protected Character target;
 
-    protected virtual Transform GetTarget()
+    protected Transform GetTarget()
     {
         if (target == null)
             target = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Character>();

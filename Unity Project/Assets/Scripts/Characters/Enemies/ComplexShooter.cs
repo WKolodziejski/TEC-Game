@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ComplexShooter : Enemy2D
+public abstract class ComplexShooter : Enemy2D //TODO: rever o calculo de angulo
 {
     protected Vector3 yAxis;
     protected float aimingAngle;

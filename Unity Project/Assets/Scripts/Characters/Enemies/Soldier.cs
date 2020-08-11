@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using Random = UnityEngine.Random;
 
-public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, talvez usar VectorDistance em algo, no CheckIfMoved checar se o pulo falhou, melhorar CheckFollow para evitar que o inimigo fique a frente do alvo
+public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicionar melhor o pulo?, talvez usar VectorDistance em algo, no CheckIfMoved checar se o pulo falhou, melhorar CheckFollow para evitar que o inimigo fique a frente do alvo
 {
 
     public float moveCooldown = 0.5f;
@@ -182,7 +182,7 @@ public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, talvez usar V
         if ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform")))
         {
             grounded = true;
-            animator.SetBool("jumping", false);
+            animator?.SetBool("jumping", false); //tava dando erro sem o null conditional
         }
     }
 

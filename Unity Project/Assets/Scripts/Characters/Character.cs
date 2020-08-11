@@ -77,7 +77,7 @@ public abstract class Character : MonoBehaviour
         return isDead;
     }
 
-    public virtual void SetEnabled(bool enabled)
+    public void SetEnabled(bool enabled)
     {
         if (!isDead)
             this.enabled = enabled;
