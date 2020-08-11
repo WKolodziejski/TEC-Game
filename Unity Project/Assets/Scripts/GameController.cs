@@ -164,13 +164,13 @@ public class GameController : MonoBehaviour
         Player2D p = FindObjectOfType<Player2D>();
         p.DisableControlsAndRun();
 
-        yield return new WaitForSeconds(0.5f);
-
         foreach (Enemy2D e in FindObjectsOfType<Enemy2D>())
             e.SetEnabled(false);
-
         foreach (Bullet b in FindObjectsOfType<Bullet>())
             Destroy(b);
+
+
+        yield return new WaitForSeconds(0.5f);
 
         complete.SetActive(true);
 
