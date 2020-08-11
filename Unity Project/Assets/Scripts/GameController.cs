@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
     private Lifebar lifebar;
     private Vector3 checkpoint;
     private int scene;
-    private int lifes = 3;
+    private int lifes = 4;
     public bool isPaused;
 
     //private Dictionary<Type, int> pontuation;

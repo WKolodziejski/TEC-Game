@@ -62,10 +62,17 @@ public abstract class Enemy2D : Enemy //TODO: mudar de facção
         assistant.EnabledAI(this, true);
     }
 
-    private void OnDestroy()
+    protected override void OnDie()
     {
+        base.OnDie();
+
         assistant.EnabledAI(this, false);
     }
+
+    /*private void OnDestroy()
+    {
+        assistant.EnabledAI(this, false);
+    }*/
 
     /*protected bool CanAttack()
     {

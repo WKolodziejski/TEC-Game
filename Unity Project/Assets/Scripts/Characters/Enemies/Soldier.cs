@@ -136,19 +136,24 @@ public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, talvez usar V
     {
         if (grounded && JumpCooldown() && !jCheck.ground)
         {
-            if (((this.transform.position.x > GetTarget().position.x) && desiredDir.x > 0) || ((this.transform.position.x < GetTarget().position.x) && desiredDir.x < 0))
-            {
-                ChangeDesiredDir();
-                lastJump = Time.time - 0.3f;
-            }
-            else
-            {
-                if (!insidePlayersCone)
+            Transform target = GetTarget();
+
+            if (target != null)
+            {            
+                if (((this.transform.position.x > target.position.x) && desiredDir.x > 0) || ((this.transform.position.x < target.position.x) && desiredDir.x < 0))
                 {
-                    rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
-                    lastJump = Time.time;
-                    animator.SetBool("jumping", true);
-                    animator.SetBool("Running", false);
+                    ChangeDesiredDir();
+                    lastJump = Time.time - 0.3f;
+                }
+                else
+                {
+                    if (!insidePlayersCone)
+                    {
+                        rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+                        lastJump = Time.time;
+                        animator.SetBool("jumping", true);
+                        animator.SetBool("Running", false);
+                    }
                 }
             }
         }
