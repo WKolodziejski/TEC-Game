@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rat : Enemy2D
+public class Rat : Character
 {
 
     protected override void InitializeComponents()
     {
-        Destroy(gameObject, 20f);
+        SetEnabled(false);
+        movementSpeed *= -1;
     }
 
     private void FixedUpdate()
     {
-        transform.position += Vector3.right * movementSpeed * Time.deltaTime * -1f;
+        transform.position += Vector3.right * movementSpeed * Time.deltaTime;
     }
 
     protected override void OnDie()
@@ -22,9 +23,14 @@ public class Rat : Enemy2D
         Destroy(gameObject);
     }
 
-    public override void Attack()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.collider.CompareTag("Wall"))
+        {
+            movementSpeed *= -1;
+            transform.rotation *= Quaternion.Euler(0f, 180f, 0f);
+        }
+
     }
 
 }
