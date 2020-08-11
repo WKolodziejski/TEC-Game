@@ -6,6 +6,7 @@ public class Turret : Enemy2D
 
     public Transform barrel1;
     public Transform barrel2;
+    public GameObject explosion;
 
     void Update()
     {
@@ -25,6 +26,13 @@ public class Turret : Enemy2D
     public override void Attack()
     {
         weapon.Fire(barrel1);
+    }
+
+    protected override void OnDie()
+    {
+        base.OnDie();
+
+        explosion.SetActive(true);
     }
 
 }
