@@ -8,6 +8,7 @@ public class AudioController : MonoBehaviour
     private AudioSource hack;
     private List<AudioSource> audios;
     private int actual;
+    private bool firstSong = true;
 
     void Start()
     {
@@ -20,11 +21,22 @@ public class AudioController : MonoBehaviour
 
     public void SetActive(AudioSource audioSource)
     {
-        StartCoroutine(FadeOut(audios[actual]));
+        if (firstSong)
+        {
+            firstSong = false;
 
-        actual = audios.IndexOf(audioSource);
+            actual = audios.IndexOf(audioSource);
 
-        StartCoroutine(FadeIn(audios[actual]));
+            StartCoroutine(FadeIn(audios[actual]));
+        }
+        else
+        {
+            StartCoroutine(FadeOut(audios[actual]));
+
+            actual = audios.IndexOf(audioSource);
+
+            StartCoroutine(FadeIn(audios[actual]));
+        }
     }
 
     public void EnterHack()

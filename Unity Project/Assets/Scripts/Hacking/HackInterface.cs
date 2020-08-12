@@ -107,6 +107,9 @@ public class HackInterface : MonoBehaviour
         {
             target.Hack(portal);
 
+            foreach (Bullet b in FindObjectsOfType<Bullet>())
+                Destroy(b);
+
             target = null;
 
             return true;

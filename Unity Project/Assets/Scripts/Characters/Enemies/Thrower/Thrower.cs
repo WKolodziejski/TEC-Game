@@ -8,6 +8,8 @@ public class Thrower : Enemy2D
     public ThrowerMissile missile;
     public float throwDistance = 15f;
 
+    private bool fired;
+
     void Update()
     {
         LookAtTarget();
@@ -23,6 +25,7 @@ public class Thrower : Enemy2D
         {
             if (Vector2.Distance(transform.position, GetTarget().position) <= throwDistance)
             {
+                fired = true;
                 missile.Fire();
                 animator.SetTrigger("Throw");
                 Destroy(gameObject, 0.5f);
@@ -34,7 +37,8 @@ public class Thrower : Enemy2D
     {
         base.OnDie();
 
-        missile.Drop();
+        if (!fired)
+            missile.Drop();
 
         Destroy(gameObject, 0.1f);
     }
