@@ -9,21 +9,18 @@ public class GameMenuButtons : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0f;
+        Time.fixedDeltaTime = 0f;
 
-        FindObjectOfType<GameController>().isPaused = true;
+        GameController.isPaused = true;
     }
 
     public void Resume()
     {
         Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
 
-        FindObjectOfType<GameController>().isPaused = false;
+        GameController.isPaused = false;
         gameObject.SetActive(false);
-    }
-
-    public void Options()
-    {
-
     }
 
     public void MainMenu()
@@ -31,6 +28,7 @@ public class GameMenuButtons : MonoBehaviour
         SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
 
         Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
     }
 
     public void QuitGame()

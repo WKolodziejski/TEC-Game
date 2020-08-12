@@ -18,6 +18,8 @@ public class HackSceneReference : MonoBehaviour
 
     public void Enter(Transform target, EDifficulty difficulty, Action<bool> onReturn)
     {
+        GameController.canPause = false;
+
         this.onReturn = onReturn;
 
         StartCoroutine(IEnter(target, difficulty));
@@ -91,6 +93,10 @@ public class HackSceneReference : MonoBehaviour
         Time.fixedDeltaTime = 0.02f;
 
         onReturn(won);
+
+        FindObjectOfType<Camera>().transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        GameController.canPause = true;
     }
 
     private EDifficulty difficulty;

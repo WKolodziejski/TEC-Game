@@ -120,9 +120,6 @@ public class HackGameController : MonoBehaviour
             }
                 
         }
-
-        if (Input.GetKey(KeyCode.H))
-            StartCoroutine(IPlayExit(true));
     }
 
     private IEnumerator IPlayEnter()
@@ -140,12 +137,16 @@ public class HackGameController : MonoBehaviour
         start.SetActive(false);
 
         isCounting = true;
+
+        GameController.canPause = true;
     }
 
     private IEnumerator IPlayExit(bool won)
     {
         if (!isReturning)
         {
+            GameController.canPause = false;
+
             isReturning = true;
             isCounting = false;
 

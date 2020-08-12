@@ -14,7 +14,7 @@ public class CameraRange : MonoBehaviour
 
     public void SetEnabled(bool enabled)
     {
-        col.enabled = enabled;
+        //col.enabled = enabled;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

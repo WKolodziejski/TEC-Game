@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     public GameObject loading;
     public GameObject complete;
     public Volume damage;
+    public static bool isPaused;
+    public static bool canPause;
 
     private GameMenuButtons menu;
     private Lifebar lifebar;
@@ -22,7 +24,6 @@ public class GameController : MonoBehaviour
     private CameraRange range;
     private int scene;
     private int lifes = 4;
-    public bool isPaused;
 
     //private Dictionary<Type, int> pontuation;
 
@@ -33,21 +34,24 @@ public class GameController : MonoBehaviour
         menu = FindObjectOfType<GameMenuButtons>();
         menu.gameObject.SetActive(false);
 
-        StartCoroutine(ILoadScene(5));
+        StartCoroutine(ILoadScene(4));
     }
 
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if (isPaused)
+            if (canPause)
             {
-                menu.Resume();
-            }
-            else
-            {
-                menu.gameObject.SetActive(true);
-                menu.Pause();
+                if (isPaused)
+                {
+                    menu.Resume();
+                }
+                else
+                {
+                    menu.gameObject.SetActive(true);
+                    menu.Pause();
+                }
             }
         }
     }
@@ -55,8 +59,7 @@ public class GameController : MonoBehaviour
     private IEnumerator ILoadScene(int s)
     {
         scene = s;
-        //checkpoint = new Vector3(-1, 5, 0);
-        checkpoint = new Vector3(156, 86, 0);
+        checkpoint = new Vector3(-1, 5, 0);
 
         lifebar.gameObject.SetActive(false);
         complete.SetActive(false);
@@ -89,6 +92,8 @@ public class GameController : MonoBehaviour
         range.SetEnabled(true);
 
         SetupPlayer();
+
+        canPause = true;
     }
 
     private void SetupPlayer()
@@ -144,6 +149,8 @@ public class GameController : MonoBehaviour
 
     private IEnumerator IGameOver()
     {
+        canPause = false;
+
         yield return new WaitForSeconds(2.5f);
 
         foreach (GameObject o in FindObjectsOfType<GameObject>())
@@ -164,6 +171,8 @@ public class GameController : MonoBehaviour
 
     private IEnumerator ICompleteLevel()
     {
+        canPause = false;
+
         range.SetEnabled(false);
         lifebar.gameObject.SetActive(false);
 
