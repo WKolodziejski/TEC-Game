@@ -49,12 +49,12 @@ public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicion
 
     public override void Attack()
     {
-        if (Vector2.Distance(this.transform.position, target.transform.position) < 1f)
+        if (Vector2.Distance(transform.position, GetTarget().position) < 1f)
         {
             if (Time.time - lastPunch >= 2f) //Punch() 
             {
                 lastPunch = Time.time;
-                target.TakeDamage(punchDamage, false);
+                GetTarget().GetComponent<Character>().TakeDamage(punchDamage, false);
                 animator.SetBool("Running", false);
                 animator.SetTrigger("punch");
                 this.nextMove = moveCooldown; //UpdateNextMove();

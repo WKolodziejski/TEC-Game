@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyHack : Enemy
+public class EnemyHack : Character
 {
 
     public GameObject explosion;
@@ -29,9 +29,20 @@ public class EnemyHack : Enemy
         }
     }
 
+    protected Transform GetTarget()
+    {
+        PlayerHack target = FindObjectOfType<PlayerHack>();
+
+        if (target != null)
+            if (!target.IsDead())
+                return target.transform;
+
+        return null;
+    }
+
     public void Fire()
     {
-        weapon.Fire(mainBarrel);
+        weapon?.Fire(mainBarrel);
     }
 
     protected override void OnDie()

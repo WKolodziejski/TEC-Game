@@ -8,14 +8,14 @@ using Vector3 = UnityEngine.Vector3;
 public class Sniper : ComplexShooter //TODO: consertar de forma decente os sniperes atirando juntos e remover função da weapon
 {
     public readonly float lockingTime = 0.5f;
-    private bool locked;
+    //private bool locked;
     private LineRenderer laser;
 
     protected override void InitializeComponents()
     {
         base.InitializeComponents();
 
-        locked = false;
+        //locked = false;
         weapon.RandomizeFireRate(); //fix porco pros sniperes atirando todos juntos
         laser = GetComponent<LineRenderer>();
     }

@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy2D : Enemy //TODO: mudar de facção
+public abstract class Enemy2D : Character //TODO: mudar de facção
 {
-    //CHAMAR BASE NOS FILHOS
+
+    public float targetDistance = 20f;
+
     protected override void InitializeComponents()
     {
         //assistant = GameObject.FindObjectOfType<AIAssistant>();
@@ -80,5 +82,21 @@ public abstract class Enemy2D : Enemy //TODO: mudar de facção
         return transform.position.x > boundries[0] && transform.position.x < boundries[1] &&
             transform.position.y > boundries[2] && transform.position.y < boundries[3];
     }*/
+
+    
+
+    //protected Character target;
+
+    protected Transform GetTarget()
+    {
+        Player2D target = FindObjectOfType<Player2D>();
+
+        if (target != null)
+            if (!target.IsDead())
+                if (Vector2.Distance(target.transform.position, transform.position) <= targetDistance)
+                    return target.transform;
+
+        return null;
+    }
 
 }
