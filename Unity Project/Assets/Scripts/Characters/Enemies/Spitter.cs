@@ -23,8 +23,9 @@ public class Spitter : Enemy2D
 
     void Update()
     {
-        if (Vector2.Distance(GetTarget().position, transform.position) <= 10f && !jumped && !jumping)
-            StartCoroutine(IJump());
+        if (GetTarget() != null)
+            if (Vector2.Distance(GetTarget().position, transform.position) <= 10f && !jumped && !jumping)
+                StartCoroutine(IJump());
 
         if (jumped && !jumping)
             Attack();
