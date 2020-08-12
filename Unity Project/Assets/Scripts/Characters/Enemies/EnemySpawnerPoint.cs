@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawnerPoint : MonoBehaviour
 {
-    public GameObject enemy;
+    public Enemy2D enemy;
     public float spawnCooldown = 2;
     public int enemyLimit = 5;
     float nextSpawnTime;
@@ -29,11 +29,8 @@ public class EnemySpawnerPoint : MonoBehaviour
     private void Spawn()
     {
         if ((enemyList.Count < enemyLimit) && !GetComponent<Renderer>().IsVisibleFrom(Camera.main)){
-            GameObject e = Instantiate(enemy, transform.position, quaternion.identity);
-            e.GetComponent<Enemy2D>().SetOnDieListener(() =>
-                {
-                    enemyList.Remove(e);
-                });
+            Enemy2D e = Instantiate(enemy, transform.position, quaternion.identity);
+            e.SetOnDieListener(() => enemyList.Remove(e));
             enemyList.Add(e);
             nextSpawnTime = spawnCooldown;
         }

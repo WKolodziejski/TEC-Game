@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class Enemy : Character
 {
+
+    public float targetDistance = 20f;
+
     protected Character target;
 
     protected Transform GetTarget()
@@ -12,8 +15,11 @@ public abstract class Enemy : Character
             target = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Character>();
 
         if (target != null)
-            return target.IsDead() ? null : target.transform;
-        else
-            return null;
+            if (!target.IsDead())
+                if (Vector2.Distance(target.transform.position, transform.position) <= targetDistance)
+                    return target.transform;
+
+        return null;
     }
+
 }
