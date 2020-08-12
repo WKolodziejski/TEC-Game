@@ -5,11 +5,13 @@ using UnityEngine;
 public class AudioTrigger : MonoBehaviour
 {
 
+    private AudioController controller;
     private AudioSource audioSource;
     private bool faded;
 
     void Start()
     {
+        controller = GetComponentInParent<AudioController>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -21,10 +23,13 @@ public class AudioTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !faded)
-            StartCoroutine(FadeIn());
+        {
+            faded = true;
+            controller.SetActive(audioSource);
+        } 
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    /*private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !faded)
             StartCoroutine(FadeOut());
@@ -62,6 +67,6 @@ public class AudioTrigger : MonoBehaviour
 
             yield return null;
         }
-    }
+    }*/
 
 }

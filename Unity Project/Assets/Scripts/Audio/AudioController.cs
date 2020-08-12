@@ -6,36 +6,37 @@ public class AudioController : MonoBehaviour
 {
 
     private AudioSource hack;
-    private AudioSource actual;
+    private List<AudioSource> audios;
+    private int actual;
 
     void Start()
     {
         hack = GetComponent<AudioSource>();
+        audios = new List<AudioSource>();
+
+        foreach (AudioTrigger a in GetComponentsInChildren<AudioTrigger>())
+            audios.Add(a.GetAudioSource());
+    }
+
+    public void SetActive(AudioSource audioSource)
+    {
+        StartCoroutine(FadeOut(audios[actual]));
+
+        actual = audios.IndexOf(audioSource);
+
+        StartCoroutine(FadeIn(audios[actual]));
     }
 
     public void EnterHack()
     {
-        foreach (AudioTrigger a in GetComponentsInChildren<AudioTrigger>())
-        {
-            AudioSource source = a.GetAudioSource();
-
-            if (!source.mute)
-            {
-                actual = source;
-                break;
-            }
-        }
-
         StartCoroutine(FadeIn(hack));
-        StartCoroutine(FadeOut(actual));
+        StartCoroutine(FadeOut(audios[actual]));
     }
 
     public void ReturnHack()
     {
-        StartCoroutine(FadeIn(actual));
+        StartCoroutine(FadeIn(audios[actual]));
         StartCoroutine(FadeOut(hack));
-
-        actual = null;
     }
 
     IEnumerator FadeOut(AudioSource a)
