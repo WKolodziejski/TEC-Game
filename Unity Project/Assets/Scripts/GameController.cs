@@ -114,7 +114,8 @@ public class GameController : MonoBehaviour
         cam.LookAt = p.transform;
         cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 4;
 
-        p.SetOnDamageListener(() => damage.weight = 1 - p.hp / 5);
+        float maxHP = p.hp;
+        p.SetOnDamageListener(() => damage.weight = (float)(Math.Exp(maxHP - p.hp) / 100));
 
         p.SetOnDieListener(() =>
         {
@@ -181,8 +182,9 @@ public class GameController : MonoBehaviour
 
         foreach (Enemy2D e in FindObjectsOfType<Enemy2D>())
             e.SetEnabled(false);
+
         foreach (Bullet b in FindObjectsOfType<Bullet>())
-            Destroy(b);
+            Destroy(b.gameObject);
 
         yield return new WaitForSeconds(0.5f);
 
