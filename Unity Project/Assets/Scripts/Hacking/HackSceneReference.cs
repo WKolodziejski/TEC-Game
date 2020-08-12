@@ -34,7 +34,9 @@ public class HackSceneReference : MonoBehaviour
 
         FindObjectOfType<AudioController>().EnterHack();
 
-        yield return new WaitForSeconds(2f * Time.timeScale);
+        //while (!transitionEnter.)
+
+        yield return new WaitForSeconds(1.9f * Time.timeScale);
 
         if (!isHacking)
         {
@@ -43,6 +45,7 @@ public class HackSceneReference : MonoBehaviour
             this.objs = FindObjectsOfType<GameObject>();
 
             AsyncOperation s = SceneManager.LoadSceneAsync("HackScene", LoadSceneMode.Additive);
+            //s.allowSceneActivation = false;
 
            while (!s.isDone)
                 yield return null;

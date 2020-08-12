@@ -55,7 +55,8 @@ public class GameController : MonoBehaviour
     private IEnumerator ILoadScene(int s)
     {
         scene = s;
-        checkpoint = new Vector3(-1, 5, 0);
+        //checkpoint = new Vector3(-1, 5, 0);
+        checkpoint = new Vector3(156, 86, 0);
 
         lifebar.gameObject.SetActive(false);
         complete.SetActive(false);

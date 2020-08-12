@@ -14,15 +14,14 @@ public class Thrower : Enemy2D
     {
         LookAtTarget();
         Attack();
-
-        //if (CanAttack())
-            transform.position += Vector3.right * movementSpeed * Time.deltaTime * GetTargetMagnitude();
     }
 
     public override void Attack()
     {
         if (GetTarget() != null)
         {
+            transform.position += Vector3.right * movementSpeed * Time.deltaTime * GetTargetMagnitude();
+
             if (Vector2.Distance(transform.position, GetTarget().position) <= throwDistance)
             {
                 fired = true;

@@ -18,11 +18,11 @@ public class Hackable : MonoBehaviour
     {
         if (!isHacked)
         {
-            portal = Instantiate(p, transform.position, Quaternion.identity, transform);
+            //portal = Instantiate(p, transform.position, Quaternion.identity, transform);
 
             FindObjectOfType<HackSceneReference>().Enter(transform, difficulty, (won) =>
             {
-                Destroy(portal);
+                //Destroy(portal);
 
                 if (won)
                 {
