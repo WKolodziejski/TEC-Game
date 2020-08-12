@@ -5,8 +5,18 @@ using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
-public class Sniper : ComplexShooter
+public class Sniper : ComplexShooter //TODO: consertar de forma decente os sniperes atirando juntos e remover função da weapon
 {
+    public readonly float lockingTime = 0.5f;
+    private bool locked;
+
+    protected override void InitializeComponents()
+    {
+        base.InitializeComponents();
+        locked = false; 
+        weapon.RandomizeFireRate(); //fix porco pros sniperes atirando todos juntos
+    }
+
     void Update()
     {
         if (GetTarget() != null)
@@ -17,13 +27,23 @@ public class Sniper : ComplexShooter
 
     public override void Attack()
     {
-        Aim();
-        mainBarrel.rotation = Quaternion.Euler(-aimingAngle - 90f, (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
+        if (!locked)
+        {
+            Aim();
+            mainBarrel.rotation = Quaternion.Euler(-aimingAngle - 90f, (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
 
-        if(weapon.CanFire())
-            animator.SetTrigger("fire");
+            if (weapon.CanFire())
+                StartCoroutine(Locking());
+        }
+    }
 
+    private IEnumerator Locking()
+    {
+        locked = true;
+        yield return new WaitForSeconds(lockingTime);
+        animator.SetTrigger("fire");
         weapon.Fire(mainBarrel);
+        locked = false;
     }
 
 }

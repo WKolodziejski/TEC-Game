@@ -43,4 +43,9 @@ public class Weapon : MonoBehaviour
         return (lastCooldown <= Time.time);
     }
 
+    public void RandomizeFireRate()
+    {
+        fireRate += Random.Range(fireRate * -0.1f, fireRate * +0.1f);
+    }
+
 }
