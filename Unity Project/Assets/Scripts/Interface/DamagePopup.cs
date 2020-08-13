@@ -18,7 +18,9 @@ public class DamagePopup : MonoBehaviour
 
     public void Hit(float damage)
     {
-        GetComponent<TextMeshPro>().SetText("-" + damage);
+        TextMeshPro txt = GetComponent<TextMeshPro>();
+        txt.color = damage < 0 ? Color.red : Color.green;
+        txt.SetText(damage.ToString());
     }
 
     private IEnumerator IAnim()

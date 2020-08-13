@@ -225,6 +225,14 @@ public class Player2D : Character
         horizontal = 0f;
     }
 
+    public void AddLife(float life)
+    {
+        hp += life;
+
+        if (damagePopup != null)
+            Instantiate(damagePopup, transform.position, Quaternion.identity).Hit(life);
+    }
+
     //private AIAssistant assistant;
 
     /*public override void SetEnabled(bool enabled)

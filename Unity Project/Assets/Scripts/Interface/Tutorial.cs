@@ -11,16 +11,45 @@ public class Tutorial : MonoBehaviour
     public Hackable terminal;
     public GameObject sparkle;
 
+    private bool done;
+    private int counter;
+
     void Start()
     {
         StartCoroutine(IFirst());
 
-        terminal.SetAction(() => SetText("You can hack some objects and enemies to help through your journey"));
+        terminal.SetAction(() =>
+        {
+            done = true;
+
+            SetText("You can hack some objects and enemies to help through your journey");
+
+            if (counter == 50)
+            {
+                SetText("Uhm?");
+            }
+            else if (counter >= 100 && counter < 200)
+            {
+                SetText("You're really obstinate, what about infinite lifes?");
+                FindObjectOfType<Player2D>().AddLife(int.MaxValue);
+            }
+            else if (counter >= 200 && counter < 300)
+            {
+                SetText("What? More? Ok then...");
+                FindObjectOfType<Player2D>().AddLife(int.MaxValue);
+            }
+            else if (counter >= 300)
+            {
+                SetText("Enough, no more lifes for you!");
+            }
+
+            counter++;
+        });
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !done)
         {
             SetText("Hold H to start hacking");
             sparkle.SetActive(false);
