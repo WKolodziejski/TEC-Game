@@ -78,7 +78,7 @@ public class Sniper : ComplexShooter //TODO: consertar de forma decente os snipe
         laser.startColor = Color.blue;
         laser.endColor = Color.blue;
 
-        yield return new WaitForSeconds(lockingTime);
+        yield return new WaitForSecondsRealtime(lockingTime);
 
         animator.SetTrigger("fire");
         weapon.Fire(mainBarrel);

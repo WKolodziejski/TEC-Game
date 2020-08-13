@@ -192,7 +192,7 @@ public class Player2D : Character
     {
         playerCollider.enabled = false;
         lastJump = Time.time;
-        yield return new WaitForSeconds(fallTime);
+        yield return new WaitForSecondsRealtime(fallTime);
         playerCollider.enabled = true;
     }
 

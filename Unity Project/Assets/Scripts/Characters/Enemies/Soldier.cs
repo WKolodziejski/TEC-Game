@@ -178,7 +178,7 @@ public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, talvez usar V
         desiredDir.x /= 5;
         animator.speed /= 5;
         lastJump = Time.time;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSecondsRealtime(0.3f);
         boxCollider2D.enabled = true;
         polygonCollider2D.enabled = true;
         desiredDir.x *= 5;

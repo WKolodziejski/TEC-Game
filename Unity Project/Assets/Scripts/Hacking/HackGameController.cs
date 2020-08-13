@@ -129,7 +129,7 @@ public class HackGameController : MonoBehaviour
 
         start.SetActive(true);
 
-        yield return new WaitForSeconds(1f * Time.timeScale);
+        yield return new WaitForSecondsRealtime(1f);
 
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;
@@ -160,7 +160,7 @@ public class HackGameController : MonoBehaviour
 
             timer.enabled = false;
 
-            yield return new WaitForSeconds(1f * Time.timeScale);
+            yield return new WaitForSecondsRealtime(1f);
 
             FindObjectOfType<HackSceneReference>().Return(won);
         }

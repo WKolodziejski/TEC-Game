@@ -53,7 +53,7 @@ public class Spitter : Enemy2D
 
         animator.SetBool("jumping", true);
 
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSecondsRealtime(0.4f);
 
         GetComponent<BoxCollider2D>().enabled = true;
 
@@ -68,7 +68,7 @@ public class Spitter : Enemy2D
     {
         animator.SetTrigger("spit");
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         animator.ResetTrigger("spit");
 

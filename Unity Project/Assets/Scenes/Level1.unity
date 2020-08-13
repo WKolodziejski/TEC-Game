@@ -7395,6 +7395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb9ec76416b72743ad7a63ad9cc80dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vcam: {fileID: 0}
 --- !u!61 &631826292
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33696,7 +33697,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 5}
+  m_Size: {x: 8, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &1414227218
 MonoBehaviour:
@@ -36492,6 +36493,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5456315504160108442, guid: a3d927cce55c40b4a93dd9056bca5165,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5456315504588745530, guid: a3d927cce55c40b4a93dd9056bca5165,
         type: 3}
       propertyPath: m_Name

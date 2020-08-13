@@ -13,14 +13,18 @@ public class AudioController : MonoBehaviour
     void Start()
     {
         hack = GetComponent<AudioSource>();
-        audios = new List<AudioSource>();
-
-        foreach (AudioTrigger a in GetComponentsInChildren<AudioTrigger>())
-            audios.Add(a.GetAudioSource());
     }
 
     public void SetActive(AudioSource audioSource)
     {
+        if (audios == null)
+        {
+            audios = new List<AudioSource>();
+
+            foreach (AudioTrigger a in GetComponentsInChildren<AudioTrigger>())
+                audios.Add(a.GetAudioSource());
+        }
+
         if (firstSong)
         {
             firstSong = false;
@@ -59,7 +63,7 @@ public class AudioController : MonoBehaviour
         {
             a.volume -= 0.1f;
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSecondsRealtime(0.1f);
         }
 
         a.mute = true;
@@ -74,7 +78,7 @@ public class AudioController : MonoBehaviour
         {
             a.volume += 0.1f;
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSecondsRealtime(0.1f);
         }
     }
 

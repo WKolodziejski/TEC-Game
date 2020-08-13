@@ -36,9 +36,7 @@ public class HackSceneReference : MonoBehaviour
 
         FindObjectOfType<AudioController>().EnterHack();
 
-        //while (!transitionEnter.)
-
-        yield return new WaitForSeconds(1.9f * Time.timeScale);
+        yield return new WaitForSecondsRealtime(1.9f);
 
         if (!isHacking)
         {
@@ -47,9 +45,19 @@ public class HackSceneReference : MonoBehaviour
             this.objs = FindObjectsOfType<GameObject>();
 
             AsyncOperation s = SceneManager.LoadSceneAsync("HackScene", LoadSceneMode.Additive);
-            //s.allowSceneActivation = false;
+            /*bool isDone = s.isDone;
 
-           while (!s.isDone)
+            while (!isDone)
+            {
+                if (s != null)
+                    isDone = s.isDone;
+                else
+                    isDone = true;
+
+                yield return null;
+            }*/
+
+            while (!s.isDone)
                 yield return null;
 
             foreach (GameObject o in objs)
@@ -65,7 +73,7 @@ public class HackSceneReference : MonoBehaviour
 
     private IEnumerator IReturn(bool won)
     {
-        yield return new WaitForSeconds(0.5f * Time.timeScale);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         transitionReturn.Play();
 
@@ -82,12 +90,12 @@ public class HackSceneReference : MonoBehaviour
                     o.SetActive(true);
         }
 
-        yield return new WaitForSeconds(0.5f * Time.timeScale);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         cam.Follow = null;
         cam.LookAt = null;
 
-        yield return new WaitForSeconds(2f * Time.timeScale);
+        yield return new WaitForSecondsRealtime(2f);
 
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;

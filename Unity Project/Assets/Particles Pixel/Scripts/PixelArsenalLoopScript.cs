@@ -13,13 +13,11 @@ public class PixelArsenalLoopScript : MonoBehaviour {
 		PlayLoopingPEffect();
 	}
 
-
 	public void PlayLoopingPEffect()
 	{
 		StartCoroutine("EffectLoop");
 	}
 	
-
 	IEnumerator EffectLoop()
 	{
 		GameObject effectPlayer = (GameObject) Instantiate(chosenEffect, transform.position, transform.rotation);

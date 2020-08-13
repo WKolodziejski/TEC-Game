@@ -98,10 +98,10 @@ public class PlayerHack : Character
         shield.SetActive(true);
         obstacle.enabled = true;
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         obstacle.enabled = false;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
 
         shield.SetActive(false);
     }

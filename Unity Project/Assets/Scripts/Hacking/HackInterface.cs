@@ -83,7 +83,7 @@ public class HackInterface : MonoBehaviour
     void OnGUI()
     {
         if (target != null)
-            rect.position = new Vector3(target.transform.position.x, target.transform.position.y + 0.5f, 0);
+            rect.position = new Vector3(target.transform.position.x, target.transform.position.y + 1f, 0);
     }
 
     public bool SetProgress(float countTime, float startTime)
