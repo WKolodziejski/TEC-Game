@@ -17,7 +17,7 @@ public class Player2D : Character
     private float horizontal;
     private float vertical;
     private float lastJump;
-    private bool grounded;
+    public bool grounded;
     private bool platform;
     private bool hacking;
     private bool lying;

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class Enemy2D : Character //TODO: mudar de facção
 {
+    protected Player2D target;
 
     public float targetDistance = 25f;
 
@@ -89,7 +90,7 @@ public abstract class Enemy2D : Character //TODO: mudar de facção
 
     protected Transform GetTarget()
     {
-        Player2D target = FindObjectOfType<Player2D>();
+        target = FindObjectOfType<Player2D>();
 
         if (target != null)
             if (!target.IsDead())

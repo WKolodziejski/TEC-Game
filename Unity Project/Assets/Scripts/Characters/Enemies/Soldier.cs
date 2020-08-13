@@ -99,31 +99,39 @@ public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, talvez usar V
 
         if (nextMove < 0) {
 
-            if ((this.transform.position.x > GetTarget().position.x + followRange) && desiredDir.x > 0) //CheckFollowBack() CheckDesiredDir()
+            if ((this.transform.position.x > GetTarget().position.x + followRange) && desiredDir.x > 0 || //CheckFollowBack() CheckDesiredDir()
+                (this.transform.position.x < GetTarget().position.x - followRange) && desiredDir.x < 0) { //CheckFollowBack()
                 ChangeDesiredDir();
-            else
-                if ((this.transform.position.x < GetTarget().position.x - followRange) && desiredDir.x < 0) //CheckFollowBack()
-                    ChangeDesiredDir();
-                else
-                    if (grounded && JumpCooldown() && transform.position.y > GetTarget().position.y + followRange/2 &&
-                        (this.transform.position.x < GetTarget().position.x + 1f) &&
-                        (this.transform.position.x > GetTarget().position.x - 1f))
+            } else {
+                if (grounded && JumpCooldown() &&
+                    (this.transform.position.x < GetTarget().position.x + 0.5f) &&
+                    (this.transform.position.x > GetTarget().position.x - 0.5f)) {
+                    if(transform.position.y > (GetTarget().position.y + followRange / 2) && target.grounded) {
                         StartCoroutine(Fall());
-
-            moveCheck -= Time.fixedDeltaTime; // CheckIfMoved()
-            if (moveCheck < 0)
-            {
-                if ((Math.Abs(prevPosition - transform.position.x) < Math.Abs(moveCheckRate * movementSpeed / 2))) 
-                {
-                    if (((this.transform.position.x > GetTarget().position.x) && desiredDir.x > 0) || ((this.transform.position.x < GetTarget().position.x) && desiredDir.x < 0))
-                        ChangeDesiredDir();
-                    else if (JumpCooldown()) //TODO: verificar se falhou
-                    {
-                        JumpAction();
+                    } else {
+                        if ((GetTarget().position.y > (transform.position.y + 0.5f)) &&
+                            (GetTarget().position.y < (transform.position.y + 4f)) && target.grounded) {
+                            JumpAction();
+                        }
                     }
                 }
-                else
+            }
+            
+
+            moveCheck -= Time.fixedDeltaTime; // CheckIfMoved()
+            if (moveCheck < 0) {
+                if ((Math.Abs(prevPosition - transform.position.x) < Math.Abs(moveCheckRate * movementSpeed / 2))) {
+                    if (((this.transform.position.x > GetTarget().position.x) && desiredDir.x > 0) ||
+                        ((this.transform.position.x < GetTarget().position.x) && desiredDir.x < 0)) {
+                        ChangeDesiredDir();
+                    } else {
+                        if (JumpCooldown()) {
+                            JumpAction();
+                        }
+                    }
+                } else {
                     ResetMoveCheck();
+                }
             }
 
             this.transform.position += desiredDir; //usar rb.MovePosition dá probleminha
