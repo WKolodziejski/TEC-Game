@@ -29,6 +29,9 @@ public class Weapon : MonoBehaviour
 
     public void Fire(Transform barrel)
     {
+        if (GameController.isPaused)
+            return;
+
         if (lastCooldown <= Time.time)
         {
             lastCooldown = Time.time + fireRate;

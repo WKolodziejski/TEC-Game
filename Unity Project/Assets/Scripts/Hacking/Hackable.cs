@@ -11,19 +11,14 @@ public class Hackable : MonoBehaviour
     public EDifficulty difficulty;
 
     private bool isHacked;
-    private GameObject portal;
     protected Action action;
 
-    public void Hack(GameObject p)
+    public void Hack()
     {
         if (!isHacked)
         {
-            //portal = Instantiate(p, transform.position, Quaternion.identity, transform);
-
             FindObjectOfType<HackSceneReference>().Enter(transform, difficulty, (won) =>
             {
-                //Destroy(portal);
-
                 if (won)
                 {
                     isHacked = true;

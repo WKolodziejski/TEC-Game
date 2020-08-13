@@ -47,6 +47,9 @@ public class Player2D : Character
 
     void Update()
     {
+        if (GameController.isPaused)
+            return;
+
         if (controlIsEnabled)
         {
             lying = false;

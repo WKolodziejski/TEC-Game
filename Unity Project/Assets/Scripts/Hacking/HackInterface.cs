@@ -32,6 +32,9 @@ public class HackInterface : MonoBehaviour
 
     void Update()
     {
+        if (GameController.isPaused)
+            return;
+
         if (Input.GetButtonDown("Fire2") && !held)
         {
             startTime = Time.time;
@@ -105,7 +108,7 @@ public class HackInterface : MonoBehaviour
 
         if (countTime > (startTime + holdTime) && target != null)
         {
-            target.Hack(portal);
+            target.Hack();
 
             foreach (Bullet b in FindObjectsOfType<Bullet>())
                 Destroy(b);
