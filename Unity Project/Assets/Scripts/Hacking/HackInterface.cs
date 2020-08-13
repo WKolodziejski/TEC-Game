@@ -69,10 +69,15 @@ public class HackInterface : MonoBehaviour
 
         if (Input.GetButtonUp("Fire2"))
         {
-            canvas.enabled = false;
-            held = false;
-            target = null;
+            CancelHacking();
         }
+    }
+
+    public void CancelHacking()
+    {
+        canvas.enabled = false;
+        held = false;
+        target = null;
     }
 
     void OnGUI()

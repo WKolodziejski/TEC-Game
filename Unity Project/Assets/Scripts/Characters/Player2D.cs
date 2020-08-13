@@ -200,6 +200,9 @@ public class Player2D : Character
     {
         base.OnDamage(damage);
 
+        FindObjectOfType<HackInterface>().CancelHacking();
+        hacking = false;
+
         if (hp >= 2)
             audioDamage.Play();
         else
