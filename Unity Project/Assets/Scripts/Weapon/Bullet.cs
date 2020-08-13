@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+using System;
 using UnityEngine;
-using UnityEngine.XR.WSA;
 
 public class Bullet : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class Bullet : MonoBehaviour
     protected Rigidbody2D rb;
 
     void Start()
-    {
+    { 
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.forward * speed;
 

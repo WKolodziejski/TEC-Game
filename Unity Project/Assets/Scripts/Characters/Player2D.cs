@@ -227,10 +227,13 @@ public class Player2D : Character
 
     public void AddLife(float life)
     {
-        hp += life;
+        float ohp = hp;
+        float tmp = hp + life;
+
+        hp = tmp <= maxHP ? tmp : maxHP;
 
         if (damagePopup != null)
-            Instantiate(damagePopup, transform.position, Quaternion.identity).Hit(life);
+            Instantiate(damagePopup, transform.position, Quaternion.identity).Hit(hp - ohp);
     }
 
     //private AIAssistant assistant;

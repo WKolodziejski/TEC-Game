@@ -24,6 +24,7 @@ public abstract class ComplexShooter : Enemy2D //TODO: rever o calculo de angulo
         LookAtTarget();
 
         aimingAngle = Vector3.Angle(yAxis, GetTarget().position - transform.position);
+
         animator.SetFloat("angle", aimingAngle);
 
         if (weapon.CanFire())

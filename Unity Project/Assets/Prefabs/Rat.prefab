@@ -96,7 +96,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 0}
   mainBarrel: {fileID: 0}
   damagePopup: {fileID: 0}
-  hp: 1
+  maxHP: 1
   movementSpeed: 5
   damageCooldown: 0
 --- !u!1 &2555387703973135304

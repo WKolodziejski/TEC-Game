@@ -124,7 +124,7 @@ MonoBehaviour:
     type: 3}
   mainBarrel: {fileID: 7760883125871837548}
   damagePopup: {fileID: 0}
-  hp: 5
+  maxHP: 5
   movementSpeed: 5
   damageCooldown: 1
   shield: {fileID: 3340609874956565157}

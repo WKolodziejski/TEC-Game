@@ -31,6 +31,7 @@ public class Tutorial : MonoBehaviour
             else if (counter >= 100 && counter < 200)
             {
                 SetText("You're really obstinate, what about infinite lifes?");
+                FindObjectOfType<Player2D>().maxHP = int.MaxValue;
                 FindObjectOfType<Player2D>().AddLife(int.MaxValue);
             }
             else if (counter >= 200 && counter < 300)

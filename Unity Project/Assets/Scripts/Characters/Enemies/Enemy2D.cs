@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Enemy2D : Character //TODO: mudar de facção
 {
 
-    public float targetDistance = 20f;
+    public float targetDistance = 25f;
 
     protected override void InitializeComponents()
     {

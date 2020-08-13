@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
         menu = FindObjectOfType<GameMenuButtons>();
         menu.gameObject.SetActive(false);
 
-        StartCoroutine(ILoadScene(4));
+        StartCoroutine(ILoadScene(6));
     }
 
     void Update()
@@ -114,8 +114,7 @@ public class GameController : MonoBehaviour
         cam.LookAt = p.transform;
         cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 4;
 
-        float maxHP = p.hp;
-        p.SetOnDamageListener(() => damage.weight = (float)(Math.Exp(maxHP - p.hp) / 100));
+        p.SetOnDamageListener(() => damage.weight = (float)(Math.Exp(p.maxHP - p.GetHP()) / 100));
 
         p.SetOnDieListener(() =>
         {
@@ -165,13 +164,16 @@ public class GameController : MonoBehaviour
         checkpoint = position;
     }
 
-    public void CompleteLevel()
+    public void CompleteLevel(CinemachineVirtualCamera vcam)
     {
-        StartCoroutine(ICompleteLevel());
+        StartCoroutine(ICompleteLevel(vcam));
     }
 
-    private IEnumerator ICompleteLevel()
+    private IEnumerator ICompleteLevel(CinemachineVirtualCamera vcam)
     {
+        if (vcam != null)
+            vcam.m_Priority = 100;
+
         canPause = false;
 
         range.SetEnabled(false);
@@ -214,6 +216,15 @@ public class GameController : MonoBehaviour
 
             yield return new WaitForSeconds(0.01f);
         }
+    }
+
+    public void AddExtraLifes(int l)
+    {
+        int tmp = lifes + l;
+
+        lifes = tmp <= 4 ? tmp : 4;
+
+        lifebar.SetExtraLifes(lifes);
     }
 
 }

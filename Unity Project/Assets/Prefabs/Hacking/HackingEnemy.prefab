@@ -89,7 +89,8 @@ MonoBehaviour:
   weaponPrefab: {fileID: 2261321554311384493, guid: 8eaccd8e681e0a44593e98c7f95e08e4,
     type: 3}
   mainBarrel: {fileID: 7685677996116595044}
-  hp: 1
+  damagePopup: {fileID: 0}
+  maxHP: 1
   movementSpeed: 5
   damageCooldown: 0
   explosion: {fileID: 166214, guid: 078d54c719054054ab1dc1e7fa88d090, type: 3}

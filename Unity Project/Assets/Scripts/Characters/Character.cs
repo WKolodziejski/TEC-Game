@@ -9,24 +9,26 @@ public abstract class Character : MonoBehaviour
     public Transform mainBarrel;
     public DamagePopup damagePopup;
 
-    public float hp = 3f;
+    public float maxHP = 3f;
     public float movementSpeed = 5f;
     public float damageCooldown = 0f;
 
     protected Weapon weapon;
     protected Animator animator;
     protected Rigidbody2D rb;
-    
+    protected float hp;
+
     private List<Action> onDie;
     private List<Action> onDamage;
     private float lastCooldown;
     private bool isDead;
-
-    //Inicializa componetes comuns
+    
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        hp = maxHP;
 
         if (weaponPrefab != null)
             SetWeapon(weaponPrefab);
@@ -70,6 +72,11 @@ public abstract class Character : MonoBehaviour
 
             OnDie();
         }
+    }
+
+    public float GetHP()
+    {
+        return hp;
     }
 
     public bool IsDead()

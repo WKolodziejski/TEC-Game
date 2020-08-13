@@ -30,7 +30,7 @@ public class Sniper : ComplexShooter //TODO: consertar de forma decente os snipe
         else
         {
             laser.enabled = false;
-            animator.SetFloat("angle", -1);
+            animator.SetFloat("angle", -45);
         }  
     }
 
@@ -39,7 +39,7 @@ public class Sniper : ComplexShooter //TODO: consertar de forma decente os snipe
         //if (!locked)
         //{
             Aim();
-            mainBarrel.rotation = Quaternion.Euler(-aimingAngle - 90f, (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
+            mainBarrel.rotation = Quaternion.Euler(-aimingAngle - 90f + Random.Range(-5f, 1f), (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
 
             laser.SetPosition(0, mainBarrel.position);
             laser.SetPosition(1, GetTarget().position);

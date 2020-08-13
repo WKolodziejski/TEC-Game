@@ -336,7 +336,7 @@ MonoBehaviour:
   mainBarrel: {fileID: 0}
   damagePopup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1,
     type: 3}
-  hp: 5
+  maxHP: 5
   movementSpeed: 5
   damageCooldown: 1
   playerCollider: {fileID: 3923419496403882210}
