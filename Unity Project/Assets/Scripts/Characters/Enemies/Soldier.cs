@@ -5,7 +5,6 @@ using Random = UnityEngine.Random;
 
 public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicionar melhor o pulo?, talvez usar VectorDistance em algo, no CheckIfMoved checar se o pulo falhou, melhorar CheckFollow para evitar que o inimigo fique a frente do alvo
 {
-
     public float moveCooldown = 0.5f;
     public float followRange = 5f;
     public float jumpForce = 15f;
@@ -27,7 +26,7 @@ public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicion
         base.InitializeComponents();
         jCheck = GetComponentInChildren<JumpCheck>();
         movementSpeed += Random.Range(-movementSpeed * 0.05f, movementSpeed * 0.05f);
-        desiredDir = new Vector3(-movementSpeed * Time.fixedDeltaTime, 0f, 0f); //setDesiredDir();
+        desiredDir = new Vector3(-movementSpeed * Time.fixedDeltaTime, 0f, 0f); //setDesiredDir(); //possivel bug, caso haja mudança de timeScale
         nextMove = moveCooldown; //setFirstMove();
         ResetMoveCheck();
         lastJump = Time.time;
@@ -36,15 +35,18 @@ public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicion
 
     void FixedUpdate()
     {
-        if (GetTarget() != null)
+        if (Time.timeScale > 0f) //gambiarra
         {
-            Move();
-            Attack();
-        }
-        else
-            animator.SetBool("Running", false);
+            if (GetTarget() != null)
+            {
+                Move();
+                Attack();
+            }
+            else
+                animator.SetBool("Running", false);
 
-        Jump();
+            Jump();
+        }
     }
 
     public override void Attack()
@@ -113,21 +115,13 @@ public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicion
                     if (((this.transform.position.x > GetTarget().position.x) && desiredDir.x > 0) || ((this.transform.position.x < GetTarget().position.x) && desiredDir.x < 0))
                         ChangeDesiredDir();
                     else if (JumpCooldown()) //JumpOnGround() //TODO: verificar se falhou
-                    {
-                        rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
-                        lastJump = Time.time;
-                        animator.SetBool("jumping", true);
-                        animator.SetBool("Running", false);
-                        ResetMoveCheck();
-                    }
+                        JumpAction();
                 }
                 else
-                {
                     ResetMoveCheck();
-                }
             }
 
-            this.transform.position += desiredDir;
+            this.transform.position += desiredDir; //usar rb.MovePosition dá probleminha
             animator.SetBool("Running", true);
         }
     }
@@ -148,15 +142,19 @@ public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicion
                 else
                 {
                     if (!insidePlayersCone)
-                    {
-                        rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
-                        lastJump = Time.time;
-                        animator.SetBool("jumping", true);
-                        animator.SetBool("Running", false);
-                    }
+                        JumpAction();
                 }
             }
         }
+    }
+
+    private void JumpAction()
+    {
+        rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+        lastJump = Time.time;
+        animator.SetBool("jumping", true);
+        animator.SetBool("Running", false);
+        ResetMoveCheck();
     }
 
     private bool JumpCooldown()
