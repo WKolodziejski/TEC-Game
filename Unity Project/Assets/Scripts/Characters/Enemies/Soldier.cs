@@ -1,15 +1,19 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using Random = UnityEngine.Random;
 
-public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicionar melhor o pulo?, talvez usar VectorDistance em algo, no CheckIfMoved checar se o pulo falhou, melhorar CheckFollow para evitar que o inimigo fique a frente do alvo
+public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, talvez usar VectorDistance em algo, no CheckIfMoved checar se o pulo falhou, melhorar CheckFollow para evitar que o inimigo fique a frente do alvo
 {
     public float moveCooldown = 0.5f;
     public float followRange = 5f;
     public float jumpForce = 15f;
     public float punchDamage = 1f;
     readonly float moveCheckRate = 0.125f;
+
+    public PolygonCollider2D polygonCollider2D;
+    public BoxCollider2D boxCollider2D;
 
     private float nextMove;
     private float moveCheck;
@@ -26,7 +30,7 @@ public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicion
         base.InitializeComponents();
         jCheck = GetComponentInChildren<JumpCheck>();
         movementSpeed += Random.Range(-movementSpeed * 0.05f, movementSpeed * 0.05f);
-        desiredDir = new Vector3(-movementSpeed * Time.fixedDeltaTime, 0f, 0f); //setDesiredDir(); //possivel bug, caso haja mudança de timeScale
+        desiredDir = new Vector3(-movementSpeed * Time.fixedDeltaTime * 1/Time.timeScale, 0f, 0f); //setDesiredDir(); //possivel bug, caso haja mudança de timeScale
         nextMove = moveCooldown; //setFirstMove();
         ResetMoveCheck();
         lastJump = Time.time;
@@ -96,16 +100,15 @@ public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicion
         if (nextMove < 0) {
 
             if ((this.transform.position.x > GetTarget().position.x + followRange) && desiredDir.x > 0) //CheckFollowBack() CheckDesiredDir()
-            {
                 ChangeDesiredDir();
-            }
             else
-            {
                 if ((this.transform.position.x < GetTarget().position.x - followRange) && desiredDir.x < 0) //CheckFollowBack()
-                {
                     ChangeDesiredDir();
-                }
-            }
+                else
+                    if (grounded && JumpCooldown() && transform.position.y > GetTarget().position.y + followRange/2 &&
+                        (this.transform.position.x < GetTarget().position.x + 1f) &&
+                        (this.transform.position.x > GetTarget().position.x - 1f))
+                        StartCoroutine(Fall());
 
             moveCheck -= Time.fixedDeltaTime; // CheckIfMoved()
             if (moveCheck < 0)
@@ -114,8 +117,10 @@ public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicion
                 {
                     if (((this.transform.position.x > GetTarget().position.x) && desiredDir.x > 0) || ((this.transform.position.x < GetTarget().position.x) && desiredDir.x < 0))
                         ChangeDesiredDir();
-                    else if (JumpCooldown()) //JumpOnGround() //TODO: verificar se falhou
+                    else if (JumpCooldown()) //TODO: verificar se falhou
+                    {
                         JumpAction();
+                    }
                 }
                 else
                     ResetMoveCheck();
@@ -155,6 +160,21 @@ public class Soldier : Enemy2D //TODO: usar o rb para mover o soldier, condicion
         animator.SetBool("jumping", true);
         animator.SetBool("Running", false);
         ResetMoveCheck();
+    }
+
+    private IEnumerator Fall()
+    {
+        ResetMoveCheck();
+        polygonCollider2D.enabled = false;
+        boxCollider2D.enabled = false;
+        desiredDir.x /= 5;
+        animator.speed /= 5;
+        lastJump = Time.time;
+        yield return new WaitForSeconds(0.3f);
+        boxCollider2D.enabled = true;
+        polygonCollider2D.enabled = true;
+        desiredDir.x *= 5;
+        animator.speed *= 5;
     }
 
     private bool JumpCooldown()

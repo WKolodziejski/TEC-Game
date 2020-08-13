@@ -18,7 +18,7 @@ public class EnemySpawnerPoint : MonoBehaviour
 
     void FixedUpdate()
     {
-        nextSpawnTime -= Time.deltaTime;
+        nextSpawnTime -= Time.fixedDeltaTime;
 
         if (nextSpawnTime < 0f) 
         {

@@ -445,6 +445,8 @@ MonoBehaviour:
   followRange: 5
   jumpForce: 15
   punchDamage: 1
+  polygonCollider2D: {fileID: 7247168589398661086}
+  boxCollider2D: {fileID: 8446085995739713090}
 --- !u!61 &8446085995739713090
 BoxCollider2D:
   m_ObjectHideFlags: 0
