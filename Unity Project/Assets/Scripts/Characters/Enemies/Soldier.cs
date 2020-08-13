@@ -103,14 +103,14 @@ public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, talvez usar V
                 (this.transform.position.x < GetTarget().position.x - followRange) && desiredDir.x < 0) { //CheckFollowBack()
                 ChangeDesiredDir();
             } else {
-                if (grounded && JumpCooldown() &&
+                if (grounded && JumpCooldown() && target.grounded &&
                     (this.transform.position.x < GetTarget().position.x + 0.5f) &&
                     (this.transform.position.x > GetTarget().position.x - 0.5f)) {
-                    if(transform.position.y > (GetTarget().position.y + followRange / 2) && target.grounded) {
+                    if(transform.position.y > (GetTarget().position.y + followRange / 2)) {
                         StartCoroutine(Fall());
                     } else {
                         if ((GetTarget().position.y > (transform.position.y + 0.5f)) &&
-                            (GetTarget().position.y < (transform.position.y + 4f)) && target.grounded) {
+                            (GetTarget().position.y < (transform.position.y + 4f))) {
                             JumpAction();
                         }
                     }
