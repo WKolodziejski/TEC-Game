@@ -26,18 +26,26 @@ public class Lifebar : MonoBehaviour
             if (animating)
                 StopAllCoroutines();
 
-            StartCoroutine(IAnim(c.GetHP() / c.maxHP));
+            StartCoroutine(IAnim(c, false));
         });
 
         if (animating)
             StopAllCoroutines();
 
-        StartCoroutine(IAnim(1));
+        StartCoroutine(IAnim(c, true));
     }
 
-    private IEnumerator IAnim(float hp)
+    private IEnumerator IAnim(Player2D c, bool firstLoad)
     {
         animating = true;
+
+        float hp = c.GetHP() / c.maxHP;
+
+        while (hp == 0 && firstLoad)
+        {
+            yield return null;
+            hp = c.GetHP() / c.maxHP;
+        }    
 
         if (bar.fillAmount < hp)
         {
