@@ -25,7 +25,8 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
     private JumpCheck jCheck;
     private bool insidePlayersCone;
 
-    protected override void InitializeComponents() {
+    protected override void InitializeComponents()
+    {
         base.InitializeComponents();
         jCheck = GetComponentInChildren<JumpCheck>();
         movementSpeed += Random.Range(-movementSpeed * 0.05f, movementSpeed * 0.05f);
@@ -34,12 +35,15 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
         ResetMoveCheck();
         lastJump = Time.time;
         lastPunch = Time.time;
+        targetDistance = 50f;
     }
 
-    void FixedUpdate() {
+    void FixedUpdate() 
+    {
         if (Time.timeScale > 0f) //gambiarra
         {
-            if (GetTarget()) {
+            if (GetTarget()) 
+            {
                 Move();
                 Attack();
                 Jump();
@@ -49,8 +53,10 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
         }
     }
 
-    public override void Attack() {
-        if (Vector2.Distance(transform.position, target.transform.position) < 1f) {
+    public override void Attack()
+    {
+        if (Vector2.Distance(transform.position, target.transform.position) < 1f) 
+        {
             if (Time.time - lastPunch >= 2f) //Punch() 
             {
                 lastPunch = Time.time;
@@ -60,15 +66,18 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
                 this.nextMove = moveCooldown; //UpdateNextMove();
             }
         }
-        else {
-            if (weapon.CanFire()) {
-
+        else 
+        {
+            if (weapon.CanFire())
+            {
                 if (target.transform.position.x < transform.position.x && desiredDir.x > 0)//SetShootingDir(); //TODO: talvez se afastar um pouco antes de poder atirar de novo
                 {
                     ChangeDesiredDir();
                 }
-                else {
-                    if (target.transform.position.x > transform.position.x && desiredDir.x < 0) {
+                else 
+                {
+                    if (target.transform.position.x > transform.position.x && desiredDir.x < 0) 
+                    {
                         ChangeDesiredDir();
                     }
                 }
@@ -83,41 +92,54 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
         }
     }
 
-    private void Move() {
+    private void Move() 
+    {
         nextMove -= Time.fixedDeltaTime;
 
-        if (nextMove < 0) {
+        if (nextMove < 0) 
+        {
 
             moveCheck -= Time.fixedDeltaTime; // CheckIfMoved()
-            if (moveCheck < 0) {
-                if ((Math.Abs(prevPosition - transform.position.x) < Math.Abs(moveCheckRate * movementSpeed / 2))) {
+            if (moveCheck < 0) 
+            {
+                if ((Math.Abs(prevPosition - transform.position.x) < Math.Abs(moveCheckRate * movementSpeed / 2))) 
+                {
                     if (((this.transform.position.x > target.transform.position.x) && desiredDir.x > 0) ||
                         ((this.transform.position.x < target.transform.position.x) && desiredDir.x < 0)) {
                         ChangeDesiredDir();
                     }
-                    else {
-                        if (JumpCooldown()) {
+                    else 
+                    {
+                        if (JumpCooldown()) 
+                        {
                             JumpAction();
                         }
                     }
                 }
-                else {
+                else 
+                {
                     ResetMoveCheck();
 
                     if ((this.transform.position.x > target.transform.position.x + followRange) && desiredDir.x > 0 || //CheckFollowBack() CheckDesiredDir()
-                        (this.transform.position.x < target.transform.position.x - followRange) && desiredDir.x < 0) { //CheckFollowBack()
+                        (this.transform.position.x < target.transform.position.x - followRange) && desiredDir.x < 0) 
+                    { //CheckFollowBack()
                         ChangeDesiredDir();
                     }
-                    else {
+                    else 
+                    {
                         if (grounded && JumpCooldown() && target.grounded &&
                             (this.transform.position.x < target.transform.position.x + 0.5f) &&
-                            (this.transform.position.x > target.transform.position.x - 0.5f)) {
-                            if (transform.position.y > (target.transform.position.y + followRange / 2)) {
+                            (this.transform.position.x > target.transform.position.x - 0.5f)) 
+                        {
+                            if (transform.position.y > (target.transform.position.y + followRange / 2)) 
+                            {
                                 StartCoroutine(Fall());
                             }
-                            else {
+                            else 
+                            {
                                 if ((target.transform.position.y > (transform.position.y + 0.5f)) &&
-                                    (target.transform.position.y < (transform.position.y + 4f))) {
+                                    (target.transform.position.y < (transform.position.y + 4f))) 
+                                {
                                     JumpAction();
                                 }
                             }
@@ -131,22 +153,27 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
         }
     }
 
-    private void Jump() {
-        if (grounded && JumpCooldown() && !jCheck.ground) {
+    private void Jump() 
+    {
+        if (grounded && JumpCooldown() && !jCheck.ground) 
+        {
 
             if (((this.transform.position.x > target.transform.position.x) && desiredDir.x > 0) ||
-                ((this.transform.position.x < target.transform.position.x) && desiredDir.x < 0)) {
+                ((this.transform.position.x < target.transform.position.x) && desiredDir.x < 0)) 
+            {
                 ChangeDesiredDir();
                 lastJump = Time.time - 0.3f;
             }
-            else {
+            else 
+            {
                 if (!(insidePlayersCone && this.target.grounded))
                     JumpAction();
             }
         }
     }
 
-    private void JumpAction() {
+    private void JumpAction() 
+    {
         rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
         lastJump = Time.time;
         animator.SetBool("jumping", true);
@@ -154,7 +181,8 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
         ResetMoveCheck();
     }
 
-    private IEnumerator Fall() {
+    private IEnumerator Fall()
+    {
         ResetMoveCheck();
         polygonCollider2D.enabled = false;
         boxCollider2D.enabled = false;
@@ -168,35 +196,43 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
         animator.speed *= 5;
     }
 
-    private bool JumpCooldown() {
+    private bool JumpCooldown() 
+    {
         return (Time.time - lastJump >= 0.6f);
     }
 
-    private void ChangeDesiredDir() {
+    private void ChangeDesiredDir() 
+    {
         desiredDir = -1 * desiredDir;
         transform.Rotate(0f, 180f, 0f);
         ResetMoveCheck();
     }
 
-    private void ResetMoveCheck() {
+    private void ResetMoveCheck()
+    {
         this.moveCheck = moveCheckRate;
         this.prevPosition = transform.position.x;
     }
 
-    private void OnTriggerStay2D(Collider2D collider) {
-        if ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform"))) {
+    private void OnTriggerStay2D(Collider2D collider) 
+    {
+        if ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform"))) 
+        {
             grounded = true;
             animator?.SetBool("jumping", false); //tava dando erro sem o null conditional
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collider) {
-        if ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform"))) {
+    private void OnTriggerExit2D(Collider2D collider) 
+    {
+        if ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform"))) 
+        {
             grounded = false;
         }
     }
 
-    public void InsideCone(bool inside) {
+    public void InsideCone(bool inside) 
+    {
         insidePlayersCone = inside;
     }
 

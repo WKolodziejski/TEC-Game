@@ -101,7 +101,7 @@ public abstract class Character : MonoBehaviour
 
         CallOnDie();
 
-        animator.SetBool("dead", isDead);
+        animator?.SetBool("dead", isDead);
 
         Destroy(gameObject, 2f);
     }

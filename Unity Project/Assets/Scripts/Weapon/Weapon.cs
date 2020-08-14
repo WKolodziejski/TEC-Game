@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour
     public Bullet bullet;
     public float fireRate = 1f;
 
+    private Renderer rd;
     private Vector3 lastPosition;
     private float lastCooldown;
     private float relativeSpeed;
@@ -19,6 +20,8 @@ public class Weapon : MonoBehaviour
         fireRate = 1 / fireRate;
 
         lastPosition = transform.parent.position;
+
+        rd = transform.parent.GetComponentInChildren<Renderer>();
     }
 
     void FixedUpdate()
@@ -32,7 +35,7 @@ public class Weapon : MonoBehaviour
         if (GameController.isPaused)
             return;
 
-        if (lastCooldown <= Time.time)
+        if (CanFire())
         {
             lastCooldown = Time.time + fireRate;
             Bullet b = Instantiate(bullet, barrel.position, barrel.rotation);
@@ -43,7 +46,7 @@ public class Weapon : MonoBehaviour
 
     public bool CanFire()
     {
-        return (lastCooldown <= Time.time);
+        return (lastCooldown <= Time.time) && rd.IsVisibleFrom(Camera.main);
     }
 
     public void RandomizeFireRate()

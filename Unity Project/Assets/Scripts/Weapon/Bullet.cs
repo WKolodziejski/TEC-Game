@@ -12,8 +12,12 @@ public class Bullet : MonoBehaviour
 
     protected Rigidbody2D rb;
 
+    private Renderer rd;
+
     void Start()
-    { 
+    {
+        rd = GetComponent<Renderer>();
+
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.forward * speed;
 
@@ -21,6 +25,15 @@ public class Bullet : MonoBehaviour
             Destroy(Instantiate(muzzle, transform.position, transform.rotation), 1f);
 
         Destroy(gameObject, 10);
+    }
+
+    void Update()
+    {
+        if (!rd.IsVisibleFrom(Camera.main))
+        {
+            enabled = false;
+            Destroy(gameObject, 0.1f);
+        }
     }
 
     public void Fire(float relativeSpeed)
