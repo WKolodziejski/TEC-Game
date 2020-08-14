@@ -27,8 +27,8 @@ public abstract class ComplexShooter : Enemy2D //TODO: rever o calculo de angulo
 
         animator.SetFloat("angle", aimingAngle);
 
-        if (weapon.CanFire())
-        {
+        //if (weapon.CanFire())
+        //{
             if (aimingAngle >= 0f && aimingAngle < 22.5f)
                 mainBarrel = barrelU;
             else if (aimingAngle >= 22.5f && aimingAngle < 67.5f)
@@ -39,6 +39,6 @@ public abstract class ComplexShooter : Enemy2D //TODO: rever o calculo de angulo
                 mainBarrel = barrelDD;
             else
                 mainBarrel = barrelD;
-        }
+        //}
     }
 }
