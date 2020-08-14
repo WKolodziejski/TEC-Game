@@ -9,6 +9,7 @@ public class EnemySpawnerPoint : MonoBehaviour
     public int enemyLimit = 5;
     float nextSpawnTime;
     private ArrayList enemyList;
+    private bool isAlive = true;
 
     void Start()
     {
@@ -28,7 +29,8 @@ public class EnemySpawnerPoint : MonoBehaviour
 
     private void Spawn()
     {
-        if ((enemyList.Count < enemyLimit) && !GetComponent<Renderer>().IsVisibleFrom(Camera.main)){
+        if ((enemyList.Count < enemyLimit) && isAlive && !GetComponent<Renderer>().IsVisibleFrom(Camera.main))
+        {
             Enemy2D e = Instantiate(enemy, transform.position, quaternion.identity);
             e.SetOnDieListener(() => enemyList.Remove(e));
             enemyList.Add(e);
@@ -36,7 +38,14 @@ public class EnemySpawnerPoint : MonoBehaviour
         }
     }
 
-    public void SetEnabled(bool enabled){
+    public void SetEnabled(bool enabled)
+    {
         this.enabled = enabled;
     }
+
+    public void Kill()
+    {
+        isAlive = false;
+    }
+
 }

@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &6466141861340973700
 BoxCollider2D:
@@ -97,9 +97,11 @@ MonoBehaviour:
   weaponPrefab: {fileID: 1089317133350336581, guid: 4ccc5d822c5b9a840892f0954313483f,
     type: 3}
   mainBarrel: {fileID: 6466141861721181367}
-  hp: 3
+  damagePopup: {fileID: 0}
+  maxHP: 3
   movementSpeed: 5
   damageCooldown: 0
+  targetDistance: 25
   jumpForce: 20
 --- !u!1 &6466141861699167780
 GameObject:

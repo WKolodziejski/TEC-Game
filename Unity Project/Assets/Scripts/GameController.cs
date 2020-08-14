@@ -112,17 +112,16 @@ public class GameController : MonoBehaviour
 
         cam.Follow = p.transform;
         cam.LookAt = p.transform;
-        cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 4;
+        //cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 4;
 
         p.SetOnDamageListener(() => damage.weight = (float)(Math.Exp(p.maxHP - p.GetHP()) / 100));
 
         p.SetOnDieListener(() =>
         {
-            cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 0;
+            /*cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 0;
             cam.Follow = null;
-            cam.LookAt = null;
+            cam.LookAt = null;*/
             
-
             lifes--;
 
             if (lifes == 0)
