@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossTurret : MonoBehaviour
 {
-    private const int MAX_TURN = 45;
+    private const int MAX_TURN = 60;
     public Bullet bullet;
     private Character target;
     private float startAngle;
@@ -41,27 +41,32 @@ public class BossTurret : MonoBehaviour
     {
         float ang;
         
-        ang = Vector2.SignedAngle(target.transform.position, transform.position);
+        Vector2 direction = target.transform.position - firePoint.position;
+        ang = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        if (ang > - MAX_TURN && ang < MAX_TURN) 
-            return ang;
-
-        return MAX_TURN;
+        return ang;
     }
 
     private void SetAngle(float ang)
     {
-        //float ang;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        //ang = Vector2.SignedAngle(target.transform.position, transform.position);
+        Debug.Log(name + "\t" + rotation.eulerAngles.z);
 
-        /*if (ang > - MAX_TURN && ang < MAX_TURN)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, startAngle - ang);
-        }*/
+        float min = NormalizeAngle(startAngle - MAX_TURN);
+        float max = NormalizeAngle(startAngle + MAX_TURN);
 
-        if (ang != MAX_TURN)
-            transform.rotation = Quaternion.Euler(0, 0, startAngle - ang);
+        if (rotation.eulerAngles.z > max || rotation.eulerAngles.z < min)
+            rotation = Quaternion.AngleAxis(startAngle, Vector3.forward);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
+    }
+
+    private float NormalizeAngle(float a)
+    {
+        if (a < 0) return a + 360;
+        if (a > 360) return a - 360;
+        return a;
     }
 
     public void Shoot() {
