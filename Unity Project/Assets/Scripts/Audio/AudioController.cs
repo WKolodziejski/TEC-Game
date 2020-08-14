@@ -55,6 +55,11 @@ public class AudioController : MonoBehaviour
         StartCoroutine(FadeOut(hack));
     }
 
+    public void FadeOut()
+    {
+        StartCoroutine(FadeOut(audios[actual]));
+    }
+
     IEnumerator FadeOut(AudioSource a)
     {
         a.volume = 1;

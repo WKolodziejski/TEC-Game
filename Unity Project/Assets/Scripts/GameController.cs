@@ -189,6 +189,8 @@ public class GameController : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
 
+        FindObjectOfType<AudioController>().FadeOut();
+
         complete.SetActive(true);
 
         yield return new WaitForSecondsRealtime(3f);
