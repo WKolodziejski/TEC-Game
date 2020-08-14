@@ -161,7 +161,7 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
         desiredDir.x /= 5;
         animator.speed /= 5;
         lastJump = Time.time;
-        yield return new WaitForSecondsRealtime(0.3f); //fallTime
+        yield return new WaitForSeconds(0.3f); //fallTime
         boxCollider2D.enabled = true;
         polygonCollider2D.enabled = true;
         desiredDir.x *= 5;

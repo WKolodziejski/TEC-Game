@@ -45,7 +45,7 @@ public class Lifebar : MonoBehaviour
             {
                 bar.fillAmount += 0.05f;
 
-                yield return new WaitForSecondsRealtime(0.01f);
+                yield return new WaitForSeconds(0.01f);
             }
         }
         else
@@ -54,7 +54,7 @@ public class Lifebar : MonoBehaviour
             {
                 bar.fillAmount -= 0.05f;
 
-                yield return new WaitForSecondsRealtime(0.01f);
+                yield return new WaitForSeconds(0.01f);
             }
         }
 

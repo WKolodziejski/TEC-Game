@@ -444,6 +444,51 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3341065229789522527, guid: 1ceeda309a320c64ea56e947720ebd75,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341065229789522527, guid: 1ceeda309a320c64ea56e947720ebd75,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341065229789522527, guid: 1ceeda309a320c64ea56e947720ebd75,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353580506752200560, guid: 1ceeda309a320c64ea56e947720ebd75,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353580506752200560, guid: 1ceeda309a320c64ea56e947720ebd75,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353580506752200560, guid: 1ceeda309a320c64ea56e947720ebd75,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6282929877810521701, guid: 1ceeda309a320c64ea56e947720ebd75,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6282929877810521701, guid: 1ceeda309a320c64ea56e947720ebd75,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6282929877810521701, guid: 1ceeda309a320c64ea56e947720ebd75,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7723657193552689507, guid: 1ceeda309a320c64ea56e947720ebd75,
         type: 3}
       propertyPath: m_TagString

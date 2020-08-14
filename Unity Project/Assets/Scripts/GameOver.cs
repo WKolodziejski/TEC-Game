@@ -13,7 +13,7 @@ public class GameOver : MonoBehaviour
 
     private IEnumerator IExit()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSeconds(3f);
 
         SceneManager.LoadScene("MainMenu");
     }

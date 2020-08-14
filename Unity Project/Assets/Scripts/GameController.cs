@@ -85,7 +85,7 @@ public class GameController : MonoBehaviour
             e.SetOnDieListener(() => pontuation[e.GetType()]++);
         }*/
 
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSeconds(1f);
 
         loading.SetActive(false);
         lifebar.gameObject.SetActive(true);
@@ -141,7 +141,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator INewPlayer()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSeconds(2f);
 
         SetupPlayer();
     }
@@ -150,7 +150,7 @@ public class GameController : MonoBehaviour
     {
         canPause = false;
 
-        yield return new WaitForSecondsRealtime(2.5f);
+        yield return new WaitForSeconds(2.5f);
 
         foreach (GameObject o in FindObjectsOfType<GameObject>())
             Destroy(o);
@@ -187,13 +187,13 @@ public class GameController : MonoBehaviour
         foreach (Bullet b in FindObjectsOfType<Bullet>())
             Destroy(b.gameObject);
 
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSeconds(0.5f);
 
         FindObjectOfType<AudioController>().FadeOut();
 
         complete.SetActive(true);
 
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSeconds(3f);
 
         AsyncOperation load = SceneManager.UnloadSceneAsync(scene);
 
@@ -209,13 +209,13 @@ public class GameController : MonoBehaviour
 
     private IEnumerator IAnim()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSeconds(1f);
 
         while (damage.weight > 0)
         {
             damage.weight -= 0.05f;
 
-            yield return new WaitForSecondsRealtime(0.01f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 

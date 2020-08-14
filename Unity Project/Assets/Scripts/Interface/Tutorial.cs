@@ -61,7 +61,7 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator IFirst()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSeconds(2f);
 
         SetText("Walk to the terminal");
     }
@@ -79,7 +79,7 @@ public class Tutorial : MonoBehaviour
 
         FadeIn();
 
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSeconds(3f);
 
         FadeOut();
     }
@@ -106,7 +106,7 @@ public class Tutorial : MonoBehaviour
             tc.a -= 0.1f;
             text.color = tc;
 
-            yield return new WaitForSecondsRealtime(0.05f);
+            yield return new WaitForSeconds(0.05f);
         }
 
         text.text = "";
@@ -122,7 +122,7 @@ public class Tutorial : MonoBehaviour
             tc.a += 0.1f;
             text.color = tc;
 
-            yield return new WaitForSecondsRealtime(0.05f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 
@@ -136,7 +136,7 @@ public class Tutorial : MonoBehaviour
             ic.a -= 0.1f;
             image.color = ic;
 
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSeconds(0.1f);
         }
 
         ic.a = 0f;
@@ -153,7 +153,7 @@ public class Tutorial : MonoBehaviour
             ic.a += 0.1f;
             image.color = ic;
 
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

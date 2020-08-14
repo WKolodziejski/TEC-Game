@@ -68,7 +68,7 @@ public class AudioController : MonoBehaviour
         {
             a.volume -= 0.1f;
 
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSeconds(0.1f);
         }
 
         a.mute = true;
@@ -83,7 +83,7 @@ public class AudioController : MonoBehaviour
         {
             a.volume += 0.1f;
 
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

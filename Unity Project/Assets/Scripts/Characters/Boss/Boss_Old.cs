@@ -69,7 +69,7 @@ public class Boss_Old : MonoBehaviour
         {
             Fire(p);
 
-            yield return new WaitForSecondsRealtime(delay);
+            yield return new WaitForSeconds(delay);
         }
     }
 
