@@ -1647,6 +1647,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interface
       objectReference: {fileID: 0}
+    - target: {fileID: 7026359159275172228, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026359159275172230, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026359159275172230, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[2].key
+      value: 
+      objectReference: {fileID: -2404241439499199934, guid: 7701dfc9a2815f8418c7002a087976f6,
+        type: 2}
     - target: {fileID: 7026359159779050114, guid: dbb0410994eb8194eb796f94e8285bbc,
         type: 3}
       propertyPath: m_LocalPosition.x

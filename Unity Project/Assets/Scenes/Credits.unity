@@ -449,11 +449,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 4
-  m_Text: "Thank you for playing!\n\n\nCredits\n\nMade by\n\xC9merson L\xF3pes\nGustavo
+  m_Text: "Thank you for playing\n\n\nCredits\n\nCreated by\n\xC9merson L\xF3pes\nGustavo
     Hubner\nMatheus Isquierdo\nWilliam Kolodziejski\n\nTEC VIII 2020\nUFPEL\n\nSprites
-    from\nContra\nMegaman\nMetal Slug\nby www.spriters-resource.com\n\nSoundtrack\r
-    from\nNieR Automata\r\nby downloads.khinsider.com\n\nAll content belongs to the
-    creator\r\nNo copyright infringement intended\n"
+    from\nContra\nMegaman\nMetal Slug\nby spriters-resource.com\n\nSoundtrack\r from\nNieR
+    Automata\r\nby downloads.khinsider.com\n\nAll content belongs to the creator\rs\nNo
+    copyright infringement intended\n"
 --- !u!222 &930240249
 CanvasRenderer:
   m_ObjectHideFlags: 0

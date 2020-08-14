@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour
         checkpoint = new Vector3(-1, 5, 0);
 
         lifebar.gameObject.SetActive(false);
-        complete.SetActive(false);
+        //complete.SetActive(false);
         loading.SetActive(true);
 
         AsyncOperation load = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
@@ -202,7 +202,7 @@ public class GameController : MonoBehaviour
             yield return null;
         }
 
-        //complete.SetActive(false);
+        complete.SetActive(false);
 
         StartCoroutine(ILoadScene(scene + 1));
     }
