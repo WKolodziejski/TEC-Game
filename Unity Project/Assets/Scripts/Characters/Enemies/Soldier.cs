@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using Random = UnityEngine.Random;
 
-public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, talvez usar VectorDistance em algo, no CheckIfMoved checar se o pulo falhou, melhorar CheckFollow para evitar que o inimigo fique a frente do alvo
+public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em contato com um soldier ele pode se jogar de uma beirada, condicionar melhor o pulo?, talvez usar VectorDistance em algo, no CheckIfMoved checar se o pulo falhou, melhorar CheckFollow para evitar que o inimigo fique a frente do alvo
 {
     public float moveCooldown = 0.5f;
     public float followRange = 5f;
