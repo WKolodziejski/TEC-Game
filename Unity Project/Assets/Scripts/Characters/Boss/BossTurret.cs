@@ -11,6 +11,7 @@ public class BossTurret : MonoBehaviour
     private float angle;
     public float fireRate = 0.5f;
     private float lastCooldown = 2;
+    private bool shoot;
 
     private Transform firePoint;
     // Start is called before the first frame update
@@ -26,9 +27,13 @@ public class BossTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shoot = true;
+        
         if (target == null) GetTarget();
+
         angle = GetAngle();
         SetAngle(angle);
+        
         Shoot();
     }
 
@@ -51,26 +56,20 @@ public class BossTurret : MonoBehaviour
     {
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        Debug.Log(name + "\t" + rotation.eulerAngles.z);
-
-        float min = NormalizeAngle(startAngle - MAX_TURN);
-        float max = NormalizeAngle(startAngle + MAX_TURN);
+        float min = startAngle - MAX_TURN;
+        float max = startAngle + MAX_TURN;
 
         if (rotation.eulerAngles.z > max || rotation.eulerAngles.z < min)
+        {
             rotation = Quaternion.AngleAxis(startAngle, Vector3.forward);
+            shoot = false;
+        }
 
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
     }
 
-    private float NormalizeAngle(float a)
-    {
-        if (a < 0) return a + 360;
-        if (a > 360) return a - 360;
-        return a;
-    }
-
     public void Shoot() {
-        if (angle == MAX_TURN) return;
+        if (!shoot) return;
 
         if (lastCooldown > Time.time) return;
         
