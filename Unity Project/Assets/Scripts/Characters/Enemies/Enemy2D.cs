@@ -11,7 +11,6 @@ public abstract class Enemy2D : Character //TODO: mudar de facção
 
     protected override void InitializeComponents()
     {
-        //assistant = GameObject.FindObjectOfType<AIAssistant>();
         SetEnabled(false);
     }
 
