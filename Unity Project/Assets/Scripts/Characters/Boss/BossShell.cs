@@ -23,12 +23,12 @@ public class BossShell : MonoBehaviour
 
     private IEnumerator IOpen()
     {
-        while (insideLeft.rotation.eulerAngles.z < 90)
+        while (insideLeft.localRotation.eulerAngles.z < 90f)
         {
-            insideLeft.Rotate(Vector3.forward, 0.5f);
+            insideLeft.Rotate(Vector3.forward, 0.5f, Space.Self);
             insideRight.Rotate(Vector3.forward, -0.5f);
 
-            if (insideLeft.rotation.eulerAngles.z > 45)
+            if (insideLeft.localRotation.eulerAngles.z > 45f)
             {
                 outsideLeft.Rotate(Vector3.forward, 0.5f);
                 outsideRight.Rotate(Vector3.forward, -0.5f);
