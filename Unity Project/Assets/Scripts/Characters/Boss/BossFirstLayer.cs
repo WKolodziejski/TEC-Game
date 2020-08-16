@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class BossFirstLayer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public List<BossTurret> turrets;
+    public int numTurrets;
+
+    public float turretsFireRate = 0.5f;
+    public float turretsFireRateIncrease = 0.2f;
+
     void Start()
     {
 
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+
+    }
+
+    public void UpdateFireRates()
+    {
+        int multiplier = numTurrets - turrets.Count;
+
+        foreach (BossTurret turret in turrets)
+            turret.SetFireRate(turretsFireRate + (turretsFireRateIncrease * multiplier));
     }
 }
