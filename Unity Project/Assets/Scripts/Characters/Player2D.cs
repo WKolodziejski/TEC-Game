@@ -216,10 +216,15 @@ public class Player2D : Character
         audioDie.Play();
     }
 
-    public void DisableControlsAndRun()
+    public void Walk(float direction)
+    {
+        horizontal = direction;
+    }
+
+    public void DisableControls()
     {
         controlIsEnabled = false;
-        horizontal = 1f;
+        horizontal = 0f;
     }
 
     public void EnableControls()

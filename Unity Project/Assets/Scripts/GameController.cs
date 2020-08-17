@@ -63,7 +63,6 @@ public class GameController : MonoBehaviour
         checkpoint = scene == 7 ? new Vector3(0, 2.5f, 0) : new Vector3(-1, 5, 0);
 
         lifebar.gameObject.SetActive(false);
-        //complete.SetActive(false);
         loading.SetActive(true);
 
         AsyncOperation load = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
@@ -186,7 +185,8 @@ public class GameController : MonoBehaviour
         lifebar.gameObject.SetActive(false);
 
         Player2D p = FindObjectOfType<Player2D>();
-        p.DisableControlsAndRun();
+        p.DisableControls();
+        p.Walk(1f);
 
         foreach (Enemy2D e in FindObjectsOfType<Enemy2D>())
             e.SetEnabled(false);

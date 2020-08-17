@@ -162,6 +162,9 @@ public class HackGameController : MonoBehaviour
 
             yield return new WaitForSecondsRealtime(1f);
 
+            foreach (Bullet b in FindObjectsOfType<Bullet>())
+                Destroy(b.gameObject);
+
             FindObjectOfType<HackSceneReference>().Return(won);
         }
     }

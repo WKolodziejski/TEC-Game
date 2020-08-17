@@ -31,60 +31,33 @@ public class AudioController : MonoBehaviour
 
             actual = audios.IndexOf(audioSource);
 
-            StartCoroutine(FadeIn(audios[actual]));
+            StartCoroutine(Utils.FadeIn(audios[actual]));
         }
         else
         {
-            StartCoroutine(FadeOut(audios[actual]));
+            StartCoroutine(Utils.FadeOut(audios[actual]));
 
             actual = audios.IndexOf(audioSource);
 
-            StartCoroutine(FadeIn(audios[actual]));
+            StartCoroutine(Utils.FadeIn(audios[actual]));
         }
     }
 
     public void EnterHack()
     {
-        StartCoroutine(FadeIn(hack));
-        StartCoroutine(FadeOut(audios[actual]));
+        StartCoroutine(Utils.FadeIn(hack));
+        StartCoroutine(Utils.FadeOut(audios[actual]));
     }
 
     public void ReturnHack()
     {
-        StartCoroutine(FadeIn(audios[actual]));
-        StartCoroutine(FadeOut(hack));
+        StartCoroutine(Utils.FadeIn(audios[actual]));
+        StartCoroutine(Utils.FadeOut(hack));
     }
 
     public void FadeOut()
     {
-        StartCoroutine(FadeOut(audios[actual]));
-    }
-
-    IEnumerator FadeOut(AudioSource a)
-    {
-        a.volume = 1;
-
-        while (a.volume > 0)
-        {
-            a.volume -= 0.1f;
-
-            yield return new WaitForSeconds(0.1f);
-        }
-
-        a.mute = true;
-    }
-
-    IEnumerator FadeIn(AudioSource a)
-    {
-        a.mute = false;
-        a.volume = 0;
-
-        while (a.volume < 1.0f)
-        {
-            a.volume += 0.1f;
-
-            yield return new WaitForSeconds(0.1f);
-        }
+        StartCoroutine(Utils.FadeOut(audios[actual]));
     }
 
 }
