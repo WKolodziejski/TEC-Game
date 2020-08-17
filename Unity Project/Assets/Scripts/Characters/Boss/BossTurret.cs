@@ -2,21 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossTurret : MonoBehaviour
+public class BossTurret : Enemy2D
 {
     private const int MAX_TURN = 60;
     public Bullet bullet;
-    private Character target;
+    //private Character target;
     private float startAngle;
     private float angle;
-    public float fireRate = 0.5f;
-    private float lastCooldown = 2;
+    private float fireRate = 0.5f;
+    private float lastCd = 2;
     private bool shoot;
+    private BossFirstLayer bossFirstLayer;
+
+    //public int hp = 3;
 
     private Transform firePoint;
     // Start is called before the first frame update
     void Start()
     {
+        bossFirstLayer = this.transform.parent.GetComponentInParent<BossFirstLayer>();
+        bossFirstLayer.turrets.Add(this);
+        bossFirstLayer.numTurrets += 1;
+        fireRate = bossFirstLayer.turretsFireRate;
+
         startAngle = transform.eulerAngles.z;
 
         GetTarget();
@@ -37,11 +45,16 @@ public class BossTurret : MonoBehaviour
         Shoot();
     }
 
-    private void GetTarget()
+    public override void Attack() //TODO: isso aqui nem tá sendo usado
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
-    } 
+        //weapon.Fire(firePoint);
+    }
 
+    /*private void GetTarget()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player2D>();
+    }*/
+    
     private float GetAngle()
     {
         float ang;
@@ -68,14 +81,38 @@ public class BossTurret : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
     }
 
-    public void Shoot() {
+    public void Shoot() 
+    {
         if (!shoot) return;
 
-        if (lastCooldown > Time.time) return;
+        if (lastCd > Time.time) return;
         
-        lastCooldown = Time.time + (1f / fireRate);
+        lastCd = Time.time + (1f / fireRate);
 
         Bullet b = Instantiate(bullet, firePoint.position, firePoint.rotation);
         b.Fire(0);
+    }
+
+    public void SetFireRate(float fr)
+    {
+        fireRate = fr;
+    }
+
+    /*public void TakeDamage(int dmg)
+    {
+        Debug.Log("HP: " + hp);
+        
+        hp -= dmg;
+
+        Debug.Log("DAMAGE: " + dmg);
+        Debug.Log("HP: " + hp);
+        
+        if (hp == 0) Destroy(this);
+    }*/
+
+    public void OnDestroy()
+    {
+        bossFirstLayer.turrets.Remove(this);
+        bossFirstLayer.UpdateFireRates();
     }
 }
