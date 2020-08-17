@@ -31,7 +31,7 @@ public class HackGameController : MonoBehaviour
     private bool isReturning;
     private bool isCounting;
    
-    void Start()
+    void Awake()
     {
         EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
 

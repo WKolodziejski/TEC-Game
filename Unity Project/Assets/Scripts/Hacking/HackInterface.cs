@@ -22,7 +22,7 @@ public class HackInterface : MonoBehaviour
     private float countTime;
     private bool held;
 
-    void Start()
+    void Awake()
     {
         rect = GetComponent<RectTransform>();
         bar = GetComponentInChildren<Image>(true);

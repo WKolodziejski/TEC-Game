@@ -34,6 +34,9 @@ public class BossShell : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.O))
+            Open();
+
         if (Input.GetKeyDown(KeyCode.I))
             StartCoroutine(Utils.FadeOut(audioSource));
     }

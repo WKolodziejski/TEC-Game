@@ -12,6 +12,7 @@ public abstract class Character : MonoBehaviour
     public float maxHP = 3f;
     public float movementSpeed = 5f;
     public float damageCooldown = 0f;
+    public float destroyTimer = 2f;
 
     protected Weapon weapon;
     protected Animator animator;
@@ -23,7 +24,7 @@ public abstract class Character : MonoBehaviour
     private float lastCooldown;
     private bool isDead;
     
-    void Start()
+    void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -36,7 +37,6 @@ public abstract class Character : MonoBehaviour
         InitializeComponents();
     }
 
-    //Inicializa componentes específicos
     protected abstract void InitializeComponents();
 
     public void SetWeapon(Weapon prefab)
@@ -47,7 +47,6 @@ public abstract class Character : MonoBehaviour
         weapon = Instantiate(prefab, transform);
     }
 
-    //tive q botar essa flag pq ao retornar do hack pode ser q n tome o dano, caso um inimigo atire antes
     public virtual void TakeDamage(float damage, bool force)
     {
         if (lastCooldown <= Time.time || force)
@@ -57,7 +56,7 @@ public abstract class Character : MonoBehaviour
             hp -= damage;
 
             OnDamage(damage);
-            
+                        
             if (hp <= 0)
                 Kill();
         }
@@ -103,7 +102,7 @@ public abstract class Character : MonoBehaviour
 
         animator?.SetBool("dead", isDead);
 
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, destroyTimer);
     }
 
     protected virtual void OnDamage(float damage)

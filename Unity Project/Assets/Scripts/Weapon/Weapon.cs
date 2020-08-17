@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     private float lastCooldown;
     private float relativeSpeed;
 
-    void Start()
+    void Awake()
     {
         tag = transform.parent.tag;
         fireRate = 1 / fireRate;
