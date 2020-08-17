@@ -37,9 +37,9 @@ public class BossTurret : Enemy2D
     {
         shoot = true;
         
-        if (target == null) GetTarget();
+        if (GetTarget() != null)
+            angle = GetAngle();
 
-        angle = GetAngle();
         SetAngle(angle);
         
         Shoot();

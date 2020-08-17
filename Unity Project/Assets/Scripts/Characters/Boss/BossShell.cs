@@ -10,12 +10,18 @@ public class BossShell : MonoBehaviour
     public Transform outsideLeft;
     public Transform outsideRight;
     public GameObject boss;
+    public Hackable hackable;
 
     private AudioSource audioSource;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        hackable.SetAction(() =>
+        {
+            Open();
+        });
     }
 
     void Update()

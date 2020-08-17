@@ -34,7 +34,7 @@ public class HackSceneReference : MonoBehaviour
         cam.Follow = target;
         transitionEnter.Play();
 
-        FindObjectOfType<AudioController>().EnterHack();
+        FindObjectOfType<AudioController>()?.EnterHack();
 
         yield return new WaitForSecondsRealtime(1.9f);
 
@@ -77,7 +77,7 @@ public class HackSceneReference : MonoBehaviour
 
         transitionReturn.Play();
 
-        FindObjectOfType<AudioController>().ReturnHack();
+        FindObjectOfType<AudioController>()?.ReturnHack();
 
         if (isHacking)
         {

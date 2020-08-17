@@ -55,7 +55,8 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Debug.Log(tag + " -> " + collision.tag);
+
         /*
          * BulletPlayer não contém Player
          * BulletEnemy não contém Enemy

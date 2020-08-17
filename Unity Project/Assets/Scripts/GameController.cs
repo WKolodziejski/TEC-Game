@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
         menu = FindObjectOfType<GameMenuButtons>();
         menu.gameObject.SetActive(false);
 
-        StartCoroutine(ILoadScene(4));
+        StartCoroutine(ILoadScene(7));
     }
 
     void Update()
@@ -59,14 +59,15 @@ public class GameController : MonoBehaviour
     private IEnumerator ILoadScene(int s)
     {
         scene = s;
-        checkpoint = new Vector3(-1, 5, 0);
+
+        checkpoint = scene == 7 ? new Vector3(0, 2.5f, 0) : new Vector3(-1, 5, 0);
 
         lifebar.gameObject.SetActive(false);
         //complete.SetActive(false);
         loading.SetActive(true);
 
         AsyncOperation load = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
-
+        
         while (!load.isDone)
         {
             yield return null;
@@ -110,18 +111,24 @@ public class GameController : MonoBehaviour
             
         lifebar.SetPlayer(p);
 
-        cam.Follow = p.transform;
-        cam.LookAt = p.transform;
-        //cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 4;
-
+        if (scene == 7)
+        {
+            cam.Follow = null;
+            cam.LookAt = null;
+            cam.enabled = false;
+            Camera.main.transform.position=  new Vector3(0, 0, -10);
+            cam.enabled = true;
+        }
+        else
+        {
+            cam.Follow = p.transform;
+            cam.LookAt = p.transform;
+        }
+        
         p.SetOnDamageListener(() => damage.weight = (float)(Math.Exp(p.maxHP - p.GetHP()) / 100));
 
         p.SetOnDieListener(() =>
-        {
-            /*cam.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 0;
-            cam.Follow = null;
-            cam.LookAt = null;*/
-                        
+        {                        
             lifes--;
 
             if (lifes == 0)
@@ -189,16 +196,18 @@ public class GameController : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        FindObjectOfType<AudioController>().FadeOut();
+        FindObjectOfType<AudioController>()?.FadeOut();
 
         complete.SetActive(true);
 
         yield return new WaitForSeconds(3f);
 
         AsyncOperation load = SceneManager.UnloadSceneAsync(scene);
+        bool isDone = false;
 
-        while (!load.isDone)
+        while (!isDone)
         {
+            isDone = load == null;
             yield return null;
         }
 
