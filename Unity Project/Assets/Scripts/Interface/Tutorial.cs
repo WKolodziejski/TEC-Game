@@ -86,75 +86,14 @@ public class Tutorial : MonoBehaviour
 
     private void FadeIn()
     {
-        StartCoroutine(FadeInText());
-        StartCoroutine(FadeInImg());
+        StartCoroutine(Utils.FadeInText(text));
+        StartCoroutine(Utils.FadeInImg(image, 0.5f));
     }
 
     private void FadeOut()
     {
-        StartCoroutine(FadeOutText());
-        StartCoroutine(FadeOutImg());
-    }
-
-    IEnumerator FadeOutText()
-    {
-        Color tc = text.color;
-        tc.a = 0.5f;
-
-        while (tc.a > 0f)
-        {
-            tc.a -= 0.1f;
-            text.color = tc;
-
-            yield return new WaitForSeconds(0.05f);
-        }
-
-        text.text = "";
-    }
-
-    IEnumerator FadeInText()
-    {
-        Color tc = text.color;
-        tc.a = 0;
-
-        while (tc.a < 1f)
-        {
-            tc.a += 0.1f;
-            text.color = tc;
-
-            yield return new WaitForSeconds(0.05f);
-        }
-    }
-
-    IEnumerator FadeOutImg()
-    {
-        Color ic = image.color;
-        ic.a = 1f;
-
-        while (ic.a > 0f)
-        {
-            ic.a -= 0.1f;
-            image.color = ic;
-
-            yield return new WaitForSeconds(0.1f);
-        }
-
-        ic.a = 0f;
-        image.color = ic;
-    }
-
-    IEnumerator FadeInImg()
-    {
-        Color ic = image.color;
-        ic.a = 0;
-
-        while (ic.a < 0.5f)
-        {
-            ic.a += 0.1f;
-            image.color = ic;
-
-            yield return new WaitForSeconds(0.1f);
-        }
+        StartCoroutine(Utils.FadeOutText(text));
+        StartCoroutine(Utils.FadeOutImg(image));
     }
 
 }

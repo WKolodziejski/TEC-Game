@@ -12,6 +12,7 @@ using static HackSceneReference;
 public class HackGameController : MonoBehaviour
 {
 
+    public GameObject lTUTORIAL;
     public GameObject lEASY;
     public GameObject lNORMAL;
     public GameObject lHARD;
@@ -35,10 +36,15 @@ public class HackGameController : MonoBehaviour
     {
         EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
 
-        timerCounter = ((int) difficulty + 1) * 10;
+        timerCounter = ((int) difficulty) * 10;
 
         switch (difficulty)
         {
+            case EDifficulty.TUTORIAL:
+                timerCounter = 30f;
+                lTUTORIAL.SetActive(true);
+                break;
+
             case EDifficulty.EASY:
                 lEASY.SetActive(true);
                 break;

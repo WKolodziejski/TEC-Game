@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
- 
+using UnityEngine.UI;
+
 public static class Utils
 {
 	public static bool IsVisibleFrom(this Renderer renderer, Camera camera)
@@ -57,6 +58,67 @@ public static class Utils
             f.cutoffFrequency -= 350f;
 
             yield return new WaitForSecondsRealtime(0.001f);
+        }
+    }
+
+    public static IEnumerator FadeOutText(Text text)
+    {
+        Color tc = text.color;
+        tc.a = 0.5f;
+
+        while (tc.a > 0f)
+        {
+            tc.a -= 0.1f;
+            text.color = tc;
+
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        text.text = "";
+    }
+
+    public static IEnumerator FadeInText(Text text)
+    {
+        Color tc = text.color;
+        tc.a = 0;
+
+        while (tc.a < 1f)
+        {
+            tc.a += 0.1f;
+            text.color = tc;
+
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    public static IEnumerator FadeOutImg(Image image)
+    {
+        Color ic = image.color;
+        //ic.a = 1f;
+
+        while (ic.a > 0f)
+        {
+            ic.a -= 0.1f;
+            image.color = ic;
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        ic.a = 0f;
+        image.color = ic;
+    }
+
+    public static IEnumerator FadeInImg(Image image, float alpha)
+    {
+        Color ic = image.color;
+        //ic.a = 0;
+
+        while (ic.a < alpha)
+        {
+            ic.a += 0.1f;
+            image.color = ic;
+
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

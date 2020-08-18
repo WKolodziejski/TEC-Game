@@ -30,7 +30,7 @@ public class Hackable : MonoBehaviour
                 }
                 else
                 {
-                    FindObjectOfType<Player2D>().TakeDamage((int) difficulty + 1, true);
+                    FindObjectOfType<Player2D>().TakeDamage((int) difficulty, true);
                 }
             });
         }

@@ -44,7 +44,7 @@ public class HackSceneReference : MonoBehaviour
             this.difficulty = difficulty;
             this.objs = FindObjectsOfType<GameObject>();
 
-            AsyncOperation s = SceneManager.LoadSceneAsync("HackScene", LoadSceneMode.Additive);
+            AsyncOperation s = SceneManager.LoadSceneAsync("HackGame", LoadSceneMode.Additive);
             /*bool isDone = s.isDone;
 
             while (!isDone)
@@ -83,7 +83,7 @@ public class HackSceneReference : MonoBehaviour
         {
             isHacking = false;
 
-            SceneManager.UnloadSceneAsync("HackScene");
+            SceneManager.UnloadSceneAsync("HackGame");
 
             foreach (GameObject o in objs)
                 if (o != null)
@@ -116,7 +116,7 @@ public class HackSceneReference : MonoBehaviour
 
     public enum EDifficulty
     {
-        EASY, NORMAL, HARD
+        TUTORIAL, EASY, NORMAL, HARD
     }
 
 }

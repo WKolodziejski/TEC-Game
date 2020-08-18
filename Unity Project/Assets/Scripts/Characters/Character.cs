@@ -107,7 +107,7 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void OnDamage(float damage)
     {
-        if (damagePopup != null)
+        if (damagePopup != null && damage > 0)
             Instantiate(damagePopup, transform.position, Quaternion.identity).Hit(-damage);
 
         CallOnDamage();

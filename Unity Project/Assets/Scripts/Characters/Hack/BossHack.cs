@@ -26,7 +26,7 @@ public class BossHack : EnemyHack
 
         GetDestination = GetRunawayPath;
 
-        if (FindObjectOfType<HackSceneReference>().GetDifficulty() == EDifficulty.EASY)
+        if (FindObjectOfType<HackSceneReference>().GetDifficulty() <= EDifficulty.EASY)
             shield.SetActive(false);
     }
 
@@ -66,7 +66,7 @@ public class BossHack : EnemyHack
     {
         hasShield = false;
 
-        if (FindObjectOfType<HackSceneReference>().GetDifficulty() != EDifficulty.EASY)
+        if (FindObjectOfType<HackSceneReference>().GetDifficulty() >= EDifficulty.EASY)
             shieldExp.SetActive(true);
 
         shield.SetActive(false);

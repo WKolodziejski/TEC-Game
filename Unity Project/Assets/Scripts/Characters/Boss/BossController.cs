@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
@@ -15,11 +17,11 @@ public class BossController : MonoBehaviour
     public AudioSource audio1;
     public GameObject audio2;
     public CinemachineVirtualCamera cam;
+    public Image fadeOut;
 
     private AudioSource audioSource;
     private Boss boss;
     private bool hacked;
-    //private bool canBeKilled;
 
     void Awake()
     {
@@ -33,8 +35,6 @@ public class BossController : MonoBehaviour
                 Open();
             }
         });
-
-        //StartCoroutine(IAudioController(audio2.GetComponent<AudioSource>()));
     }
 
     void Update()
@@ -53,6 +53,8 @@ public class BossController : MonoBehaviour
 
     private IEnumerator IOpen()
     {
+        FindObjectOfType<Lifebar>()?.gameObject.SetActive(false);
+
         GameController.canPause = false;
 
         yield return new WaitForSeconds(1f);
@@ -65,16 +67,9 @@ public class BossController : MonoBehaviour
 
         boss = Instantiate(bossPrefab, transform.position, Quaternion.identity);
 
-        /*boss.SetOnDamageListener(() =>
-        {
-            if (boss.GetHP() < 50 && !canBeKilled)
-                boss.AddLife(10f);
-        });*/
-
         boss.SetOnDieListener(() =>
         {
-            StartCoroutine(Utils.FadeOutAudio(audio1));
-            //TODO: end game
+            StartCoroutine(IFinish());
         });
 
         cam.m_Priority = 20;
@@ -103,30 +98,29 @@ public class BossController : MonoBehaviour
 
         cam.m_Priority = 0;
 
+        FindObjectOfType<Lifebar>()?.gameObject.SetActive(true);
+
         FindObjectOfType<Player2D>().EnableControls();
 
         GameController.canPause = true;
     }
 
-    /*private IEnumerator IAudioController(AudioSource a)
+    private IEnumerator IFinish()
     {
-        while (a.time < 130f)
-            yield return new WaitForSecondsRealtime(1f);
+        GameController.canPause = false;
 
-        canBeKilled = true;
+        FindObjectOfType<Lifebar>()?.gameObject.SetActive(false);
 
-        while (a.time < 150f)
-            yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSeconds(7f);
 
-        if (boss.GetHP() <= 10f)
-            boss.Kill();
-        //else
-            //TODO: boss explode e mata player
+        StartCoroutine(Utils.FadeInImg(fadeOut, 1f));
+        StartCoroutine(Utils.FadeOutAudio(audio1));
 
-        while (a.isPlaying)
-            yield return new WaitForSecondsRealtime(1f);
+        FindObjectOfType<Player2D>().DisableControls();
 
-        //TODO: end game
-    }*/
+        yield return new WaitForSeconds(2f);
+
+        SceneManager.LoadScene("Credits");
+    }
 
 }
