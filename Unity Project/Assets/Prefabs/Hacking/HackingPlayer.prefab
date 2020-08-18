@@ -124,9 +124,10 @@ MonoBehaviour:
     type: 3}
   mainBarrel: {fileID: 7760883125871837548}
   damagePopup: {fileID: 0}
-  maxHP: 5
+  maxHP: 3
   movementSpeed: 5
   damageCooldown: 1
+  destroyTimer: 2
   shield: {fileID: 3340609874956565157}
   explosion: {fileID: 156742, guid: 320fa7a07c5532145ab6bc43005b4d2e, type: 3}
   turnSpeed: 5
