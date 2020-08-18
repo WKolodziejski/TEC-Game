@@ -31,33 +31,33 @@ public class AudioController : MonoBehaviour
 
             actual = audios.IndexOf(audioSource);
 
-            StartCoroutine(Utils.FadeIn(audios[actual]));
+            StartCoroutine(Utils.FadeInAudio(audios[actual]));
         }
         else
         {
-            StartCoroutine(Utils.FadeOut(audios[actual]));
+            StartCoroutine(Utils.FadeOutAudio(audios[actual]));
 
             actual = audios.IndexOf(audioSource);
 
-            StartCoroutine(Utils.FadeIn(audios[actual]));
+            StartCoroutine(Utils.FadeInAudio(audios[actual]));
         }
     }
 
     public void EnterHack()
     {
-        StartCoroutine(Utils.FadeIn(hack));
-        StartCoroutine(Utils.FadeOut(audios[actual]));
+        StartCoroutine(Utils.FadeInAudio(hack));
+        StartCoroutine(Utils.FadeOutAudio(audios[actual]));
     }
 
     public void ReturnHack()
     {
-        StartCoroutine(Utils.FadeIn(audios[actual]));
-        StartCoroutine(Utils.FadeOut(hack));
+        StartCoroutine(Utils.FadeInAudio(audios[actual]));
+        StartCoroutine(Utils.FadeOutAudio(hack));
     }
 
     public void FadeOut()
     {
-        StartCoroutine(Utils.FadeOut(audios[actual]));
+        StartCoroutine(Utils.FadeOutAudio(audios[actual]));
     }
 
 }

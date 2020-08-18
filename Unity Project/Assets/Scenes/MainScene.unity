@@ -311,6 +311,9 @@ GameObject:
   - component: {fileID: 252929994}
   - component: {fileID: 252929995}
   - component: {fileID: 252929996}
+  - component: {fileID: 252930000}
+  - component: {fileID: 252929999}
+  - component: {fileID: 252929997}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -367,6 +370,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976cf5ced6c79f84899648f8a8bcf382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!164 &252929997
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252929993}
+  m_Enabled: 0
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -476
+  m_DecayTime: 4.32
+  m_DecayHFRatio: 0.59
+  m_ReflectionsLevel: -789
+  m_ReverbLevel: -289
+  m_ReverbDelay: 0.03
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 7
+--- !u!169 &252929999
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252929993}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!81 &252930000
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252929993}
+  m_Enabled: 1
 --- !u!1 &273453894
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +485,6 @@ GameObject:
   - component: {fileID: 310355584}
   - component: {fileID: 310355585}
   - component: {fileID: 310355586}
-  - component: {fileID: 310355587}
   m_Layer: 0
   m_Name: Hack Transition
   m_TagString: Untagged
@@ -480,14 +538,6 @@ MonoBehaviour:
   cam: {fileID: 648519178}
   transitionEnter: {fileID: 2063150731}
   transitionReturn: {fileID: 2051420331}
---- !u!81 &310355587
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310355583}
-  m_Enabled: 1
 --- !u!1 &352811468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1752,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2404241439499199934, guid: 7701dfc9a2815f8418c7002a087976f6,
         type: 2}
+    - target: {fileID: 7026359159690686840, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: lowPass
+      value: 
+      objectReference: {fileID: 252929999}
+    - target: {fileID: 7026359159690686840, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: reverb
+      value: 
+      objectReference: {fileID: 252929997}
     - target: {fileID: 7026359159779050114, guid: dbb0410994eb8194eb796f94e8285bbc,
         type: 3}
       propertyPath: m_LocalPosition.x

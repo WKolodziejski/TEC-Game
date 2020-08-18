@@ -9,7 +9,7 @@ public static class Utils
 		return GeometryUtility.TestPlanesAABB(planes, renderer.bounds);
 	}
 
-    public static IEnumerator FadeOut(AudioSource a)
+    public static IEnumerator FadeOutAudio(AudioSource a)
     {
         a.volume = 1;
 
@@ -23,7 +23,7 @@ public static class Utils
         a.mute = true;
     }
 
-    public static IEnumerator FadeIn(AudioSource a)
+    public static IEnumerator FadeInAudio(AudioSource a)
     {
         a.mute = false;
         a.volume = 0;
@@ -33,6 +33,30 @@ public static class Utils
             a.volume += 0.1f;
 
             yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    public static IEnumerator FadeOutLowPass(AudioLowPassFilter f)
+    {
+        //f.cutoffFrequency = 1000f;
+
+        while (f.cutoffFrequency < 22000f)
+        {
+            f.cutoffFrequency += 350f;
+
+            yield return new WaitForSecondsRealtime(0.001f);
+        }
+    }
+
+    public static IEnumerator FadeInLowPass(AudioLowPassFilter f)
+    {
+        //f.cutoffFrequency = 22000f;
+
+        while (f.cutoffFrequency >= 1000f)
+        {
+            f.cutoffFrequency -= 350f;
+
+            yield return new WaitForSecondsRealtime(0.001f);
         }
     }
 
