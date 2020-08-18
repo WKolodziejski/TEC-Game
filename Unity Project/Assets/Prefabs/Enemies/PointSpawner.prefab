@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0325f2ac7c6475428f8a6dbeb35cb5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 2778196925352573742, guid: 3049dcdabcff02543a0db1fa06674975, type: 3}
+  soldier: {fileID: 2778196925352573742, guid: 3049dcdabcff02543a0db1fa06674975, type: 3}
+  thrower: {fileID: 1876270329, guid: 47355c54329b6ff488fc454562079fef, type: 3}
   spawnCooldown: 3
   enemyLimit: 3
 --- !u!61 &1458778906349498157
