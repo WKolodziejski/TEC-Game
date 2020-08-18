@@ -14,7 +14,7 @@ public static class Utils
     {
         a.volume = 1;
 
-        while (a.volume >= 0)
+        while (a.volume > 0)
         {
             a.volume -= 0.1f;
 
@@ -29,7 +29,7 @@ public static class Utils
         a.mute = false;
         a.volume = 0;
 
-        while (a.volume <= 1.0f)
+        while (a.volume < 1.0f)
         {
             a.volume += 0.1f;
 
@@ -39,8 +39,6 @@ public static class Utils
 
     public static IEnumerator FadeOutLowPass(AudioLowPassFilter f)
     {
-        //f.cutoffFrequency = 1000f;
-
         while (f.cutoffFrequency < 22000f)
         {
             f.cutoffFrequency += 350f;
@@ -51,9 +49,7 @@ public static class Utils
 
     public static IEnumerator FadeInLowPass(AudioLowPassFilter f)
     {
-        //f.cutoffFrequency = 22000f;
-
-        while (f.cutoffFrequency >= 1000f)
+        while (f.cutoffFrequency > 1000f)
         {
             f.cutoffFrequency -= 350f;
 

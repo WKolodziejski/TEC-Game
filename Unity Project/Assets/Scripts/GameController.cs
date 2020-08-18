@@ -224,7 +224,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator IAnim()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.5f);
 
         while (damage.weight > 0)
         {
