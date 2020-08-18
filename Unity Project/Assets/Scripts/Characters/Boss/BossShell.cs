@@ -52,7 +52,7 @@ public class BossShell : MonoBehaviour
 
         audio2.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
 
         FindObjectOfType<Player2D>().DisableControls();
 
@@ -76,7 +76,7 @@ public class BossShell : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
-        while (o.transform.position.y > 0)
+        while (o.transform.position.y >= 2)
         {
             o.transform.position -= Vector3.up * 0.05f;
             yield return new WaitForSeconds(0.025f);

@@ -30,7 +30,6 @@ public class Rat : Character
             movementSpeed *= -1;
             transform.rotation *= Quaternion.Euler(0f, 180f, 0f);
         }
-
     }
 
 }

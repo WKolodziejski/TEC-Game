@@ -9,6 +9,8 @@ public class Boss : Enemy2D
     public GameObject explosion2;
     public GameObject explosion3;
 
+    private bool isAnimating;
+
     protected override void InitializeComponents()
     {
         SetEnabled(true);
@@ -24,20 +26,33 @@ public class Boss : Enemy2D
         StartCoroutine(ICollider());
     }
     
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (!isAnimating)
+            rb.position += Vector2.right * movementSpeed * Time.fixedDeltaTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Wall"))
+            movementSpeed *= -1;
     }
 
     private IEnumerator ICollider()
     {
+        isAnimating = true;
+
         foreach (Collider2D c in GetComponents<Collider2D>())
             c.enabled = false;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(15f);
 
         foreach (Collider2D c in GetComponents<Collider2D>())
             c.enabled = true;
+
+        yield return new WaitForSeconds(1f);
+
+        isAnimating = false;
     }
 
     protected override void OnDie()
@@ -49,6 +64,10 @@ public class Boss : Enemy2D
 
     private IEnumerator IDie()
     {
+        rb.AddForce(Vector2.right * movementSpeed * 0.5f, ForceMode2D.Impulse);
+        rb.gravityScale = 0.05f;
+        transform.Rotate(Vector3.forward, -movementSpeed);
+
         explosion1.SetActive(true);
 
         yield return new WaitForSeconds(1.25f);
@@ -61,7 +80,6 @@ public class Boss : Enemy2D
 
         rb.gravityScale = 1f;
         rb.constraints -= RigidbodyConstraints2D.FreezeRotation;
-        transform.Rotate(Vector3.forward, 10f);
     }
 
 }
