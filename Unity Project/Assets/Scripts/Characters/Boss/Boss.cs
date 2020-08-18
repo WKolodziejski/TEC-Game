@@ -18,14 +18,20 @@ public class Boss : Enemy2D
 
     public override void Attack()
     {
-        throw new System.NotImplementedException();
+        StartCoroutine(IAttack());
     }
 
     void Start()
     {
         StartCoroutine(ICollider());
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            Attack();
+    }
+
     void FixedUpdate()
     {
         if (!isAnimating)
@@ -36,23 +42,6 @@ public class Boss : Enemy2D
     {
         if (collision.collider.CompareTag("Wall"))
             movementSpeed *= -1;
-    }
-
-    private IEnumerator ICollider()
-    {
-        isAnimating = true;
-
-        foreach (Collider2D c in GetComponents<Collider2D>())
-            c.enabled = false;
-
-        yield return new WaitForSeconds(15f);
-
-        foreach (Collider2D c in GetComponents<Collider2D>())
-            c.enabled = true;
-
-        yield return new WaitForSeconds(1f);
-
-        isAnimating = false;
     }
 
     protected override void OnDie()
@@ -80,6 +69,32 @@ public class Boss : Enemy2D
 
         rb.gravityScale = 1f;
         rb.constraints -= RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    private IEnumerator ICollider()
+    {
+        isAnimating = true;
+
+        foreach (Collider2D c in GetComponents<Collider2D>())
+            c.enabled = false;
+
+        yield return new WaitForSeconds(15f);
+
+        foreach (Collider2D c in GetComponents<Collider2D>())
+            c.enabled = true;
+
+        yield return new WaitForSeconds(1f);
+
+        isAnimating = false;
+    }
+
+    private IEnumerator IAttack()
+    {
+        animator.SetTrigger("attack");
+
+        yield return new WaitForSeconds(1.5f);
+
+        weapon.Fire(mainBarrel);
     }
 
 }
