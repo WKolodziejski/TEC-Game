@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 2
+  damage: 5
   hit: {fileID: 199020, guid: 69eef08ba093e7043a884389294c691e, type: 3}
   muzzle: {fileID: 149706, guid: f22508243116fff4a82bf8ce58e9eb4f, type: 3}
 --- !u!58 &6202214438267253784
