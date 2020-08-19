@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2555387703737664015}
   m_Layer: 10
   m_Name: Rat
-  m_TagString: Rat
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   maxHP: 1
   movementSpeed: 5
   damageCooldown: 0
+  destroyTimer: 2
 --- !u!1 &2555387703973135304
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdeda824d2b56f0458de40159eaa5be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 10
   damage: 1
   hit: {fileID: 7347725156897785008, guid: bf488e5397fd8f6488fbba0565ec466b, type: 3}
   muzzle: {fileID: 4773203370814425042, guid: e6ed154cba4aa91419234bf3fcce4309, type: 3}

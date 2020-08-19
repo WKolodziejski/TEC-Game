@@ -14,6 +14,7 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
 
     public PolygonCollider2D polygonCollider2D;
     public BoxCollider2D boxCollider2D;
+    public GameObject slash;
 
     private float nextMove;
     private float moveCheck;
@@ -64,6 +65,9 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
                 animator.SetBool("Running", false);
                 animator.SetTrigger("punch");
                 this.nextMove = moveCooldown; //UpdateNextMove();
+
+                if (slash != null)
+                    Destroy(Instantiate(slash, transform), 2f);
             }
         }
         else 

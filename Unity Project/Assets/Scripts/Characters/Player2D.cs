@@ -38,6 +38,8 @@ public class Player2D : Character
     public AudioSource audioSpawn;
     public AudioSource audioDie;
 
+    public GameObject heal;
+
     protected override void InitializeComponents()
     {
         //assistant = GameObject.FindObjectOfType<AIAssistant>();
@@ -200,7 +202,7 @@ public class Player2D : Character
     {
         base.OnDamage(damage);
 
-        FindObjectOfType<HackInterface>().CancelHacking();
+        FindObjectOfType<HackInterface>()?.CancelHacking();
         hacking = false;
 
         if (hp >= 2)
@@ -242,6 +244,9 @@ public class Player2D : Character
 
         if (damagePopup != null)
             Instantiate(damagePopup, transform.position, Quaternion.identity).Hit(hp - ohp);
+
+        if (heal != null)
+            Destroy(Instantiate(heal, transform), 2f);
     }
 
     //private AIAssistant assistant;

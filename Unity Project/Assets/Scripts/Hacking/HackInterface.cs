@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using static HackSceneReference;
 
 public class HackInterface : MonoBehaviour
 {
@@ -32,7 +31,7 @@ public class HackInterface : MonoBehaviour
 
     void Update()
     {
-        if (GameController.isPaused)
+        if (GameController.isPaused || !GameController.canPause)
             return;
 
         if (Input.GetButtonDown("Fire2") && !held)

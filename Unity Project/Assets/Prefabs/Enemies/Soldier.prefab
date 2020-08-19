@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 2778196925352573742}
   - component: {fileID: 8446085995739713090}
   m_Layer: 10
-  m_Name: Runner
+  m_Name: Soldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -440,6 +440,7 @@ MonoBehaviour:
   maxHP: 1
   movementSpeed: 5
   damageCooldown: 0
+  destroyTimer: 2
   targetDistance: 20
   moveCooldown: 0.5
   followRange: 5
@@ -447,6 +448,7 @@ MonoBehaviour:
   punchDamage: 1
   polygonCollider2D: {fileID: 7247168589398661086}
   boxCollider2D: {fileID: 8446085995739713090}
+  slash: {fileID: 129780, guid: 15f4c8fe95882b8458fde34e3f0cfc55, type: 3}
 --- !u!61 &8446085995739713090
 BoxCollider2D:
   m_ObjectHideFlags: 0
