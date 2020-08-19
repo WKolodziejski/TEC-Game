@@ -11,7 +11,7 @@ public abstract class Character : MonoBehaviour
 
     public float maxHP = 3f;
     public float movementSpeed = 5f;
-    public float damageCooldown = 0f;
+    public float damageCooldown = 0.1f;
     public float destroyTimer = 2f;
 
     protected Weapon weapon;

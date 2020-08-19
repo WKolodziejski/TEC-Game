@@ -100,6 +100,7 @@ MonoBehaviour:
   maxHP: 10
   movementSpeed: 5
   damageCooldown: 0
+  destroyTimer: 2
   targetDistance: 20
   missile: {fileID: 5093600384966417676}
   throwDistance: 15
@@ -202,7 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tail: {fileID: 5093600386269610527}
-  explosion: {fileID: 120324, guid: 98630b7b52c76a24db7b7d5b415342ca, type: 3}
+  explosion: {fileID: 1128815539559092971, guid: 3bc7ee9f2fa9ad34daaaa29c004c015a,
+    type: 3}
   speed: 500
 --- !u!50 &5093600384966417679
 Rigidbody2D:
