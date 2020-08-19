@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
 
     private Renderer rd;
     private Vector3 lastPosition;
-    private float lastCooldown;
+    protected float lastCooldown;
     private float relativeSpeed;
 
     void Awake()
@@ -30,7 +30,7 @@ public class Weapon : MonoBehaviour
         lastPosition = transform.parent.position;
     }
 
-    public void Fire(Transform barrel)
+    public virtual void Fire(Transform barrel)
     {
         if (GameController.isPaused)
             return;
@@ -38,10 +38,15 @@ public class Weapon : MonoBehaviour
         if (CanFire())
         {
             lastCooldown = Time.time + fireRate;
-            Bullet b = Instantiate(bullet, barrel.position, barrel.rotation);
-            b.tag += tag;
-            b.Fire(relativeSpeed);
+            FireBullet(barrel);
         }
+    }
+
+    protected void FireBullet(Transform barrel)
+    {
+        Bullet b = Instantiate(bullet, barrel.position, barrel.rotation);
+        b.tag += tag;
+        b.Fire(relativeSpeed);
     }
 
     public bool CanFire()
