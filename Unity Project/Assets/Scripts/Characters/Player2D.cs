@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player2D : Character
 {
 
@@ -37,10 +38,16 @@ public class Player2D : Character
     public AudioSource audioCritical;
     public AudioSource audioSpawn;
     public AudioSource audioDie;
+ 
+    private Joystick joystick;
+    private TouchHandler touchButtons;
+
 
     protected override void InitializeComponents()
     {
         //assistant = GameObject.FindObjectOfType<AIAssistant>();
+        joystick = GameObject.Find("TouchStick").GetComponent<VariableJoystick>();
+        touchButtons = GameObject.Find("Touch").GetComponent<TouchHandler>();
         SetEnabled(true);
         audioSpawn.Play();
     }
@@ -54,20 +61,20 @@ public class Player2D : Character
         {
             lying = false;
 
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire2") || touchButtons.hack)
                 hacking = true;
 
-            if (Input.GetButtonUp("Fire2"))
+            if (Input.GetButtonUp("Fire2")|| !touchButtons.hack)
                 hacking = false;
 
             if (!hacking)
             {
-                horizontal = Input.GetAxis("Horizontal");
-                vertical = Input.GetAxis("Vertical");
+                horizontal = Input.GetAxis("Horizontal") + joystick.Horizontal;
+                vertical = Input.GetAxis("Vertical") + joystick.Vertical;
 
-                if (Input.GetButtonDown("Jump"))
+                if (Input.GetButtonDown("Jump") || touchButtons.jump)
                 {
-                    if (Input.GetAxis("Vertical") < 0)
+                    if (vertical < 0)
                     {
                         if (platform)
                             StartCoroutine(Fall());
@@ -78,7 +85,7 @@ public class Player2D : Character
                     }
                 }
 
-                if (Input.GetButton("Fire3"))
+                if (Input.GetButton("Fire3") || touchButtons.fire)
                 {
                     weapon.Fire(mainBarrel);
                 }
@@ -243,6 +250,8 @@ public class Player2D : Character
         if (damagePopup != null)
             Instantiate(damagePopup, transform.position, Quaternion.identity).Hit(hp - ohp);
     }
+
+ 
 
     //private AIAssistant assistant;
 
