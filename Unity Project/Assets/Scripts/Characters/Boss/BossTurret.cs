@@ -67,18 +67,36 @@ public class BossTurret : Enemy2D
 
     private void SetAngle(float ang)
     {
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
         float min = startAngle - MAX_TURN;
         float max = startAngle + MAX_TURN;
+        
+        (min, max) = ClampAngle(min, max);
 
-        if (rotation.eulerAngles.z > max || rotation.eulerAngles.z < min)
+        Quaternion rotation = Quaternion.AngleAxis(ang, Vector3.forward);
+
+        if (startAngle - MAX_TURN < 0) 
+        {
+            if (rotation.eulerAngles.z > max && rotation.eulerAngles.z < min)
+            {
+                rotation = Quaternion.AngleAxis(startAngle, Vector3.forward);
+                shoot = false;
+            }
+        } 
+        else if (rotation.eulerAngles.z > max || rotation.eulerAngles.z < min)
         {
             rotation = Quaternion.AngleAxis(startAngle, Vector3.forward);
             shoot = false;
         }
 
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 * Time.deltaTime);
+    }
+
+    private (float, float) ClampAngle(float min, float max)
+    {
+        if (min < 0) min += 360;
+        if (max > 360) max += 360;
+
+        return (min, max);
     }
 
     public void Shoot() 
