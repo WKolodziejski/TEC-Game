@@ -9,17 +9,17 @@ public class Drone : Character
     public GameObject explosion;
     public Drop drop;
 
-    private Vector3 posOffset = new Vector3();
-    private Vector3 tempPos = new Vector3();
+    private Vector3 startPos;
+    private Vector3 tempPos;
 
     protected override void InitializeComponents()
     {
-        posOffset = transform.position;
+        startPos = transform.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        tempPos = posOffset;
+        tempPos = startPos;
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI) * 0.5f;
 
         transform.position = tempPos;
