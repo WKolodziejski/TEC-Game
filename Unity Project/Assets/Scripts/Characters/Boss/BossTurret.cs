@@ -9,6 +9,11 @@ public class BossTurret : Turret
     private float startAngle;
     private bool shoot;
 
+    protected override void InitializeComponents()
+    {
+        SetEnabled(true);
+    }
+
     void Start()
     {
         startAngle = transform.eulerAngles.z;
@@ -16,8 +21,15 @@ public class BossTurret : Turret
         
     private float GetAngle()
     {
-        Vector2 direction = target.transform.position - mainBarrel.position;
-        return Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if (GetTarget() != null)
+        {
+            Vector2 direction = GetTarget().transform.position - mainBarrel.position;
+            return Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        }
+        else
+        {
+            return startAngle;
+        }
     }
 
     public override void Attack()
