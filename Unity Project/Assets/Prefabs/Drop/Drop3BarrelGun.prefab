@@ -93,7 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f76ae6ccbcf3ca44bcf30e5ad81e6af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 172870, guid: 8bf3c7f1e15f18444a1d114bb968116a, type: 3}
   weapon: {fileID: 1399277992296826166, guid: 8c781b0742cd536429cfd78978af6054, type: 3}
+  ttl: 10
 --- !u!1001 &6524980602180246724
 PrefabInstance:
   m_ObjectHideFlags: 0

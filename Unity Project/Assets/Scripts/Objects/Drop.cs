@@ -5,7 +5,14 @@ using UnityEngine;
 public class Drop : MonoBehaviour
 {
 
+    public GameObject explosion;
     public Weapon weapon;
+    public float ttl = 10f;
+
+    void Start()
+    {
+        Destroy(gameObject, ttl);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,6 +21,11 @@ public class Drop : MonoBehaviour
             FindObjectOfType<Player2D>().SetWeapon(weapon);
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(explosion, transform.position, Quaternion.identity);
     }
 
 }
