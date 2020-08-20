@@ -2,77 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossTurret : Enemy2D
+public class BossTurret : Turret
 {
+
     private const int MAX_TURN = 60;
-    public Bullet bullet;
-    //private Character target;
     private float startAngle;
-    private float angle;
-    private float fireRate = 0.5f;
-    private float lastCd = 2;
     private bool shoot;
-    private BossFirstLayer bossFirstLayer;
 
-    //public int hp = 3;
-
-    private Transform firePoint;
-    // Start is called before the first frame update
     void Start()
     {
-        bossFirstLayer = this.transform.parent.GetComponentInParent<BossFirstLayer>();
-        bossFirstLayer.turrets.Add(this);
-        bossFirstLayer.numTurrets += 1;
-        fireRate = bossFirstLayer.turretsFireRate;
-
         startAngle = transform.eulerAngles.z;
-
-        GetTarget();
-
-        firePoint = transform.Find("FirePoint");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        shoot = true;
         
-        if (GetTarget() != null)
-            angle = GetAngle();
-
-        SetAngle(angle);
-        
-        Shoot();
-    }
-
-    public override void Attack() //TODO: isso aqui nem tá sendo usado
-    {
-        //weapon.Fire(firePoint);
-    }
-
-    /*private void GetTarget()
-    {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Player2D>();
-    }*/
-    
     private float GetAngle()
     {
-        float ang;
-        
-        Vector2 direction = target.transform.position - firePoint.position;
-        ang = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        return ang;
+        Vector2 direction = target.transform.position - mainBarrel.position;
+        return Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
     }
 
-    private void SetAngle(float ang)
+    public override void Attack()
+    {
+        if (shoot)
+            base.Attack();
+    }
+
+    protected override void Aim()
     {
         float min = startAngle - MAX_TURN;
         float max = startAngle + MAX_TURN;
         
         (min, max) = ClampAngle(min, max);
 
-        Quaternion rotation = Quaternion.AngleAxis(ang, Vector3.forward);
+        Quaternion rotation = Quaternion.AngleAxis(GetAngle(), Vector3.forward);
+
+        shoot = true;
 
         if (startAngle - MAX_TURN < 0) 
         {
@@ -99,38 +62,9 @@ public class BossTurret : Enemy2D
         return (min, max);
     }
 
-    public void Shoot() 
+    public void IncreaseFireRate(float fr)
     {
-        if (!shoot) return;
-
-        if (lastCd > Time.time) return;
-        
-        lastCd = Time.time + (1f / fireRate);
-
-        Bullet b = Instantiate(bullet, firePoint.position, firePoint.rotation);
-        b.Fire(0);
+        weapon.fireRate -= fr;
     }
 
-    public void SetFireRate(float fr)
-    {
-        fireRate = fr;
-    }
-
-    /*public void TakeDamage(int dmg)
-    {
-        Debug.Log("HP: " + hp);
-        
-        hp -= dmg;
-
-        Debug.Log("DAMAGE: " + dmg);
-        Debug.Log("HP: " + hp);
-        
-        if (hp == 0) Destroy(this);
-    }*/
-
-    public void OnDestroy()
-    {
-        bossFirstLayer.turrets.Remove(this);
-        bossFirstLayer.UpdateFireRates();
-    }
 }

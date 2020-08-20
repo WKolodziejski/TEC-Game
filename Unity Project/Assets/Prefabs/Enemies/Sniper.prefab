@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76a1bfee3845f84c9ae7d21edb89eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 0
+  difficulty: 1
 --- !u!114 &2641348538530134298
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6704107646996608475}
   m_Layer: 10
-  m_Name: Barrel 1
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525663914751821850}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.85, y: 0.15, z: 0}
+  m_LocalPosition: {x: 0.85, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1967621793834575390}
@@ -63,7 +63,6 @@ Transform:
   m_Children:
   - {fileID: 2069533138527236761}
   - {fileID: 6704107646996608475}
-  - {fileID: 1839572102378492186}
   - {fileID: 9189697758301124001}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,13 +81,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 6927569103293174824, guid: 8b4fbfeeab1d30547b8925ddf18f7b4c,
     type: 3}
-  mainBarrel: {fileID: 0}
+  mainBarrel: {fileID: 6704107646996608475}
   damagePopup: {fileID: 0}
-  hp: 3
+  maxHP: 3
   movementSpeed: 5
   damageCooldown: 0
-  barrel1: {fileID: 6704107646996608475}
-  barrel2: {fileID: 1839572102378492186}
+  destroyTimer: 2
+  targetDistance: 25
   explosion: {fileID: 6860818627895048727}
 --- !u!114 &6104242370222446634
 MonoBehaviour:
@@ -102,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76a1bfee3845f84c9ae7d21edb89eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 0
+  difficulty: 1
 --- !u!58 &2698416285493217102
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -140,36 +139,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!1 &3341145651767836806
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1839572102378492186}
-  m_Layer: 10
-  m_Name: Barrel 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1839572102378492186
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3341145651767836806}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.85, y: -0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1967621793834575390}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!1 &6860818627895048727
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +169,7 @@ Transform:
   - {fileID: 8251267754878948969}
   - {fileID: 3797546151776451683}
   m_Father: {fileID: 1967621793834575390}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7716303194672767634
 GameObject:

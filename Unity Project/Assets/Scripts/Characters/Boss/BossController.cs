@@ -1,6 +1,7 @@
 ﻿using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,7 +19,10 @@ public class BossController : MonoBehaviour
     public GameObject audio2;
     public CinemachineVirtualCamera cam;
     public Image fadeOut;
+    public GameObject terminal;
+    public float frIncrease = 0.2f;
 
+    private List<BossTurret> enemies;
     private AudioSource audioSource;
     private Boss boss;
     private bool hacked;
@@ -35,6 +39,27 @@ public class BossController : MonoBehaviour
                 Open();
             }
         });
+
+        enemies = FindObjectsOfType<BossTurret>().ToList();
+
+        int enemiesCount = enemies.Count;
+
+        enemies.ForEach(e =>
+        {
+            e.SetOnDieListener(() =>
+            {
+                enemies.Remove(e);
+
+                if (enemies.Count == 0)
+                {
+                    StartCoroutine(ITerminal());
+                }
+                else
+                {
+                    enemies.ForEach(t => t.IncreaseFireRate(frIncrease * (enemiesCount - enemies.Count)));
+                }
+            });
+        });
     }
 
     void Update()
@@ -44,6 +69,9 @@ public class BossController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I))
             StartCoroutine(Utils.FadeOutAudio(audioSource));
+
+        if (Input.GetKeyDown(KeyCode.U))
+            StartCoroutine(ITerminal());
     }
 
     public void Open()
@@ -121,6 +149,17 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         SceneManager.LoadScene("Credits");
+    }
+
+    private IEnumerator ITerminal()
+    {
+        terminal.SetActive(true);
+
+        while (terminal.transform.localPosition.y > 6.575f)
+        {
+            terminal.transform.position += Vector3.up * 0.05f;
+            yield return new WaitForSeconds(0.025f);
+        }
     }
 
 }

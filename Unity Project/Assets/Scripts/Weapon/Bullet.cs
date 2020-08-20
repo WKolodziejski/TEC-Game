@@ -41,22 +41,8 @@ public class Bullet : MonoBehaviour
 
     public void Fire(float relativeSpeed)
     {
-        //Tive que usar coroutine pq o rb é null quando chama essa função ?????
-        //StartCoroutine(IFire(relativeSpeed));
         rb.velocity = transform.forward * (speed + Math.Abs(relativeSpeed));
     }
-
-    /*private IEnumerator IFire(float relativeSpeed)
-    {
-        while (rb == null)
-        {
-            Debug.Log(name + " is null");
-            yield return null;
-        }
-            
-
-        rb.velocity = transform.forward * (speed + Math.Abs(relativeSpeed));
-    }*/
 
     void OnTriggerEnter2D(Collider2D collision)
     {
