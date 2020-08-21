@@ -47,8 +47,6 @@ public class HackInterface : MonoBehaviour
             }
             else
             {
-                player.LookAt(target.transform.position);
-
                 if (target.IsHacked())
                 {
                     target.ExecuteAction();
@@ -64,6 +62,9 @@ public class HackInterface : MonoBehaviour
         if (Input.GetButton("Fire2") && !held && target != null)
         {
             countTime += Time.deltaTime;
+
+            if (player != null)
+                player.LookAt(target.transform.position);
 
             held = SetProgress(countTime, startTime);
         }
