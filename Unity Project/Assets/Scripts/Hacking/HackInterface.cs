@@ -47,6 +47,8 @@ public class HackInterface : MonoBehaviour
             }
             else
             {
+                player.LookAt(target.transform.position);
+
                 if (target.IsHacked())
                 {
                     target.ExecuteAction();

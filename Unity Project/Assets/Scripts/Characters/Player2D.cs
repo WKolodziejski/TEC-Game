@@ -249,6 +249,11 @@ public class Player2D : Character
             Destroy(Instantiate(heal, transform), 2f);
     }
 
+    public void LookAt(Vector3 position)
+    {
+        scale.y = position.x > transform.position.x ? 0 : 180;
+    }
+
     //private AIAssistant assistant;
 
     /*public override void SetEnabled(bool enabled)
