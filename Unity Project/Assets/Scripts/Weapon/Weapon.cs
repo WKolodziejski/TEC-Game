@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
     private Renderer rd;
     private Vector3 lastPosition;
     protected float lastCooldown;
-    private float relativeSpeed;
+    private float relativeSpeedX;
 
     void Awake()
     {
@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
 
     void FixedUpdate()
     {
-        relativeSpeed = (transform.parent.position.x - lastPosition.x) / Time.deltaTime;
+        relativeSpeedX = (transform.parent.position.x - lastPosition.x) / Time.deltaTime;
         lastPosition = transform.parent.position;
     }
 
@@ -46,7 +46,7 @@ public class Weapon : MonoBehaviour
     {
         Bullet b = Instantiate(bullet, barrel.position, barrel.rotation);
         b.tag += tag;
-        b.Fire(relativeSpeed);
+        b.Fire(relativeSpeedX);
     }
 
     public bool CanFire()

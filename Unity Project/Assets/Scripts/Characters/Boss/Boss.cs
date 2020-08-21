@@ -9,6 +9,7 @@ public class Boss : Enemy2D
     public GameObject explosion2;
     public GameObject explosion3;
     public GameObject fire;
+    public GameObject sparkle;
 
     private bool isAnimating;
 
@@ -55,6 +56,7 @@ public class Boss : Enemy2D
     private IEnumerator IDie()
     {
         fire.SetActive(true);
+        sparkle.SetActive(false);
 
         rb.AddForce(Vector2.right * movementSpeed * 0.5f, ForceMode2D.Impulse);
         rb.gravityScale = 0.05f;

@@ -39,9 +39,9 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void Fire(float relativeSpeed)
+    public void Fire(float relativeSpeedX)
     {
-        rb.velocity = transform.forward * (speed + Math.Abs(relativeSpeed));
+        rb.velocity = transform.forward * (speed + Math.Abs(relativeSpeedX));
     }
 
     void OnTriggerEnter2D(Collider2D collision)

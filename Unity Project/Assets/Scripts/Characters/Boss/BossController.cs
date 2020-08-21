@@ -118,6 +118,8 @@ public class BossController : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
+        terminal.SetActive(false);
+
         while (boss.transform.position.y >= 2)
         {
             boss.transform.position -= Vector3.up * 0.05f;
