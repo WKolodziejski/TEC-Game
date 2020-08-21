@@ -37,7 +37,7 @@ public static class Utils
         }
     }
 
-    public static IEnumerator FadeOutLowPass(AudioLowPassFilter f)
+    /*public static IEnumerator FadeOutLowPass(AudioLowPassFilter f)
     {
         while (f.cutoffFrequency < 22000f)
         {
@@ -55,7 +55,7 @@ public static class Utils
 
             yield return new WaitForSecondsRealtime(0.001f);
         }
-    }
+    }*/
 
     public static IEnumerator FadeOutText(Text text)
     {

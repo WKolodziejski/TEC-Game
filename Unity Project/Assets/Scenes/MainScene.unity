@@ -400,7 +400,7 @@ AudioLowPassFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252929993}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_LowpassResonanceQ: 1
   lowpassLevelCustomCurve:
@@ -408,7 +408,7 @@ AudioLowPassFilter:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.045020465
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1621,6 +1621,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 252929994}
     m_Modifications:
+    - target: {fileID: 192939201743481106, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 192939201743481106, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 192939201743481106, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1101615496275228356, guid: dbb0410994eb8194eb796f94e8285bbc,
         type: 3}
       propertyPath: m_SortingOrder
@@ -1735,6 +1750,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Interface
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719987409361442528, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719987409361442528, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6719987409361442528, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026359159208655638, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026359159208655638, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: BypassListenerEffects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7026359159208655638, guid: dbb0410994eb8194eb796f94e8285bbc,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7026359159275172228, guid: dbb0410994eb8194eb796f94e8285bbc,
         type: 3}

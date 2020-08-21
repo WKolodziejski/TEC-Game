@@ -7,10 +7,12 @@ public class GameMenuButtons : MonoBehaviour
 {
 
     public AudioReverbFilter reverb;
+    public AudioLowPassFilter lowPass;
 
     public void Pause()
     {
         reverb.enabled = true;
+        lowPass.enabled = true;
 
         Time.timeScale = 0f;
         Time.fixedDeltaTime = 0f;
@@ -21,6 +23,7 @@ public class GameMenuButtons : MonoBehaviour
     public void Resume()
     {
         reverb.enabled = false;
+        lowPass.enabled = false;
 
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;

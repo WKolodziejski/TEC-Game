@@ -18,7 +18,6 @@ public class GameController : MonoBehaviour
     public static bool isPaused;
     public static bool canPause;
 
-    private AudioLowPassFilter lowPass;
     private GameMenuButtons menu;
     private Lifebar lifebar;
     private Vector3 checkpoint;
@@ -30,7 +29,6 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        lowPass = GetComponent<AudioLowPassFilter>();
         lifebar = FindObjectOfType<Lifebar>();
         range = FindObjectOfType<CameraRange>();
         menu = FindObjectOfType<GameMenuButtons>();
@@ -48,15 +46,11 @@ public class GameController : MonoBehaviour
                 if (isPaused)
                 {
                     menu.Resume();
-                    StopCoroutine(Utils.FadeInLowPass(lowPass));
-                    StartCoroutine(Utils.FadeOutLowPass(lowPass));
                 }
                 else
                 {
                     menu.gameObject.SetActive(true);
                     menu.Pause();
-                    StopCoroutine(Utils.FadeOutLowPass(lowPass));
-                    StartCoroutine(Utils.FadeInLowPass(lowPass));
                 }
             }
         }
