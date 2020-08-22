@@ -21,6 +21,7 @@ public class BossController : MonoBehaviour
     public Image fadeOut;
     public GameObject terminal;
     public float frIncrease = 0.2f;
+    public float anIncrease = 5f;
 
     private List<BossTurret> enemies;
     private AudioSource audioSource;
@@ -57,7 +58,7 @@ public class BossController : MonoBehaviour
                 else
                 {
                     //enemies.ForEach(t => t.IncreaseFireRate(frIncrease * (enemiesCount - enemies.Count)));
-                    enemies.ForEach(t => t.IncreaseFireRate(frIncrease));
+                    enemies.ForEach(t => t.Increase(frIncrease, anIncrease));
                 }
             });
         });

@@ -233,7 +233,6 @@ MonoBehaviour:
   explosion3: {fileID: 1577801126552660700}
   fire: {fileID: 4965932946966677240}
   sparkle: {fileID: 2467733492098661440}
-  attack: {fileID: 0}
 --- !u!50 &1283844582180459330
 Rigidbody2D:
   serializedVersion: 4
@@ -387,8 +386,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1513144593
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2424553518018739129, guid: 0c73a02edcca81b48bc8a4ccc173fb66,
     type: 3}
