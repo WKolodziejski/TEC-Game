@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossTurret : Turret
 {
 
-    private const int MAX_TURN = 60;
+    [SerializeField] private int max_turn = 75;
     private float startAngle;
     private bool shoot;
 
@@ -40,16 +40,20 @@ public class BossTurret : Turret
 
     protected override void Aim()
     {
-        float min = startAngle - MAX_TURN;
-        float max = startAngle + MAX_TURN;
+        shoot = true;
+
+        if (max_turn == 0) return;
+
+        float min = startAngle - max_turn;
+        float max = startAngle + max_turn;
         
         (min, max) = ClampAngle(min, max);
 
         Quaternion rotation = Quaternion.AngleAxis(GetAngle(), Vector3.forward);
 
-        shoot = true;
+        
 
-        if (startAngle - MAX_TURN < 0) 
+        if (startAngle - max_turn < 0) 
         {
             if (rotation.eulerAngles.z > max && rotation.eulerAngles.z < min)
             {
@@ -69,7 +73,7 @@ public class BossTurret : Turret
     private (float, float) ClampAngle(float min, float max)
     {
         if (min < 0) min += 360;
-        if (max > 360) max += 360;
+        if (max > 360) max -= 360;
 
         return (min, max);
     }

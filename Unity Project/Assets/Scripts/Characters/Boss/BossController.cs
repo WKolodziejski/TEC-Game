@@ -56,7 +56,8 @@ public class BossController : MonoBehaviour
                 }
                 else
                 {
-                    enemies.ForEach(t => t.IncreaseFireRate(frIncrease * (enemiesCount - enemies.Count)));
+                    //enemies.ForEach(t => t.IncreaseFireRate(frIncrease * (enemiesCount - enemies.Count)));
+                    enemies.ForEach(t => t.IncreaseFireRate(frIncrease));
                 }
             });
         });

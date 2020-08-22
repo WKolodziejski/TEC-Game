@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 2851908391768223218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4449546281967574220}
   - {fileID: 7126431590616841934}
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4ffcc84b49cbc42aa8403496f94077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 8833496160627859498, guid: 089083774a933124dbd5f90372d3aac0,
+  weaponPrefab: {fileID: 6927569103293174824, guid: 531f80d299c55f649bb39e1d984ea0c9,
     type: 3}
   mainBarrel: {fileID: 7126431590616841934}
   damagePopup: {fileID: 0}
@@ -89,6 +89,7 @@ MonoBehaviour:
   destroyTimer: 2
   targetDistance: 25
   explosion: {fileID: 2737333013118469501}
+  max_turn: 75
 --- !u!70 &4143636610928642477
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
