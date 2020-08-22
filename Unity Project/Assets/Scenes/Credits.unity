@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -451,7 +451,7 @@ MonoBehaviour:
     m_LineSpacing: 4
   m_Text: "Thank you for playing\n\n\nCredits\n\nCreated by\n\xC9merson L\xF3pes\nGustavo
     Hubner\nMatheus Isquierdo\nWilliam Kolodziejski\n\nTEC VIII 2020\nUFPEL\n\nSprites
-    from\nContra\nFront Mission\nMegaman\nMetal Slug\nby spriters-resource.com\n\nSoundtrack\r
+    from\nContra\nMegaman\nMetal Slug\nFront Mission\nby spriters-resource.com\n\nSoundtrack\r
     from\nNieR Automata\r\nby downloads.khinsider.com\n\nAll content belongs to the
     creator\rs\nNo copyright infringement intended\n"
 --- !u!222 &930240249

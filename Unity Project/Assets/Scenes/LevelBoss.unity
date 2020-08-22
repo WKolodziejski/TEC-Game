@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -269,8 +269,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -25891117
-  m_SortingLayer: -4
+  m_SortingLayerID: -310163949
+  m_SortingLayer: -1
   m_SortingOrder: 2
   m_Sprite: {fileID: 2091205702816336549, guid: 398934a66d46ac144a542e975a4b72ec,
     type: 3}
@@ -314,7 +314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264940166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1099717799}
@@ -440,8 +440,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -25891117
-  m_SortingLayer: -4
+  m_SortingLayerID: -310163949
+  m_SortingLayer: -1
   m_SortingOrder: 1
   m_Sprite: {fileID: -5270546403577614844, guid: 398934a66d46ac144a542e975a4b72ec,
     type: 3}
@@ -1148,8 +1148,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -25891117
-  m_SortingLayer: -4
+  m_SortingLayerID: -310163949
+  m_SortingLayer: -1
   m_SortingOrder: 2
   m_Sprite: {fileID: 2091205702816336549, guid: 398934a66d46ac144a542e975a4b72ec,
     type: 3}
@@ -1472,8 +1472,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -25891117
-  m_SortingLayer: -4
+  m_SortingLayerID: -310163949
+  m_SortingLayer: -1
   m_SortingOrder: 1
   m_Sprite: {fileID: -5270546403577614844, guid: 398934a66d46ac144a542e975a4b72ec,
     type: 3}
@@ -1530,7 +1530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1296522114
 AudioListener:
   m_ObjectHideFlags: 0
@@ -21098,7 +21098,7 @@ PrefabInstance:
     - target: {fileID: 1134803256459682972, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1134803256459682975, guid: 71a069d4dfb8d5948b2e016df40c8a3e,
         type: 3}
@@ -21735,7 +21735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998536010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1812874774}
@@ -21777,8 +21777,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -25891117
-  m_SortingLayer: -4
+  m_SortingLayerID: -310163949
+  m_SortingLayer: -1
   m_SortingOrder: 3
   m_Sprite: {fileID: -8272719284462999971, guid: 398934a66d46ac144a542e975a4b72ec,
     type: 3}

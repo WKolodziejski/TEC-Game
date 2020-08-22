@@ -117,6 +117,8 @@ public class HackInterface : MonoBehaviour
         {
             target.Hack();
 
+            canvas.enabled = false;
+
             foreach (Bullet b in FindObjectsOfType<Bullet>())
                 Destroy(b);
 
