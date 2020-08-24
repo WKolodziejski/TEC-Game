@@ -10,11 +10,22 @@ public class Boss : Enemy2D
     public GameObject explosion3;
     public GameObject fire;
     public GameObject sparkle;
+    public GameObject laser;
+    public GameObject shield;
 
+    public float laserDamage = 2f;
+
+    private LineRenderer laserLine;
+    private AudioSource laserAudio;
     private bool isAnimating;
+    private bool isAttacking;
+    private int magnitude;
 
     protected override void InitializeComponents()
     {
+        laserLine = laser.GetComponent<LineRenderer>();
+        laserAudio = laser.GetComponent<AudioSource>();
+
         SetEnabled(true);
     }
 
@@ -32,19 +43,30 @@ public class Boss : Enemy2D
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
             Attack();
+
+        if (laser.activeSelf)
+        {
+            Vector3 start = mainBarrel.position;
+            Vector3 end = new Vector3(start.x, start.y - 10, start.z);
+
+            laserLine.SetPosition(0, start);
+            laserLine.SetPosition(1, end);
+
+            laserAudio.pitch = Time.timeScale;
+        }
     }
 
     void FixedUpdate()
     {
-        if (!isAnimating)
-            rb.position += Vector2.right * movementSpeed * Time.fixedDeltaTime;
+        if (!isAnimating && isAttacking)
+            rb.position += Vector2.right * movementSpeed * magnitude * Time.fixedDeltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Wall"))
             movementSpeed *= -1;
-    }
+    }   */
 
     protected override void OnDie()
     {
@@ -53,12 +75,33 @@ public class Boss : Enemy2D
         StartCoroutine(IDie());
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Character c = collision.GetComponent<Character>();
+
+            if (c != null)
+            {
+                if (!c.IsDead())
+                {
+                    c.TakeDamage(laserDamage, false);
+                }
+            }
+        }
+
+        if (collision.CompareTag("Wall"))
+            magnitude *= -1;
+    }
+
     private IEnumerator IDie()
     {
         fire.SetActive(true);
         sparkle.SetActive(false);
+        laser.SetActive(false);
+        shield.SetActive(false);
 
-        rb.AddForce(Vector2.right * movementSpeed * 0.5f, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.right * movementSpeed * 0.5f * magnitude, ForceMode2D.Impulse);
         rb.gravityScale = 0.05f;
         transform.Rotate(Vector3.forward, -movementSpeed);
 
@@ -88,6 +131,8 @@ public class Boss : Enemy2D
         foreach (Collider2D c in GetComponents<Collider2D>())
             c.enabled = true;
 
+        shield.SetActive(true);
+
         yield return new WaitForSeconds(1f);
 
         isAnimating = false;
@@ -95,11 +140,25 @@ public class Boss : Enemy2D
 
     private IEnumerator IAttack()
     {
-        animator.SetTrigger("attack");
+        magnitude = GetTargetMagnitude();
+
+        animator.SetBool("attack", true);
 
         yield return new WaitForSeconds(1.5f);
 
-        weapon.Fire(mainBarrel);
+        isAttacking = true;
+
+        shield.SetActive(false);
+        laser.SetActive(true);
+
+        yield return new WaitForSeconds(9f);
+
+        animator.SetBool("attack", false);
+
+        laser.SetActive(false);
+        shield.SetActive(true);
+
+        isAttacking = false;
     }
 
 }
