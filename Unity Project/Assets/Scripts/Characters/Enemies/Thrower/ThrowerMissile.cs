@@ -27,10 +27,12 @@ public class ThrowerMissile : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, 0, -10 * Time.deltaTime);
     }
 
-    public void Fire()
+    public void Fire(float angle)
     {
         if (!fired)
         {
+            rb.rotation = angle;
+
             col.enabled = true;
             fired = true;
             rb.simulated = true;

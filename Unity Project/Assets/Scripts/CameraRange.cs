@@ -5,18 +5,6 @@ using UnityEngine;
 public class CameraRange : MonoBehaviour
 {
 
-    private BoxCollider2D col;
-
-    void Awake()
-    {
-        col = GetComponent<BoxCollider2D>();
-    }
-
-    public void SetEnabled(bool enabled)
-    {
-        //col.enabled = enabled;
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy") || collision.CompareTag("Rat"))
@@ -39,7 +27,7 @@ public class CameraRange : MonoBehaviour
         if (collision.CompareTag("Spawner"))
             collision.gameObject.GetComponent<EnemySpawnerPoint>().SetEnabled(false);
 
-        if (collision.tag.Contains("Bullet") || collision.CompareTag("Rat"))
+        if (collision.tag.Contains("Bullet") || collision.CompareTag("Rat") || collision.tag.Contains("Missile"))
             Destroy(collision.gameObject);
     }
 

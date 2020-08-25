@@ -4,37 +4,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.LWRP;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
 
+    public static bool isPaused;
+    public static bool canPause;
+
     public Player2D player;
-    //public CinemachineVirtualCamera cam;
-    //public CinemachineConfiner confiner;
     public GameObject loading;
     public GameObject complete;
     public Volume damage;
-    public static bool isPaused;
-    public static bool canPause;
+    public Camera cam;
 
     private GameMenuButtons menu;
     private Lifebar lifebar;
     private Vector3 checkpoint;
-    private CameraRange range;
     private int scene;
     private int lifes = 4;
+    private int[] bgColor = new int[3] { 0x020E04, 0x29031D, 0x0F0329 };
 
     //private Dictionary<Type, int> pontuation;
 
     void Awake()
     {
         lifebar = FindObjectOfType<Lifebar>();
-        range = FindObjectOfType<CameraRange>();
         menu = FindObjectOfType<GameMenuButtons>();
         menu.gameObject.SetActive(false);
 
-        StartCoroutine(ILoadScene(5));
+        StartCoroutine(ILoadScene(4));
     }
 
     void Update()
@@ -65,14 +66,21 @@ public class GameController : MonoBehaviour
         lifebar.gameObject.SetActive(false);
         loading.SetActive(true);
 
+        if (s < 7 && s >= 4)
+        {
+            int i = s - 4;
+
+            cam.backgroundColor = new Color32((byte)((bgColor[i] & 0xff0000) >> 16),
+                                              (byte)((bgColor[i] & 0xff00) >> 8),
+                                              (byte)(bgColor[i] & 0xff), 255);
+        }
+        
         AsyncOperation load = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         
         while (!load.isDone)
         {
             yield return null;
         }
-
-        //confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Grid").GetComponent<PolygonCollider2D>();
 
         /*pontuation = new Dictionary<Type, int>();
 
@@ -89,7 +97,6 @@ public class GameController : MonoBehaviour
 
         loading.SetActive(false);
         lifebar.gameObject.SetActive(true);
-        range.SetEnabled(true);
 
         SetupPlayer();
 
@@ -186,7 +193,6 @@ public class GameController : MonoBehaviour
 
         canPause = false;
 
-        range.SetEnabled(false);
         lifebar.gameObject.SetActive(false);
 
         Player2D p = FindObjectOfType<Player2D>();

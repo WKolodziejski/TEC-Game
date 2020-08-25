@@ -356,6 +356,7 @@ MonoBehaviour:
   loading: {fileID: 1613031103}
   complete: {fileID: 940349689}
   damage: {fileID: 273453896}
+  cam: {fileID: 1808016626}
 --- !u!114 &252929996
 MonoBehaviour:
   m_ObjectHideFlags: 0

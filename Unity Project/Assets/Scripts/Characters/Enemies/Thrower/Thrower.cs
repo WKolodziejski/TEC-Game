@@ -20,12 +20,15 @@ public class Thrower : Enemy2D
     {
         if (GetTarget() != null)
         {
+            Vector3 posT = transform.position;
+            Vector3 posP = GetTarget().position;
+
             transform.position += Vector3.right * movementSpeed * Time.deltaTime * GetTargetMagnitude();
 
-            if (Vector2.Distance(transform.position, GetTarget().position) <= throwDistance)
+            if (Vector2.Distance(posT, posP) <= throwDistance)
             {
                 fired = true;
-                missile.Fire();
+                missile.Fire(-Vector2.Angle(posT, posP));
                 animator.SetTrigger("Throw");
                 Destroy(gameObject, 0.5f);
             }

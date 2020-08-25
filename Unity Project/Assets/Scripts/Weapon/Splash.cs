@@ -9,29 +9,33 @@ public class Splash : MonoBehaviour
     public float damage = 3f;
     public float duration = 0.1f;
 
+    private bool active = true;
+
     private void Start()
     {
         Destroy(gameObject, 2f);
-        StartCoroutine(IDestroy());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") || collision.CompareTag("Player"))
+        if (active)
         {
-            Character c = collision.GetComponent<Character>();
+            if (collision.CompareTag("Enemy") || collision.CompareTag("Player"))
+            {
+                Character c = collision.GetComponent<Character>();
 
-            if (c != null)
-                if (!c.IsDead())
-                    c.TakeDamage(damage, false);
-        }
+                if (c != null)
+                    if (!c.IsDead())
+                        c.TakeDamage(damage, false);
+            }
+        } 
     }
 
-    private IEnumerator IDestroy()
+    private IEnumerator IDisable()
     {
         yield return new WaitForSeconds(duration);
 
-        enabled = false;
+        active = false;
     }
 
 }
