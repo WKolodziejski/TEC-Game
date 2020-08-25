@@ -23,6 +23,7 @@ public class Boss : Enemy2D
 
     private LineRenderer laserLine;
     private AudioSource laserAudio;
+    private AudioSource laserActivation;
     private float lastShot;
     private float lastLaser;
     private int magnitude;
@@ -36,6 +37,7 @@ public class Boss : Enemy2D
     {
         laserLine = laser.GetComponent<LineRenderer>();
         laserAudio = laser.GetComponent<AudioSource>();
+        laserActivation = GetComponent<AudioSource>();
 
         SetEnabled(true);
     }
@@ -56,6 +58,7 @@ public class Boss : Enemy2D
             laserLine.SetPosition(1, end);
 
             laserAudio.pitch = Time.timeScale;
+            laserActivation.pitch = Time.timeScale;
         }
 
         if (!isAnimating)
@@ -198,6 +201,8 @@ public class Boss : Enemy2D
         yield return new WaitForSeconds(2f);
 
         magnitude = GetTargetMagnitude();
+
+        laserActivation.Play();
 
         animator.SetBool("attack", true);
 
