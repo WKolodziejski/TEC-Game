@@ -64,27 +64,41 @@ public class Boss : Enemy2D
             {
                 if (lastShot <= Time.time)
                 {
-                    lastShot = Time.time + cooldownFire;
+                    if (GetTarget() != null)
+                    {
+                        lastShot = Time.time + cooldownFire;
 
-                    int r = Random.Range(0, 100);
+                        int r = Random.Range(0, 100);
 
-                    barrel = (barrel + 1) % 2;
+                        barrel = (barrel + 1) % 2;
 
-                    Transform b = barrel == 0 ? barreL : barrelR;
+                        Transform b = barrel == 0 ? barreL : barrelR;
 
-                    if (r > 50)
-                        FireHack(b);
+                        if (r > 50)
+                            FireHack(b);
+                        else
+                            FireFollow(b);
+                    }
                     else
-                        FireFollow(b);
+                    {
+                        lastShot = Time.time + 1f;
+                    }
                 }
             }
         }
 
         if (lastLaser <= Time.time)
         {
-            lastLaser = Time.time + cooldownLaser;
+            if (GetTarget() != null)
+            {
+                lastLaser = Time.time + cooldownLaser;
 
-            Attack();
+                Attack();
+            }
+            else
+            {
+                lastLaser = Time.time + 1f;
+            }
         }
     }
 
@@ -103,7 +117,7 @@ public class Boss : Enemy2D
         StartCoroutine(IDie());
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -118,6 +132,12 @@ public class Boss : Enemy2D
             }
         }
 
+        if (collision.CompareTag("Wall"))
+            magnitude *= -1;
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
         if (collision.CompareTag("Wall"))
             magnitude *= -1;
     }

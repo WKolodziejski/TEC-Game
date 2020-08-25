@@ -100,6 +100,9 @@ public class BossController : MonoBehaviour
 
         boss.SetOnDieListener(() =>
         {
+            foreach (MissileFollow m in FindObjectsOfType<MissileFollow>())
+                 Destroy(m.gameObject);
+
             StartCoroutine(IFinish());
         });
 
