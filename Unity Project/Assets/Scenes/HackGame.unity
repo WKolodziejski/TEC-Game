@@ -932,7 +932,7 @@ MonoBehaviour:
   start: {fileID: 1275115620}
   sucess: {fileID: 706354946}
   failed: {fileID: 1828640546}
-  damage: {fileID: 2011656617}
+  damage: {fileID: 756564328}
   timer: {fileID: 640283083}
 --- !u!1 &1104660588
 GameObject:

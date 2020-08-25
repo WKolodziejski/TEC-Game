@@ -42,7 +42,9 @@ public class HackGameControllerNew : MonoBehaviour
         for (int i = 0; i < 17; i++)
             matrix[i] = new GameObject[9];
 
-        EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
+        //EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
+
+        EDifficulty difficulty = EDifficulty.NORMAL;
 
         int d = (int)difficulty;
 
@@ -188,13 +190,7 @@ public class HackGameControllerNew : MonoBehaviour
         int i = UnityEngine.Random.Range(0, 17);
         int j = UnityEngine.Random.Range(0, 9);
 
-        while (matrix[i][j] != null && i < 17 && j < 9)
-        {
-            i++;
-            j++;
-        }
-
-        if (i > 17 || j > 9)
+        if (matrix[i][j] != null)
             return GeneratePosition();
         else
             return (i, j);
@@ -211,7 +207,7 @@ public class HackGameControllerNew : MonoBehaviour
 
             (i, j) = GeneratePosition();
 
-            matrix[i][j] = Instantiate(prefab, new Vector3(i - 8, j - 4, 0), Quaternion.identity);
+            matrix[i][j] = Instantiate(prefab, new Vector3(i - 8, j - 4, 0), Quaternion.identity, transform);
         }
     }
 
@@ -230,7 +226,7 @@ public class HackGameControllerNew : MonoBehaviour
 
             Vector3 rotation = new Vector3(0, 0, 90 * r);
 
-            matrix[i][j] = Instantiate(obstaclePrefabs[o], new Vector3(i - 8, j - 4, 0), Quaternion.Euler(rotation));
+            matrix[i][j] = Instantiate(obstaclePrefabs[o], new Vector3(i - 8, j - 4, 0), Quaternion.Euler(rotation), transform);
         }
     }
 

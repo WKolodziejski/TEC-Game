@@ -11,7 +11,7 @@ public class Hackable : MonoBehaviour
     public EDifficulty difficulty;
 
     private bool isHacked;
-    protected Action action;
+    private Action action;
 
     public void Hack()
     {

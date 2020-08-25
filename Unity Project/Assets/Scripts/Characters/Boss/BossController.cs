@@ -53,6 +53,7 @@ public class BossController : MonoBehaviour
 
                 if (enemies.Count == 0)
                 {
+                    StartCoroutine(Utils.FadeOutAudio(audioSource));
                     StartCoroutine(ITerminal());
                 }
                 else
