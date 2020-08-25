@@ -14,7 +14,6 @@ public class EnemySpawnerPoint : MonoBehaviour
     private float nextSpawnTime;
     private ArrayList enemyList;
     private bool isAlive = true;
-    private int nextEnemy;
 
     void Start()
     {
@@ -36,12 +35,10 @@ public class EnemySpawnerPoint : MonoBehaviour
     {
         if ((enemyList.Count < enemyLimit) && isAlive && !GetComponent<Renderer>().IsVisibleFrom(Camera.main))
         {
-            Enemy2D e = Instantiate(nextEnemy >= 90 ? thrower : soldier, transform.position, quaternion.identity);
+            Enemy2D e = Instantiate(UnityEngine.Random.Range(0, 100) >= 90 ? thrower : soldier, transform.position, quaternion.identity);
             e.SetOnDieListener(() => enemyList.Remove(e));
             enemyList.Add(e);
             nextSpawnTime = spawnCooldown;
-
-            nextEnemy = UnityEngine.Random.Range(0, 100);
         }
     }
 

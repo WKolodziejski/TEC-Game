@@ -72,16 +72,9 @@ public class Boss : Enemy2D
                     {
                         lastShot = Time.time + cooldownFire;
 
-                        int r = Random.Range(0, 100);
-
                         barrel = (barrel + 1) % 2;
 
-                        Transform b = barrel == 0 ? barreL : barrelR;
-
-                        if (r > 50)
-                            FireHack(b);
-                        else
-                            FireFollow(b);
+                        Fire(Random.Range(0, 100) >= 50 ? missileHack : missileFollow, barrel == 0 ? barreL : barrelR);
                     }
                     else
                     {
@@ -238,14 +231,9 @@ public class Boss : Enemy2D
         shouldFire = true;
     }
 
-    private void FireHack(Transform barrel)
+    private void Fire(MissileFollow missile, Transform barrel)
     {
-        Instantiate(missileHack, barrel.position, barrel.rotation);
-    }
-
-    private void FireFollow(Transform barrel)
-    {
-        Instantiate(missileFollow, barrel.position, barrel.rotation);
+        Instantiate(missile, barrel.position, barrel.rotation);
     }
 
     public override void Attack()
