@@ -124,7 +124,8 @@ MonoBehaviour:
     type: 3}
   mainBarrel: {fileID: 7760883125871837548}
   damagePopup: {fileID: 0}
-  maxHP: 3
+  heal: {fileID: 0}
+  maxHP: 5
   movementSpeed: 5
   damageCooldown: 1
   destroyTimer: 2
