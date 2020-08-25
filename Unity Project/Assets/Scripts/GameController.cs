@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
         menu = FindObjectOfType<GameMenuButtons>();
         menu.gameObject.SetActive(false);
 
-        StartCoroutine(ILoadScene(4));
+        StartCoroutine(ILoadScene(6));
     }
 
     void Update()
@@ -115,7 +115,8 @@ public class GameController : MonoBehaviour
             cam.Follow = null;
             cam.LookAt = null;
             cam.enabled = false;
-            Camera.main.transform.position=  new Vector3(0, 0, -10);
+            Camera.main.transform.position = new Vector3(0, 0, -10);
+            cam.transform.position = new Vector3(0, 0, -10);
             cam.enabled = true;
         }
         else
@@ -201,6 +202,9 @@ public class GameController : MonoBehaviour
         complete.SetActive(true);
 
         yield return new WaitForSeconds(3f);
+
+        if (vcam != null)
+            vcam.m_Priority = 0;
 
         AsyncOperation load = SceneManager.UnloadSceneAsync(scene);
         bool isDone = false;
