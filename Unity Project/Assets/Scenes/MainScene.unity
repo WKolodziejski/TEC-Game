@@ -353,8 +353,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1134803256459682971, guid: 71a069d4dfb8d5948b2e016df40c8a3e, type: 3}
-  cam: {fileID: 1511690159}
-  confiner: {fileID: 1511690158}
   loading: {fileID: 1613031103}
   complete: {fileID: 940349689}
   damage: {fileID: 273453896}
@@ -911,7 +909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1511690156
 Transform:
   m_ObjectHideFlags: 0

@@ -10,8 +10,8 @@ public class GameController : MonoBehaviour
 {
 
     public Player2D player;
-    public CinemachineVirtualCamera cam;
-    public CinemachineConfiner confiner;
+    //public CinemachineVirtualCamera cam;
+    //public CinemachineConfiner confiner;
     public GameObject loading;
     public GameObject complete;
     public Volume damage;
@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
         menu = FindObjectOfType<GameMenuButtons>();
         menu.gameObject.SetActive(false);
 
-        StartCoroutine(ILoadScene(5));
+        StartCoroutine(ILoadScene(7));
     }
 
     void Update()
@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
             yield return null;
         }
 
-        confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Grid").GetComponent<PolygonCollider2D>();
+        //confiner.m_BoundingShape2D = GameObject.FindGameObjectWithTag("Grid").GetComponent<PolygonCollider2D>();
 
         /*pontuation = new Dictionary<Type, int>();
 
@@ -131,6 +131,8 @@ public class GameController : MonoBehaviour
             p.transform.position = checkpoint;
             p.EnableControls();
         }
+
+        CinemachineVirtualCamera cam = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
 
         if (scene == 7)
         {

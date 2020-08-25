@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
 
     void FixedUpdate()
     {
-        relativeSpeedX = (transform.parent.position.x - lastPosition.x) / Time.deltaTime;
+        relativeSpeedX = (transform.parent.position.x - lastPosition.x) / Time.fixedDeltaTime;
         lastPosition = transform.parent.position;
     }
 
