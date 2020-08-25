@@ -88,13 +88,13 @@ public class BossController : MonoBehaviour
 
         GameController.canPause = false;
 
+        FindObjectOfType<Player2D>().DisableControls();
+
         yield return new WaitForSeconds(1f);
 
         audio2.SetActive(true);
 
         yield return new WaitForSeconds(3f);
-
-        FindObjectOfType<Player2D>().DisableControls();
 
         boss = Instantiate(bossPrefab, transform.position, Quaternion.identity);
 

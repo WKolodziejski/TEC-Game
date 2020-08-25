@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 518088517117803400}
   - component: {fileID: 2464326486201221304}
   - component: {fileID: 4181856342265056775}
-  m_Layer: 16
+  m_Layer: 12
   m_Name: Drop3BarrelGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 111548, guid: 867654028f7b6d54ca7a08f243ee59f3, type: 3}
       propertyPath: m_Layer
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 197324, guid: 867654028f7b6d54ca7a08f243ee59f3, type: 3}
       propertyPath: m_Name
@@ -113,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 197324, guid: 867654028f7b6d54ca7a08f243ee59f3, type: 3}
       propertyPath: m_Layer
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 494372, guid: 867654028f7b6d54ca7a08f243ee59f3, type: 3}
       propertyPath: m_LocalPosition.x
