@@ -96,7 +96,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 0}
   mainBarrel: {fileID: 0}
-  damagePopup: {fileID: 0}
+  damagePopup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1,
+    type: 3}
+  heal: {fileID: 0}
   maxHP: 10
   movementSpeed: 5
   damageCooldown: 0

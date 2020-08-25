@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     private Vector3 checkpoint;
     private int scene;
     private int lifes = 4;
-    private int[] bgColor = new int[3] { 0x020E04, 0x29031D, 0x0F0329 };
+    private int[] bgColor = new int[4] { 0x020E04, 0x29031D, 0x0F0329, 0x0 };
 
     //private Dictionary<Type, int> pontuation;
 
@@ -66,15 +66,12 @@ public class GameController : MonoBehaviour
         lifebar.gameObject.SetActive(false);
         loading.SetActive(true);
 
-        if (s < 7 && s >= 4)
-        {
-            int i = s - 4;
+        int i = s - 4;
 
-            cam.backgroundColor = new Color32((byte)((bgColor[i] & 0xff0000) >> 16),
-                                              (byte)((bgColor[i] & 0xff00) >> 8),
-                                              (byte)(bgColor[i] & 0xff), 255);
-        }
-        
+        cam.backgroundColor = new Color32((byte)((bgColor[i] & 0xff0000) >> 16),
+                                          (byte)((bgColor[i] & 0xff00) >> 8),
+                                          (byte)(bgColor[i] & 0xff), 255);
+
         AsyncOperation load = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         
         while (!load.isDone)

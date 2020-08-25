@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
 
         lastPosition = transform.parent.position;
 
-        rd = transform.parent.GetComponentInChildren<Renderer>();
+        rd = GetComponent<Renderer>();
     }
 
     void FixedUpdate()

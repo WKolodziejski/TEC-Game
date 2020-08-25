@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        if (!rd.IsVisibleFrom(Camera.main) && tag.Contains("Player"))
+        if (!rd.IsVisibleFrom(Camera.main))
         {
             enabled = false;
             Destroy(gameObject, 0.1f);

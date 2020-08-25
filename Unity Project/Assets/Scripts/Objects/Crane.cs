@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crane_Controller : MonoBehaviour
+public class Crane : MonoBehaviour
 {
+
     public float rangeH = 5f;
     public float rangeV = 5f;
     public float X = 0;

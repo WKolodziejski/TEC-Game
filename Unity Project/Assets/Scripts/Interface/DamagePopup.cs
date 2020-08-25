@@ -6,6 +6,8 @@ using UnityEngine;
 public class DamagePopup : MonoBehaviour
 {
 
+    public bool isPlayer;
+
     void Start()
     {
         Destroy(gameObject, 0.5f);
@@ -19,8 +21,17 @@ public class DamagePopup : MonoBehaviour
     public void Hit(float damage)
     {
         TextMeshPro txt = GetComponent<TextMeshPro>();
-        txt.color = damage < 0 ? Color.red : Color.green;
-        txt.SetText(damage.ToString());
+
+        if (isPlayer)
+        {
+            txt.color = damage < 0 ? Color.red : Color.green;
+            txt.SetText(damage.ToString());
+        }
+        else
+        {
+            txt.color = Color.cyan;
+            txt.SetText((-damage).ToString());
+        }
     }
 
     private IEnumerator IAnim()

@@ -334,8 +334,9 @@ MonoBehaviour:
   weaponPrefab: {fileID: 1072420094742162731, guid: 46bceafad6e5bdf409ec6fd5e52ddd4d,
     type: 3}
   mainBarrel: {fileID: 0}
-  damagePopup: {fileID: 3761328250247434352, guid: 7fd8abb4806b26a4eb1d3a8f292411a1,
+  damagePopup: {fileID: 3761328250247434352, guid: 8ee27a64dc1b35345bb3835ce5656ac9,
     type: 3}
+  heal: {fileID: 151306, guid: 2833ba34ecec6754ba437cb2e004190e, type: 3}
   maxHP: 5
   movementSpeed: 5
   damageCooldown: 1
@@ -359,7 +360,6 @@ MonoBehaviour:
   audioCritical: {fileID: 1946331243293253257}
   audioSpawn: {fileID: 5189990850519166912}
   audioDie: {fileID: 7655864741063738439}
-  heal: {fileID: 151306, guid: 2833ba34ecec6754ba437cb2e004190e, type: 3}
 --- !u!61 &1134803256459682970
 BoxCollider2D:
   m_ObjectHideFlags: 0
