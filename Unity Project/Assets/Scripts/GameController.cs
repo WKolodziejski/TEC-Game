@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
         menu = FindObjectOfType<GameMenuButtons>();
         menu.gameObject.SetActive(false);
 
-        StartCoroutine(ILoadScene(7));
+        StartCoroutine(ILoadScene(5));
     }
 
     void Update()

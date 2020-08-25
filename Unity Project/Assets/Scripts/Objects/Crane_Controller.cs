@@ -20,7 +20,7 @@ public class Crane_Controller : MonoBehaviour
     private float targetV;
     private bool unlocked;
 
-    void Start()
+    void Awake()
     {
         HAxis.localPosition = new Vector3(X, HAxis.localPosition.y, HAxis.localPosition.z);
         wire.localPosition = new Vector3(wire.localPosition.x, 1 + VAxis.localPosition.y/2, wire.localPosition.z);
@@ -30,16 +30,16 @@ public class Crane_Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(unlocked)// || !startMovOnContact)
+        if (unlocked)// || !startMovOnContact)
         {
             if (HAxis.localPosition.x <= targetH)
             {
-                X = X + Time.deltaTime * speedH;
+                X = X + Time.fixedDeltaTime * speedH;
                 targetH = rangeH;
             }
             else 
             {
-                X = X - Time.deltaTime * speedH;
+                X = X - Time.fixedDeltaTime * speedH;
                 targetH = 0f;
             }
             
@@ -47,12 +47,12 @@ public class Crane_Controller : MonoBehaviour
 
             if (VAxis.localPosition.y >= targetV)
             {
-                Y = Y - Time.deltaTime * speedV;
+                Y = Y - Time.fixedDeltaTime * speedV;
                 targetV = -rangeV;
             }
             else
             {
-                Y = Y + Time.deltaTime * speedV;
+                Y = Y + Time.fixedDeltaTime * speedV;
                 targetV = 0f;
             }
             
