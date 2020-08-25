@@ -13,7 +13,6 @@ public class Bullet : MonoBehaviour
     protected Rigidbody2D rb;
 
     private Renderer rd;
-    private bool isPlayer;
 
     void Awake()
     {
@@ -26,13 +25,11 @@ public class Bullet : MonoBehaviour
             Destroy(Instantiate(muzzle, transform.position, transform.rotation), 1f);
 
         Destroy(gameObject, 10);
-
-        isPlayer = tag.Contains("Player");
     }
 
     void Update()
     {
-        if (!rd.IsVisibleFrom(Camera.main) && isPlayer)
+        if (!rd.IsVisibleFrom(Camera.main) && tag.Contains("Player"))
         {
             enabled = false;
             Destroy(gameObject, 0.1f);

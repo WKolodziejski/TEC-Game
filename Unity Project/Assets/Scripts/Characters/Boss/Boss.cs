@@ -5,21 +5,32 @@ using UnityEngine;
 public class Boss : Enemy2D
 {
 
+    public Transform barreL;
+    public Transform barrelR;
+    public MissileFollow missileFollow;
+    public MissileHack missileHack;
+
     public GameObject explosion1;
     public GameObject explosion2;
     public GameObject explosion3;
     public GameObject fire;
-    public GameObject sparkle;
     public GameObject laser;
     public GameObject shield;
 
     public float laserDamage = 2f;
+    public float cooldownFire = 0.5f;
+    public float cooldownLaser = 10f;
 
     private LineRenderer laserLine;
     private AudioSource laserAudio;
-    private bool isAnimating;
-    private bool isAttacking;
+    private float lastShot;
+    private float lastLaser;
     private int magnitude;
+    private int barrel;
+    private bool isAnimating;
+    private bool shouldMove;
+    private bool shouldFire;
+    private bool isInitialized;
 
     protected override void InitializeComponents()
     {
@@ -29,11 +40,6 @@ public class Boss : Enemy2D
         SetEnabled(true);
     }
 
-    public override void Attack()
-    {
-        StartCoroutine(IAttack());
-    }
-
     void Start()
     {
         StartCoroutine(ICollider());
@@ -41,9 +47,6 @@ public class Boss : Enemy2D
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            Attack();
-
         if (laser.activeSelf)
         {
             Vector3 start = mainBarrel.position;
@@ -54,19 +57,44 @@ public class Boss : Enemy2D
 
             laserAudio.pitch = Time.timeScale;
         }
+
+        if (!isAnimating)
+        {
+            if (shouldFire)
+            {
+                if (lastShot <= Time.time)
+                {
+                    lastShot = Time.time + cooldownFire;
+
+                    int r = Random.Range(0, 100);
+
+                    barrel = (barrel + 1) % 2;
+
+                    Transform b = barrel == 0 ? barreL : barrelR;
+
+                    if (r > 50)
+                        FireHack(b);
+                    else
+                        FireFollow(b);
+                }
+            }
+        }
+
+        if (lastLaser <= Time.time)
+        {
+            lastLaser = Time.time + cooldownLaser;
+
+            Attack();
+        }
     }
 
     void FixedUpdate()
     {
-        if (!isAnimating && isAttacking)
+        if (!isAnimating && shouldMove)
+        {
             rb.position += Vector2.right * movementSpeed * magnitude * Time.fixedDeltaTime;
+        }
     }
-
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Wall"))
-            movementSpeed *= -1;
-    }   */
 
     protected override void OnDie()
     {
@@ -97,7 +125,6 @@ public class Boss : Enemy2D
     private IEnumerator IDie()
     {
         fire.SetActive(true);
-        sparkle.SetActive(false);
         laser.SetActive(false);
         shield.SetActive(false);
 
@@ -135,30 +162,69 @@ public class Boss : Enemy2D
 
         yield return new WaitForSeconds(1f);
 
+        lastShot = Time.time + cooldownFire;
+        lastLaser = Time.time + cooldownLaser;
+
         isAnimating = false;
+        shouldFire = true;
+        isInitialized = true;
     }
 
-    private IEnumerator IAttack()
+    private IEnumerator ILaser()
     {
+        shouldFire = false;
+        shield.SetActive(false);
+
+        yield return new WaitForSeconds(2f);
+
         magnitude = GetTargetMagnitude();
 
         animator.SetBool("attack", true);
 
         yield return new WaitForSeconds(1.5f);
 
-        isAttacking = true;
+        shouldMove = true;
 
-        shield.SetActive(false);
         laser.SetActive(true);
 
         yield return new WaitForSeconds(9f);
+
+        lastLaser = Time.time + cooldownLaser;
 
         animator.SetBool("attack", false);
 
         laser.SetActive(false);
         shield.SetActive(true);
 
-        isAttacking = false;
+        shouldMove = false;
+
+        yield return new WaitForSeconds(1.5f);
+
+        shouldFire = true;
+    }
+
+    private void FireHack(Transform barrel)
+    {
+        Instantiate(missileHack, barrel.position, barrel.rotation);
+    }
+
+    private void FireFollow(Transform barrel)
+    {
+        Instantiate(missileFollow, barrel.position, barrel.rotation);
+    }
+
+    public override void Attack()
+    {
+        if (shouldFire)
+            StartCoroutine(ILaser());
+    }
+
+    void OnEnable()
+    {
+        //Isso serve para ele não travar ao voltar do hack
+
+        if (!shouldFire && isInitialized)
+            StartCoroutine(ILaser());
     }
 
 }

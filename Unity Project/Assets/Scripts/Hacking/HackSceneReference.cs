@@ -61,8 +61,13 @@ public class HackSceneReference : MonoBehaviour
                 yield return null;
 
             foreach (GameObject o in objs)
-                if (o.GetComponent<DontDestroy>() == null)
+            {
+                if (o.GetComponent<Bullet>() != null || o.GetComponent<MissileFollow>() != null)
+                    Destroy(o);
+
+                else if (o.GetComponent<DontDestroy>() == null)
                     o.SetActive(false);
+            }
         }
     }
 

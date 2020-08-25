@@ -4,23 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using static HackSceneReference;
 
-public class MissileHack : Bullet
+public class MissileHack : MissileFollow
 {
-    void OnCollisionEnter2D(Collision2D collision)
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
 
-            FindObjectOfType<HackSceneReference>().Enter(collision.collider.gameObject.transform, EDifficulty.EASY, (won) =>
+            Player2D p = collision.gameObject.GetComponent<Player2D>();
+
+            if (!p.IsDead())
             {
-                if (!won)
+                FindObjectOfType<HackSceneReference>()?.Enter(p.transform, (EDifficulty) Random.Range(1, 4), (won) =>
                 {
-                    FindObjectOfType<Player2D>().TakeDamage(5f, true);
-                }
-            });
+                    if (!won)
+                    {
+                        p.TakeDamage(2f, true);
+                    }
+                });
+            }
+
+            Explode();
         }
-        else if(!collision.collider.CompareTag(tag))
+        else if (collision.CompareTag("BulletPlayer"))
         {
             Explode();
         }

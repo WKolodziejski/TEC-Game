@@ -17,6 +17,8 @@ public class AudioController : MonoBehaviour
 
     public void SetActive(AudioSource audioSource)
     {
+        Debug.Log("Active audio: " + audioSource.name);
+
         if (audios == null)
         {
             audios = new List<AudioSource>();

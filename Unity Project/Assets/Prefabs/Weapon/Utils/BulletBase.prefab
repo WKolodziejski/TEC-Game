@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3283620014373243352}
   - component: {fileID: 6624402216543588787}
   - component: {fileID: 4994016678154491021}
-  - component: {fileID: -5447742815328361507}
+  - component: {fileID: -8621409208775867184}
   m_Layer: 15
   m_Name: BulletBase
   m_TagString: Bullet
@@ -87,7 +87,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!212 &-5447742815328361507
+--- !u!212 &-8621409208775867184
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -57,7 +57,6 @@ public class BossController : MonoBehaviour
                 }
                 else
                 {
-                    //enemies.ForEach(t => t.IncreaseFireRate(frIncrease * (enemiesCount - enemies.Count)));
                     enemies.ForEach(t => t.Increase(frIncrease, anIncrease));
                 }
             });
@@ -83,7 +82,9 @@ public class BossController : MonoBehaviour
 
     private IEnumerator IOpen()
     {
-        FindObjectOfType<Lifebar>()?.gameObject.SetActive(false);
+        Lifebar lifebar = FindObjectOfType<Lifebar>();
+
+        lifebar?.gameObject.SetActive(false);
 
         GameController.canPause = false;
 
@@ -130,7 +131,7 @@ public class BossController : MonoBehaviour
 
         cam.m_Priority = 0;
 
-        FindObjectOfType<Lifebar>()?.gameObject.SetActive(true);
+        lifebar?.gameObject.SetActive(true);
 
         FindObjectOfType<Player2D>().EnableControls();
 
