@@ -14,6 +14,7 @@ public class Splash : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, 2f);
+        StartCoroutine(IDisable());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
