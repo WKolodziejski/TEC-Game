@@ -209,13 +209,9 @@ public class GameController : MonoBehaviour
             vcam.m_Priority = 0;
 
         AsyncOperation load = SceneManager.UnloadSceneAsync(scene);
-        bool isDone = false;
 
-        while (!isDone)
-        {
-            isDone = load == null;
+        while (load != null)
             yield return null;
-        }
 
         complete.SetActive(false);
 
