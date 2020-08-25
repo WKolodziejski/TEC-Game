@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7237498131858052081
 Transform:
   m_ObjectHideFlags: 0
@@ -170,9 +170,11 @@ MonoBehaviour:
     type: 3}
   mainBarrel: {fileID: 7833792635527143577}
   damagePopup: {fileID: 0}
+  heal: {fileID: 0}
   maxHP: 5
   movementSpeed: 5
   damageCooldown: 0
+  destroyTimer: 2
   explosion: {fileID: 166214, guid: 078d54c719054054ab1dc1e7fa88d090, type: 3}
   shield: {fileID: 8827016359232172292}
   shieldExp: {fileID: 4795705039346261776}

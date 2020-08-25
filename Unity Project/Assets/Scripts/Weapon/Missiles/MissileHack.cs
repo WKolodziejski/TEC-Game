@@ -17,7 +17,7 @@ public class MissileHack : MissileFollow
 
             if (!p.IsDead())
             {
-                FindObjectOfType<HackSceneReference>()?.Enter(p.transform, (EDifficulty) Random.Range(1, 4), (won) =>
+                FindObjectOfType<HackSceneReference>()?.Enter(p.transform, EDifficulty.EASY, (won) =>
                 {
                     if (!won)
                     {

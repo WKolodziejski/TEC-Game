@@ -34,7 +34,10 @@ public class GameMenuButtons : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+        GameController.isPaused = false;
+        GameController.canPause = true;
+
+        SceneManager.LoadSceneAsync("MainMenu");
 
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;
