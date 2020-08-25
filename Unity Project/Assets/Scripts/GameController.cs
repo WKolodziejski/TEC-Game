@@ -101,14 +101,36 @@ public class GameController : MonoBehaviour
         Player2D p = FindObjectOfType<Player2D>();
 
         if (p == null)
+        {
             p = Instantiate(player, checkpoint, Quaternion.identity, null);
+
+            p.SetOnDamageListener(() => damage.weight = (float)(Math.Exp(p.maxHP - p.GetHP()) / 100));
+
+            p.SetOnDieListener(() =>
+            {
+                lifes--;
+
+                if (lifes == 0)
+                {
+                    StartCoroutine(IGameOver());
+                }
+                else
+                {
+                    lifebar.SetExtraLifes(lifes);
+
+                    StartCoroutine(INewPlayer());
+
+                    StartCoroutine(IAnim());
+                }
+            });
+
+            lifebar.SetPlayer(p);
+        }
         else
         {
             p.transform.position = checkpoint;
             p.EnableControls();
         }
-            
-        lifebar.SetPlayer(p);
 
         if (scene == 7)
         {
@@ -124,26 +146,6 @@ public class GameController : MonoBehaviour
             cam.Follow = p.transform;
             cam.LookAt = p.transform;
         }
-        
-        p.SetOnDamageListener(() => damage.weight = (float)(Math.Exp(p.maxHP - p.GetHP()) / 100));
-
-        p.SetOnDieListener(() =>
-        {                        
-            lifes--;
-
-            if (lifes == 0)
-            {
-                StartCoroutine(IGameOver());
-            } 
-            else
-            {
-                lifebar.SetExtraLifes(lifes);
-
-                StartCoroutine(INewPlayer());
-
-                StartCoroutine(IAnim());
-            }
-        });
     }
 
     private IEnumerator INewPlayer()

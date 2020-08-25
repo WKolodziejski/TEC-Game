@@ -8,6 +8,7 @@ public abstract class Character : MonoBehaviour
     public Weapon weaponPrefab;
     public Transform mainBarrel;
     public DamagePopup damagePopup;
+    public GameObject heal;
 
     public float maxHP = 3f;
     public float movementSpeed = 5f;
@@ -61,7 +62,23 @@ public abstract class Character : MonoBehaviour
                 Kill();
         }
     }
-    
+
+    public void AddLife(float life)
+    {
+        float ohp = hp;
+        float tmp = hp + life;
+
+        hp = tmp <= maxHP ? tmp : maxHP;
+
+        if (damagePopup != null)
+            Instantiate(damagePopup, transform.position, Quaternion.identity).Hit(hp - ohp);
+
+        if (heal != null)
+            Destroy(Instantiate(heal, transform), 2f);
+
+        CallOnDamage();
+    }
+
     public void Kill()
     {
         if (!isDead)

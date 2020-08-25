@@ -38,8 +38,6 @@ public class Player2D : Character
     public AudioSource audioSpawn;
     public AudioSource audioDie;
 
-    public GameObject heal;
-
     protected override void InitializeComponents()
     {
         //assistant = GameObject.FindObjectOfType<AIAssistant>();
@@ -235,19 +233,7 @@ public class Player2D : Character
         horizontal = 0f;
     }
 
-    public void AddLife(float life)
-    {
-        float ohp = hp;
-        float tmp = hp + life;
-
-        hp = tmp <= maxHP ? tmp : maxHP;
-
-        if (damagePopup != null)
-            Instantiate(damagePopup, transform.position, Quaternion.identity).Hit(hp - ohp);
-
-        if (heal != null)
-            Destroy(Instantiate(heal, transform), 2f);
-    }
+    
 
     public void LookAt(Vector3 position)
     {
