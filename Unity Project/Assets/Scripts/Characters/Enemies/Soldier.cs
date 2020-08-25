@@ -240,4 +240,12 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
         insidePlayersCone = inside;
     }
 
+    protected override void OnDie()
+    {
+        base.OnDie();
+
+        boxCollider2D.enabled = true;
+        polygonCollider2D.enabled = true;
+    }
+
 }
