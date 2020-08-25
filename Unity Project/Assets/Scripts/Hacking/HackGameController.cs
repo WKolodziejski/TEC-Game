@@ -97,7 +97,7 @@ public class HackGameController : MonoBehaviour
         }
 
         player.SetOnDieListener(() => StartCoroutine(IPlayExit(false)));
-        player.SetOnDamageListener(() => damage.weight = (float)(Math.Exp(player.maxHP - player.GetHP()) / 100));
+        player.SetOnDamageListener(() => damage.weight = (float)(Math.Exp(player.maxHP - player.GetHP()) / 10));
 
         StartCoroutine(IPlayEnter());
     }
