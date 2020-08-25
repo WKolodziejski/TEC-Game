@@ -42,9 +42,9 @@ public class HackGameControllerNew : MonoBehaviour
         for (int i = 0; i < 17; i++)
             matrix[i] = new GameObject[9];
 
-        //EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
+        EDifficulty difficulty = FindObjectOfType<HackSceneReference>().GetDifficulty();
 
-        EDifficulty difficulty = EDifficulty.NORMAL;
+        //EDifficulty difficulty = EDifficulty.NORMAL;
 
         int d = (int)difficulty;
 

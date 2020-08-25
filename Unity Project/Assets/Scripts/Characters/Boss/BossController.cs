@@ -64,18 +64,6 @@ public class BossController : MonoBehaviour
         });
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-            Open();
-
-        if (Input.GetKeyDown(KeyCode.I))
-            StartCoroutine(Utils.FadeOutAudio(audioSource));
-
-        if (Input.GetKeyDown(KeyCode.U))
-            StartCoroutine(ITerminal());
-    }
-
     public void Open()
     {
         StartCoroutine(IOpen());
