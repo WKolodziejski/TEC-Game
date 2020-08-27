@@ -35,6 +35,9 @@ public class BossTurret : Turret
 
     public override void Attack()
     {
+        if (!GameController.canPause)
+            return;
+
         if (shoot)
             base.Attack();
     }

@@ -24,7 +24,10 @@ public class Hackable : MonoBehaviour
                     isHacked = true;
 
                     if (gameObject.GetComponent<Character>() != null)
+                    {
                         gameObject.GetComponent<Character>().Kill();
+                        FindObjectOfType<Player2D>().AddLife(0.5f);
+                    } 
                     else
                         action?.Invoke();
                 }

@@ -56,6 +56,9 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
 
     public override void Attack()
     {
+        if (!GameController.canPause)
+            return;
+
         if (Vector2.Distance(transform.position, target.transform.position) < 1f) 
         {
             if (Time.time - lastPunch >= 2f) //Punch() 

@@ -28,6 +28,9 @@ public class Turret : Enemy2D
 
     public override void Attack()
     {
+        if (!GameController.canPause)
+            return;
+
         weapon.Fire(mainBarrel);
     }
 

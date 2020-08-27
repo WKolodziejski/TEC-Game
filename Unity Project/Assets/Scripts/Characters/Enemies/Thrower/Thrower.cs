@@ -18,6 +18,9 @@ public class Thrower : Enemy2D
 
     public override void Attack()
     {
+        if (!GameController.canPause)
+            return;
+
         if (GetTarget() != null)
         {
             Vector3 posT = transform.position;

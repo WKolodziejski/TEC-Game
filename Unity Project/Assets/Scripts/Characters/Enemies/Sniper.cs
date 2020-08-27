@@ -36,9 +36,11 @@ public class Sniper : ComplexShooter //TODO: consertar de forma decente os snipe
 
     public override void Attack()
     {
+        if (!GameController.canPause)
+            return;
         //if (!locked)
         //{
-            Aim();
+        Aim();
             mainBarrel.rotation = Quaternion.Euler(-aimingAngle - 90f + Random.Range(-5f, 1f), (GetTarget().position.x < transform.position.x) ? 90f : -90f, -90f);
 
             laser.SetPosition(0, mainBarrel.position);

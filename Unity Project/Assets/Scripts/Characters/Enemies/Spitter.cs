@@ -12,6 +12,9 @@ public class Spitter : Enemy2D
 
     public override void Attack()
     {
+        if (!GameController.canPause)
+            return;
+
         if (weapon.CanFire())
             StartCoroutine(IFire());
     }
