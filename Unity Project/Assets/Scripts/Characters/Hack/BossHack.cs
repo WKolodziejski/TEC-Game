@@ -43,6 +43,9 @@ public class BossHack : EnemyHack
 
     void Update()
     {
+        if (!GameController.canPause)
+            return;
+
         if (!hasShield && isAgressive)
             weapon.Fire(mainBarrel);
     }

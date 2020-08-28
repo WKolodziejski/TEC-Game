@@ -57,7 +57,12 @@ public class PlayerHack : Character
         }
 
         if (Input.GetButton("Fire3"))
+        {
+            if (!GameController.canPause)
+                return;
+
             weapon.Fire(mainBarrel);
+        }  
     }
 
     void FixedUpdate()

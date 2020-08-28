@@ -42,6 +42,9 @@ public class EnemyHack : Character
 
     public void Fire()
     {
+        if (!GameController.canPause)
+            return;
+
         weapon?.Fire(mainBarrel);
     }
 
