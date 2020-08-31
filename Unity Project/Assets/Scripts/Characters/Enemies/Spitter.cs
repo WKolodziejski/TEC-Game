@@ -19,11 +19,6 @@ public class Spitter : Enemy2D
             StartCoroutine(IFire());
     }
 
-    protected override void InitializeComponents()
-    {
-        base.InitializeComponents();
-    }
-
     void Update()
     {
         if (GetTarget() != null)

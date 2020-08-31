@@ -11,7 +11,7 @@ public class Lifebar : MonoBehaviour
     public Image bar;
 
     private bool animating;
-
+    
     public void SetExtraLifes(int l)
     {
         lf1.SetActive(l >= 2);
@@ -23,6 +23,13 @@ public class Lifebar : MonoBehaviour
     {
         c.SetOnDamageListener(() =>
         {
+            if (animating)
+                StopAllCoroutines();
+
+            StartCoroutine(IAnim(c, false));
+        });
+
+        c.SetOnDieListener(() => {
             if (animating)
                 StopAllCoroutines();
 

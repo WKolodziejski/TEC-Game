@@ -3,15 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy2D : Character //TODO: mudar de facção
+public abstract class Enemy2D : Character 
 {
-
+    private new Renderer renderer;
     protected Player2D target;
 
     public float targetDistance = 25f;
 
     protected override void InitializeComponents()
     {
+        renderer = GetComponent<Renderer>();
+        if(!renderer)
+            renderer = GetComponentInChildren<Renderer>();
         SetEnabled(false);
     }
 
@@ -84,17 +87,14 @@ public abstract class Enemy2D : Character //TODO: mudar de facção
             transform.position.y > boundries[2] && transform.position.y < boundries[3];
     }*/
 
-    
-
-    //protected Character target;
-
     protected Transform GetTarget()
     {
         target = FindObjectOfType<Player2D>();
 
         if (target != null)
             if (!target.IsDead())
-                if (Vector2.Distance(target.transform.position, transform.position) <= targetDistance)
+                if (Vector2.Distance(target.transform.position, transform.position) <= targetDistance ||
+                    renderer.isVisible)
                     return target.transform;
 
         return null;

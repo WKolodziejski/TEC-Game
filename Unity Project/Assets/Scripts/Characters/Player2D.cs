@@ -211,8 +211,9 @@ public class Player2D : Character
 
     protected override void OnDie()
     {
-        base.OnDie();
+        enemyCone.enabled = false;
 
+        base.OnDie();
         audioDie.Play();
     }
 
@@ -232,8 +233,6 @@ public class Player2D : Character
         controlIsEnabled = true;
         horizontal = 0f;
     }
-
-    
 
     public void LookAt(Vector3 position)
     {

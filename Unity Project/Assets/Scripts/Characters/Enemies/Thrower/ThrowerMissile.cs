@@ -58,20 +58,22 @@ public class ThrowerMissile : MonoBehaviour
         Destroy(gameObject, 10f);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         if (!collision.CompareTag("Grid") && 
             !collision.tag.Contains("Enemy") && 
             !collision.tag.Contains("Bullet") &&
-            !collision.CompareTag("MainCamera"))
+            !collision.CompareTag("MainCamera") &&
+            !collision.CompareTag("JumpCone"))
         {
-            Destroy(Instantiate(explosion, gameObject.transform.position, Quaternion.identity), 2f);
-            Destroy(gameObject);
 
             if (collision.CompareTag("Player"))
             {
                 collision.GetComponent<Player2D>().Kill();
             }
+
+            Destroy(Instantiate(explosion, gameObject.transform.position, Quaternion.identity), 2f);
+            Destroy(gameObject);
         }
     }
 

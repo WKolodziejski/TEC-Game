@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using Random = UnityEngine.Random;
 
-public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em contato com um soldier ele pode se jogar de uma beirada, condicionar melhor o pulo?, talvez usar VectorDistance em algo, no CheckIfMoved checar se o pulo falhou, melhorar CheckFollow para evitar que o inimigo fique a frente do alvo
+public class Soldier : Enemy2D //TODO: condicionar melhor o pulo?, no CheckIfMoved checar se o pulo falhou?, melhorar CheckFollow para evitar que o inimigo fique a frente do alvo?
 {
     public float moveCooldown = 0.5f;
     public float followRange = 5f;
@@ -105,7 +105,6 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
 
         if (nextMove < 0) 
         {
-
             moveCheck -= Time.fixedDeltaTime; // CheckIfMoved()
             if (moveCheck < 0) 
             {
@@ -135,12 +134,13 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
                     else 
                     {
                         if (grounded && JumpCooldown() && target.grounded &&
-                            (this.transform.position.x < target.transform.position.x + 0.5f) &&
-                            (this.transform.position.x > target.transform.position.x - 0.5f)) 
+                            (this.transform.position.x < target.transform.position.x + 1f) &&
+                            (this.transform.position.x > target.transform.position.x - 1f)) 
                         {
                             if (transform.position.y > (target.transform.position.y + followRange / 2)) 
                             {
                                 StartCoroutine(Fall());
+                                //print("Cai aqui");
                             }
                             else 
                             {
@@ -148,6 +148,7 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
                                     (target.transform.position.y < (transform.position.y + 4f))) 
                                 {
                                     JumpAction();
+                                    //print("Pulei aqui");
                                 }
                             }
                         }
@@ -223,7 +224,7 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
 
     private void OnTriggerStay2D(Collider2D collider) 
     {
-        if ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform"))) 
+        if (!grounded && ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform")))) 
         {
             grounded = true;
             animator?.SetBool("jumping", false); //tava dando erro sem o null conditional
@@ -232,9 +233,10 @@ public class Soldier : Enemy2D //TODO: corrigir bug de que se o player morrer em
 
     private void OnTriggerExit2D(Collider2D collider) 
     {
-        if ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform"))) 
+        if (grounded && ((collider.CompareTag("Ground")) || (collider.CompareTag("Platform")))) 
         {
             grounded = false;
+            ResetMoveCheck();
         }
     }
 

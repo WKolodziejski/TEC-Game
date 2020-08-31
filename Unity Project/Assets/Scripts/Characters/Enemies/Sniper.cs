@@ -5,7 +5,7 @@ using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
-public class Sniper : ComplexShooter //TODO: consertar de forma decente os sniperes atirando juntos e remover função da weapon
+public class Sniper : ComplexShooter //TALVEZ: melhorar a forma de os sniperes atirem, para que não seja juntos, e remover função da weapon
 {
     public readonly float lockingTime = 0.5f;
     //private bool locked;
