@@ -94,7 +94,7 @@ public abstract class Enemy2D : Character
         if (target != null)
             if (!target.IsDead())
                 if (Vector2.Distance(target.transform.position, transform.position) <= targetDistance ||
-                    renderer.isVisible)
+                    renderer.IsVisibleFrom(Camera.main))
                     return target.transform;
 
         return null;
