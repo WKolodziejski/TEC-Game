@@ -32,7 +32,7 @@ public class Boss : Enemy2D
     private bool shouldMove;
     private bool shouldFire;
     private bool isInitialized;
-    private bool canChangeDir;
+    //private bool canChangeDir;
 
     protected override void InitializeComponents()
     {
@@ -107,6 +107,11 @@ public class Boss : Enemy2D
                 rb.position += Vector2.right * movementSpeed * magnitude * Time.fixedDeltaTime;
 
             rb.position += Vector2.up * Mathf.Sin(Time.fixedTime * Mathf.PI * 1f) * 0.01f;
+
+            if (transform.position.x >= 10.5f)
+                magnitude = -1;
+            else if (transform.position.x <= -10.5f)
+                magnitude = 1;
         }
     }
 
@@ -132,21 +137,21 @@ public class Boss : Enemy2D
             }
         }
 
-        if (collision.CompareTag("Wall"))
+        /*if (collision.CompareTag("Wall"))
         {
             magnitude *= -1;
             canChangeDir = true;
-        }
+        }*/
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    /*void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Wall") && canChangeDir)
         {
             magnitude *= -1;
             canChangeDir = false;
         }  
-    }
+    }*/
 
     private IEnumerator IDie()
     {

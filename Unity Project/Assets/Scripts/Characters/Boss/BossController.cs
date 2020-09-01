@@ -37,7 +37,7 @@ public class BossController : MonoBehaviour
             if (!hacked)
             {
                 hacked = true;
-                Open();
+                StartCoroutine(IOpen());
             }
         });
 
@@ -64,11 +64,6 @@ public class BossController : MonoBehaviour
         });
     }
 
-    public void Open()
-    {
-        StartCoroutine(IOpen());
-    }
-
     private IEnumerator IOpen()
     {
         Lifebar lifebar = FindObjectOfType<Lifebar>();
@@ -77,7 +72,7 @@ public class BossController : MonoBehaviour
 
         GameController.canPause = false;
 
-        FindObjectOfType<Player2D>().DisableControls();
+        FindObjectOfType<Player2D>()?.DisableControls();
 
         yield return new WaitForSeconds(1f);
 
@@ -125,7 +120,7 @@ public class BossController : MonoBehaviour
 
         lifebar?.gameObject.SetActive(true);
 
-        FindObjectOfType<Player2D>().EnableControls();
+        FindObjectOfType<Player2D>()?.EnableControls();
 
         GameController.canPause = true;
     }

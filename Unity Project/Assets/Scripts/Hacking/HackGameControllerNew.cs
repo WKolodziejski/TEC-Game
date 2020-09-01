@@ -161,6 +161,9 @@ public class HackGameControllerNew : MonoBehaviour
     {
         if (!isReturning)
         {
+            foreach (Bullet b in FindObjectsOfType<Bullet>())
+                Destroy(b.gameObject);
+
             GameController.canPause = false;
 
             isReturning = true;
