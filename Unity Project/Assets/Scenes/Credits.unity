@@ -451,9 +451,11 @@ MonoBehaviour:
     m_LineSpacing: 4
   m_Text: "Thank you for playing\n\n\nCredits\n\nCreated by\n\xC9merson L\xF3pes\nGustavo
     Hubner\nMatheus Isquierdo\nWilliam Kolodziejski\n\nTEC VIII 2020\nUFPEL\n\nSprites
-    from\nContra\nMegaman\nMetal Slug\nFront Mission\nby spriters-resource.com\nNorma2D\nby
-    deviantart.com\n\nSoundtrack\r from\nNieR Automata\r\nby downloads.khinsider.com\n\nAll
-    content belongs to the creator\rs\nNo copyright infringement intended\n"
+    from\nContra\nMegaman\nMetal Slug\nFront Mission\nby spriters-resource.com\n\nSprites
+    by\nNorma2D\non deviantart.com/norma2d\nMirruTatep\non twitter.com/mirrutatep\n\nSoundtrack\r
+    from\nNieR Automata\r\nby downloads.khinsider.com\n\nThis game is a college project\r\nAll
+    content used belongs to their respective creators\r\nThere is no intention of
+    copyright infringement\nNo monetization of any kind has been or will be applied"
 --- !u!222 &930240249
 CanvasRenderer:
   m_ObjectHideFlags: 0
