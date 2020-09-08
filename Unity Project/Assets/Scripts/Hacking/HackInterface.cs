@@ -34,7 +34,8 @@ public class HackInterface : MonoBehaviour
         if (GameController.isPaused || !GameController.canPause)
             return;
 
-        if (Input.GetButtonDown("Fire2") && !held)
+        //if (Input.GetButtonDown("Fire2") && !held)
+        if (KeyBindingManager.GetKeyDown(KeyAction.hack) && !held)
         {
             startTime = Time.time;
             countTime = startTime;
@@ -59,7 +60,7 @@ public class HackInterface : MonoBehaviour
             }
         }
 
-        if (Input.GetButton("Fire2") && !held && target != null)
+        if (KeyBindingManager.GetKey(KeyAction.hack) && !held && target != null)
         {
             countTime += Time.deltaTime;
 
@@ -69,7 +70,7 @@ public class HackInterface : MonoBehaviour
             held = SetProgress(countTime, startTime);
         }
 
-        if (Input.GetButtonUp("Fire2"))
+        if (KeyBindingManager.GetKeyUp(KeyAction.hack))
         {
             CancelHacking();
         }

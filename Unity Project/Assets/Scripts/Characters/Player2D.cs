@@ -54,20 +54,23 @@ public class Player2D : Character
         {
             lying = false;
 
-            if (Input.GetButtonDown("Fire2"))
+            if (KeyBindingManager.GetKey(KeyAction.hack))
                 hacking = true;
-
-            if (Input.GetButtonUp("Fire2"))
+            else
                 hacking = false;
 
             if (!hacking)
             {
-                horizontal = Input.GetAxis("Horizontal");
-                vertical = Input.GetAxis("Vertical");
+                horizontal = 0f;
+                vertical = 0f;
+                if (KeyBindingManager.GetKey(KeyAction.left)) horizontal = -1f;
+                if (KeyBindingManager.GetKey(KeyAction.right)) horizontal = 1f;
+                if (KeyBindingManager.GetKey(KeyAction.up)) vertical = 1f;
+                if (KeyBindingManager.GetKey(KeyAction.down)) vertical = -1f;
 
-                if (Input.GetButtonDown("Jump"))
+                if (KeyBindingManager.GetKey(KeyAction.jump))
                 {
-                    if (Input.GetAxis("Vertical") < 0)
+                    if (vertical < 0)
                     {
                         if (platform)
                             StartCoroutine(Fall());
@@ -78,7 +81,7 @@ public class Player2D : Character
                     }
                 }
 
-                if (Input.GetButton("Fire3"))
+                if (KeyBindingManager.GetKey(KeyAction.fire))
                 {
                     weapon.Fire(mainBarrel);
                 }
