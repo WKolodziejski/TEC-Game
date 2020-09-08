@@ -12,6 +12,7 @@ public class PlayerHack : Character
 
     private float angle = 90;
     private Vector2 movement;
+    private Vector2 aim;
     private NavMeshObstacle obstacle;
 
     protected override void InitializeComponents()
@@ -22,26 +23,36 @@ public class PlayerHack : Character
 
     void Update()
     {
-        movement.y = Input.GetAxis("HackingVertical");
-        movement.x = Input.GetAxis("HackingHorizontal");
 
-        if (Input.GetAxis("HackingShootHorizontal") > 0f)
+        movement.y = 0f;
+        movement.x = 0f;
+        if (KeyBindingManager.GetKey(KeyAction.hackLeft)) movement.x = -1f;
+        if (KeyBindingManager.GetKey(KeyAction.hackRight)) movement.x = 1f;
+        if (KeyBindingManager.GetKey(KeyAction.hackUp)) movement.y = 1f;
+        if (KeyBindingManager.GetKey(KeyAction.hackDown)) movement.y = -1f;
+
+        if (KeyBindingManager.GetKey(KeyAction.hackAimLeft)) aim.x = -1f;
+        if (KeyBindingManager.GetKey(KeyAction.hackAimRight)) aim.x = 1f;
+        if (KeyBindingManager.GetKey(KeyAction.hackAimUp)) aim.y = 1f;
+        if (KeyBindingManager.GetKey(KeyAction.hackAimDown)) aim.y = -1f;
+
+        if (aim.x > 0f)
         {
-            if (Input.GetAxis("HackingShootVertical") > 0f)
+            if (aim.y > 0f)
                 angle = 45;
 
-            else if (Input.GetAxis("HackingShootVertical") < 0f)
+            else if (aim.y < 0f)
                 angle = 315;
 
             else
                 angle = 0;
         }
-        else if (Input.GetAxis("HackingShootHorizontal") < 0f)
+        else if (aim.x < 0f)
         {
-            if (Input.GetAxis("HackingShootVertical") > 0f)
+            if (aim.y > 0f)
                 angle = 135;
 
-            else if (Input.GetAxis("HackingShootVertical") < 0f)
+            else if (aim.y < 0f)
                 angle = 225;
 
             else
@@ -49,14 +60,14 @@ public class PlayerHack : Character
         }
         else
         {
-            if (Input.GetAxis("HackingShootVertical") > 0f)
+            if (aim.y > 0f)
                 angle = 90;
 
-            else if (Input.GetAxis("HackingShootVertical") < 0f)
+            else if (aim.y < 0f)
                 angle = 270;
         }
 
-        if (Input.GetButton("Fire3"))
+        if (KeyBindingManager.GetKey(KeyAction.hackFire))
         {
             if (!GameController.canPause)
                 return;
