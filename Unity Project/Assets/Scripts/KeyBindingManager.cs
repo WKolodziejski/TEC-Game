@@ -18,6 +18,7 @@ public static class KeyBindingManager  {
 			{ KeyAction.hackUp,			KeyCode.W},
 			{ KeyAction.hackDown,		KeyCode.S},
 			{ KeyAction.hackRight,		KeyCode.A},
+			{ KeyAction.hackLeft,		KeyCode.D},
 			{ KeyAction.hackFire,		KeyCode.LeftShift},
 			{ KeyAction.hackAimUp,		KeyCode.UpArrow},
 			{ KeyAction.hackAimDown,	KeyCode.DownArrow},
