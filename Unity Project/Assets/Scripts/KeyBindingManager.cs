@@ -17,8 +17,8 @@ public static class KeyBindingManager  {
 			{ KeyAction.fire,			KeyCode.LeftShift},
 			{ KeyAction.hackUp,			KeyCode.W},
 			{ KeyAction.hackDown,		KeyCode.S},
-			{ KeyAction.hackLeft,       KeyCode.A},
-			{ KeyAction.hackRight,		KeyCode.D},
+			{ KeyAction.hackRight,		KeyCode.A},
+			{ KeyAction.hackLeft,		KeyCode.D},
 			{ KeyAction.hackFire,		KeyCode.LeftShift},
 			{ KeyAction.hackAimUp,		KeyCode.UpArrow},
 			{ KeyAction.hackAimDown,	KeyCode.DownArrow},
@@ -60,13 +60,10 @@ public static class KeyBindingManager  {
 
 	public static void UpdateDictionary(KeyBinding key)
 	{
-		//if (!keyDict.ContainsValue(key.keyCode)){
-			if (!keyDict.ContainsKey(key.keyAction))
-				keyDict.Add(key.keyAction, key.keyCode);
-			else
-				keyDict[key.keyAction] = key.keyCode;
-		//}
-		keyDict.Values.GetEnumerator();
+        if (!keyDict.ContainsKey(key.keyAction))
+            keyDict.Add(key.keyAction, key.keyCode);
+        else
+            keyDict[key.keyAction] = key.keyCode;
 	}
 
 	public static void UpdateDictionary(KeyAction keyAction, KeyCode keyCode)
