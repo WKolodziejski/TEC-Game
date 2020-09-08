@@ -54,7 +54,7 @@ public class Tutorial : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !done)
         {
-            SetText("Hold H to start hacking");
+            SetText("Hold " + KeyBindingManager.GetKeyCode(KeyAction.hack).ToString() + " to start hacking");
             sparkle.SetActive(false);
         }
     }
