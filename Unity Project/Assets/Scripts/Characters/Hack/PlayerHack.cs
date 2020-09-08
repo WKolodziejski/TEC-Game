@@ -10,7 +10,7 @@ public class PlayerHack : Character
     public GameObject explosion;
     public float turnSpeed = 5f;
 
-    private float angle = 90;
+    private float angle = 0;
     private Vector2 movement;
     private Vector2 aim;
     private NavMeshObstacle obstacle;
@@ -19,11 +19,12 @@ public class PlayerHack : Character
     {
         shield.SetActive(false);
         obstacle = GetComponent<NavMeshObstacle>();
+        aim.y = 1f;
+        angle = 90;
     }
 
     void Update()
     {
-
         movement.y = 0f;
         movement.x = 0f;
         if (KeyBindingManager.GetKey(KeyAction.hackLeft)) movement.x = -1f;
@@ -31,6 +32,8 @@ public class PlayerHack : Character
         if (KeyBindingManager.GetKey(KeyAction.hackUp)) movement.y = 1f;
         if (KeyBindingManager.GetKey(KeyAction.hackDown)) movement.y = -1f;
 
+        aim.y = 0f;
+        aim.x = 0f;
         if (KeyBindingManager.GetKey(KeyAction.hackAimLeft)) aim.x = -1f;
         if (KeyBindingManager.GetKey(KeyAction.hackAimRight)) aim.x = 1f;
         if (KeyBindingManager.GetKey(KeyAction.hackAimUp)) aim.y = 1f;
