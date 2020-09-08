@@ -6,7 +6,24 @@ using System.Collections.Generic;
 //The keybinding scripts will load from the inspector unless there is a corresponding key in player prefs.
 public static class KeyBindingManager  {
 
-	public static Dictionary<KeyAction, KeyCode> keyDict = new Dictionary<KeyAction, KeyCode>();
+	public static Dictionary<KeyAction, KeyCode> keyDict = new Dictionary<KeyAction, KeyCode>(){
+			{ KeyAction.none,			KeyCode.None},
+			{ KeyAction.up,				KeyCode.W},
+			{ KeyAction.down,			KeyCode.S},
+			{ KeyAction.left,			KeyCode.A},
+			{ KeyAction.right,			KeyCode.D},
+			{ KeyAction.jump,			KeyCode.Space},
+			{ KeyAction.hack,			KeyCode.E},
+			{ KeyAction.fire,			KeyCode.LeftShift},
+			{ KeyAction.hackUp,			KeyCode.W},
+			{ KeyAction.hackDown,		KeyCode.S},
+			{ KeyAction.hackRight,		KeyCode.A},
+			{ KeyAction.hackFire,		KeyCode.LeftShift},
+			{ KeyAction.hackAimUp,		KeyCode.UpArrow},
+			{ KeyAction.hackAimDown,	KeyCode.DownArrow},
+			{ KeyAction.hackAimLeft,	KeyCode.LeftArrow},
+			{ KeyAction.hackAimRight,	KeyCode.RightArrow},
+			};
 
 	//Returns key code
 	public static KeyCode GetKeyCode(KeyAction key)
