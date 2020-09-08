@@ -64,6 +64,14 @@ public static class KeyBindingManager  {
         else
             keyDict[key.keyAction] = key.keyCode;
 	}
+
+	public static void UpdateDictionary(KeyAction keyAction, KeyCode keyCode)
+	{
+		if (!keyDict.ContainsKey(keyAction))
+			keyDict.Add(keyAction, keyCode);
+		else
+			keyDict[keyAction] = keyCode;
+	}
 }
 
 //used to safe code inputs
