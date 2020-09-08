@@ -9,6 +9,9 @@ public class GameMenuButtons : MonoBehaviour
     public AudioReverbFilter reverb;
     public AudioLowPassFilter lowPass;
 
+    public GameObject mainTab;
+    public GameObject optionsTab;
+
     public void Pause()
     {
         reverb.enabled = true;
@@ -48,4 +51,16 @@ public class GameMenuButtons : MonoBehaviour
         Application.Quit();
     }
 
+    public void Options()
+    {
+        mainTab.SetActive(false);
+        optionsTab.SetActive(true);
+
+    }
+
+    public void Back()
+    {
+        mainTab.SetActive(true);
+        optionsTab.SetActive(false);
+    }
 }
